@@ -5,13 +5,11 @@ using UnityEditor;
 
 public class CreateAbilities : EditorWindow
 {
-    Transform _lastCheckPoint;
-    private int _possibleWays;
-    Transform _newChekPoint;
+    Ability yesAbility;
     string _abilityName;
     string _abilityDesc;
-
-
+    
+    int count = 0;
     public enum MODIFIERTYPE
     {
         damage,
@@ -38,23 +36,44 @@ public class CreateAbilities : EditorWindow
     private void OnGUI()
     {
         _abilityName = (string)EditorGUILayout.TextField("Name: ", _abilityName);
-        _abilityDesc = (string)EditorGUILayout.TextField("Desc: ", _abilityDesc);
         
-        if(GUILayout.Button("Add Damage Modifier"))
+        if (GUILayout.Button("Create ScriptableObj"))
         {
-            mods.Add(MODIFIERTYPE.damage);
+            Ability newAbility = ScriptableObject.CreateInstance<Ability>();
+            string path = "Assets/ScriptableObjects/Abilities/" + _abilityName + ".asset";
+            AssetDatabase.CreateAsset(newAbility, path);
+            yesAbility = newAbility;
         }
 
-        for (int i = 0; i < mods.Count; i++)
+        yesAbility = (Ability)EditorGUILayout.ObjectField("Scriptable Obj: ", yesAbility, typeof(Ability), false);
+        _abilityDesc = (string)EditorGUILayout.TextField("Desc: ", _abilityDesc);
+
+        if (yesAbility == null)
         {
-            mods[i] = (MODIFIERTYPE)EditorGUILayout.EnumPopup("Modifier Type ", mods[i]);
-            switch (mods[i])
-            {
-                case MODIFIERTYPE.damage:
-                    int damage = 
-                    break;
-            }
+            return;
         }
+        if(GUILayout.Button("Add Damage Modifier"))
+        {
+            DamageModifier damage = new DamageModifier();
+            yesAbility.Mods.Add(damage);
+        }
+        if (GUILayout.Button("Add Stun Modifier"))
+        {
+            StunModifier damage = new StunModifier();
+            yesAbility.Mods.Add(damage);
+        }
+
+
+        for (int i = 0; i < yesAbility.Mods.Count; i++)
+        {
+            yesAbility.Mods[i].Draw();
+        }
+
+        if (GUILayout.Button("Save"))
+        {
+            EditorUtility.SetDirty(yesAbility);
+        }
+
         //mods[0] = ()
         
         /*if (teste == TESTE.Create)
