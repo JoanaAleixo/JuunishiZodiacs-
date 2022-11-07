@@ -17,8 +17,6 @@ public class CreateAbilities : EditorWindow
         applyBuff,
         applyDebuff
     }
-    //MODIFIERTYPE[] mods = new MODIFIERTYPE[0];
-    List<MODIFIERTYPE> mods = new List<MODIFIERTYPE>();
 
     public enum TESTE
     {
@@ -26,7 +24,7 @@ public class CreateAbilities : EditorWindow
         Edit
     }
     public  TESTE teste;
-    [MenuItem("Tools/CreateAbility")]
+    [MenuItem("Tools/AbilityMenu")]
  
       static void Init()
     {
@@ -57,6 +55,16 @@ public class CreateAbilities : EditorWindow
             DamageModifier damage = new DamageModifier();
             yesAbility.Mods.Add(damage);
         }
+
+        for (int i = 0; i < yesAbility.Mods.Count; i++)
+        {
+            Debug.Log(yesAbility.Mods[i].GetType());
+            if(yesAbility.Mods[i] is DamageModifier)
+            {
+                yesAbility.Mods[i].Draw();
+            }
+        }
+
         if (GUILayout.Button("Add Stun Modifier"))
         {
             StunModifier damage = new StunModifier();
@@ -66,15 +74,18 @@ public class CreateAbilities : EditorWindow
 
         for (int i = 0; i < yesAbility.Mods.Count; i++)
         {
-            yesAbility.Mods[i].Draw();
+            if (yesAbility.Mods[i] is StunModifier)
+            {
+                yesAbility.Mods[i].Draw();
+            }
         }
 
-        if (GUILayout.Button("Save"))
+        if(GUILayout.Button("Save"))
         {
             EditorUtility.SetDirty(yesAbility);
         }
 
-        //mods[0] = ()
+        
         
         /*if (teste == TESTE.Create)
         {

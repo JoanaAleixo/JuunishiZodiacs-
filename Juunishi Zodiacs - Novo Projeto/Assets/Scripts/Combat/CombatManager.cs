@@ -2,17 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum BattleState
+enum BATTLESTATE
 {
-    StartBattle, PlayerTurn, EnemyTurn, Victory, Defeat
+    StartBattle,
+    PlayerTurn, 
+    SelectCaracter,
+    EnemyTurn, 
+    Victory, 
+    Defeat
 }
 
 public class CombatManager : MonoBehaviour
 {
     public static CombatManager combatInstance;
+    [SerializeField] CombatUiManager uIManager;
+    [SerializeField] BATTLESTATE _curState;
+    [Header("Players")]
+    [SerializeField] PlayableCaracter[] _caracters = new PlayableCaracter[3];
 
-    [SerializeField] BattleState _curState;
-    [SerializeField] AtaqueMagico _action;
+    [SerializeField] List<Ability> _actions;
+    [SerializeField] int _selectedCaracter;
+
+    [SerializeField] GameObject _actionMenu;
+
+    public int SelectedCaracter { get => _selectedCaracter; set { ChangeSelectedCaracter(_selectedCaracter, value);} }
+
+    public PlayableCaracter[] Caracters { get => _caracters; set => _caracters = value; }
 
     private void Awake()
     {
@@ -27,48 +42,78 @@ public class CombatManager : MonoBehaviour
     }
     void Start()
     {
-        _curState = BattleState.StartBattle;
+        _curState = BATTLESTATE.StartBattle;
     }
 
     void Update()
     {
         switch (_curState)
         {
-            case BattleState.StartBattle:
+            case BATTLESTATE.StartBattle:
+                ChangeState(BATTLESTATE.PlayerTurn);
+                break;
+            case BATTLESTATE.PlayerTurn:
+
+                ChangeState(BATTLESTATE.SelectCaracter);
                 
-                break;
-            case BattleState.PlayerTurn:
-                if(_action != null)
+                /*if(_action != null)
                 {
-                    ChangeState(BattleState.EnemyTurn);
-                }
+                    ChangeState(BATTLESTATE.EnemyTurn);
+                }*/
                 break;
-            case BattleState.EnemyTurn:
+            case BATTLESTATE.SelectCaracter:
+                //CheckCaracterSelected();
                 break;
-            case BattleState.Victory:
+            case BATTLESTATE.EnemyTurn:
                 break;
-            case BattleState.Defeat:
+            case BATTLESTATE.Victory:
                 break;
-            
+            case BATTLESTATE.Defeat:
+                break;
         }
     }
 
-    void ChangeState(BattleState _newState)
+    #region ChangeState
+    void ChangeState(BATTLESTATE _newState)
     {
         _curState = _newState;
         switch (_curState)
         {
-            case BattleState.StartBattle:
-                ChangeState(BattleState.PlayerTurn);
+            case BATTLESTATE.StartBattle:
+                ChangeState(BATTLESTATE.PlayerTurn);
                 break;
-            case BattleState.PlayerTurn:
+            case BATTLESTATE.PlayerTurn:
                 break;
-            case BattleState.EnemyTurn:
+            case BATTLESTATE.SelectCaracter:
                 break;
-            case BattleState.Victory:
+            case BATTLESTATE.EnemyTurn:
                 break;
-            case BattleState.Defeat:
+            case BATTLESTATE.Victory:
+                break;
+            case BATTLESTATE.Defeat:
                 break;
         }
     }
+    #endregion
+
+    #region CaracterSelection
+    public void SelectCaracter(int caracterNum)
+    {
+        SelectedCaracter = caracterNum;
+    }
+
+    private void CheckCaracterSelected()
+    {
+        if(SelectedCaracter == 0 || SelectedCaracter == 1 || SelectedCaracter == 2)
+        {
+            //uIManager.OpenAbilitiesMenu(SelectedCaracter);
+        }
+    }
+
+    private void ChangeSelectedCaracter(int oldValue, int newValue)
+    {
+        _selectedCaracter = newValue;
+        uIManager.OpenActionMenu();
+    }
+    #endregion
 }

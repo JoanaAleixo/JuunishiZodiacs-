@@ -13,7 +13,7 @@ public class AtaqueMagico : ScriptableObject
     [SerializeField] string nome;
     [SerializeField] Sprite icon;
 
-    [SerializeField] TipoPoder tipo;
+    [SerializeField] ELEMENT tipo;
     [SerializeField] Range tipoRange; 
     [SerializeField] Consumo tipoConsumo;
 
@@ -22,7 +22,7 @@ public class AtaqueMagico : ScriptableObject
 
     #region Propriedades
     public Sprite Icon { get => icon; set => icon = value; }
-    public TipoPoder Tipo { get => tipo; set => tipo = value; }
+    public ELEMENT Tipo { get => tipo; set => tipo = value; }
     public string Nome { get => nome; set => nome = value; }
     public int Dano { get => dano; }
     public int Custo { get => custo; set => custo = value; }

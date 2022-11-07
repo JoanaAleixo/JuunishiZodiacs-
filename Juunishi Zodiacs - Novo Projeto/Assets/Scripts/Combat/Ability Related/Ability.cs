@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/Abilty")]
 public class Ability : ScriptableObject
 {
-    [SerializeReference] List<Modifiers> mods = new List<Modifiers>();
+    [SerializeReference] List<Modifiers> _mods = new List<Modifiers>();
 
-    public List<Modifiers> Mods { get => mods; set => mods = value; }
+    public List<Modifiers> Mods { get => _mods; set => _mods = value; }
 }
