@@ -13,6 +13,7 @@ public class CombatUiManager : MonoBehaviour
     [SerializeField] GameObject _spellsBut;
     [SerializeField] GameObject _abilitiesMenu;
     [SerializeField] GameObject[] _magicalAttack = new GameObject[3];
+    [SerializeField] GameObject[] _selectionButtons;
     
     void Start()
     {
@@ -38,6 +39,17 @@ public class CombatUiManager : MonoBehaviour
     public void OpenActionMenu()
     {
         _actionMenu.SetActive(true);
+        _abilitiesMenu.SetActive(false);
         _attackBut.GetComponentInChildren<TextMeshProUGUI>().text = combatMg.Caracters[combatMg.SelectedCaracter].PhysicalAbility.name;
+    }
+
+    public void CloseActionMenu()
+    {
+        _actionMenu.SetActive(false);
+    }
+
+    public void LockSelectionButton(int _buttonInt)
+    {
+        _selectionButtons[_buttonInt].SetActive(false);
     }
 }

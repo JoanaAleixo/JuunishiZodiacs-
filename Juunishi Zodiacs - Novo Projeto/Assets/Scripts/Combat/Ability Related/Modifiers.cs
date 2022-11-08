@@ -6,13 +6,21 @@ using UnityEditor;
 
 public enum TARGETING
 {
-    single,
-    multiple
+    self,
+    singleAlly,
+    singleEnemy,
+    multipleAlly,
+    multipleEnemy
 }
 
 [System.Serializable]
 public abstract class Modifiers
 {
+
+    [SerializeField] TARGETING _targetType;
+
+    public TARGETING TargetType { get => _targetType; set => _targetType = value; }
+
     public Modifiers()
     {
     }
