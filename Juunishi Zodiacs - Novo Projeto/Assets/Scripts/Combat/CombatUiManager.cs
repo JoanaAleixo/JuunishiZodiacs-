@@ -15,11 +15,12 @@ public class CombatUiManager : MonoBehaviour
     [SerializeField] GameObject _abilitiesMenu;
     [SerializeField] GameObject[] _magicalAttack = new GameObject[3];
     [SerializeField] GameObject[] _selectionButtons;
-
+    [Header("TemporaryTargetSelection")]
     [SerializeField] BaseStats _temporarySelectedTarget;
-    float _targetTimer;
-    bool _enemyTargetSelecting = false;
-    bool _allyTargetSelecting = false;
+    [SerializeField] float _targetTimer;
+    [SerializeField] bool _enemyTargetSelecting = false;
+    [SerializeField] bool _allyTargetSelecting = false;
+    //[Header("Other")]
 
     public BaseStats TemporarySelectedTarget { get => _temporarySelectedTarget; set => _temporarySelectedTarget = value; }
     public bool EnemyTargetSelecting { get => _enemyTargetSelecting; set => _enemyTargetSelecting = value; }
@@ -83,6 +84,8 @@ public class CombatUiManager : MonoBehaviour
         _selectionButtons[_buttonInt].SetActive(false);
     }
 
+    #region TargetSelection
+
     public void OpenEnemyTargetSelection()
     {
         _temporarySelectedTarget.transform.GetChild(0).gameObject.SetActive(true);
@@ -112,5 +115,7 @@ public class CombatUiManager : MonoBehaviour
         combatMg.RecieveTarget(_temporarySelectedTarget.gameObject);
         _temporarySelectedTarget = null;
     }
+
+    #endregion
 
 }

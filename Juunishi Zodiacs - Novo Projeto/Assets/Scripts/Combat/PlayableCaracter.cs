@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 public class PlayableCaracter : BaseStats
 {
 
-    [SerializeField] int spMax;
-    [SerializeField] int sp;
+    [SerializeField] int _spMax;
+    [SerializeField] int _sp;
 
     protected override void Start()
     {
