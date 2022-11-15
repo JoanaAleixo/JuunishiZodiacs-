@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public enum ELEMENT
 {
@@ -13,19 +14,18 @@ public enum ELEMENT
     NoElement
 }
 
-public class BaseStats : MonoBehaviour
+public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 {
-    CombatManager combatMg;
-
-    [SerializeField] string _name;
+    [SerializeField] protected CombatManager combatMg;
+    [SerializeField] protected CombatUiManager uIManager;
+    [SerializeField] protected string _name;
     //[SerializeField] TextMeshProUGUI nomeDisplay;
-    [SerializeField] ELEMENT _type; 
-    [SerializeField] int _hpMax;
-    [SerializeField] int _curHp;
-    [SerializeField] int _shieldHp;
-    [SerializeField] Ability _physicalAbility;
-    [SerializeField] Ability[] _abilities = new Ability[3];
-
+    [SerializeField] protected ELEMENT _type; 
+    [SerializeField] protected int _hpMax;
+    [SerializeField] protected int _curHp;
+    [SerializeField] protected int _shieldHp;
+    [SerializeField] protected Ability _physicalAbility;
+    [SerializeField] protected Ability[] _abilities = new Ability[3];
     public Ability[] Abilities { get => _abilities; set => _abilities = value; }
     public Ability PhysicalAbility { get => _physicalAbility; set => _physicalAbility = value; }
 
@@ -41,13 +41,22 @@ public class BaseStats : MonoBehaviour
     //[SerializeField] Sprite iconElementoSprite;
     //[SerializeField] Image iconElementoImage;
 
-    void Start()
+    protected virtual void Start()
     {
         combatMg = CombatManager.combatInstance;
+        uIManager = CombatUiManager.uiInstance;
     }
 
     void Update()
     {
         
+    }
+
+    public virtual void OnPointerClick(PointerEventData eventData)
+    {
+    }
+
+    public virtual void OnPointerEnter(PointerEventData eventData)
+    {
     }
 }

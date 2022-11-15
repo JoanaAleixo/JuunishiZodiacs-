@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Events;
+using System;
 
 enum BATTLESTATE
 {
     StartBattle,
     PlayerTurn, 
+    SelectingTarget,
     ExecutePlayerTurn,
     EnemyTurn, 
     Victory, 
@@ -15,7 +19,7 @@ enum BATTLESTATE
 [System.Serializable]
 public struct SelectedModifiers
 {
-    [SerializeField] Modifiers modifierToExecute;
+    [SerializeReference] Modifiers modifierToExecute;
     [SerializeField] GameObject[] targets;
 
     public SelectedModifiers(Modifiers newMod, GameObject[] newTargets)
@@ -42,9 +46,19 @@ public class CombatManager : MonoBehaviour
     [SerializeField] int _selectedCaracter;
     [SerializeField] GameObject _actionMenu;
 
+    /*[SerializeReference] Modifiers[] targetlessMods;
+    [SerializeField] Ability temporaryAbility;*/
+
+    [Header("TemporaryStuff")]
+    [SerializeField] int tempIndex;
+    [SerializeReference] Modifiers[] temporaryMods;
+    [SerializeField] GameObject[] temporaryTargets;
+    
+
     public int SelectedCaracter { get => _selectedCaracter; set { ChangeSelectedCaracter(_selectedCaracter, value);} }
 
     public PlayableCaracter[] Caracters { get => _caracters; set => _caracters = value; }
+    internal BATTLESTATE CurState { get => _curState; set => _curState = value; }
 
     private void Awake()
     {
@@ -59,18 +73,23 @@ public class CombatManager : MonoBehaviour
     }
     void Start()
     {
-        _curState = BATTLESTATE.StartBattle;
+        uIManager = CombatUiManager.uiInstance;
+        CurState = BATTLESTATE.StartBattle;
+        temporaryTargets = null;
     }
 
     void Update()
     {
-        switch (_curState)
+        switch (CurState)
         {
             case BATTLESTATE.StartBattle:
                 ChangeState(BATTLESTATE.PlayerTurn);
                 break;
             case BATTLESTATE.PlayerTurn:
                 CheckForAbilities();
+                break;
+            case BATTLESTATE.SelectingTarget:
+                TargetAbility();
                 break;
             case BATTLESTATE.ExecutePlayerTurn:
                 break;
@@ -86,8 +105,8 @@ public class CombatManager : MonoBehaviour
     #region ChangeState
     void ChangeState(BATTLESTATE _newState)
     {
-        _curState = _newState;
-        switch (_curState)
+        CurState = _newState;
+        switch (CurState)
         {
             case BATTLESTATE.StartBattle:
                 ChangeState(BATTLESTATE.PlayerTurn);
@@ -95,6 +114,8 @@ public class CombatManager : MonoBehaviour
             case BATTLESTATE.PlayerTurn:
                 break;
             case BATTLESTATE.ExecutePlayerTurn:
+                break;
+            case BATTLESTATE.SelectingTarget:
                 break;
             case BATTLESTATE.EnemyTurn:
                 break;
@@ -129,20 +150,107 @@ public class CombatManager : MonoBehaviour
 
     #region AbilitySelection
 
+    private void TargetAbility()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            temporaryTargets = new GameObject[] { _enemies[0].gameObject };
+            Debug.Log("click");
+        }
+
+        SelectedModifiers modToAdd;
+        if (tempIndex < temporaryMods.Length)
+        {
+            switch (temporaryMods[tempIndex].TargetType)
+            {
+                case TARGETING.self:
+                        temporaryTargets = new GameObject[] { _caracters[SelectedCaracter].gameObject };
+                        AddToMods(temporaryMods[tempIndex], temporaryTargets);
+                    break;
+                case TARGETING.multipleAlly:
+                        temporaryTargets = new GameObject[_caracters.Length];
+                        for (int u = 0; u < _caracters.Length; u++)
+                        {
+                            temporaryTargets[u] = _caracters[u].gameObject;
+                        }
+                        AddToMods(temporaryMods[tempIndex], temporaryTargets);
+                    break;
+                case TARGETING.multipleEnemy:
+                        temporaryTargets = new GameObject[_enemies.Length];
+                        for (int u = 0; u < _enemies.Length; u++)
+                        {
+                            temporaryTargets[u] = _enemies[u].gameObject;
+                        }
+                        AddToMods(temporaryMods[tempIndex], temporaryTargets);
+                    break;
+                case TARGETING.singleEnemy:
+                    if (temporaryTargets != null)
+                    {
+                        AddToMods(temporaryMods[tempIndex], temporaryTargets);
+                    }
+                    else if(uIManager.TemporarySelectedTarget == null)
+                    {
+                        uIManager.TemporarySelectedTarget = _enemies[0];
+                        uIManager.OpenEnemyTargetSelection();
+                    }
+                    break;
+                case TARGETING.singleAlly:
+                    if (temporaryTargets != null)
+                    {
+                        AddToMods(temporaryMods[tempIndex], temporaryTargets);
+                    }else if (uIManager.TemporarySelectedTarget == null)
+                    {
+                        uIManager.TemporarySelectedTarget = _caracters[0];
+                        uIManager.OpenAllyTargetSelection();
+                    }
+                    break;
+            }
+        }
+
+        if(tempIndex >= temporaryMods.Length)
+        {
+            temporaryTargets = null;
+            temporaryMods = null;
+            tempIndex = 0;
+            ChangeState(BATTLESTATE.PlayerTurn);
+        }
+    }
+
+    public void RecieveTarget(GameObject lockedTarget)
+    {
+        temporaryTargets = new GameObject[1] { lockedTarget };
+    }
+
+    private void AddToMods(Modifiers mod1, GameObject[] targets1)
+    {
+        SelectedModifiers modToAdd = new SelectedModifiers(mod1, targets1);
+        _modifiers.Add(modToAdd);
+        temporaryTargets = null;
+        tempIndex++;
+    }
+
     public void SelectAbility(int _abilityNumb)
     {
-        
+
         if(_abilityNumb >= 0 && _abilityNumb <=2)
         {
-            _actions.Add(_caracters[SelectedCaracter].Abilities[_abilityNumb]);
-            for (int i = 0; i < _caracters[SelectedCaracter].Abilities[_abilityNumb].Mods.Count; i++)
+            temporaryMods = _caracters[SelectedCaracter].Abilities[_abilityNumb].Mods.ToArray();
+
+            ChangeState(BATTLESTATE.SelectingTarget);
+
+            /*Modifiers[] temporaryMods = _caracters[SelectedCaracter].Abilities[_abilityNumb].Mods.ToArray();
+            targetlessMods = new Modifiers[temporaryMods.Length];
+            Array.Copy(temporaryMods, targetlessMods,temporaryMods.Length);*/
+
+            /*_actions.Add(_caracters[SelectedCaracter].Abilities[_abilityNumb]);
+            for (int i = 0; i < _caracters[SelectedCaracter].Abilities[_abilityNumb].Mods.Count && ; i++)
             {
                 GameObject[] tempTargets;
                 Modifiers mod = _caracters[SelectedCaracter].Abilities[_abilityNumb].Mods[i];
                 if(mod.TargetType == TARGETING.self)
                 {
                     tempTargets = new GameObject[1];
-                    tempTargets[0] = this.gameObject;
+                    tempTargets[0] = _caracters[SelectedCaracter].gameObject;
                     SelectedModifiers modToAdd = new SelectedModifiers(mod, tempTargets);
                     _modifiers.Add(modToAdd);
                 }
@@ -175,22 +283,22 @@ public class CombatManager : MonoBehaviour
                 }
                 if (mod.TargetType == TARGETING.singleEnemy)
                 {
-                    tempTargets = new GameObject[1];
-                    tempTargets[0] = this.gameObject;
+                    TargetSelection(mod);
                     SelectedModifiers modToAdd = new SelectedModifiers(mod, tempTargets);
                     _modifiers.Add(modToAdd);
                 }
-            }
+            }*/
         }
         else
         {
             _actions.Add(_caracters[SelectedCaracter].PhysicalAbility);
         }
+
+        //ChangeState(BATTLESTATE.SelectingTarget);
+
         uIManager.CloseActionMenu();
         uIManager.LockSelectionButton(SelectedCaracter);
     }
-
-
 
     private void CheckForAbilities()
     {
@@ -202,5 +310,8 @@ public class CombatManager : MonoBehaviour
 
     #endregion
 
-
+    public void SelectTargetButton(GameObject gm)
+    {
+        temporaryTargets = new GameObject[1] { gm };
+    }
 }

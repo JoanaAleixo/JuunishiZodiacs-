@@ -12,6 +12,7 @@ enum DAMAGETYPE
     Nature,
     Metal
 }
+
 [System.Serializable]
 public class DamageModifier : Modifiers
 {

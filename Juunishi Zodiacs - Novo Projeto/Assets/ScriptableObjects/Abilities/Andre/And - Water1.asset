@@ -14,12 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mods:
   - rid: 3818156559832973314
+  - rid: 3818156713669033989
   references:
     version: 2
     RefIds:
     - rid: 3818156559832973314
       type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
       data:
-        _targetType: 4
+        yes: 0
+        _targetType: 2
         _quantity: 5
         _damageType: 2
+    - rid: 3818156713669033989
+      type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
+      data:
+        yes: 0
+        _targetType: 1
+        _quantity: 10
+        _damageType: 4
