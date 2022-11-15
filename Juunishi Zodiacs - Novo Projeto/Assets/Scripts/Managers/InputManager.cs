@@ -43,12 +43,12 @@ public class InputManager : MonoBehaviour
                 if (GameManager.Instance.JogoPausado)
                 {
                     GameManager.Instance.RetomarJogo();
-                    ui.MenuPausa.gameObject.SetActive(false);
+                  //  ui.MenuPausa.gameObject.SetActive(false);
                 }
                 else
                 {
                     GameManager.Instance.Pausa();
-                    ui.MenuPausa.gameObject.SetActive(true);
+                   // ui.MenuPausa.gameObject.SetActive(true);
                 }
             }
         }
