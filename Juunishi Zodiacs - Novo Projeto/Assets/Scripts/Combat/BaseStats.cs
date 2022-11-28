@@ -59,4 +59,9 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     public virtual void OnPointerEnter(PointerEventData eventData)
     {
     }
+
+    public virtual void TakeDamage(int dmToTake, DAMAGETYPE dmType)
+    {
+        _curHp -= dmToTake;
+    }
 }

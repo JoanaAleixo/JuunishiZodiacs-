@@ -26,5 +26,10 @@ public abstract class Modifiers
     {
     }
 
+    public virtual void ExecuteMod(GameObject[] target)
+    {
+
+    }
+
     public abstract void Draw();
 }

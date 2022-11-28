@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-enum DAMAGETYPE
+public enum DAMAGETYPE
 {
     Physical,
     Fire,
@@ -18,8 +18,6 @@ public class DamageModifier : Modifiers
 {
     [SerializeField] int _quantity;
     [SerializeField] DAMAGETYPE _damageType;
-    
-    GameObject target;
 
     public int Quantity { get => _quantity; set => _quantity = value; }
     
@@ -32,16 +30,24 @@ public class DamageModifier : Modifiers
         TargetType = (TARGETING)EditorGUILayout.EnumPopup("Targeting Type: ",TargetType);
     }
 
-    public void ExecuteDamage(GameObject target)
+    public override void ExecuteMod(GameObject[] target)
     {
-        if(TargetType == TARGETING.singleEnemy)
+        if (TargetType == TARGETING.singleEnemy || TargetType == TARGETING.singleAlly || TargetType == TARGETING.self)
         {
-           // Damage(target);
+            target[0].GetComponent<BaseStats>().TakeDamage(Quantity, DamageType);
         }
-        else if(TargetType == TARGETING.multipleEnemy)
+        else if (TargetType == TARGETING.multipleEnemy || TargetType == TARGETING.multipleAlly)
         {
-            //Damage(all);
+            for (int i = 0; i < target.Length; i++)
+            {
+                target[i].GetComponent<BaseStats>().TakeDamage(Quantity, DamageType);
+            }
         }
+    }
+
+    public void ExecuteDamageMod(GameObject[] target)
+    {
+        
     }
 }
 

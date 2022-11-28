@@ -5,15 +5,23 @@ using UnityEngine.EventSystems;
 
 public class CaraterSelection : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    CombatManager cM;
     [SerializeField] GameObject _selectionArrow;
+
+    private void Start()
+    {
+        cM = CombatManager.combatInstance;
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        _selectionArrow.SetActive(true);
+        if(cM.CurState == BATTLESTATE.PlayerTurn)
+            _selectionArrow.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        _selectionArrow.SetActive(false);
+        if (cM.CurState == BATTLESTATE.PlayerTurn)
+            _selectionArrow.SetActive(false);
     }
 }

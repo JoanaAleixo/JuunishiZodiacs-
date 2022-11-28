@@ -26,6 +26,8 @@ public class CombatUiManager : MonoBehaviour
     public bool EnemyTargetSelecting { get => _enemyTargetSelecting; set => _enemyTargetSelecting = value; }
     public bool AllyTargetSelecting { get => _allyTargetSelecting; set => _allyTargetSelecting = value; }
 
+    #region Awake + Start + Update
+
     private void Awake()
     {
         if (uiInstance != null)
@@ -57,6 +59,10 @@ public class CombatUiManager : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Abilities Tab
+
     public void OpenAbilitiesMenu()
     {
         _abilitiesMenu.SetActive(true);
@@ -79,10 +85,7 @@ public class CombatUiManager : MonoBehaviour
         _actionMenu.SetActive(false);
     }
 
-    public void LockSelectionButton(int _buttonInt)
-    {
-        _selectionButtons[_buttonInt].SetActive(false);
-    }
+    #endregion
 
     #region TargetSelection
 
@@ -118,4 +121,28 @@ public class CombatUiManager : MonoBehaviour
 
     #endregion
 
+    #region CaracterSelection
+
+    public void LockCaracterSelection()
+    {
+        for (int i = 0; i < _selectionButtons.Length; i++)
+        {
+            _selectionButtons[i].GetComponent<Button>().enabled = false;
+        }
+    }
+
+    public void UnlockCaracterSelection()
+    {
+        for (int i = 0; i < _selectionButtons.Length; i++)
+        {
+            _selectionButtons[i].GetComponent<Button>().enabled = true;
+        }
+    }
+
+    public void LockSelectionButton(int _buttonInt)
+    {
+        _selectionButtons[_buttonInt].SetActive(false);
+    }
+
+    #endregion
 }
