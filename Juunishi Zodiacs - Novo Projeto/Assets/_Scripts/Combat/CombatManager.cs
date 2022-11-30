@@ -43,15 +43,12 @@ public class CombatManager : MonoBehaviour
     [SerializeField] BATTLESTATE _curState;
     [Header("Players")]
     [SerializeField] PlayableCaracter[] _caracters = new PlayableCaracter[3];
+    
     [SerializeField] Enemy[] _enemies;
     [SerializeField] List<Ability> _actions;
     [SerializeField] List<SelectedModifiers> _modifiers;
     [SerializeField] int _selectedCaracter;
     [SerializeField] GameObject _actionMenu;
-
-    /*[SerializeReference] Modifiers[] targetlessMods;
-    [SerializeField] Ability temporaryAbility;*/
-
     [Header("TemporaryStuff")]
     [SerializeField] int tempIndex;
     [SerializeReference] Modifiers[] temporaryMods;
