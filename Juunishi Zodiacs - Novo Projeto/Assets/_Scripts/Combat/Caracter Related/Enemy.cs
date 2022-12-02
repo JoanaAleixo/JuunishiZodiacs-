@@ -19,6 +19,8 @@ public class Enemy : BaseStats
 
     public override void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log(eventData.pointerEnter.name);
+
         if (uIManager.EnemyTargetSelecting == true)
         {
             if (combatMg.CurState == BATTLESTATE.SelectingTarget && uIManager.TemporarySelectedTarget == this)
@@ -30,6 +32,9 @@ public class Enemy : BaseStats
 
     public override void OnPointerEnter(PointerEventData eventData)
     {
+        Debug.Log(eventData.pointerEnter.name);
+
+        Debug.Log("123");
         if(uIManager.EnemyTargetSelecting == true)
         {
             if (combatMg.CurState == BATTLESTATE.SelectingTarget && uIManager.TemporarySelectedTarget != this)

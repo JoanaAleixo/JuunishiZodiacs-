@@ -8,6 +8,7 @@ public class CombatUiManager : MonoBehaviour
 {
     public static CombatUiManager uiInstance;
     CombatManager combatMg;
+
     [Header("ActionMenu")]
     [SerializeField] GameObject _actionMenu;
     [SerializeField] GameObject _attackBut;
