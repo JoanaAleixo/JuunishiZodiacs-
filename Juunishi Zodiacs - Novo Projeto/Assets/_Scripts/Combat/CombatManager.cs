@@ -43,7 +43,6 @@ public class CombatManager : MonoBehaviour
     [SerializeField] BATTLESTATE _curState;
     [Header("Players")]
     [SerializeField] PlayableCaracter[] _caracters = new PlayableCaracter[3];
-    
     [SerializeField] Enemy[] _enemies;
     [SerializeField] List<Ability> _actions;
     [SerializeField] List<SelectedModifiers> _modifiers;
@@ -158,13 +157,13 @@ public class CombatManager : MonoBehaviour
 
         if (_abilityNumb >= 0 && _abilityNumb <= 2)
         {
-            _actions.Add(_caracters[SelectedCaracter].Abilities[_abilityNumb]);
-            temporaryMods = _caracters[SelectedCaracter].Abilities[_abilityNumb].Mods.ToArray();
+            _actions.Add(_caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb]);
+            temporaryMods = _caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb].Mods.ToArray();
             ChangeState(BATTLESTATE.SelectingTarget);
         }
         else
         {
-            _actions.Add(_caracters[SelectedCaracter].PhysicalAbility);
+            _actions.Add(_caracters[SelectedCaracter].MyCaracter.PhysicalAbility);
         }
 
         uIManager.CloseActionMenu();

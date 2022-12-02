@@ -385,7 +385,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1294851775}
         m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
         m_MethodName: SelectCaracter
         m_Mode: 3
@@ -1458,18 +1458,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatMg: {fileID: 0}
   uIManager: {fileID: 0}
-  _name: 
-  _type: 2
-  _hpMax: 100
-  _curHp: 100
-  _shieldHp: 0
-  _physicalAbility: {fileID: 11400000, guid: 123a701969c0d6245aba085c067117e2, type: 2}
-  _abilities:
-  - {fileID: 11400000, guid: 8a5e215515498d642aa0d62788310580, type: 2}
-  - {fileID: 11400000, guid: e5585e12b59450647a4827451ce11392, type: 2}
-  - {fileID: 11400000, guid: fa42e2a7cb014444b804b1b5a026e6b2, type: 2}
-  _spMax: 0
-  _sp: 0
+  myCaracter: {fileID: 0}
+  _caracterNumber: 2
+  _allCaracters: {fileID: 11400000, guid: 93bc55ecfdcecd146b814e81f7de7f4a, type: 2}
 --- !u!212 &360797933
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2194,17 +2185,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatMg: {fileID: 0}
   uIManager: {fileID: 0}
-  _name: 
-  _type: 0
-  _hpMax: 100
-  _curHp: 100
-  _shieldHp: 0
-  _physicalAbility: {fileID: 0}
-  _abilities:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  myCaracter: {fileID: 0}
+  _caracterNumber: 0
 --- !u!212 &703977060
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2612,7 +2594,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1294851775}
         m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
         m_MethodName: SelectCaracter
         m_Mode: 3
@@ -3423,7 +3405,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1294851775}
         m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
         m_MethodName: SelectCaracter
         m_Mode: 3
@@ -5153,17 +5135,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatMg: {fileID: 0}
   uIManager: {fileID: 0}
-  _name: 
-  _type: 0
-  _hpMax: 100
-  _curHp: 100
-  _shieldHp: 0
-  _physicalAbility: {fileID: 0}
-  _abilities:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  myCaracter: {fileID: 0}
+  _caracterNumber: 0
 --- !u!212 &1435982099
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5365,18 +5338,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatMg: {fileID: 0}
   uIManager: {fileID: 0}
-  _name: 
-  _type: 4
-  _hpMax: 200
-  _curHp: 200
-  _shieldHp: 0
-  _physicalAbility: {fileID: 11400000, guid: 21799c49af13da345b1b56a3e40a6857, type: 2}
-  _abilities:
-  - {fileID: 11400000, guid: 9d4e18388cee15a449f0d583af87202e, type: 2}
-  - {fileID: 11400000, guid: 99747b5f2008f4a44bd281c2c0e30b37, type: 2}
-  - {fileID: 11400000, guid: f4a6b163b9b89a34094a784e4e7b5c3f, type: 2}
-  _spMax: 0
-  _sp: 0
+  myCaracter: {fileID: 0}
+  _caracterNumber: 2
+  _allCaracters: {fileID: 11400000, guid: 93bc55ecfdcecd146b814e81f7de7f4a, type: 2}
 --- !u!212 &1483627698
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5494,18 +5458,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatMg: {fileID: 0}
   uIManager: {fileID: 0}
-  _name: 
-  _type: 0
-  _hpMax: 60
-  _curHp: 60
-  _shieldHp: 0
-  _physicalAbility: {fileID: 11400000, guid: 62073ccdef0b6e7418f325a1e89cd6de, type: 2}
-  _abilities:
-  - {fileID: 11400000, guid: 4f9131f43d6387b4fb7f30ef949eab19, type: 2}
-  - {fileID: 11400000, guid: 5aa8d301b7042b44bbcdad505995a292, type: 2}
-  - {fileID: 11400000, guid: 22ce13ed24653da489f72ac60849afe4, type: 2}
-  _spMax: 0
-  _sp: 0
+  myCaracter: {fileID: 0}
+  _caracterNumber: 2
+  _allCaracters: {fileID: 11400000, guid: 93bc55ecfdcecd146b814e81f7de7f4a, type: 2}
 --- !u!212 &1502411198
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6008,18 +5963,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51daf68950e26e34cb7d82deb66b89d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actionMenu: {fileID: 0}
-  _attackBut: {fileID: 0}
-  _spellsBut: {fileID: 0}
-  _abilitiesMenu: {fileID: 0}
+  _actionMenu: {fileID: 1821750586}
+  _attackBut: {fileID: 1286839977}
+  _spellsBut: {fileID: 662056312}
+  _abilitiesMenu: {fileID: 432044540}
   _magicalAttack:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 451030541}
+  - {fileID: 1005659879}
+  - {fileID: 1333634862}
   _selectionButtons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 42240094}
+  - {fileID: 744009955}
+  - {fileID: 1035166673}
   _temporarySelectedTarget: {fileID: 0}
   _targetTimer: 0
   _enemyTargetSelecting: 0
@@ -6352,7 +6307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1821750587
 RectTransform:
   m_ObjectHideFlags: 0

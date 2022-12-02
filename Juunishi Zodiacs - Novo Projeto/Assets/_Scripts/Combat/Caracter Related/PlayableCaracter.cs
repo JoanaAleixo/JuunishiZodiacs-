@@ -6,11 +6,14 @@ using UnityEngine.EventSystems;
 public class PlayableCaracter : BaseStats
 {
 
-    [SerializeField] int _spMax;
-    [SerializeField] int _sp;
+    /*[SerializeField] int _spMax;
+    [SerializeField] int _sp;*/
+
+    [SerializeField] ActiveCaracters _allCaracters;
 
     protected override void Start()
     {
+        MyCaracter = _allCaracters.ActiveCaractersInGame[_caracterNumber];
         base.Start();
     }
 

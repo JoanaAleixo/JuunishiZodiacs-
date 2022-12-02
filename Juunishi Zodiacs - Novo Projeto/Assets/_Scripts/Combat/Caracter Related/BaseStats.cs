@@ -18,7 +18,7 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
 {
     [SerializeField] protected CombatManager combatMg;
     [SerializeField] protected CombatUiManager uIManager;
-    [SerializeField] protected string _name;
+    /*[SerializeField] protected string _name;
     //[SerializeField] TextMeshProUGUI nomeDisplay;
     [SerializeField] protected ELEMENT _type; 
     [SerializeField] protected int _hpMax;
@@ -28,7 +28,7 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     [SerializeField] protected Ability[] _abilities = new Ability[3];
     public Ability[] Abilities { get => _abilities; set => _abilities = value; }
     public Ability PhysicalAbility { get => _physicalAbility; set => _physicalAbility = value; }
-
+    */
     //[SerializeField] Image barraHP;
     //[SerializeField] TextMeshProUGUI vidaText;
 
@@ -40,6 +40,11 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     //[SerializeField] AtaqueMagico[] ataqMagicos;
     //[SerializeField] Sprite iconElementoSprite;
     //[SerializeField] Image iconElementoImage;
+
+    [SerializeField] private CaracterCreation myCaracter;
+    [SerializeField] protected int _caracterNumber;
+
+    public CaracterCreation MyCaracter { get => myCaracter; set => myCaracter = value; }
 
     protected virtual void Start()
     {
@@ -62,6 +67,6 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
 
     public virtual void TakeDamage(int dmToTake, DAMAGETYPE dmType)
     {
-        _curHp -= dmToTake;
+        myCaracter.HpMax.Value -= dmToTake;
     }
 }

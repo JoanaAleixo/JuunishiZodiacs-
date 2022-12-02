@@ -69,7 +69,7 @@ public class CombatUiManager : MonoBehaviour
         for (int i = 0; i < _magicalAttack.Length; i++)
         {
             Debug.Log("ability");
-            _magicalAttack[i].GetComponentInChildren<TextMeshProUGUI>().text = combatMg.Caracters[combatMg.SelectedCaracter].Abilities[i].name;
+            _magicalAttack[i].GetComponentInChildren<TextMeshProUGUI>().text = combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.Abilities[i].name;
         }
     }
 
@@ -77,7 +77,7 @@ public class CombatUiManager : MonoBehaviour
     {
         _actionMenu.SetActive(true);
         _abilitiesMenu.SetActive(false);
-        _attackBut.GetComponentInChildren<TextMeshProUGUI>().text = combatMg.Caracters[combatMg.SelectedCaracter].PhysicalAbility.name;
+        _attackBut.GetComponentInChildren<TextMeshProUGUI>().text = combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.PhysicalAbility.name;
     }
 
     public void CloseActionMenu()
