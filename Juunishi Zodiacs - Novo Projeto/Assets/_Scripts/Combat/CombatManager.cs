@@ -116,10 +116,12 @@ public class CombatManager : MonoBehaviour
                 ChangeState(BATTLESTATE.PlayerTurn);
                 break;
             case BATTLESTATE.PlayerTurn:
+                uIManager.EnableCaracterSelection();
                 uIManager.UnlockCaracterSelection();
                 break;
             case BATTLESTATE.SelectingTarget:
                 uIManager.LockCaracterSelection();
+                uIManager.DisableCaracterSelection();
                 break;
             case BATTLESTATE.ExecuteAbility:
                 ExecuteModifiers();

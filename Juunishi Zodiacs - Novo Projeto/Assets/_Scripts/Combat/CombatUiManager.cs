@@ -14,6 +14,7 @@ public class CombatUiManager : MonoBehaviour
     [SerializeField] GameObject _attackBut;
     [SerializeField] GameObject _spellsBut;
     [SerializeField] GameObject _abilitiesMenu;
+    [SerializeField] GameObject _caracterSelection;
     [SerializeField] GameObject[] _magicalAttack = new GameObject[3];
     [SerializeField] GameObject[] _selectionButtons;
     [Header("TemporaryTargetSelection")]
@@ -143,6 +144,16 @@ public class CombatUiManager : MonoBehaviour
     public void LockSelectionButton(int _buttonInt)
     {
         _selectionButtons[_buttonInt].SetActive(false);
+    }
+
+    public void DisableCaracterSelection()
+    {
+        _caracterSelection.SetActive(false);
+    }
+
+    public void EnableCaracterSelection()
+    {
+        _caracterSelection.SetActive(true);
     }
 
     #endregion

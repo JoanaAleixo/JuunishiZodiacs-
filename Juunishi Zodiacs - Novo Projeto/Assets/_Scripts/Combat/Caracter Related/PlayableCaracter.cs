@@ -25,6 +25,8 @@ public class PlayableCaracter : BaseStats
 
     public override void OnPointerClick(PointerEventData eventData)
     {
+
+        Debug.Log(eventData);
         if (uIManager.AllyTargetSelecting == true)
         {
             if (combatMg.CurState == BATTLESTATE.SelectingTarget && uIManager.TemporarySelectedTarget == this)
@@ -36,6 +38,7 @@ public class PlayableCaracter : BaseStats
 
     public override void OnPointerEnter(PointerEventData eventData)
     {
+        Debug.Log(eventData.pointerEnter.name);
         if (uIManager.AllyTargetSelecting == true)
         {
             if (combatMg.CurState == BATTLESTATE.SelectingTarget && uIManager.TemporarySelectedTarget != this)
