@@ -2814,6 +2814,7 @@ GameObject:
   - component: {fileID: 846513296}
   - component: {fileID: 846513298}
   - component: {fileID: 846513297}
+  - component: {fileID: 846513299}
   m_Layer: 5
   m_Name: JoanaSection
   m_TagString: Untagged
@@ -2882,6 +2883,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 846513295}
   m_CullTransparentMesh: 1
+--- !u!114 &846513299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846513295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e6c1379cf6e604bb82e95e45ec4b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _allCaracters: {fileID: 11400000, guid: 93bc55ecfdcecd146b814e81f7de7f4a, type: 2}
+  caracterNumber: 2
+  myCaracter: {fileID: 0}
+  _nameTag: {fileID: 1032446574}
 --- !u!1 &913993253
 GameObject:
   m_ObjectHideFlags: 0
@@ -6350,6 +6367,7 @@ GameObject:
   - component: {fileID: 1794941859}
   - component: {fileID: 1794941861}
   - component: {fileID: 1794941860}
+  - component: {fileID: 1794941862}
   m_Layer: 5
   m_Name: LeoSection
   m_TagString: Untagged
@@ -6418,6 +6436,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794941858}
   m_CullTransparentMesh: 1
+--- !u!114 &1794941862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794941858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e6c1379cf6e604bb82e95e45ec4b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _allCaracters: {fileID: 11400000, guid: 93bc55ecfdcecd146b814e81f7de7f4a, type: 2}
+  caracterNumber: 1
+  myCaracter: {fileID: 0}
+  _nameTag: {fileID: 1125236640}
 --- !u!1 &1821750586
 GameObject:
   m_ObjectHideFlags: 0
@@ -8175,6 +8209,7 @@ GameObject:
   - component: {fileID: 3241066060564730506}
   - component: {fileID: 3351389303070980222}
   - component: {fileID: 4024522637291672535}
+  - component: {fileID: 4024522637291672536}
   m_Layer: 5
   m_Name: AndreSection
   m_TagString: Untagged
@@ -8248,6 +8283,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4024522637291672536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3564613963773341726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e6c1379cf6e604bb82e95e45ec4b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _allCaracters: {fileID: 11400000, guid: 93bc55ecfdcecd146b814e81f7de7f4a, type: 2}
+  caracterNumber: 0
+  myCaracter: {fileID: 0}
+  _nameTag: {fileID: 5463848304948891526}
 --- !u!114 &4194989955889453888
 MonoBehaviour:
   m_ObjectHideFlags: 0

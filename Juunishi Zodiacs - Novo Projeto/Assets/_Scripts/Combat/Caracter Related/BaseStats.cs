@@ -68,6 +68,6 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     public virtual void TakeDamage(int dmToTake, DAMAGETYPE dmType)
     {
         Debug.Log("levou damage");
-        myCaracter.HpMax.Value -= dmToTake;
+        myCaracter.HpMax.value -= dmToTake;
     }
 }

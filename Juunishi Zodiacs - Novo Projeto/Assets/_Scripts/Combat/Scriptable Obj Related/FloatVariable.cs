@@ -5,5 +5,15 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Float Variable")]
 public class FloatVariable : ScriptableObject
 {
-    public float Value;
+    [SerializeField] public float value;
+    [SerializeField] public bool resetable = false;
+    [SerializeField] public float resetValue;
+
+    private void OnEnable()
+    {
+        if (resetable)
+        {
+            value = resetValue;
+        }
+    }
 }
