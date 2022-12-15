@@ -70,7 +70,6 @@ public class CombatUiManager : MonoBehaviour
         _abilitiesMenu.SetActive(true);
         for (int i = 0; i < _magicalAttack.Length; i++)
         {
-            Debug.Log("ability");
             _magicalAttack[i].GetComponentInChildren<TextMeshProUGUI>().text = combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.Abilities[i].name;
         }
     }

@@ -260,7 +260,6 @@ public class CombatManager : MonoBehaviour
     {
         for (int i = 0; i < _modifiers.Count; i++)
         {
-            Debug.Log("ExecuteMod");
             _modifiers[i].ModifierToExecute.ExecuteMod(_modifiers[i].Targets);
         }
         _modifiers.Clear();

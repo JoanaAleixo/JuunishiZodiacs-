@@ -44,6 +44,8 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     [SerializeField] private CaracterCreation myCaracter;
     [SerializeField] protected int _caracterNumber;
 
+    [SerializeField] GameEvent ev;
+
     public CaracterCreation MyCaracter { get => myCaracter; set => myCaracter = value; }
 
     protected virtual void Start()
@@ -69,5 +71,6 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     {
         Debug.Log("levou damage");
         myCaracter.HpMax.value -= dmToTake;
+        ev.Raise();
     }
 }

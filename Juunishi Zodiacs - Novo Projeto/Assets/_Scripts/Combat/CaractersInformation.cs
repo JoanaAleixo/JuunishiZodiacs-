@@ -12,10 +12,12 @@ public class CaractersInformation : MonoBehaviour
     [Header("References")]
     [SerializeField] GameObject _nameTag;
 
+    public CaracterCreation MyCaracter { get => myCaracter; set => myCaracter = value; }
+
     void Start()
     {
-        myCaracter = _allCaracters.ActiveCaractersInGame[caracterNumber];
-        _nameTag.GetComponentInChildren<TextMeshProUGUI>().text = myCaracter.Name;
+        MyCaracter = _allCaracters.ActiveCaractersInGame[caracterNumber];
+        _nameTag.GetComponentInChildren<TextMeshProUGUI>().text = MyCaracter.Name;
     }
 
 
