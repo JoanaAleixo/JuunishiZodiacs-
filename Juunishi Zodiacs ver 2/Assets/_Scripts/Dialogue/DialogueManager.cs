@@ -54,6 +54,11 @@ public class DialogueManager : MonoBehaviour
     //nivel de confiança do vilao
     [SerializeField] int _trustValue;
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
+=======
+    [SerializeField] DialogUIManager _diaUiManager;
+
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
     public int TrustValue { get => _trustValue; set => _trustValue = value; }
     
 
@@ -66,6 +71,10 @@ public class DialogueManager : MonoBehaviour
         _dialogNumber = 0;
         _dialogTreeNumber = 0;
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
+=======
+
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
         UpdateOnUI();
 
     }
@@ -80,37 +89,65 @@ public class DialogueManager : MonoBehaviour
         {
             case CharacterDisplayExpression.Happy:
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
                 _expressionNumber = (int)CharacterDisplayExpression.Happy;
+=======
+                _fullbodyExpressionNumber = (int)CharacterDisplayExpression.Happy;
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
                 break;
 
             case CharacterDisplayExpression.Surprise:
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
                 _expressionNumber = (int)CharacterDisplayExpression.Surprise;
+=======
+                _fullbodyExpressionNumber = (int)CharacterDisplayExpression.Surprise;
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
                 break;
 
             case CharacterDisplayExpression.Nervous:
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
                 _expressionNumber = (int)CharacterDisplayExpression.Nervous;
+=======
+                _fullbodyExpressionNumber = (int)CharacterDisplayExpression.Nervous;
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
                 break;
 
             case CharacterDisplayExpression.Sad:
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
                 _expressionNumber = (int)CharacterDisplayExpression.Sad;
+=======
+                _fullbodyExpressionNumber = (int)CharacterDisplayExpression.Sad;
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
                 break;
 
             case CharacterDisplayExpression.Crying:
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
                 _expressionNumber = (int)CharacterDisplayExpression.Crying;
+=======
+                _fullbodyExpressionNumber = (int)CharacterDisplayExpression.Crying;
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
                 break;
 
             case CharacterDisplayExpression.Hangry:
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
                 _expressionNumber = (int)CharacterDisplayExpression.Hangry;
+=======
+                _fullbodyExpressionNumber = (int)CharacterDisplayExpression.Hangry;
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
                 break;
 
             case CharacterDisplayExpression.Serious:
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
                 _expressionNumber = (int)CharacterDisplayExpression.Serious;
+=======
+                _fullbodyExpressionNumber = (int)CharacterDisplayExpression.Serious;
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
                 break;
         }
 
@@ -123,37 +160,65 @@ public class DialogueManager : MonoBehaviour
         {
             case CharacterFullBodyExpression.Happy:
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
                 _fullbodyExpressionNumber = (int)CharacterFullBodyExpression.Happy;
+=======
+                _expressionNumber = (int)CharacterFullBodyExpression.Happy;
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
                 break;
 
             case CharacterFullBodyExpression.Surprise:
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
                 _fullbodyExpressionNumber = (int)CharacterFullBodyExpression.Surprise;
+=======
+                _expressionNumber = (int)CharacterFullBodyExpression.Surprise;
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
                 break;
 
             case CharacterFullBodyExpression.Nervous:
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
                 _fullbodyExpressionNumber = (int)CharacterFullBodyExpression.Nervous;
+=======
+                _expressionNumber = (int)CharacterFullBodyExpression.Nervous;
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
                 break;
 
             case CharacterFullBodyExpression.Sad:
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
                 _fullbodyExpressionNumber = (int)CharacterFullBodyExpression.Sad;
+=======
+                _expressionNumber = (int)CharacterFullBodyExpression.Sad;
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
                 break;
 
             case CharacterFullBodyExpression.Crying:
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
                 _fullbodyExpressionNumber = (int)CharacterFullBodyExpression.Crying;
+=======
+                _expressionNumber = (int)CharacterFullBodyExpression.Crying;
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
                 break;
 
             case CharacterFullBodyExpression.Hangry:
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
                 _fullbodyExpressionNumber = (int)CharacterFullBodyExpression.Hangry;
+=======
+                _expressionNumber = (int)CharacterFullBodyExpression.Hangry;
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
                 break;
 
             case CharacterFullBodyExpression.Serious:
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
                 _fullbodyExpressionNumber = (int)CharacterFullBodyExpression.Serious;
+=======
+                _expressionNumber = (int)CharacterFullBodyExpression.Serious;
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
                 break;
         }
 
@@ -201,6 +266,10 @@ public class DialogueManager : MonoBehaviour
     private void UpdateOnUI()
     {
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
+=======
+        
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
         DialogueTree = myDialogTree[_dialogTreeNumber];
 
         //Encapsulamento de informação do Scriptable Dialogue e Character Scriptable Object
@@ -224,11 +293,19 @@ public class DialogueManager : MonoBehaviour
 
 
         //Atualização de informação no UI: Nome do personagem, Fonte do texto, Cor do nome, cor do Dialogo, Background, Expressoes de texto, background do texto do personagem.
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
         DialogUIManager.instance.DialogOnScrene(CharacterName, font, NameColor, DialogColor, SpriteBackground, ExpressionsToDisplay, Background, NameBackground);
 
 
         //Atualização de informação no UI: Introdução do Texto dos dialogos
         DialogUIManager.instance.PlayCoroutine(DialogToDisplay);
+=======
+        _diaUiManager.DialogOnScrene(CharacterName, font, NameColor, DialogColor, SpriteBackground, ExpressionsToDisplay, Background, NameBackground);
+
+
+        //Atualização de informação no UI: Introdução do Texto dos dialogos
+        _diaUiManager.PlayCoroutine(DialogToDisplay);
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
 
 
         //Iformação dos Enums dos Fullbody.
@@ -236,10 +313,19 @@ public class DialogueManager : MonoBehaviour
         PisitonSwitch();
 
         //Atualização de informação no UI: Posição dos FullBody e Sprite dos Fullbody nas posições.
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
         DialogUIManager.instance.CharactersOnDisplay(FullBodyToDisplay, FullBodyPosition);
 
         //questoes para ui
         DialogUIManager.instance.QuestionsToUi(_questionToUi1, _questionToUi2, _questionToUi3);
+=======
+        _diaUiManager.CharactersOnDisplay(FullBodyToDisplay, FullBodyPosition);
+
+        //questoes para ui
+        _diaUiManager.QuestionsToUi(_questionToUi1, _questionToUi2, _questionToUi3);
+
+      
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
   
     }
 
@@ -315,7 +401,14 @@ public class DialogueManager : MonoBehaviour
         if (_dialogueCanChange == true)
         {
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogueManager.cs
             _positionInDialog++;
+=======
+            if (_diaUiManager.typingeffectCoroutine == null)
+            {
+                _positionInDialog++;
+            }
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogueManager.cs
 
             if (_positionInDialog >= DialogueTree.DialogueStr[_dialogNumber].DialogueMessages.Length)
             {

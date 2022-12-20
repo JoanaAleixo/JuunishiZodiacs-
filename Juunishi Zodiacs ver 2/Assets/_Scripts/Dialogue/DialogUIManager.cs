@@ -42,6 +42,10 @@ public class DialogUIManager : MonoBehaviour
     #region Awake com Sigletone
     private void Awake()
     {
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogUIManager.cs
+=======
+        
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogUIManager.cs
         //singletone
         if (instance != null)
         {
@@ -50,8 +54,13 @@ public class DialogUIManager : MonoBehaviour
         else
         {
             instance = this;
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogUIManager.cs
 
         }
+=======
+            
+        } 
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogUIManager.cs
     }
     #endregion
 
@@ -63,7 +72,11 @@ public class DialogUIManager : MonoBehaviour
         _charName.text = characterName; //Passa o nome do Personagem para o UI
         _diaBackgroundUI.sprite = diaBackground;
         _characterUI.sprite = character;
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogUIManager.cs
         _charDialog.font = font;
+=======
+        _charDialog.font = font; 
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogUIManager.cs
         _charName.font = font;
         _backgroundUI.sprite = background;
         _backgroundNameUI.sprite = backgroundname;
@@ -74,7 +87,11 @@ public class DialogUIManager : MonoBehaviour
 
     public void CharactersOnDisplay(Sprite characterSprite, int characterPositionOnDisplay)
     {
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogUIManager.cs
 
+=======
+        
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogUIManager.cs
         CharactersPositions[characterPositionOnDisplay].gameObject.SetActive(true);
         CharactersPositions[characterPositionOnDisplay].sprite = characterSprite;
     }
@@ -84,19 +101,35 @@ public class DialogUIManager : MonoBehaviour
     #region Exposição do Dialogo
     public void PlayCoroutine(string dialogToDisplay)
     {
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogUIManager.cs
         if (typingeffectCoroutine != null)
         {
             EndCoroutine(dialogToDisplay);
+=======
+
+        if (typingeffectCoroutine != null)
+        {
+            EndCoroutine(dialogToDisplay);
+            Debug.Log("oi");
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogUIManager.cs
         }
         else
         {
             typingeffectCoroutine = Typing(dialogToDisplay);
             StartCoroutine(typingeffectCoroutine);
         }
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogUIManager.cs
     }
 
     IEnumerator Typing(string dialog)
     {
+=======
+
+    }
+    IEnumerator Typing(string dialog)
+    {
+        Debug.Log("o123123");
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogUIManager.cs
         _charDialog.text = "";
         _currentMensage = dialog;
 
@@ -106,6 +139,10 @@ public class DialogUIManager : MonoBehaviour
             yield return new WaitForSeconds(_textVelocity);
         }
         typingeffectCoroutine = null;
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogUIManager.cs
+=======
+
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogUIManager.cs
     }
 
 
@@ -124,7 +161,10 @@ public class DialogUIManager : MonoBehaviour
         _diaManager.ChangeDialogue();
     }
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogUIManager.cs
 
+=======
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogUIManager.cs
     #endregion
 
     #region Encolhas das ramificações
@@ -160,4 +200,8 @@ public class DialogUIManager : MonoBehaviour
 
     #endregion
 
+<<<<<<< HEAD:Juunishi Zodiacs ver 2/Assets/_Scripts/Dialogue/DialogUIManager.cs
+=======
+  
+>>>>>>> ToAFicarDoidaComOSourcetree:Juunishi Zodiacs - Novo Projeto/Assets/_Scripts/Dialogue/DialogUIManager.cs
 }
