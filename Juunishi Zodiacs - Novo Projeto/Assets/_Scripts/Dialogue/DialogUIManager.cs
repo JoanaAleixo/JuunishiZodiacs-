@@ -23,12 +23,14 @@ public class DialogUIManager : MonoBehaviour
 
     float _textVelocity = 0.05f;
 
-    Coroutine typingeffectCoroutine;
+    public IEnumerator typingeffectCoroutine;
 
     [Header("Questions")]
     [SerializeField] Text _questionText1;
     [SerializeField] Text _questionText2;
     [SerializeField] Text _questionText3;
+
+    string _currentMensage;
 
     #endregion
 
@@ -40,6 +42,7 @@ public class DialogUIManager : MonoBehaviour
     #region Awake com Sigletone
     private void Awake()
     {
+        
         //singletone
         if (instance != null)
         {
@@ -48,6 +51,7 @@ public class DialogUIManager : MonoBehaviour
         else
         {
             instance = this;
+            
         } 
     }
     #endregion
@@ -81,36 +85,49 @@ public class DialogUIManager : MonoBehaviour
     #region Exposição do Dialogo
     public void PlayCoroutine(string dialogToDisplay)
     {
+
         if (typingeffectCoroutine != null)
         {
-            StopCoroutine(Typing(dialogToDisplay));
+            EndCoroutine(dialogToDisplay);
+            Debug.Log("oi");
+        }
+        else
+        {
+            typingeffectCoroutine = Typing(dialogToDisplay);
+            StartCoroutine(typingeffectCoroutine);
         }
 
-        typingeffectCoroutine = StartCoroutine(Typing(dialogToDisplay));
     }
     IEnumerator Typing(string dialog)
     {
+        Debug.Log("o123123");
         _charDialog.text = "";
-     
+        _currentMensage = dialog;
 
         foreach (char letra in dialog.ToCharArray())
         {
             _charDialog.text += letra;
             yield return new WaitForSeconds(_textVelocity);
         }
+        typingeffectCoroutine = null;
+
     }
 
-    public void EndCoroutine()
+
+    public void EndCoroutine(string dialogue)
     {
         StopCoroutine(typingeffectCoroutine);
-   
+
+        _charDialog.text = _currentMensage;
+
+        typingeffectCoroutine = null;
+        //dar display do texto completo
     }
 
     public void NextDialogueButton()
     {
         _diaManager.ChangeDialogue();
     }
-
 
     #endregion
 
@@ -119,23 +136,23 @@ public class DialogUIManager : MonoBehaviour
     {
         _diaManager.ChoiseChange1();
         _diaManager.ChoiseChangeDialogue();
-        
-       // _diaManager.TrustValue += _diaManager.DialogueTree1.TrustValueToIncrese1;
+
+        // _diaManager.TrustValue += _diaManager.DialogueTree1.TrustValueToIncrese1;
 
     }
     public void NextDialgueOnChoise2()
     {
         _diaManager.ChoiseChange2();
         _diaManager.ChoiseChangeDialogue();
-        
-       // _diaManager.TrustValue += _diaManager.DialogueTree1.TrustValueToIncrese2;
+
+        // _diaManager.TrustValue += _diaManager.DialogueTree1.TrustValueToIncrese2;
     }
     public void NextDialgueOnChoise3()
     {
         _diaManager.ChoiseChange3();
         _diaManager.ChoiseChangeDialogue();
-       
-       // _diaManager.TrustValue += _diaManager.DialogueTree1.TrustValueToIncrese3;
+
+        // _diaManager.TrustValue += _diaManager.DialogueTree1.TrustValueToIncrese3;
     }
 
     public void QuestionsToUi(string question1, string question2, string question3)
@@ -146,4 +163,6 @@ public class DialogUIManager : MonoBehaviour
     }
 
     #endregion
+
+  
 }

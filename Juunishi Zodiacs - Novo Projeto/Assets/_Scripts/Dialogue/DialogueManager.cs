@@ -54,6 +54,8 @@ public class DialogueManager : MonoBehaviour
     //nivel de confiança do vilao
     [SerializeField] int _trustValue;
 
+    [SerializeField] DialogUIManager _diaUiManager;
+
     public int TrustValue { get => _trustValue; set => _trustValue = value; }
     
 
@@ -65,6 +67,7 @@ public class DialogueManager : MonoBehaviour
         _positionInDialog = 0;
         _dialogNumber = 0;
         _dialogTreeNumber = 0;
+
 
         UpdateOnUI();
 
@@ -201,6 +204,7 @@ public class DialogueManager : MonoBehaviour
     private void UpdateOnUI()
     {
 
+        
         DialogueTree = myDialogTree[_dialogTreeNumber];
 
         //Encapsulamento de informação do Scriptable Dialogue e Character Scriptable Object
@@ -224,11 +228,11 @@ public class DialogueManager : MonoBehaviour
 
 
         //Atualização de informação no UI: Nome do personagem, Fonte do texto, Cor do nome, cor do Dialogo, Background, Expressoes de texto, background do texto do personagem.
-        DialogUIManager.instance.DialogOnScrene(CharacterName, font, NameColor, DialogColor, SpriteBackground, ExpressionsToDisplay, Background, NameBackground);
+        _diaUiManager.DialogOnScrene(CharacterName, font, NameColor, DialogColor, SpriteBackground, ExpressionsToDisplay, Background, NameBackground);
 
 
         //Atualização de informação no UI: Introdução do Texto dos dialogos
-        DialogUIManager.instance.PlayCoroutine(DialogToDisplay);
+        _diaUiManager.PlayCoroutine(DialogToDisplay);
 
 
         //Iformação dos Enums dos Fullbody.
@@ -236,10 +240,10 @@ public class DialogueManager : MonoBehaviour
         PisitonSwitch();
 
         //Atualização de informação no UI: Posição dos FullBody e Sprite dos Fullbody nas posições.
-        DialogUIManager.instance.CharactersOnDisplay(FullBodyToDisplay, FullBodyPosition);
+        _diaUiManager.CharactersOnDisplay(FullBodyToDisplay, FullBodyPosition);
 
         //questoes para ui
-        DialogUIManager.instance.QuestionsToUi(_questionToUi1, _questionToUi2, _questionToUi3);
+        _diaUiManager.QuestionsToUi(_questionToUi1, _questionToUi2, _questionToUi3);
 
       
   
@@ -317,7 +321,10 @@ public class DialogueManager : MonoBehaviour
         if (_dialogueCanChange == true)
         {
 
-            _positionInDialog++;
+            if (_diaUiManager.typingeffectCoroutine == null)
+            {
+                _positionInDialog++;
+            }
 
             if (_positionInDialog >= DialogueTree.DialogueStr[_dialogNumber].DialogueMessages.Length)
             {
