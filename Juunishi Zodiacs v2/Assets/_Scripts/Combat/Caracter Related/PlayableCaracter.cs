@@ -14,6 +14,7 @@ public class PlayableCaracter : BaseStats
     protected override void Start()
     {
         MyCaracter = _allCaracters.ActiveCaractersInGame[_caracterNumber];
+        //StartCoroutine(WaitASec());
         base.Start();
     }
 
@@ -43,5 +44,11 @@ public class PlayableCaracter : BaseStats
                 uIManager.ChangeTarget(this);
             }
         }
+    }
+
+    IEnumerator WaitASec()
+    {
+        yield return new WaitForSeconds(5);
+        MyCaracter.TakeDamageEv.Raise();
     }
 }

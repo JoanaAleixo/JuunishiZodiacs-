@@ -7,8 +7,10 @@ using TMPro;
 public class HpUpdate : MonoBehaviour
 {
     [SerializeField] CaracterCreation thisCaracter;
-    [SerializeField] Image img;
-    [SerializeField] TextMeshProUGUI text;
+    [SerializeField] Image hpImg;
+    [SerializeField] Image spImg;
+    [SerializeField] TextMeshProUGUI hpText;
+    [SerializeField] TextMeshProUGUI spText;
     void Start()
     {
         //thisCaracter = gameObject.GetComponentInParent<CaractersInformation>().MyCaracter;
@@ -19,12 +21,16 @@ public class HpUpdate : MonoBehaviour
         
     }
 
-    public void UpdateHpUI()
+    public void UpdateUI()
     {
-        thisCaracter = gameObject.GetComponentInParent<CaractersInformation>().MyCaracter;
+        if(thisCaracter == null)
+        {
+            thisCaracter = gameObject.GetComponent<CaractersInformation>().MyCaracter;
+        }
         //gameObject.GetComponentInChildren<Image>().fillAmount = thisCaracter.HpMax.value / 100;
-        img.fillAmount = thisCaracter.HpMax.value / 100;
-        text.text = thisCaracter.HpMax.value.ToString();
+        hpImg.fillAmount = thisCaracter.HpMax.value / 100;
+        spImg.fillAmount = thisCaracter.HpMax.value / 100;
+        hpText.text = thisCaracter.HpMax.value.ToString();
+        spText.text = thisCaracter.HpMax.value.ToString();
     }
-
 }

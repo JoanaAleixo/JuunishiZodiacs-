@@ -10,6 +10,7 @@ public class CaracterCreation : ScriptableObject
     [SerializeField] FloatVariable _shieldHp;
     [SerializeField] Ability _physicalAbility;
     [SerializeField] Ability[] _abilities = new Ability[3];
+    [SerializeField] GameEvent takeDamageEv;
 
     public Ability[] Abilities { get => _abilities; set => _abilities = value; }
     public Ability PhysicalAbility { get => _physicalAbility; set => _physicalAbility = value; }
@@ -17,4 +18,5 @@ public class CaracterCreation : ScriptableObject
     public string Name { get => _name; set => _name = value; }
     public FloatVariable ShieldHp { get => _shieldHp; set => _shieldHp = value; }
     public FloatVariable HpMax { get => _hpMax; set => _hpMax = value; }
+    public GameEvent TakeDamageEv { get => takeDamageEv;}
 }
