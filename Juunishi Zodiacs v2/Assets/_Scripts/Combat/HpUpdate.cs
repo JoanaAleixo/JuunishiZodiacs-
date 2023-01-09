@@ -21,6 +21,11 @@ public class HpUpdate : MonoBehaviour
         
     }
 
+    public void EnemyUpdateUI()
+    {
+        hpImg.fillAmount = thisCaracter.HpMax.value / 100;
+    }
+
     public void UpdateUI()
     {
         if(thisCaracter == null)

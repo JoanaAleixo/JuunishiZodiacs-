@@ -8,13 +8,14 @@ public class PlayableCaracter : BaseStats
 
     /*[SerializeField] int _spMax;
     [SerializeField] int _sp;*/
-
+    
     [SerializeField] ActiveCaracters _allCaracters;
 
     protected override void Start()
     {
         MyCaracter = _allCaracters.ActiveCaractersInGame[_caracterNumber];
-        //StartCoroutine(WaitASec());
+        StartCoroutine(WaitASec());
+        
         base.Start();
     }
 
@@ -48,7 +49,7 @@ public class PlayableCaracter : BaseStats
 
     IEnumerator WaitASec()
     {
-        yield return new WaitForSeconds(5);
-        MyCaracter.TakeDamageEv.Raise();
+        yield return new WaitForSeconds(2);
+        takeDamageEV.Raise();
     }
 }
