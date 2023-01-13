@@ -90,7 +90,7 @@ public class CombatManager : MonoBehaviour
         switch (CurState)
         {
             case BATTLESTATE.StartBattle:
-                ChangeState(BATTLESTATE.EnemyTurn);
+                ChangeState(BATTLESTATE.PlayerTurn);
                 break;
             case BATTLESTATE.PlayerTurn:
                 CheckForAbilities();
@@ -120,6 +120,10 @@ public class CombatManager : MonoBehaviour
                 ChangeState(BATTLESTATE.PlayerTurn);
                 break;
             case BATTLESTATE.PlayerTurn:
+                if(_actions.Count == 0)
+                {
+                    uIManager.UnlockAllSelectionButtons();
+                }
                 uIManager.EnableCaracterSelection();
                 uIManager.UnlockCaracterSelection();
                 break;
@@ -141,7 +145,6 @@ public class CombatManager : MonoBehaviour
                 {
                     uIManager.LockCaracterSelection();
                     uIManager.CloseActionMenu();
-                    uIManager.LockSelectionButton(SelectedCaracter);
                     Debug.Log("enemyturn");
                     Enemies[tempEnemy].ChoseAbility();
                 }
@@ -309,7 +312,6 @@ public class CombatManager : MonoBehaviour
 
     public void EnemyAbility(Ability ab)
     {
-        Debug.Log(ab);
         _actions.Add(ab);
         temporaryMods = ab.Mods.ToArray();
         EnemyTargetAbility();

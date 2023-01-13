@@ -11,7 +11,6 @@ public class GameEventListener : MonoBehaviour
     private void OnEnable()
     {
         curEvent.RegisterListener(this);
-        Debug.Log("Registered");
     }
 
     private void OnDisable()

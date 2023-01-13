@@ -145,6 +145,14 @@ public class CombatUiManager : MonoBehaviour
         _selectionButtons[_buttonInt].SetActive(false);
     }
 
+    public void UnlockAllSelectionButtons()
+    {
+        for (int i = 0; i < _selectionButtons.Length; i++)
+        {
+            _selectionButtons[i].SetActive(true);
+        }
+    }
+
     public void DisableCaracterSelection()
     {
         _caracterSelection.SetActive(false);
