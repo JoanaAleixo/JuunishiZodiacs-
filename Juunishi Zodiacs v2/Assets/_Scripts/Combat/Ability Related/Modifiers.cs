@@ -17,7 +17,6 @@ public enum TARGETING
 [System.Serializable]
 public abstract class Modifiers
 {
-    [SerializeField] int yes;
     [SerializeField] TARGETING _targetType;
 
     public TARGETING TargetType { get => _targetType; set => _targetType = value; }
