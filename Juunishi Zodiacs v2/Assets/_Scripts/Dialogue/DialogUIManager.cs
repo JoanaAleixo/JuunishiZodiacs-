@@ -32,6 +32,10 @@ public class DialogUIManager : MonoBehaviour
 
     string _currentMensage;
 
+    [Header("Places")]
+    [SerializeField] Image _placeBackgroundUI;
+    [SerializeField] Image _namePlace;
+
     #endregion
 
     #region Propriedades
@@ -58,7 +62,7 @@ public class DialogUIManager : MonoBehaviour
 
     #region Informação para UI
     //Passa a informação do dialogo para o UI
-    public void DialogOnScrene(string characterName, Font font, Color NameColor, Color DialogColor, Sprite diaBackground, Sprite character, Sprite background, Sprite backgroundname)
+    public void DialogOnScrene(string characterName, Font font, Color NameColor, Color DialogColor, Sprite diaBackground, Sprite character, Sprite background)
     {
 
         _charName.text = characterName; //Passa o nome do Personagem para o UI
@@ -67,7 +71,7 @@ public class DialogUIManager : MonoBehaviour
         _charDialog.font = font; 
         _charName.font = font;
         _backgroundUI.sprite = background;
-        _backgroundNameUI.sprite = backgroundname;
+    
 
         _charDialog.color = DialogColor;
         _charName.color = NameColor;
@@ -80,6 +84,11 @@ public class DialogUIManager : MonoBehaviour
         CharactersPositions[characterPositionOnDisplay].sprite = characterSprite;
     }
 
+    public void PlaceOnScrene(Sprite background, Sprite nameSpace)
+    {
+        _placeBackgroundUI.sprite = background;
+        _namePlace.sprite = nameSpace;
+    }
     #endregion
 
     #region Exposição do Dialogo
@@ -89,7 +98,6 @@ public class DialogUIManager : MonoBehaviour
         if (typingeffectCoroutine != null)
         {
             EndCoroutine(dialogToDisplay);
-            Debug.Log("oi");
         }
         else
         {
@@ -100,7 +108,6 @@ public class DialogUIManager : MonoBehaviour
     }
     IEnumerator Typing(string dialog)
     {
-        Debug.Log("o123123");
         _charDialog.text = "";
         _currentMensage = dialog;
 
@@ -136,7 +143,7 @@ public class DialogUIManager : MonoBehaviour
     {
         _diaManager.ChoiseChange1();
         _diaManager.ChoiseChangeDialogue();
-
+        _diaManager.ChangeDialogue();
         // _diaManager.TrustValue += _diaManager.DialogueTree1.TrustValueToIncrese1;
 
     }
@@ -144,14 +151,14 @@ public class DialogUIManager : MonoBehaviour
     {
         _diaManager.ChoiseChange2();
         _diaManager.ChoiseChangeDialogue();
-
+        _diaManager.ChangeDialogue();
         // _diaManager.TrustValue += _diaManager.DialogueTree1.TrustValueToIncrese2;
     }
     public void NextDialgueOnChoise3()
     {
         _diaManager.ChoiseChange3();
         _diaManager.ChoiseChangeDialogue();
-
+        _diaManager.ChangeDialogue();
         // _diaManager.TrustValue += _diaManager.DialogueTree1.TrustValueToIncrese3;
     }
 

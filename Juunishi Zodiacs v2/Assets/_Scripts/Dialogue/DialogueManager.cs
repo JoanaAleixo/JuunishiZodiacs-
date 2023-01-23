@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 using static Dialogue;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -28,7 +30,6 @@ public class DialogueManager : MonoBehaviour
     Color DialogColor;
     Sprite SpriteBackground;
     Sprite Background;
-    Sprite NameBackground;
 
     //Variaveis de Expressoes
     Sprite ExpressionsToDisplay;
@@ -54,20 +55,17 @@ public class DialogueManager : MonoBehaviour
     //nivel de confiança do vilao
     [SerializeField] int _trustValue;
 
-    [SerializeField] DialogUIManager _diaUiManager;
-
     public int TrustValue { get => _trustValue; set => _trustValue = value; }
     
 
     #endregion
 
     #region Awake
-    private void Awake()
+    private void Start()
     {
         _positionInDialog = 0;
         _dialogNumber = 0;
         _dialogTreeNumber = 0;
-
 
         UpdateOnUI();
 
@@ -204,7 +202,6 @@ public class DialogueManager : MonoBehaviour
     private void UpdateOnUI()
     {
 
-        
         DialogueTree = myDialogTree[_dialogTreeNumber];
 
         //Encapsulamento de informação do Scriptable Dialogue e Character Scriptable Object
@@ -214,8 +211,6 @@ public class DialogueManager : MonoBehaviour
         DialogColor = DialogueTree.DialogueStr[_dialogNumber].MyCharacter.MyDialogColor;
         SpriteBackground = DialogueTree.DialogueStr[_dialogNumber].MyCharacter.BackGround;
         Background = DialogueTree.Background;
-        NameBackground = DialogueTree.BackgroundName;
-
         DialogToDisplay = DialogueTree.DialogueStr[_dialogNumber].DialogueMessages[_positionInDialog]; //Referencia ao texto dos dialgos
 
         //encapsulamento das questoes
@@ -228,11 +223,11 @@ public class DialogueManager : MonoBehaviour
 
 
         //Atualização de informação no UI: Nome do personagem, Fonte do texto, Cor do nome, cor do Dialogo, Background, Expressoes de texto, background do texto do personagem.
-        _diaUiManager.DialogOnScrene(CharacterName, font, NameColor, DialogColor, SpriteBackground, ExpressionsToDisplay, Background, NameBackground);
+        DialogUIManager.instance.DialogOnScrene(CharacterName, font, NameColor, DialogColor, SpriteBackground, ExpressionsToDisplay, Background);
 
 
         //Atualização de informação no UI: Introdução do Texto dos dialogos
-        _diaUiManager.PlayCoroutine(DialogToDisplay);
+        DialogUIManager.instance.PlayCoroutine(DialogToDisplay);
 
 
         //Iformação dos Enums dos Fullbody.
@@ -240,10 +235,10 @@ public class DialogueManager : MonoBehaviour
         PisitonSwitch();
 
         //Atualização de informação no UI: Posição dos FullBody e Sprite dos Fullbody nas posições.
-        _diaUiManager.CharactersOnDisplay(FullBodyToDisplay, FullBodyPosition);
+        DialogUIManager.instance.CharactersOnDisplay(FullBodyToDisplay, FullBodyPosition);
 
         //questoes para ui
-        _diaUiManager.QuestionsToUi(_questionToUi1, _questionToUi2, _questionToUi3);
+        DialogUIManager.instance.QuestionsToUi(_questionToUi1, _questionToUi2, _questionToUi3);
 
       
   
@@ -255,21 +250,13 @@ public class DialogueManager : MonoBehaviour
 
     private void ChoseNextBrench()
     {
-        if (DialogueTree.ChangeBrench == false)
-        {
-            _dialogNumber = 0;
-
-            _dialogTreeNumber++;
-
-          
-        }
-        else
-        {
+        
+       
             _dialogueCanChange = false;
             _dialogNumber = DialogueTree.DialogueStr.Length;
            
                 _chosesButtons.SetActive(true);
-        }
+        
     }
 
     public void ChoiseChangeDialogue()
@@ -320,11 +307,11 @@ public class DialogueManager : MonoBehaviour
     {
         if (_dialogueCanChange == true)
         {
-
-            if (_diaUiManager.typingeffectCoroutine == null)
+            if(DialogUIManager.instance.typingeffectCoroutine == null)
             {
                 _positionInDialog++;
             }
+           
 
             if (_positionInDialog >= DialogueTree.DialogueStr[_dialogNumber].DialogueMessages.Length)
             {
@@ -332,9 +319,29 @@ public class DialogueManager : MonoBehaviour
 
                 _dialogNumber++;
 
-                if (_dialogNumber >= DialogueTree.DialogueStr.Length)
+                if (_dialogNumber >= DialogueTree.DialogueStr.Length && DialogueTree.IsEndDialogue == false)
                 {
-                    ChoseNextBrench();                   
+                    if (DialogueTree.ChangeBrench == false)
+                    {
+                        _dialogNumber = 0;
+
+                        if (_dialogTreeNumber < myDialogTree.Length) //avança a posição nos dialogos principais
+                        {
+                            _dialogTreeNumber++;
+                        }                      
+
+                    }
+                    else
+                    {
+                        ChoseNextBrench();
+
+                    }
+                }
+                else if(_dialogNumber >= DialogueTree.DialogueStr.Length && DialogueTree.IsEndDialogue == true)
+                {
+  
+                   SceneManager.LoadScene("NavigationSystem");
+                                      
                 }
             }
 

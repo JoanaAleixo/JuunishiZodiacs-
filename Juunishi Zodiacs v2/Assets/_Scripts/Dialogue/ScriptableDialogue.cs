@@ -33,7 +33,7 @@ public class ScriptableDialogue : ScriptableObject
     [SerializeField] string _question3;
     [SerializeField] int _TrustValueToIncrese3;
 
-    
+    [SerializeField] bool _isEndDialogue;
 
     #endregion
 
@@ -51,6 +51,7 @@ public class ScriptableDialogue : ScriptableObject
     public int TrustValueToIncrese1 { get => _TrustValueToIncrese1; set => _TrustValueToIncrese1 = value; }
     public int TrustValueToIncrese2 { get => _TrustValueToIncrese2; set => _TrustValueToIncrese2 = value; }
     public int TrustValueToIncrese3 { get => _TrustValueToIncrese3; set => _TrustValueToIncrese3 = value; }
+    public bool IsEndDialogue { get => _isEndDialogue; set => _isEndDialogue = value; }
 
     #endregion
 }

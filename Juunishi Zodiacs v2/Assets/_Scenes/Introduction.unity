@@ -915,13 +915,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myDialogTree:
   - {fileID: 11400000, guid: fed99a9bb1d6fbc4c8e5db5a799ee503, type: 2}
+  - {fileID: 11400000, guid: 07bfb293c8469c842908c2826988d8e2, type: 2}
+  - {fileID: 11400000, guid: ee2af8fb268bdb14d83c48445fd69f0b, type: 2}
+  - {fileID: 11400000, guid: 3ecf08ebce87a7c4d8d2608c3c832dfe, type: 2}
   _dialogueCanChange: 1
   _chosesButtons: {fileID: 1265436881}
   _dialogNumber: 0
   _positionInDialog: 0
   _dialogTreeNumber: 0
   _trustValue: 0
-  _diaUiManager: {fileID: 1134114318}
 --- !u!4 &1031295753
 Transform:
   m_ObjectHideFlags: 0
@@ -1120,6 +1122,8 @@ MonoBehaviour:
   _questionText1: {fileID: 1110507486}
   _questionText2: {fileID: 1427819746}
   _questionText3: {fileID: 193296904}
+  _placeBackgroundUI: {fileID: 0}
+  _namePlace: {fileID: 0}
 --- !u!1 &1136592845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,8 +1208,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1134114318}
+        m_TargetAssemblyTypeName: DialogUIManager, Assembly-CSharp
         m_MethodName: NextDialgueOnChoise3
         m_Mode: 1
         m_Arguments:
@@ -1574,8 +1578,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1134114318}
+        m_TargetAssemblyTypeName: DialogUIManager, Assembly-CSharp
         m_MethodName: NextDialgueOnChoise1
         m_Mode: 1
         m_Arguments:
@@ -1970,8 +1974,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1134114318}
+        m_TargetAssemblyTypeName: DialogUIManager, Assembly-CSharp
         m_MethodName: NextDialgueOnChoise2
         m_Mode: 1
         m_Arguments:
