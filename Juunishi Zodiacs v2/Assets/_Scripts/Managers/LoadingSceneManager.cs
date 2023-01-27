@@ -9,6 +9,8 @@ public class LoadingSceneManager : MonoBehaviour
     public GameObject _loadingScreen;
     public Image _loadingBarFill;
     public static LoadingSceneManager sceneInstance;
+    [SerializeField] private float timer;
+    private bool canTimer = false;
 
     private void Awake()
     {
@@ -23,6 +25,12 @@ public class LoadingSceneManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(canTimer)
+            timer += Time.deltaTime;
+    }
+
     public void LoadScene(int sceneId)
     {
         StartCoroutine(LoadSceneAsync(sceneId));
@@ -32,10 +40,10 @@ public class LoadingSceneManager : MonoBehaviour
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
         _loadingScreen.SetActive(true);
+        canTimer = true;
+        operation.allowSceneActivation = false;
 
-        //operation.allowSceneActivation = false;
-
-        while (!operation.isDone)
+        while (!operation.isDone && timer < 2)
         {
             float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
 
@@ -44,7 +52,13 @@ public class LoadingSceneManager : MonoBehaviour
             yield return null;
         }
 
+        
+        canTimer = false;
+        timer = 0;
         Debug.Log("please 1");
         _loadingScreen.SetActive(false);
+        operation.allowSceneActivation = true;
+        
+        
     }
 }
