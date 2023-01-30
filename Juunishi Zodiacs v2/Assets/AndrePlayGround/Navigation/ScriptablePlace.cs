@@ -34,9 +34,15 @@ public struct DislocationButtons
 
     [SerializeField] Vector3 _buttonPosition;
 
+    [SerializeField] bool _hasDialogue;
+
+    [SerializeField] ScriptableDialogue _dialogueToPlace;
+
     public string ButtonDirectionName { get => _buttonDirectionName; set => _buttonDirectionName = value; }
     public int NextPlaceValue { get => _nextPlaceValue; set => _nextPlaceValue = value; }
     public Color TextColor { get => _textColor; set => _textColor = value; }
     public Vector3 ButtonPosition { get => _buttonPosition; set => _buttonPosition = value; }
+    public bool HasDialogue { get => _hasDialogue; set => _hasDialogue = value; }
+    public ScriptableDialogue DialogueToPlace { get => _dialogueToPlace; set => _dialogueToPlace = value; }
 }
 #endregion
