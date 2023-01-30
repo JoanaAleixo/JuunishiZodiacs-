@@ -8,6 +8,7 @@ public class CharacterScriptbleObject : ScriptableObject
     #region Variaveis
 
     [SerializeField] Font _font; //fonte do texto
+    [SerializeField] Font _characterFont; //fonte do texto do nome do personagem
     [SerializeField] Color _myNameColor; //cor do nome
     [SerializeField] Color _myDialogColor; //cor do dialogo
     [SerializeField] string _characterName; //Nome do Personagem
@@ -26,6 +27,7 @@ public class CharacterScriptbleObject : ScriptableObject
     public Sprite BackGround { get => _backGround; set => _backGround = value; }
     public Sprite[] CharacterDisplayExpressions { get => _characterDisplayExpressions; set => _characterDisplayExpressions = value; }
     public Sprite[] FullBodyPoses { get => _fullBodyPoses; set => _fullBodyPoses = value; }
+    public Font CharacterFont { get => _characterFont; set => _characterFont = value; }
 
     #endregion
 }

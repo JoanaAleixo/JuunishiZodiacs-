@@ -83,7 +83,10 @@ public struct Dialogue
         Sad,
         Crying,
         Hangry,
-        Serious
+        Serious,
+        VeryHappy,
+        Extra
+
     }
 
     public enum CharacterFullBodyExpression
@@ -94,7 +97,9 @@ public struct Dialogue
         Sad,
         Crying,
         Hangry,
-        Serious
+        Serious,
+        VeryHappy,
+        Extra
     }
 
     public enum FullBodyPositions

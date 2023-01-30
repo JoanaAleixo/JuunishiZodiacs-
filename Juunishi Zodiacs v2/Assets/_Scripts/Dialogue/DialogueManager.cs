@@ -26,6 +26,7 @@ public class DialogueManager : MonoBehaviour
     string DialogToDisplay;
     string CharacterName;
     Font font;
+    Font fontOfCharacter;
     Color NameColor;
     Color DialogColor;
     Sprite SpriteBackground;
@@ -81,37 +82,47 @@ public class DialogueManager : MonoBehaviour
         {
             case CharacterDisplayExpression.Happy:
 
-                _fullbodyExpressionNumber = (int)CharacterDisplayExpression.Happy;
+                _expressionNumber = (int)CharacterDisplayExpression.Happy;
                 break;
 
             case CharacterDisplayExpression.Surprise:
 
-                _fullbodyExpressionNumber = (int)CharacterDisplayExpression.Surprise;
+                _expressionNumber = (int)CharacterDisplayExpression.Surprise;
                 break;
 
             case CharacterDisplayExpression.Nervous:
 
-                _fullbodyExpressionNumber = (int)CharacterDisplayExpression.Nervous;
+                _expressionNumber = (int)CharacterDisplayExpression.Nervous;
                 break;
 
             case CharacterDisplayExpression.Sad:
 
-                _fullbodyExpressionNumber = (int)CharacterDisplayExpression.Sad;
+                _expressionNumber = (int)CharacterDisplayExpression.Sad;
                 break;
 
             case CharacterDisplayExpression.Crying:
 
-                _fullbodyExpressionNumber = (int)CharacterDisplayExpression.Crying;
+                _expressionNumber = (int)CharacterDisplayExpression.Crying;
                 break;
 
             case CharacterDisplayExpression.Hangry:
 
-                _fullbodyExpressionNumber = (int)CharacterDisplayExpression.Hangry;
+                _expressionNumber = (int)CharacterDisplayExpression.Hangry;
                 break;
 
             case CharacterDisplayExpression.Serious:
 
-                _fullbodyExpressionNumber = (int)CharacterDisplayExpression.Serious;
+                _expressionNumber = (int)CharacterDisplayExpression.Serious;
+                break;
+
+            case CharacterDisplayExpression.VeryHappy:
+
+                _expressionNumber = (int)CharacterDisplayExpression.VeryHappy;
+                break;
+
+            case CharacterDisplayExpression.Extra:
+
+                _expressionNumber = (int)CharacterDisplayExpression.Extra;
                 break;
         }
 
@@ -124,37 +135,45 @@ public class DialogueManager : MonoBehaviour
         {
             case CharacterFullBodyExpression.Happy:
 
-                _expressionNumber = (int)CharacterFullBodyExpression.Happy;
+                _fullbodyExpressionNumber = (int)CharacterFullBodyExpression.Happy;
                 break;
 
             case CharacterFullBodyExpression.Surprise:
 
-                _expressionNumber = (int)CharacterFullBodyExpression.Surprise;
+                _fullbodyExpressionNumber = (int)CharacterFullBodyExpression.Surprise;
                 break;
 
             case CharacterFullBodyExpression.Nervous:
 
-                _expressionNumber = (int)CharacterFullBodyExpression.Nervous;
+                _fullbodyExpressionNumber = (int)CharacterFullBodyExpression.Nervous;
                 break;
 
             case CharacterFullBodyExpression.Sad:
 
-                _expressionNumber = (int)CharacterFullBodyExpression.Sad;
+                _fullbodyExpressionNumber = (int)CharacterFullBodyExpression.Sad;
                 break;
 
             case CharacterFullBodyExpression.Crying:
 
-                _expressionNumber = (int)CharacterFullBodyExpression.Crying;
+                _fullbodyExpressionNumber = (int)CharacterFullBodyExpression.Crying;
                 break;
 
             case CharacterFullBodyExpression.Hangry:
 
-                _expressionNumber = (int)CharacterFullBodyExpression.Hangry;
+                _fullbodyExpressionNumber = (int)CharacterFullBodyExpression.Hangry;
                 break;
 
             case CharacterFullBodyExpression.Serious:
 
-                _expressionNumber = (int)CharacterFullBodyExpression.Serious;
+                _fullbodyExpressionNumber = (int)CharacterFullBodyExpression.Serious;
+                break;
+            case CharacterFullBodyExpression.VeryHappy:
+
+                _fullbodyExpressionNumber = (int)CharacterFullBodyExpression.VeryHappy;
+                break;
+            case CharacterFullBodyExpression.Extra:
+
+                _fullbodyExpressionNumber = (int)CharacterFullBodyExpression.Extra;
                 break;
         }
 
@@ -207,6 +226,7 @@ public class DialogueManager : MonoBehaviour
         //Encapsulamento de informação do Scriptable Dialogue e Character Scriptable Object
         CharacterName = DialogueTree.DialogueStr[_dialogNumber].MyCharacter.CharacterName;
         font = DialogueTree.DialogueStr[_dialogNumber].MyCharacter.Font;
+        fontOfCharacter = DialogueTree.DialogueStr[_dialogNumber].MyCharacter.CharacterFont;
         NameColor = DialogueTree.DialogueStr[_dialogNumber].MyCharacter.MyNameColor;
         DialogColor = DialogueTree.DialogueStr[_dialogNumber].MyCharacter.MyDialogColor;
         SpriteBackground = DialogueTree.DialogueStr[_dialogNumber].MyCharacter.BackGround;
@@ -223,7 +243,7 @@ public class DialogueManager : MonoBehaviour
 
 
         //Atualização de informação no UI: Nome do personagem, Fonte do texto, Cor do nome, cor do Dialogo, Background, Expressoes de texto, background do texto do personagem.
-        DialogUIManager.instance.DialogOnScrene(CharacterName, font, NameColor, DialogColor, SpriteBackground, ExpressionsToDisplay, Background);
+        DialogUIManager.instance.DialogOnScrene(CharacterName, font, NameColor, DialogColor, SpriteBackground, ExpressionsToDisplay, Background, fontOfCharacter);
 
 
         //Atualização de informação no UI: Introdução do Texto dos dialogos
