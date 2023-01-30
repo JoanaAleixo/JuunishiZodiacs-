@@ -9,6 +9,7 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
     #region Variaveis
     [SerializeField] int _nextPlaceInfo;
     [SerializeField] NavigationManager _navManager;
+    [SerializeField] DialogueManager _diaManager;
 
     [SerializeField] GameObject _text;
      Color _textColor;
@@ -20,27 +21,43 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
     #region Informação do Butão
 
     //Receber informação sobre o butão para implementar e adicionar a função ao butão
-    public void SetButtonInfo(int nextPlace, string placeTextName, Color textColor, Vector3 buttonPosition)
+    public void SetButtonInfo(int nextPlace, string placeTextName, Color textColor, Vector3 buttonPosition, int positionInButton, ScriptableDialogue dialogue)
     {
        _nextPlaceInfo= nextPlace;
         _nextPlaceName= placeTextName;
         _textColor= textColor;
-        _newButtonPosition= buttonPosition;
+       _newButtonPosition= buttonPosition;
 
        Button thisButton = GetComponent<Button>();
         thisButton.onClick.RemoveAllListeners();
-        thisButton.onClick.AddListener(() => NextPlaceButton(_nextPlaceInfo));
+        thisButton.onClick.AddListener(() => NextPlaceButton(_nextPlaceInfo, positionInButton, dialogue));
 
         thisButton.transform.position = Camera.main.WorldToScreenPoint(_newButtonPosition);
+
+       
     }
 
     #endregion
 
     #region Abrir novo Place
-    public void NextPlaceButton(int changePlace)
-    {   
-        //abrir o novo Place
-        _navManager.NewPlace(changePlace);
+    public void NextPlaceButton(int changePlace, int positionInButton, ScriptableDialogue dialogue)
+    {
+      
+            _diaManager.DisableDialgue();
+
+            if (_navManager.PlacesList.DislocationStr[positionInButton].HasDialogue == true)
+            {
+                _diaManager.MyDialogTree[0] = dialogue;
+                _diaManager.UpdateOnUI();
+                _navManager.DialogueCanvas.SetActive(true);
+
+            }
+
+            //abrir o novo Place
+            _navManager.NewPlace(changePlace);
+      
+       
+       
     }
 
     #endregion

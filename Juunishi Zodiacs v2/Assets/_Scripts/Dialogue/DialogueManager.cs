@@ -6,12 +6,14 @@ using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 using static Dialogue;
 using UnityEngine.SceneManagement;
+using JetBrains.Annotations;
 
 public class DialogueManager : MonoBehaviour
 {
     #region Variaveis
     //Arrey com os conjuntos de dialogos que sao feitos com Scriptable Objects
     [SerializeField] ScriptableDialogue[] myDialogTree;
+    [SerializeField] GameObject _dialogueGameObject;
 
     //boolan que dita caso haja ramificação no dialogo ou nao
     [SerializeField] bool _dialogueCanChange = true;
@@ -57,7 +59,10 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] int _trustValue;
 
     public int TrustValue { get => _trustValue; set => _trustValue = value; }
-    
+    public ScriptableDialogue[] MyDialogTree { get => myDialogTree; set => myDialogTree = value; }
+    public ScriptableDialogue DialogueTree1 { get => DialogueTree; set => DialogueTree = value; }
+    public int DialogNumber { get => _dialogNumber; set => _dialogNumber = value; }
+
 
     #endregion
 
@@ -65,7 +70,7 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         _positionInDialog = 0;
-        _dialogNumber = 0;
+        DialogNumber = 0;
         _dialogTreeNumber = 0;
 
         UpdateOnUI();
@@ -78,7 +83,7 @@ public class DialogueManager : MonoBehaviour
     void ExpressionsSwitch()
     {
        
-        switch (myDialogTree[_dialogTreeNumber].DialogueStr[_dialogNumber].myExpressions)
+        switch (MyDialogTree[_dialogTreeNumber].DialogueStr[DialogNumber].myExpressions)
         {
             case CharacterDisplayExpression.Happy:
 
@@ -126,12 +131,12 @@ public class DialogueManager : MonoBehaviour
                 break;
         }
 
-        ExpressionsToDisplay = myDialogTree[_dialogTreeNumber].DialogueStr[_dialogNumber].MyCharacter.CharacterDisplayExpressions[_expressionNumber];
+        ExpressionsToDisplay = MyDialogTree[_dialogTreeNumber].DialogueStr[DialogNumber].MyCharacter.CharacterDisplayExpressions[_expressionNumber];
     }
 
     void FullbodySwitch()
     {
-        switch (myDialogTree[_dialogTreeNumber].DialogueStr[_dialogNumber].myFullbody)
+        switch (MyDialogTree[_dialogTreeNumber].DialogueStr[DialogNumber].myFullbody)
         {
             case CharacterFullBodyExpression.Happy:
 
@@ -177,12 +182,12 @@ public class DialogueManager : MonoBehaviour
                 break;
         }
 
-        FullBodyToDisplay = myDialogTree[_dialogTreeNumber].DialogueStr[_dialogNumber].MyCharacter.FullBodyPoses[_fullbodyExpressionNumber];
+        FullBodyToDisplay = MyDialogTree[_dialogTreeNumber].DialogueStr[DialogNumber].MyCharacter.FullBodyPoses[_fullbodyExpressionNumber];
     }
 
     void PisitonSwitch()
     {
-        switch (myDialogTree[_dialogTreeNumber].DialogueStr[_dialogNumber].myPositions)
+        switch (MyDialogTree[_dialogTreeNumber].DialogueStr[DialogNumber].myPositions)
         {
             case FullBodyPositions.Position1:
 
@@ -218,25 +223,25 @@ public class DialogueManager : MonoBehaviour
     #endregion
 
     #region Mandar informação para o UI
-    private void UpdateOnUI()
+    public void UpdateOnUI()
     {
 
-        DialogueTree = myDialogTree[_dialogTreeNumber];
+        DialogueTree1 = MyDialogTree[_dialogTreeNumber];
 
         //Encapsulamento de informação do Scriptable Dialogue e Character Scriptable Object
-        CharacterName = DialogueTree.DialogueStr[_dialogNumber].MyCharacter.CharacterName;
-        font = DialogueTree.DialogueStr[_dialogNumber].MyCharacter.Font;
-        fontOfCharacter = DialogueTree.DialogueStr[_dialogNumber].MyCharacter.CharacterFont;
-        NameColor = DialogueTree.DialogueStr[_dialogNumber].MyCharacter.MyNameColor;
-        DialogColor = DialogueTree.DialogueStr[_dialogNumber].MyCharacter.MyDialogColor;
-        SpriteBackground = DialogueTree.DialogueStr[_dialogNumber].MyCharacter.BackGround;
-        Background = DialogueTree.Background;
-        DialogToDisplay = DialogueTree.DialogueStr[_dialogNumber].DialogueMessages[_positionInDialog]; //Referencia ao texto dos dialgos
+        CharacterName = DialogueTree1.DialogueStr[DialogNumber].MyCharacter.CharacterName;
+        font = DialogueTree1.DialogueStr[DialogNumber].MyCharacter.Font;
+        fontOfCharacter = DialogueTree1.DialogueStr[DialogNumber].MyCharacter.CharacterFont;
+        NameColor = DialogueTree1.DialogueStr[DialogNumber].MyCharacter.MyNameColor;
+        DialogColor = DialogueTree1.DialogueStr[DialogNumber].MyCharacter.MyDialogColor;
+        SpriteBackground = DialogueTree1.DialogueStr[DialogNumber].MyCharacter.BackGround;
+        Background = DialogueTree1.Background;
+        DialogToDisplay = DialogueTree1.DialogueStr[DialogNumber].DialogueMessages[_positionInDialog]; //Referencia ao texto dos dialgos
 
         //encapsulamento das questoes
-        _questionToUi1 = (DialogueTree.Question1);
-        _questionToUi2 = (DialogueTree.Question2);
-        _questionToUi3 = (DialogueTree.Question3);
+        _questionToUi1 = (DialogueTree1.Question1);
+        _questionToUi2 = (DialogueTree1.Question2);
+        _questionToUi3 = (DialogueTree1.Question3);
 
         //Iformação do Enum das Expressoes.
         ExpressionsSwitch();
@@ -273,7 +278,7 @@ public class DialogueManager : MonoBehaviour
         
        
             _dialogueCanChange = false;
-            _dialogNumber = DialogueTree.DialogueStr.Length;
+            DialogNumber = DialogueTree1.DialogueStr.Length;
            
                 _chosesButtons.SetActive(true);
         
@@ -283,9 +288,9 @@ public class DialogueManager : MonoBehaviour
     {
         ChangeDialogue();
 
-        if (_dialogTreeNumber <= myDialogTree.Length)
+        if (_dialogTreeNumber <= MyDialogTree.Length)
         {
-            _dialogNumber = 0;
+            DialogNumber = 0;
             _positionInDialog = -1;
             _dialogueCanChange = true;
 
@@ -299,24 +304,24 @@ public class DialogueManager : MonoBehaviour
     {
         if( _dialogueCanChange == false)
         {
-            _dialogTreeNumber = DialogueTree.ChoiseDialogueToChange1;
-             TrustValue += DialogueTree.TrustValueToIncrese1;
+            _dialogTreeNumber = DialogueTree1.ChoiseDialogueToChange1;
+             TrustValue += DialogueTree1.TrustValueToIncrese1;
         }
     }
     public void ChoiseChange2()
     {
         if (_dialogueCanChange == false)
         {
-            _dialogTreeNumber = DialogueTree.ChoiseDialogueToChange2;
-            TrustValue += DialogueTree.TrustValueToIncrese2;
+            _dialogTreeNumber = DialogueTree1.ChoiseDialogueToChange2;
+            TrustValue += DialogueTree1.TrustValueToIncrese2;
         }
     }
     public void ChoiseChange3()
     {
         if (_dialogueCanChange == false)
         {
-            _dialogTreeNumber = DialogueTree.ChoiseDialogueToChange3;
-            TrustValue += DialogueTree.TrustValueToIncrese3;
+            _dialogTreeNumber = DialogueTree1.ChoiseDialogueToChange3;
+            TrustValue += DialogueTree1.TrustValueToIncrese3;
         }
     }
 
@@ -333,19 +338,19 @@ public class DialogueManager : MonoBehaviour
             }
            
 
-            if (_positionInDialog >= DialogueTree.DialogueStr[_dialogNumber].DialogueMessages.Length)
+            if (_positionInDialog >= DialogueTree1.DialogueStr[DialogNumber].DialogueMessages.Length)
             {
                 _positionInDialog = 0;
 
-                _dialogNumber++;
+                DialogNumber++;
 
-                if (_dialogNumber >= DialogueTree.DialogueStr.Length && DialogueTree.IsEndDialogue == false)
+                if (DialogNumber >= DialogueTree1.DialogueStr.Length && DialogueTree1.IsEndDialogue == false)
                 {
-                    if (DialogueTree.ChangeBrench == false)
+                    if (DialogueTree1.ChangeBrench == false)
                     {
-                        _dialogNumber = 0;
+                        DialogNumber = 0;
 
-                        if (_dialogTreeNumber < myDialogTree.Length) //avança a posição nos dialogos principais
+                        if (_dialogTreeNumber < MyDialogTree.Length) //avança a posição nos dialogos principais
                         {
                             _dialogTreeNumber++;
                         }                      
@@ -357,17 +362,25 @@ public class DialogueManager : MonoBehaviour
 
                     }
                 }
-                else if(_dialogNumber >= DialogueTree.DialogueStr.Length && DialogueTree.IsEndDialogue == true)
+                else if(DialogNumber >= DialogueTree1.DialogueStr.Length && DialogueTree1.IsEndDialogue == true)
                 {
-  
-                   SceneManager.LoadScene("NavigationSystem");
-                                      
+                    DisableDialgue();                              
                 }
             }
 
             UpdateOnUI();
 
         }
+
+        
     }
     #endregion
+
+    public void DisableDialgue()
+    {
+        _positionInDialog = 0;
+        DialogNumber = 0;
+        _dialogTreeNumber = 0;
+        _dialogueGameObject.SetActive(false);
+    }
 }

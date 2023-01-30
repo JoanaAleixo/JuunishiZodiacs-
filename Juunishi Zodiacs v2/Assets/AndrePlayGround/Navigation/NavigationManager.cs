@@ -13,6 +13,7 @@ public class NavigationManager : MonoBehaviour
     [SerializeField] ScriptablePlace[] _myPlaces;
     [SerializeField] DialogUIManager _uiManager;
     [SerializeField] GameObject _placesCanvas;
+    [SerializeField] GameObject _DialogueCanvas;
 
     int _currentPlaceIndex;
     ScriptablePlace _placesList;
@@ -23,11 +24,16 @@ public class NavigationManager : MonoBehaviour
 
     [Header("Buttons")]
     [SerializeField] GameObject[] _buttons;
+  
+
+    
 
     #endregion
 
     #region Propriedades
     public ScriptablePlace PlacesList { get => _placesList; set => _placesList = value; }
+    public GameObject DialogueCanvas { get => _DialogueCanvas; set => _DialogueCanvas = value; }
+  
 
     #endregion
 
@@ -40,7 +46,7 @@ public class NavigationManager : MonoBehaviour
 
     #region Informação para o UI
     //Implementação dos elementos do UI
-    void UpdateUI()
+   public void UpdateUI()
     {
         PlacesList = _myPlaces[_currentPlaceIndex];
         _background = PlacesList.Background;
@@ -52,10 +58,13 @@ public class NavigationManager : MonoBehaviour
         for (int i = 0; i < PlacesList.DislocationStr.Length; i++)
         {
             _buttons[i].SetActive(true);
+             
 
             DislocationButtons buttonProperties = PlacesList.DislocationStr[i];
-            _buttons[i].GetComponent<NextScenarioButton>().SetButtonInfo(buttonProperties.NextPlaceValue, buttonProperties.ButtonDirectionName, buttonProperties.TextColor, buttonProperties.ButtonPosition);   //Info para o butão     
-        }        
+            _buttons[i].GetComponent<NextScenarioButton>().SetButtonInfo(buttonProperties.NextPlaceValue, buttonProperties.ButtonDirectionName, buttonProperties.TextColor, buttonProperties.ButtonPosition, i, buttonProperties.DialogueToPlace);   //Info para o butão     
+          
+        } 
+       
     }
 
     #endregion
@@ -64,6 +73,8 @@ public class NavigationManager : MonoBehaviour
     //Metudo que troca de Place quando o butão é percionado
     public void NewPlace(int placeIndex)
     {
+       
+       
         //novo Place
         _currentPlaceIndex = placeIndex;
 
@@ -73,7 +84,12 @@ public class NavigationManager : MonoBehaviour
             _buttons[i].SetActive(false);
         }
         //Readicionar o novo Place no UI
-        UpdateUI();
+     
+            UpdateUI();
+        
+       
     }
     #endregion
+
+   
 }
