@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject optionMenu;
     [SerializeField] GameObject extrasMenu;
 
+    [SerializeField] GameObject EnemyPreTest;
+
     void Start()
     {
         sceneInstance = LoadingSceneManager.sceneInstance;
@@ -25,6 +27,11 @@ public class UIManager : MonoBehaviour
     {
         //SceneManager.LoadScene(sceneName);
         sceneInstance.LoadScene(1);
+    }
+
+    public void CombatSceneButton()
+    {
+        sceneInstance.LoadCombatScene(EnemyPreTest);
     }
 
     public void OptionsMenuButton()
