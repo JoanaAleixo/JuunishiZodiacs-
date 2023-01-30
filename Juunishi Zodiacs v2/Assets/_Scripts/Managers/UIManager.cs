@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    LoadingSceneManager sceneInstance;
     [SerializeField] GameObject titleScreen;
     [SerializeField] GameObject optionMenu;
     [SerializeField] GameObject extrasMenu;
 
     void Start()
     {
-        
+        sceneInstance = LoadingSceneManager.sceneInstance;
     }
 
     #region Title Screen Buttons
@@ -22,7 +23,8 @@ public class UIManager : MonoBehaviour
 
     public void NewGameButton(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        //SceneManager.LoadScene(sceneName);
+        sceneInstance.LoadScene(1);
     }
 
     public void OptionsMenuButton()
