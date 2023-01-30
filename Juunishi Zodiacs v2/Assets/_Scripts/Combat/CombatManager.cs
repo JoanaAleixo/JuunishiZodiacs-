@@ -109,6 +109,11 @@ public class CombatManager : MonoBehaviour
             case BATTLESTATE.Defeat:
                 break;
         }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            LocateEnemies();
+        }
     }
 
     void ChangeState(BATTLESTATE _newState)
@@ -371,4 +376,19 @@ public class CombatManager : MonoBehaviour
         return false;
     }
 
+    public void LocateEnemies()
+    {
+        
+        GameObject parent = GameObject.FindGameObjectWithTag("EnemySet");
+        int enemiesCount = 0;
+        Enemies = new Enemy[parent.transform.childCount];
+        for (int i = 0; i < parent.transform.childCount; i++)
+        {
+            if (parent.transform.GetChild(i).CompareTag("Enemy"))
+            {
+                Enemies[enemiesCount] = parent.transform.GetChild(i).GetComponent<Enemy>();
+                enemiesCount++;
+            }
+        }
+    }
 }
