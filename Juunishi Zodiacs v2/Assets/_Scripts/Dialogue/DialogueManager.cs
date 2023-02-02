@@ -58,10 +58,17 @@ public class DialogueManager : MonoBehaviour
     //nivel de confiança do vilao
     [SerializeField] int _trustValue;
 
+    bool _canChangePlace = true;
+    [SerializeField] NextScenarioButton _placesButtons1;
+    [SerializeField] NextScenarioButton _placesButtons2;
+    [SerializeField] NextScenarioButton _placesButtons3;
+    [SerializeField] NextScenarioButton _placesButtons4;
+
     public int TrustValue { get => _trustValue; set => _trustValue = value; }
     public ScriptableDialogue[] MyDialogTree { get => myDialogTree; set => myDialogTree = value; }
     public ScriptableDialogue DialogueTree1 { get => DialogueTree; set => DialogueTree = value; }
     public int DialogNumber { get => _dialogNumber; set => _dialogNumber = value; }
+    public bool CanChangePlace { get => _canChangePlace; set => _canChangePlace = value; }
 
 
     #endregion
@@ -364,7 +371,12 @@ public class DialogueManager : MonoBehaviour
                 }
                 else if(DialogNumber >= DialogueTree1.DialogueStr.Length && DialogueTree1.IsEndDialogue == true)
                 {
-                    DisableDialgue();                              
+                    DisableDialgue();
+                    CanChangePlace = true;
+                    _placesButtons1.ChangeButtonColorVisible();
+                    _placesButtons2.ChangeButtonColorVisible();
+                    _placesButtons3.ChangeButtonColorVisible();
+                    _placesButtons4.ChangeButtonColorVisible();
                 }
             }
 

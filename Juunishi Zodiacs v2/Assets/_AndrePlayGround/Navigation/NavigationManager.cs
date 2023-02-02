@@ -24,9 +24,6 @@ public class NavigationManager : MonoBehaviour
 
     [Header("Buttons")]
     [SerializeField] GameObject[] _buttons;
-  
-
-    
 
     #endregion
 
@@ -58,7 +55,13 @@ public class NavigationManager : MonoBehaviour
         for (int i = 0; i < PlacesList.DislocationStr.Length; i++)
         {
             _buttons[i].SetActive(true);
-             
+
+            if (PlacesList.ThisPlaceHasDialogue == true)
+            {
+                _buttons[i].GetComponent<NextScenarioButton>().ChangeButtonColorInvisible();
+            }
+              
+            
 
             DislocationButtons buttonProperties = PlacesList.DislocationStr[i];
             _buttons[i].GetComponent<NextScenarioButton>().SetButtonInfo(buttonProperties.NextPlaceValue, buttonProperties.ButtonDirectionName, buttonProperties.TextColor, buttonProperties.ButtonPosition, i, buttonProperties.DialogueToPlace);   //Info para o butão     

@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _background: {fileID: 21300000, guid: b09c9db4ad6ff1a46a6348b5be994c32, type: 3}
   _namePlace: {fileID: 21300000, guid: 4b29705659fdbb946be167fef265fbd1, type: 3}
+  _thisPlaceHasDialogue: 1
   _dislocationStr:
   - _buttonDirectionName: test1
     _nextPlaceValue: 0
     _textColor: {r: 1, g: 1, b: 1, a: 1}
     _buttonPosition: {x: -5.35, y: 1.72, z: 0}
+    _hasDialogue: 0
+    _dialogueToPlace: {fileID: 0}
   - _buttonDirectionName: test2
     _nextPlaceValue: 1
     _textColor: {r: 1, g: 1, b: 1, a: 1}
     _buttonPosition: {x: 4.08, y: 0.18, z: 0}
-  - _buttonDirectionName: test3
-    _nextPlaceValue: 2
-    _textColor: {r: 1, g: 1, b: 1, a: 1}
-    _buttonPosition: {x: -2.81, y: -2.81, z: 0}
+    _hasDialogue: 1
+    _dialogueToPlace: {fileID: 11400000, guid: 1c6555278a875834bb0f73674fef8740, type: 2}

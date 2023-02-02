@@ -16,6 +16,7 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
     string _nextPlaceName;
     Vector3 _newButtonPosition;
 
+  
     #endregion
 
     #region Informação do Butão
@@ -23,7 +24,8 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
     //Receber informação sobre o butão para implementar e adicionar a função ao butão
     public void SetButtonInfo(int nextPlace, string placeTextName, Color textColor, Vector3 buttonPosition, int positionInButton, ScriptableDialogue dialogue)
     {
-       _nextPlaceInfo= nextPlace;
+        
+        _nextPlaceInfo = nextPlace;
         _nextPlaceName= placeTextName;
         _textColor= textColor;
        _newButtonPosition= buttonPosition;
@@ -42,22 +44,45 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
     #region Abrir novo Place
     public void NextPlaceButton(int changePlace, int positionInButton, ScriptableDialogue dialogue)
     {
-      
+
+      if(_diaManager.CanChangePlace == true)
+        {
+           
+
             _diaManager.DisableDialgue();
 
             if (_navManager.PlacesList.DislocationStr[positionInButton].HasDialogue == true)
             {
+                ChangeButtonColorInvisible();
                 _diaManager.MyDialogTree[0] = dialogue;
                 _diaManager.UpdateOnUI();
                 _navManager.DialogueCanvas.SetActive(true);
+                _diaManager.CanChangePlace = false;
+               
 
             }
 
             //abrir o novo Place
             _navManager.NewPlace(changePlace);
-      
-       
-       
+            
+        }
+
+
+    }
+    public void ChangeButtonColorVisible()
+    {
+        Color newColor = new Color(255, 255, 255, 1);
+        Image _buttonImage = GetComponent<Image>();
+
+        _buttonImage.color = newColor;
+    }
+
+    public void ChangeButtonColorInvisible()
+    {
+        Color newColor = new Color(0, 0, 0, 0);
+        Image _buttonImage = GetComponent<Image>();
+
+        _buttonImage.color = newColor;
     }
 
     #endregion
