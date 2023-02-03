@@ -75,6 +75,7 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
         Image _buttonImage = GetComponent<Image>();
 
         _buttonImage.color = newColor;
+        _buttonImage.raycastTarget = true;
     }
 
     public void ChangeButtonColorInvisible()
@@ -83,6 +84,7 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
         Image _buttonImage = GetComponent<Image>();
 
         _buttonImage.color = newColor;
+        _buttonImage.raycastTarget = false;
     }
 
     #endregion
