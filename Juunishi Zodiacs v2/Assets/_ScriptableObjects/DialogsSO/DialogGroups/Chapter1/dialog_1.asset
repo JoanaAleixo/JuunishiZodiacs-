@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60273dc35858ef04aa950a041ea1afe0, type: 3}
   m_Name: dialog_1
   m_EditorClassIdentifier: 
-  _background: {fileID: 21300000, guid: 2313e423839467a41969fa1dd19d214a, type: 3}
-  _backgroundName: {fileID: 21300000, guid: baae7f833a59fe94d8e099ec8078c150, type: 3}
+  _background: {fileID: 21300000, guid: 9d3a03d94f333af4a9fc72ebdcff503d, type: 3}
+  _backgroundName: {fileID: 0}
   _dialogueStr:
-  - myCharacter: {fileID: 11400000, guid: f9cb58de52f6082498205d2f0ce3b776, type: 2}
+  - myCharacter: {fileID: 11400000, guid: 41b69fd2a06a35e4abc7a4047d78f70f, type: 2}
     _dialogueMessages:
-    - I can feel the cold wind that enters the church from its broken windows and
-      walls.
+    - "Aoishima, a state born from a powerful magic, Etheria. GenBase \u2013 the
+      military and government entity that exploits it and makes it possible to use
+      it for electrical consumption, in a nearly destroyed world."
     - "Despite being tired and exhausted, we cannot give up \u2013 we finally have
       the enemy in front of us."
     myExpressions: 3
@@ -50,14 +51,14 @@ MonoBehaviour:
     myExpressions: 2
     myFullbody: 2
     myPositions: 2
-  _changeBrench: 1
-  _choiseDialogueToChange1: 1
-  _question1: "Let\xB4s end this!"
+  _changeBrench: 0
+  _choiseDialogueToChange1: 0
+  _question1: 
   _TrustValueToIncrese1: 0
-  _choiseDialogueToChange2: 2
-  _question2: I don't plan to die here.
-  _TrustValueToIncrese2: 10
-  _choiseDialogueToChange3: 3
-  _question3: Do you think you can really do it?
-  _TrustValueToIncrese3: -10
+  _choiseDialogueToChange2: 0
+  _question2: 
+  _TrustValueToIncrese2: 0
+  _choiseDialogueToChange3: 0
+  _question3: 
+  _TrustValueToIncrese3: 0
   _isEndDialogue: 0
