@@ -9,13 +9,13 @@ C:\Program Files\Unity\Hub\Editor\2021.3.10f1\Editor\Unity.exe
 -batchMode
 -noUpm
 -name
-AssetImportWorker11
+AssetImportWorker0
 -projectPath
 C:/Users/pikia/OneDrive/Documentos/.Documentos/21-23 ETIC/Modulo 18 Projeto Final/Projeto em GitHub e Sourcetree/Juunishi Zodiacs v2
 -logFile
-Logs/AssetImportWorker11.log
+Logs/AssetImportWorker0.log
 -srvPort
-63005
+55735
 Successfully changed project path to: C:/Users/pikia/OneDrive/Documentos/.Documentos/21-23 ETIC/Modulo 18 Projeto Final/Projeto em GitHub e Sourcetree/Juunishi Zodiacs v2
 C:/Users/pikia/OneDrive/Documentos/.Documentos/21-23 ETIC/Modulo 18 Projeto Final/Projeto em GitHub e Sourcetree/Juunishi Zodiacs v2
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/pikia/OneDrive/Documentos/.Documentos/21-23 ETIC/Modulo 18 Projeto Fina
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 57.78 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 46.03 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.10f1 (1c7d0df0160b)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/Resources/UnitySubsystems
@@ -55,150 +55,95 @@ Initialize engine version: 2021.3.10f1 (1c7d0df0160b)
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: AMD Radeon(TM) Graphics (ID=0x1681)
-    Vendor:   ATI
-    VRAM:     7814 MB
-    Driver:   31.0.12024.2005
+    Renderer: NVIDIA GeForce RTX 3070 Ti Laptop GPU (ID=0x24a0)
+    Vendor:   NVIDIA
+    VRAM:     8032 MB
+    Driver:   31.0.15.3118
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56616
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56144
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005430 seconds.
+Registered in 0.004862 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 38.54 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 36.07 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.593 seconds
+- Completed reload, in  0.501 seconds
 Domain Reload Profiling:
-	ReloadAssembly (594ms)
-		BeginReloadAssembly (91ms)
+	ReloadAssembly (502ms)
+		BeginReloadAssembly (64ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (394ms)
-			LoadAssemblies (89ms)
+		EndReloadAssembly (343ms)
+			LoadAssemblies (62ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (101ms)
+			SetupTypeCache (82ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (25ms)
-			SetupLoadedEditorAssemblies (219ms)
+			RebuildScriptCaches (22ms)
+			SetupLoadedEditorAssemblies (198ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
+				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (39ms)
+				RefreshPlugins (36ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (129ms)
-				ProcessInitializeOnLoadMethodAttributes (43ms)
+				ProcessInitializeOnLoadAttributes (116ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006180 seconds.
+Registered in 0.005847 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 38.15 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 34.01 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.904 seconds
+- Completed reload, in  0.762 seconds
 Domain Reload Profiling:
-	ReloadAssembly (904ms)
-		BeginReloadAssembly (97ms)
+	ReloadAssembly (763ms)
+		BeginReloadAssembly (89ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (21ms)
-		EndReloadAssembly (714ms)
-			LoadAssemblies (74ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (583ms)
+			LoadAssemblies (65ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (199ms)
+			SetupTypeCache (140ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (38ms)
-			SetupLoadedEditorAssemblies (360ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (309ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (38ms)
-				BeforeProcessingInitializeOnLoad (64ms)
-				ProcessInitializeOnLoadAttributes (204ms)
-				ProcessInitializeOnLoadMethodAttributes (42ms)
-				AfterProcessingInitializeOnLoad (7ms)
+				RefreshPlugins (34ms)
+				BeforeProcessingInitializeOnLoad (60ms)
+				ProcessInitializeOnLoadAttributes (169ms)
+				ProcessInitializeOnLoadMethodAttributes (36ms)
+				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 0.60 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.59 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2541 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 33 unused Assets / (56.6 KB). Loaded Objects now: 3003.
 Memory consumption went from 114.3 MB to 114.2 MB.
-Total: 3.195300 ms (FindLiveObjects: 0.176600 ms CreateObjectMapping: 0.107000 ms MarkObjects: 2.829700 ms  DeleteObjects: 0.081200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005555 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.786 seconds
-Domain Reload Profiling:
-	ReloadAssembly (787ms)
-		BeginReloadAssembly (113ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (34ms)
-		EndReloadAssembly (598ms)
-			LoadAssemblies (70ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (148ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (40ms)
-			SetupLoadedEditorAssemblies (293ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (11ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (57ms)
-				ProcessInitializeOnLoadAttributes (177ms)
-				ProcessInitializeOnLoadMethodAttributes (37ms)
-				AfterProcessingInitializeOnLoad (10ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (9ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.91 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2517 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 20 unused Assets / (24.7 KB). Loaded Objects now: 3006.
-Memory consumption went from 112.3 MB to 112.3 MB.
-Total: 3.706400 ms (FindLiveObjects: 0.206600 ms CreateObjectMapping: 0.063400 ms MarkObjects: 3.408900 ms  DeleteObjects: 0.026200 ms)
+Total: 3.264600 ms (FindLiveObjects: 0.271700 ms CreateObjectMapping: 0.078700 ms MarkObjects: 2.828200 ms  DeleteObjects: 0.084800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -213,28 +158,46 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1203220.362896 seconds.
-  path: Assets/Sprites/Interface/Dialogue/d_Fumiko.PNG
-  artifactKey: Guid(b372826faab7f7347b2fb23fff123a9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Dialogue/d_Fumiko.PNG using Guid(b372826faab7f7347b2fb23fff123a9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e46eeb8847e7d29a97460718d0b3af8') in 0.146791 seconds 
+  Time since last request: 7825.329928 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v1_damage_earth.png
+  artifactKey: Guid(b4c6536ab8bb19e498980ad5da87dfc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v1_damage_earth.png using Guid(b4c6536ab8bb19e498980ad5da87dfc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a42c952f7bb113c837754df8875bf41') in 0.177245 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Sprites/Interface/Dialogue/d_MoonGod.PNG
-  artifactKey: Guid(ebd734523107cd74bb9cbf26d8c83130) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Dialogue/d_MoonGod.PNG using Guid(ebd734523107cd74bb9cbf26d8c83130) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cabda0d126903ee3ce9cb06530cf6e3') in 0.033151 seconds 
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v1_damage_water.png
+  artifactKey: Guid(de62bf013c160be4e89555a94b99c502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v1_damage_water.png using Guid(de62bf013c160be4e89555a94b99c502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22a287ca885302eb57e496af42003f6a') in 0.079484 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000055 seconds.
-  path: Assets/Sprites/Interface/Dialogue/d_Fushimi.PNG
-  artifactKey: Guid(f8fa6b43d61c8eb429229d0d5c1d4138) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Dialogue/d_Fushimi.PNG using Guid(f8fa6b43d61c8eb429229d0d5c1d4138) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1335ea07118cea6cb43947528645301') in 0.036667 seconds 
+  Time since last request: 0.000029 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v1_damage_physical.png
+  artifactKey: Guid(53b978d8cdc63ae45ae6a45ddc960106) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v1_damage_physical.png using Guid(53b978d8cdc63ae45ae6a45ddc960106) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64e16352f6b0ba307199863b2ca2a7da') in 0.079400 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Sprites/Interface/Dialogue/d_SunGodess.PNG
-  artifactKey: Guid(f170c66ed52679e479f0aa03aafa804d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Dialogue/d_SunGodess.PNG using Guid(f170c66ed52679e479f0aa03aafa804d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfa234a3694e0cc4a5a17a732eecfd08') in 0.034404 seconds 
+  Time since last request: 0.642920 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v1_healing.png
+  artifactKey: Guid(bbc51238eaa900046b9d30a91c10792a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v1_healing.png using Guid(bbc51238eaa900046b9d30a91c10792a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45f296b7a31eb66c90a97a5a21500bbd') in 0.090247 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.027734 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v2_damage_earth.png
+  artifactKey: Guid(a0ffbf5ed512f404c843b29c22ff8417) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v2_damage_earth.png using Guid(a0ffbf5ed512f404c843b29c22ff8417) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe7d4bba1e0a9a53a05664bb1c26e264') in 0.089620 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v2_death.png
+  artifactKey: Guid(58f63dfe78a6daf409b0f6aa2f339984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v2_death.png using Guid(58f63dfe78a6daf409b0f6aa2f339984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b3aaaffee46a35e5c98ff8f4eda509b') in 0.114818 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v2_damage_plant.png
+  artifactKey: Guid(6e98aae26595b084c9d77424c671aff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v2_damage_plant.png using Guid(6e98aae26595b084c9d77424c671aff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc82e41d05fc06599531b6f4f86f21ab') in 0.099616 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting
