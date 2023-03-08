@@ -38,7 +38,7 @@ public class CreateAbilities : EditorWindow
         if (GUILayout.Button("Create ScriptableObj"))
         {
             Ability newAbility = ScriptableObject.CreateInstance<Ability>();
-            string path = "Assets/ScriptableObjects/Abilities/" + _abilityName + ".asset";
+            string path = "Assets/_ScriptableObjects/" + _abilityName + ".asset";
             AssetDatabase.CreateAsset(newAbility, path);
             yesAbility = newAbility;
         }
@@ -60,6 +60,25 @@ public class CreateAbilities : EditorWindow
         {
             Debug.Log(yesAbility.Mods[i].GetType());
             if(yesAbility.Mods[i] is DamageModifier)
+            {
+                yesAbility.Mods[i].Draw();
+            }
+        }
+
+        if (yesAbility == null)
+        {
+            return;
+        }
+        if (GUILayout.Button("Add Healing Modifier"))
+        {
+            HealModifier healing = new HealModifier();
+            yesAbility.Mods.Add(healing);
+        }
+
+        for (int i = 0; i < yesAbility.Mods.Count; i++)
+        {
+            Debug.Log(yesAbility.Mods[i].GetType());
+            if (yesAbility.Mods[i] is HealModifier)
             {
                 yesAbility.Mods[i].Draw();
             }

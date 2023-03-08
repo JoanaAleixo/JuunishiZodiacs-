@@ -75,6 +75,10 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     public virtual void HealCaracter(int healingAmount)
     {
         myCaracter.HpMax.value += healingAmount;
+        if (myCaracter.HpMax.value > myCaracter.HpMax.resetValue)
+        {
+            myCaracter.HpMax.value = myCaracter.HpMax.resetValue;
+        }
         takeDamageEV.Raise();
     }
 

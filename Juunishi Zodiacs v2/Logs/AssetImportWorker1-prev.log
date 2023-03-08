@@ -15,7 +15,7 @@ C:/Users/pikia/OneDrive/Documentos/.Documentos/21-23 ETIC/Modulo 18 Projeto Fina
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-49677
+60215
 Successfully changed project path to: C:/Users/pikia/OneDrive/Documentos/.Documentos/21-23 ETIC/Modulo 18 Projeto Final/Projeto em GitHub e Sourcetree/Juunishi Zodiacs v2
 C:/Users/pikia/OneDrive/Documentos/.Documentos/21-23 ETIC/Modulo 18 Projeto Final/Projeto em GitHub e Sourcetree/Juunishi Zodiacs v2
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/pikia/OneDrive/Documentos/.Documentos/21-23 ETIC/Modulo 18 Projeto Fina
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 62.69 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 52.52 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.10f1 (1c7d0df0160b)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/Resources/UnitySubsystems
@@ -63,87 +63,87 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56188
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56032
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.010291 seconds.
+Registered in 0.004975 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 78.77 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 34.77 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.025 seconds
+- Completed reload, in  0.607 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1026ms)
-		BeginReloadAssembly (171ms)
+	ReloadAssembly (607ms)
+		BeginReloadAssembly (90ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (670ms)
-			LoadAssemblies (167ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (411ms)
+			LoadAssemblies (87ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (171ms)
+			SetupTypeCache (117ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (39ms)
-			SetupLoadedEditorAssemblies (384ms)
+			RebuildScriptCaches (21ms)
+			SetupLoadedEditorAssemblies (222ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
+				InitializePlatformSupportModulesInManaged (7ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (79ms)
+				RefreshPlugins (35ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (217ms)
-				ProcessInitializeOnLoadMethodAttributes (73ms)
+				ProcessInitializeOnLoadAttributes (136ms)
+				ProcessInitializeOnLoadMethodAttributes (42ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.010948 seconds.
+Registered in 0.005537 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 38.73 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 34.36 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.061 seconds
+- Completed reload, in  0.842 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1062ms)
-		BeginReloadAssembly (156ms)
+	ReloadAssembly (842ms)
+		BeginReloadAssembly (94ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (11ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (33ms)
-		EndReloadAssembly (778ms)
-			LoadAssemblies (113ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (658ms)
+			LoadAssemblies (78ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (217ms)
+			SetupTypeCache (183ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (52ms)
-			SetupLoadedEditorAssemblies (356ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (316ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (39ms)
-				BeforeProcessingInitializeOnLoad (64ms)
-				ProcessInitializeOnLoadAttributes (203ms)
-				ProcessInitializeOnLoadMethodAttributes (40ms)
-				AfterProcessingInitializeOnLoad (7ms)
+				RefreshPlugins (34ms)
+				BeforeProcessingInitializeOnLoad (60ms)
+				ProcessInitializeOnLoadAttributes (175ms)
+				ProcessInitializeOnLoadMethodAttributes (36ms)
+				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.62 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2541 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 33 unused Assets / (56.6 KB). Loaded Objects now: 3003.
 Memory consumption went from 114.3 MB to 114.2 MB.
-Total: 3.456200 ms (FindLiveObjects: 0.210500 ms CreateObjectMapping: 0.088300 ms MarkObjects: 3.067900 ms  DeleteObjects: 0.088200 ms)
+Total: 3.032400 ms (FindLiveObjects: 0.334000 ms CreateObjectMapping: 0.078800 ms MarkObjects: 2.533900 ms  DeleteObjects: 0.084600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -158,133 +158,115 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 91382.995282 seconds.
-  path: Assets/Sprites/Interface/Navigation/n_10Station_march.png
-  artifactKey: Guid(2b032f6cdd43164409d1b2ad272663fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/n_10Station_march.png using Guid(2b032f6cdd43164409d1b2ad272663fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f46733df5711d7eb8bc6cdd314c2b98') in 0.116549 seconds 
+  Time since last request: 248065.656107 seconds.
+  path: Assets/Sprites/Characters/Expressions/Gods/Bosses/ex_mischiefGod_human_2feliz.png
+  artifactKey: Guid(bb070c9461a2a2a43b7e3c498595faee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Gods/Bosses/ex_mischiefGod_human_2feliz.png using Guid(bb070c9461a2a2a43b7e3c498595faee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39d2a781aa74dd60efacc430882285a6') in 0.209841 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Sprites/Interface/Navigation/n_7BackAlley_march.png
-  artifactKey: Guid(2f619b71eb0899f4289ff4097c0d54b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/n_7BackAlley_march.png using Guid(2f619b71eb0899f4289ff4097c0d54b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a0a059641c7e22e185a1ea5573ff074') in 0.020521 seconds 
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Characters/Expressions/Gods/Bosses
+  artifactKey: Guid(f07fa362487272846afaa1c85231f196) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Gods/Bosses using Guid(f07fa362487272846afaa1c85231f196) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5632ef66d4f7b7aa8981cb7be62cf9ec') in 0.005806 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Sprites/Interface/Navigation/n_6Rooftop_march.png
-  artifactKey: Guid(00eb17c5417cdab4e9ffe9a353c80b09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/n_6Rooftop_march.png using Guid(00eb17c5417cdab4e9ffe9a353c80b09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11d75978f4536995d10ac5890392571f') in 0.018270 seconds 
+  Time since last request: 9.531132 seconds.
+  path: Assets/Sprites/Characters/Expressions/Gods/Bosses/ex_mischiefGod_human_2feliz.png
+  artifactKey: Guid(bb070c9461a2a2a43b7e3c498595faee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Gods/Bosses/ex_mischiefGod_human_2feliz.png using Guid(bb070c9461a2a2a43b7e3c498595faee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f40ba09bcd6aa151724d552fa407355e') in 0.092675 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Sprites/Interface/Navigation/n_3PublisherStreet_march.png
-  artifactKey: Guid(678af9815929d70499cdec302b9f56b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/n_3PublisherStreet_march.png using Guid(678af9815929d70499cdec302b9f56b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '221f3a77719b0aa2edfe2e3e83ced72a') in 0.019221 seconds 
+  Time since last request: 17.670711 seconds.
+  path: Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 1/ex_Nezuko_v1_2Feliz.png
+  artifactKey: Guid(7bec2796865d48d47a7649120589cb0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 1/ex_Nezuko_v1_2Feliz.png using Guid(7bec2796865d48d47a7649120589cb0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32022cb2578eb00e7efce1b2521a0d3b') in 0.112804 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Sprites/Interface/Navigation/n_12NierTemple_march.png
-  artifactKey: Guid(94796426b5b3cb44e9a237314498c31e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/n_12NierTemple_march.png using Guid(94796426b5b3cb44e9a237314498c31e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5df4d15ee7397d5c3418a559d04dd077') in 0.021222 seconds 
+  Time since last request: 0.000036 seconds.
+  path: Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 1/ex_Nezuko_v1_6choro.png
+  artifactKey: Guid(b63f27c49845d2641889ce102a421cc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 1/ex_Nezuko_v1_6choro.png using Guid(b63f27c49845d2641889ce102a421cc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d14bfe243f47647e771404b0ec88efd') in 0.085740 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Sprites/Interface/Navigation/n_1AkiraRoom_march.png
-  artifactKey: Guid(3ae30f3a5e71f7f48be58514a7e85ea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/n_1AkiraRoom_march.png using Guid(3ae30f3a5e71f7f48be58514a7e85ea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ccc9b0f9cafb10eea33d6f1483f244e') in 0.020125 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 14.458484 seconds.
-  path: Assets/Sprites/Interface/Navigation/n_1AkiraRoom_march.png
-  artifactKey: Guid(3ae30f3a5e71f7f48be58514a7e85ea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/n_1AkiraRoom_march.png using Guid(3ae30f3a5e71f7f48be58514a7e85ea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb7e491ce335de2f1bdf680d5b9d0288') in 0.021961 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Sprites/Interface/Navigation/n_6Rooftop_march.png
-  artifactKey: Guid(00eb17c5417cdab4e9ffe9a353c80b09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/n_6Rooftop_march.png using Guid(00eb17c5417cdab4e9ffe9a353c80b09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d6e4c1a3a24fdaf18e3d288fbd8a099') in 0.018972 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Sprites/Interface/Navigation/n_3PublisherStreet_march.png
-  artifactKey: Guid(678af9815929d70499cdec302b9f56b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/n_3PublisherStreet_march.png using Guid(678af9815929d70499cdec302b9f56b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53559857c2b29c4c3444432ae5d4a459') in 0.016665 seconds 
+  Time since last request: 0.000037 seconds.
+  path: Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 1/ex_Nezuko_v1_8serio.png
+  artifactKey: Guid(c47da620dc26c6d4aa5de8ece5eb34d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 1/ex_Nezuko_v1_8serio.png using Guid(c47da620dc26c6d4aa5de8ece5eb34d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e0aaf40866efa28854901e95182de81') in 0.114768 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000033 seconds.
-  path: Assets/Sprites/Interface/Navigation/n_8CentralAvenue_march.png
-  artifactKey: Guid(68ec710825685bb40b62985f6b8faa29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/n_8CentralAvenue_march.png using Guid(68ec710825685bb40b62985f6b8faa29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd0c440a40a0ccdd6f135b73bd5eb207') in 0.022929 seconds 
+  path: Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 1/ex_Nezuko_v1_7irritado.png
+  artifactKey: Guid(328df035df121bf498e7ddc23536895f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 1/ex_Nezuko_v1_7irritado.png using Guid(328df035df121bf498e7ddc23536895f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9e156fb8e21f208886589e0c5d6fae1') in 0.106996 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 710.461440 seconds.
-  path: Assets/Sprites/Interface/Navigation/03 March/n_14BehindTemple_march.png
-  artifactKey: Guid(86f509df147427b4d841deccf34b688a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/03 March/n_14BehindTemple_march.png using Guid(86f509df147427b4d841deccf34b688a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6882a8b7e5009892de6aaca1e5ea3517') in 0.022284 seconds 
+  Time since last request: 8.686153 seconds.
+  path: Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 1/ex_Nezuko_v1_2Feliz.png
+  artifactKey: Guid(7bec2796865d48d47a7649120589cb0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 1/ex_Nezuko_v1_2Feliz.png using Guid(7bec2796865d48d47a7649120589cb0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36ef97b7e5466d659b43e36070b8c711') in 0.102170 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 41.930434 seconds.
-  path: Assets/Sprites/Interface/Navigation/04 April/n_2Residencial_april.png
-  artifactKey: Guid(a095244c87e24c74ba701d994d23b984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/04 April/n_2Residencial_april.png using Guid(a095244c87e24c74ba701d994d23b984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e99cc39006beaf25f9a23b83e7a3abf5') in 0.023443 seconds 
+  Time since last request: 0.000048 seconds.
+  path: Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 1/ex_Nezuko_v1_6choro.png
+  artifactKey: Guid(b63f27c49845d2641889ce102a421cc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 1/ex_Nezuko_v1_6choro.png using Guid(b63f27c49845d2641889ce102a421cc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd91ec634e6a041660ba70c6e521dd7a0') in 0.107929 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.010605 seconds.
-  path: Assets/Sprites/Interface/Navigation/04 April/n_9StationStreet_april.png
-  artifactKey: Guid(c24738e2afcc1a946906ddce677929da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/04 April/n_9StationStreet_april.png using Guid(c24738e2afcc1a946906ddce677929da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f34da922ea0f7905440c7dddfeeb58e1') in 0.030664 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Sprites/Interface/Navigation/04 April/n_12NierTemple_april.png
-  artifactKey: Guid(cc03bef77a48bad45a8d7271a2e92c16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/04 April/n_12NierTemple_april.png using Guid(cc03bef77a48bad45a8d7271a2e92c16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f019c20e6c26ff3b8cb41ebc36650df') in 0.023724 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Sprites/Interface/Navigation/04 April/n_8CentralAvenue_april.png
-  artifactKey: Guid(de01853b10ca13943bb7637a1842815b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/04 April/n_8CentralAvenue_april.png using Guid(de01853b10ca13943bb7637a1842815b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54e5010360a9065e1fe0ca06eaab7d3d') in 0.024468 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Sprites/Interface/Navigation/04 April/n_11NierRiver_april.png
-  artifactKey: Guid(e19308bdb15449547a80208d4a4d086b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/04 April/n_11NierRiver_april.png using Guid(e19308bdb15449547a80208d4a4d086b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50742c270b791918ca0516243ad14cef') in 0.020740 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Sprites/Interface/Navigation/04 April/n_10Station_april.png
-  artifactKey: Guid(43c1c39d5bdae5f4699c5c07e8e542f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/04 April/n_10Station_april.png using Guid(43c1c39d5bdae5f4699c5c07e8e542f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f1f1b0e22df70b694c2cefcf7729cc1') in 0.021668 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.642082 seconds.
-  path: Assets/Sprites/Interface/Navigation/04 April/n_3PublisherStreet_april.png
-  artifactKey: Guid(411fd7400db3395469e0e4a29520c75c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/04 April/n_3PublisherStreet_april.png using Guid(411fd7400db3395469e0e4a29520c75c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a32351ec3fff4d590ef2a117fc07b04') in 0.016516 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Sprites/Interface/Navigation/04 April/n_9StationStreet_april.png
-  artifactKey: Guid(c24738e2afcc1a946906ddce677929da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/04 April/n_9StationStreet_april.png using Guid(c24738e2afcc1a946906ddce677929da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca5711b1501281842a7cd8c00ed000ce') in 0.016664 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Sprites/Interface/Navigation/04 April/n_7BackAlley_april.png
-  artifactKey: Guid(fecf8530eb44f7b479a1a0ad7e43ed88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/04 April/n_7BackAlley_april.png using Guid(fecf8530eb44f7b479a1a0ad7e43ed88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc3e7ee53f1b48ddf8cec3787927a8f4') in 0.019397 seconds 
+  Time since last request: 2.031398 seconds.
+  path: Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 2/ex_Nezuko_v2_3Surpresa.png
+  artifactKey: Guid(46fdc41c7096599429392c4fe7cea7e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 2/ex_Nezuko_v2_3Surpresa.png using Guid(46fdc41c7096599429392c4fe7cea7e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2db1fdcbef2c191ebca09416ba6fdacb') in 0.124904 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000022 seconds.
-  path: Assets/Sprites/Interface/Navigation/04 April/n_14BehindTemple_april.png
-  artifactKey: Guid(1c7375e8c1e54894091e8623a7b12cdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/04 April/n_14BehindTemple_april.png using Guid(1c7375e8c1e54894091e8623a7b12cdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbf7a1712eccae2a570ebc6aa461ba9a') in 0.016533 seconds 
+  path: Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 2/ex_Nezuko_v2_6choro.png
+  artifactKey: Guid(2e0ac1a853ad46844917fa8701dd07a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 2/ex_Nezuko_v2_6choro.png using Guid(2e0ac1a853ad46844917fa8701dd07a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b300359ab62038706aed70e4d359ea5f') in 0.089834 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Sprites/Interface/Navigation/04 April/n_11NierRiver_april.png
-  artifactKey: Guid(e19308bdb15449547a80208d4a4d086b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Interface/Navigation/04 April/n_11NierRiver_april.png using Guid(e19308bdb15449547a80208d4a4d086b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42db6bc24cbf801d1faf703180d7a8a9') in 0.014823 seconds 
+  Time since last request: 9.439957 seconds.
+  path: Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 2/ex_Nezuko_v2_2Feliz.png
+  artifactKey: Guid(17d69d746b9828646ae998aa667be909) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 2/ex_Nezuko_v2_2Feliz.png using Guid(17d69d746b9828646ae998aa667be909) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fac32f4c1a8a0ec9a6b8e4cf1716cd0e') in 0.113654 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 2/ex_Nezuko_v2_5triste.png
+  artifactKey: Guid(aa93fec9b6ca9444a839931d05ef83b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Human/Outfit 2/ex_Nezuko_v2_5triste.png using Guid(aa93fec9b6ca9444a839931d05ef83b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dba80a81b1bff711d5b04107678bfdf8') in 0.102435 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 54.397560 seconds.
+  path: Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 1/fu_Nezuko_v1_3surpreso.png
+  artifactKey: Guid(3196663810faeb8439ddf111a395331c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 1/fu_Nezuko_v1_3surpreso.png using Guid(3196663810faeb8439ddf111a395331c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca55dc67e93095e1b52c81fff8892522') in 0.256753 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 1/fu_Nezuko_v1_6choro.png
+  artifactKey: Guid(c69d16eb760384f4a91d6587e23f9826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 1/fu_Nezuko_v1_6choro.png using Guid(c69d16eb760384f4a91d6587e23f9826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f1da8e48ffe3dfdaa28ac0d182a1077') in 0.214003 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.632379 seconds.
+  path: Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 1/fu_Nezuko_v1_5triste.png
+  artifactKey: Guid(3ae5f3bfac6274b4ab255f7525220ebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 1/fu_Nezuko_v1_5triste.png using Guid(3ae5f3bfac6274b4ab255f7525220ebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ccacf8945d9ea83976907603880a03d') in 0.219510 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.259552 seconds.
+  path: Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 2/fu_Nezuko_v2_3surpresa.png
+  artifactKey: Guid(9026b68d5b5306e4f8eff5e8875369bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 2/fu_Nezuko_v2_3surpresa.png using Guid(9026b68d5b5306e4f8eff5e8875369bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0109a5bd5bedba6aadb5de7434a335a') in 0.215513 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 2/fu_Nezuko_v2_5triste.png
+  artifactKey: Guid(5d69563c1c7722949baa6e7008a6a992) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 2/fu_Nezuko_v2_5triste.png using Guid(5d69563c1c7722949baa6e7008a6a992) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a825ebf04de9bd295e7dc82763ac9bbe') in 0.214623 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 28.636857 seconds.
+  path: Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 2/fu_Nezuko_v2_5triste.png
+  artifactKey: Guid(5d69563c1c7722949baa6e7008a6a992) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 2/fu_Nezuko_v2_5triste.png using Guid(5d69563c1c7722949baa6e7008a6a992) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7430bfeda2daa04d65c6f41c52bb2a61') in 0.249997 seconds 
