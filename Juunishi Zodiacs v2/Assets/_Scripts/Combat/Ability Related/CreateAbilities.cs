@@ -86,14 +86,14 @@ public class CreateAbilities : EditorWindow
 
         if (GUILayout.Button("Add Stun Modifier"))
         {
-            StunModifier damage = new StunModifier();
+            StatusModifier damage = new StatusModifier();
             yesAbility.Mods.Add(damage);
         }
 
 
         for (int i = 0; i < yesAbility.Mods.Count; i++)
         {
-            if (yesAbility.Mods[i] is StunModifier)
+            if (yesAbility.Mods[i] is StatusModifier)
             {
                 yesAbility.Mods[i].Draw();
             }

@@ -45,9 +45,5 @@ public class DamageModifier : Modifiers
         }
     }
 
-    /*public void ExecuteDamageMod(GameObject[] target)
-    {
-        
-    }*/
 }
 

@@ -44,6 +44,10 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     [SerializeField] private CaracterCreation myCaracter;
     [SerializeField] protected int _caracterNumber;
     [SerializeField] protected GameEvent takeDamageEV;
+
+    public Dictionary<StatusFx, int> currentStatus = new Dictionary<StatusFx, int>();
+
+
     public CaracterCreation MyCaracter { get => myCaracter; set => myCaracter = value; }
 
     protected virtual void Start()
