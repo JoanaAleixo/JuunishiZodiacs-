@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60273dc35858ef04aa950a041ea1afe0, type: 3}
+  m_Name: dialog_act3_5.
+  m_EditorClassIdentifier: 
+  _background: {fileID: 21300000, guid: 87a0dd3c3bd4c8f46b945593f1348f57, type: 3}
+  _backgroundName: {fileID: 21300000, guid: 3ae30f3a5e71f7f48be58514a7e85ea1, type: 3}
+  _dialogueStr:
+  - myCharacter: {fileID: 11400000, guid: 37be8fdde13b6c145ac6fa2084028489, type: 2}
+    _dialogueMessages:
+    - '"Don''t do this again, please..."'
+    myExpressions: 3
+    myFullbody: 3
+    myPositions: 3
+  - myCharacter: {fileID: 11400000, guid: 37be8fdde13b6c145ac6fa2084028489, type: 2}
+    _dialogueMessages:
+    - "\"\u2026.. Who is this?\""
+    myExpressions: 6
+    myFullbody: 6
+    myPositions: 3
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - "\u201CHim? Oh, this is-\""
+    myExpressions: 2
+    myFullbody: 2
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 9732b72edb9819a4586d61ca4efd7e46, type: 2}
+    _dialogueMessages:
+    - "\u201CTachibana Nezuko. We met by chance at the publisher, I really appreciate
+      his work, and I came to accompany him home, he didn't look very well.\u201D"
+    myExpressions: 7
+    myFullbody: 7
+    myPositions: 1
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - "\u201COh, yes! Nezuko is new here, the director recommended him to assist
+      me, he's from District 3! I was dizzy and he helped me get here.\u201D"
+    - Fushimi breaks the hug, keeping a step away from me. His golden gaze drifts
+      to my hands.
+    myExpressions: 7
+    myFullbody: 7
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 37be8fdde13b6c145ac6fa2084028489, type: 2}
+    _dialogueMessages:
+    - '"Oh, really...?"'
+    - "\u201CAre you feeling better now, Akira?... \u2013 without your bandages?\u201D"
+    myExpressions: 6
+    myFullbody: 6
+    myPositions: 3
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - "\u201CThis\u2026? I decided to take them off, I wanted to feel a bit of today's
+      freshness\u2026 I'm fine, Fushimi.\u201D"
+    myExpressions: 0
+    myFullbody: 0
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 37be8fdde13b6c145ac6fa2084028489, type: 2}
+    _dialogueMessages:
+    - "\u201COkay\u2026 I'm glad you're well\u2026\u201D"
+    - "\u201CThen, he can leave now\u2026\u201D"
+    myExpressions: 0
+    myFullbody: 0
+    myPositions: 3
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - "\u201CAh, Nezuko had his wallet stolen and he has no money or place to stay,
+      so I invited him to spend the night here.\u201C"
+    myExpressions: 2
+    myFullbody: 2
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 37be8fdde13b6c145ac6fa2084028489, type: 2}
+    _dialogueMessages:
+    - "\u201CYou are already treating each other with your first names\u2026? Akira,
+      are you sure it's a good idea to do this for a stranger? You're here alone\u2026\u201D"
+    - "\u201C\u2026He's not taking advantage of you, is he, Akira? You're not lying
+      to me, are you...?\""
+    myExpressions: 6
+    myFullbody: 6
+    myPositions: 3
+  _changeBrench: 1
+  _choiseDialogueToChange1: 2
+  _question1: 'I would never lie to you, Fushimi. '
+  _TrustValueToIncrese1: -10
+  _choiseDialogueToChange2: 3
+  _question2: 'Nezuko doesn''t seem like a bad person to me. '
+  _TrustValueToIncrese2: 0
+  _choiseDialogueToChange3: 4
+  _question3: "Trust me\u2026 "
+  _TrustValueToIncrese3: 10
+  _isEndDialogueOnNav: 0
+  _sceneTransition: 0
+  _nextScene: 

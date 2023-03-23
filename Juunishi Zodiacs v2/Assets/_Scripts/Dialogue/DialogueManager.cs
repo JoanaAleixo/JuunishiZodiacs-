@@ -267,7 +267,11 @@ public class DialogueManager : MonoBehaviour
         PisitonSwitch();
 
         //Atualização de informação no UI: Posição dos FullBody e Sprite dos Fullbody nas posições.
-        DialogUIManager.instance.CharactersOnDisplay(FullBodyToDisplay, FullBodyPosition);
+        if(FullBodyToDisplay != null)
+        {
+            DialogUIManager.instance.CharactersOnDisplay(FullBodyToDisplay, FullBodyPosition);
+
+        }
 
         //questoes para ui
         DialogUIManager.instance.QuestionsToUi(_questionToUi1, _questionToUi2, _questionToUi3);
@@ -351,7 +355,7 @@ public class DialogueManager : MonoBehaviour
 
                 DialogNumber++;
 
-                if (DialogNumber >= DialogueTree1.DialogueStr.Length && DialogueTree1.IsEndDialogue == false)
+                if (DialogNumber >= DialogueTree1.DialogueStr.Length && DialogueTree1.IsEndDialogue == false && DialogueTree1.SceneTransition == false)
                 {
                     if (DialogueTree1.ChangeBrench == false)
                     {
@@ -378,7 +382,14 @@ public class DialogueManager : MonoBehaviour
                     _placesButtons3.ChangeButtonColorVisible();
                     _placesButtons4.ChangeButtonColorVisible();
                 }
+                else if(DialogNumber >= DialogueTree1.DialogueStr.Length && DialogueTree1.SceneTransition == true)
+                {
+
+                    SceneManager.LoadScene(DialogueTree1.NextScene);
+
+                }
             }
+            
 
             UpdateOnUI();
 

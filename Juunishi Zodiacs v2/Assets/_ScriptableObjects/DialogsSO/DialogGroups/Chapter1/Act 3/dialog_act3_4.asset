@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60273dc35858ef04aa950a041ea1afe0, type: 3}
+  m_Name: dialog_act3_4
+  m_EditorClassIdentifier: 
+  _background: {fileID: 21300000, guid: 87a0dd3c3bd4c8f46b945593f1348f57, type: 3}
+  _backgroundName: {fileID: 21300000, guid: 3ae30f3a5e71f7f48be58514a7e85ea1, type: 3}
+  _dialogueStr:
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - 'As soon as Nezuko opens the door, I see light inside. '
+    - We come across Fushimi, standing in the middle of the apartment, who looks
+      me up and down and, after doing the same to Nezuko.
+    - His expression changes from concern to surprise and ends up in anger, taking
+      a step back.
+    - "\u201CFushimi? What are you doing here?\""
+    myExpressions: 1
+    myFullbody: 1
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 37be8fdde13b6c145ac6fa2084028489, type: 2}
+    _dialogueMessages:
+    - "\u201C\u2026\u2026\u2026\u201D"
+    - "\u201CAkira, what is this message you left here on the table\u2026? It looked
+      like you were going to-\u2026. I was worried about you\u2026. You have your
+      phone off\u2026\u201D"
+    myExpressions: 6
+    myFullbody: 6
+    myPositions: 3
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - " In his right hand, he was clutching a crumpled piece of paper \u2013 it was
+      the farewell letter I had left him on my desk\u2026 I didn't expect him to
+      come here tonight\u2026"
+    - "\u201CI-\u2026\u201D"
+    - "\u201CI-\u2026......\u201D"
+    myExpressions: 2
+    myFullbody: 2
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - "\u201CI'm sorry I worried you, Fushimi\u2026. I didn't do anything, I swear...
+      I'm not going to\u2026\u201D"
+    - 'I look down in embarrassment until, after hearing hurried footsteps, I feel
+      a warm embrace against my body. '
+    - 'Fushimi squeezes me tightly, and smothers his head on my shoulder, I''ve never
+      seen him like this. In my ear he whispers:'
+    myExpressions: 3
+    myFullbody: 3
+    myPositions: 0
+  _changeBrench: 0
+  _choiseDialogueToChange1: 0
+  _question1: 
+  _TrustValueToIncrese1: 0
+  _choiseDialogueToChange2: 0
+  _question2: 
+  _TrustValueToIncrese2: 0
+  _choiseDialogueToChange3: 0
+  _question3: 
+  _TrustValueToIncrese3: 0
+  _isEndDialogueOnNav: 0
+  _sceneTransition: 0
+  _nextScene: 

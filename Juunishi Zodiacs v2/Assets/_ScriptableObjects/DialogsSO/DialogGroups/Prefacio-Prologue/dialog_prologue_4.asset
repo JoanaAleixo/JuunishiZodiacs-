@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60273dc35858ef04aa950a041ea1afe0, type: 3}
+  m_Name: dialog_prologue_4
+  m_EditorClassIdentifier: 
+  _background: {fileID: 21300000, guid: dac55afb5ecddf842b6abdf39062634b, type: 3}
+  _backgroundName: {fileID: 21300000, guid: 94227921711f172438536507b0e51baa, type: 3}
+  _dialogueStr:
+  - myCharacter: {fileID: 11400000, guid: f9cb58de52f6082498205d2f0ce3b776, type: 2}
+    _dialogueMessages:
+    - My heart is racing so fast it feels like I can feel it coming out of my chest...
+    - 'In front of us, the bodies of the fallen monsters surround the God of Memories,
+      illuminated by the soft light coming from the ceiling... '
+    - His gaze is sad and angry, he is kneeling on the ground... Despite my overwhelming
+      joy, I almost feel pity for him...
+    myExpressions: 1
+    myFullbody: 1
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: f9cb58de52f6082498205d2f0ce3b776, type: 2}
+    _dialogueMessages:
+    - "\"We made it\u2026!\""
+    myExpressions: 0
+    myFullbody: 0
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: d04d07f168c0fa240b25f33d1c6064d7, type: 2}
+    _dialogueMessages:
+    - '"No! No! No! No! No! No! No! No! No! No! No! No! No!"'
+    - '"I won''t let this happen... You must die!"'
+    myExpressions: 5
+    myFullbody: 5
+    myPositions: 2
+  - myCharacter: {fileID: 11400000, guid: f9cb58de52f6082498205d2f0ce3b776, type: 2}
+    _dialogueMessages:
+    - "\u201CARGH!!!\u201D"
+    - In a quick movement, without me being able to dodge, I feel something hot pierce
+      my chest.
+    - "I bring my hands close to the pain \u2013 they stain red, as my clothes, and
+      the taste of blood invades my mouth, running down my chin\u2026"
+    - "I feel my body falling backwards\u2026 The chains break\u2026-"
+    myExpressions: 8
+    myFullbody: 8
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 9732b72edb9819a4586d61ca4efd7e46, type: 2}
+    _dialogueMessages:
+    - "\u201CAkira!!!!\u201D"
+    myExpressions: 1
+    myFullbody: 1
+    myPositions: 0
+  _changeBrench: 0
+  _choiseDialogueToChange1: 0
+  _question1: 
+  _TrustValueToIncrese1: 0
+  _choiseDialogueToChange2: 0
+  _question2: 
+  _TrustValueToIncrese2: 0
+  _choiseDialogueToChange3: 0
+  _question3: 
+  _TrustValueToIncrese3: 0
+  _isEndDialogueOnNav: 0
+  _sceneTransition: 1
+  _nextScene: D_1_Act1.1
