@@ -10,24 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60273dc35858ef04aa950a041ea1afe0, type: 3}
-  m_Name: dialog_act3_5.1
+  m_Name: dialog_act3_9
   m_EditorClassIdentifier: 
-  _background: {fileID: 21300000, guid: 87a0dd3c3bd4c8f46b945593f1348f57, type: 3}
+  _background: {fileID: 21300000, guid: 73cdc0fc4f6a79f4fb72452b7010b140, type: 3}
   _backgroundName: {fileID: 21300000, guid: 3ae30f3a5e71f7f48be58514a7e85ea1, type: 3}
   _dialogueStr:
+  - myCharacter: {fileID: 11400000, guid: 9732b72edb9819a4586d61ca4efd7e46, type: 2}
+    _dialogueMessages:
+    - '"Sweet dreams, kid."'
+    myExpressions: 0
+    myFullbody: 8
+    myPositions: 2
   - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
     _dialogueMessages:
-    - "\u201CI would never lie to you Fushimi; you are my best friend. Nezuko is
-      also very fond of reading and we've talked a lot\u2026\u201D"
+    - "My mind is quiet finally\u2026\u2026"
     myExpressions: 0
     myFullbody: 0
     myPositions: 0
-  - myCharacter: {fileID: 11400000, guid: 37be8fdde13b6c145ac6fa2084028489, type: 2}
-    _dialogueMessages:
-    - "\u201CIf you say so\u2026\u201D"
-    myExpressions: 6
-    myFullbody: 6
-    myPositions: 3
   _changeBrench: 0
   _choiseDialogueToChange1: 0
   _question1: 
@@ -39,5 +38,5 @@ MonoBehaviour:
   _question3: 
   _TrustValueToIncrese3: 0
   _isEndDialogueOnNav: 0
-  _sceneTransition: 1
-  _nextScene: D_1_Act3.3
+  _sceneTransition: 0
+  _nextScene: 
