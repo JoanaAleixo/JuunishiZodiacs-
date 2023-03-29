@@ -13,8 +13,9 @@ public class BoundFx : StatusFx
         DamagePerStack = damage;
     }
 
-    public override void ApplyEffect(PlayableCaracter chara)
+    public override void ApplyEffect(BaseStats chara)
     {
+        Debug.Log("Bound Fx");
         chara.currentStatus.TryGetValue(this, out int value);
         chara.TakeDamage(DamagePerStack * value, DAMAGETYPE.Physical);
     }

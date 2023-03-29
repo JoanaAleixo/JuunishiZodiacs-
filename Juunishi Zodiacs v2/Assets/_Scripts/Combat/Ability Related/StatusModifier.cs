@@ -39,6 +39,7 @@ public class StatusModifier : Modifiers
 
         if (TargetType == TARGETING.singleEnemy || TargetType == TARGETING.singleAlly || TargetType == TARGETING.self)
         {
+            Debug.Log("Status Mod Executed!");
             target[0].GetComponent<BaseStats>().currentStatus.Add(effect, Quantity);
         }
         else if (TargetType == TARGETING.multipleEnemy || TargetType == TARGETING.multipleAlly)

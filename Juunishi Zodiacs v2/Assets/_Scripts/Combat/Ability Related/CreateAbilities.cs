@@ -84,10 +84,10 @@ public class CreateAbilities : EditorWindow
             }
         }
 
-        if (GUILayout.Button("Add Stun Modifier"))
+        if (GUILayout.Button("Add Status Modifier"))
         {
-            StatusModifier damage = new StatusModifier();
-            yesAbility.Mods.Add(damage);
+            StatusModifier status = new StatusModifier();
+            yesAbility.Mods.Add(status);
         }
 
 

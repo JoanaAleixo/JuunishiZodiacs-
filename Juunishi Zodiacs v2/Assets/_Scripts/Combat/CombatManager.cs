@@ -11,8 +11,10 @@ enum BATTLESTATE
     PlayerTurn, 
     SelectingTarget,
     ExecuteAbility,
+    EndOfPlayerTurn,
     EnemyTurn, 
     EnemyExecuteAbility,
+    EndOfEnemyTurn,
     Victory, 
     Defeat
 }
@@ -139,12 +141,15 @@ public class CombatManager : MonoBehaviour
             case BATTLESTATE.ExecuteAbility:
                 ExecuteModifiers();
                 break;
+            case BATTLESTATE.EndOfPlayerTurn:
+                CheckPlayerStatus();
+                break;
             case BATTLESTATE.EnemyTurn:
                 if (CheckIfRoundDone())
                 {
                     _actions.Clear();
                     tempEnemy = 0;
-                    ChangeState(BATTLESTATE.PlayerTurn);
+                    ChangeState(BATTLESTATE.EndOfEnemyTurn);
                 }
                 else
                 {
@@ -156,6 +161,9 @@ public class CombatManager : MonoBehaviour
                 break;
             case BATTLESTATE.EnemyExecuteAbility:
                 ExecuteEnemyModifiers();
+                break;
+            case BATTLESTATE.EndOfEnemyTurn:
+                CheckEnemyStatus();
                 break;
             case BATTLESTATE.Victory:
                 break;
@@ -279,7 +287,7 @@ public class CombatManager : MonoBehaviour
         if(_actions.Count >= Caracters.Length)
         {
             _actions.Clear();
-            ChangeState(BATTLESTATE.EnemyTurn);
+            ChangeState(BATTLESTATE.EndOfPlayerTurn);
         }
     }
 
@@ -391,4 +399,54 @@ public class CombatManager : MonoBehaviour
             }
         }
     }
+
+    #region Status
+
+    private void CheckPlayerStatus()
+    {
+        foreach (PlayableCaracter caracterRef in _caracters)
+        {
+            foreach(StatusFx effect in caracterRef.currentStatus.Keys)
+            {
+                if (effect.HasEndRoundFx)
+                {
+                    effect.ApplyEffect(caracterRef);
+                }
+                if (effect.LoseStackOnEndRound)
+                {
+                    caracterRef.currentStatus[effect]--;
+                }
+                if (caracterRef.currentStatus[effect] <= 0)
+                {
+                    caracterRef.currentStatus.Remove(effect);
+                }
+            }
+        }
+        ChangeState(BATTLESTATE.EnemyTurn);
+    }
+
+    private void CheckEnemyStatus()
+    {
+        foreach (Enemy enemyRef in _enemies)
+        {
+            foreach (StatusFx effect in enemyRef.currentStatus.Keys)
+            {
+                if (effect.HasEndRoundFx)
+                {
+                    effect.ApplyEffect(enemyRef);
+                }
+                if (effect.LoseStackOnEndRound)
+                {
+                    enemyRef.currentStatus[effect]--;
+                }
+                if (enemyRef.currentStatus[effect] <= 0)
+                {
+                    enemyRef.currentStatus.Remove(effect);
+                }
+            }
+        }
+        ChangeState(BATTLESTATE.PlayerTurn);
+    }
+
+    #endregion
 }

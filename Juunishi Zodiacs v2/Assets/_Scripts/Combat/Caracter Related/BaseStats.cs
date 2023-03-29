@@ -44,11 +44,13 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     [SerializeField] private CaracterCreation myCaracter;
     [SerializeField] protected int _caracterNumber;
     [SerializeField] protected GameEvent takeDamageEV;
+    [SerializeField] bool isShielded;
 
     public Dictionary<StatusFx, int> currentStatus = new Dictionary<StatusFx, int>();
 
 
     public CaracterCreation MyCaracter { get => myCaracter; set => myCaracter = value; }
+    public bool IsShielded { get => isShielded; set => isShielded = value; }
 
     protected virtual void Start()
     {
@@ -72,8 +74,16 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
 
     public virtual void TakeDamage(int dmToTake, DAMAGETYPE dmType)
     {
-        myCaracter.HpMax.value -= dmToTake;
-        takeDamageEV.Raise();
+        if (IsShielded == false)
+        {
+            myCaracter.HpMax.value -= dmToTake;
+            takeDamageEV.Raise();
+        }
+        else
+        {
+            IsShielded = false;
+        }
+        
     }
 
     public virtual void HealCaracter(int healingAmount)

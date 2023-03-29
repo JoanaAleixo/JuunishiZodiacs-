@@ -19,5 +19,5 @@ public abstract class StatusFx
     public bool LoseStackOnEndRound { get => loseStackOnEndRound; set => loseStackOnEndRound = value; }
     public bool IsBuff { get => isBuff; set => isBuff = value; }
 
-    public abstract void ApplyEffect(PlayableCaracter chara);
+    public abstract void ApplyEffect(BaseStats chara);
 }
