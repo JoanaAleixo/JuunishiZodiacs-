@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.TextCore.Text;
 
 public enum ELEMENT
 {
@@ -76,7 +77,7 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     {
         if (IsShielded == false)
         {
-            myCaracter.HpMax.value -= dmToTake;
+            myCaracter.HpMax.value -= dmToTake * ElementInteractions.CheckInteraction(MyCaracter.Type, dmType); ;
             takeDamageEV.Raise();
         }
         else
