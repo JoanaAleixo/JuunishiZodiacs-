@@ -36,10 +36,16 @@ public class DialogUIManager : MonoBehaviour
     [SerializeField] Image _placeBackgroundUI;
     [SerializeField] Image _namePlace;
 
+    [Header("Phone")]
+    [SerializeField] Image _phoneUI;
+    bool _phoneIsOpen = false;
+    bool _canOpenPhone = true;
+
     #endregion
 
     #region Propriedades
     public Image[] CharactersPositions { get => _charactersPositions; set => _charactersPositions = value; }
+    public bool CanOpenPhone { get => _canOpenPhone; set => _canOpenPhone = value; }
 
     #endregion
 
@@ -171,5 +177,23 @@ public class DialogUIManager : MonoBehaviour
 
     #endregion
 
+    public void PhoneButton()
+    {
+        if(CanOpenPhone == true)
+        {
+            if (_phoneIsOpen == true)
+            {
+                _phoneUI.gameObject.SetActive(false);
+                _phoneIsOpen = false;
+            }
+            else
+            {
+                _phoneUI.gameObject.SetActive(true);
+                _phoneIsOpen = true;
+            }
+
+        }
+       
+    }
   
 }
