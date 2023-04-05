@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System;
+using TMPro;
 
 enum BATTLESTATE
 {
@@ -56,6 +57,7 @@ public class CombatManager : MonoBehaviour
     [SerializeReference] Modifiers[] temporaryMods;
     [SerializeField] GameObject[] temporaryTargets;
     [SerializeField] int tempEnemy = 0;
+    [SerializeField] GameObject FloatingDamagePre;
 
     public int SelectedCaracter { get => _selectedCaracter; set { ChangeSelectedCaracter(_selectedCaracter, value);} }
 
@@ -155,7 +157,6 @@ public class CombatManager : MonoBehaviour
                 {
                     uIManager.LockCaracterSelection();
                     uIManager.CloseActionMenu();
-                    Debug.Log("enemyturn");
                     Enemies[tempEnemy].ChoseAbility();
                 }
                 break;
@@ -287,7 +288,7 @@ public class CombatManager : MonoBehaviour
         if(_actions.Count >= Caracters.Length)
         {
             _actions.Clear();
-            ChangeState(BATTLESTATE.EndOfPlayerTurn);
+            StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EndOfPlayerTurn,2.5f));
         }
     }
 
@@ -313,7 +314,7 @@ public class CombatManager : MonoBehaviour
         }
         _modifiers.Clear();
         tempEnemy++;
-        ChangeState(BATTLESTATE.EnemyTurn);
+        StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EnemyTurn, 3));
     }
 
     #endregion
@@ -325,6 +326,9 @@ public class CombatManager : MonoBehaviour
 
     public void EnemyAbility(Ability ab)
     {
+
+        //Lógica de dizer qual é a abilidade que está a ser ultilizada pelo inimigo
+
         _actions.Add(ab);
         temporaryMods = ab.Mods.ToArray();
         EnemyTargetAbility();
@@ -422,7 +426,7 @@ public class CombatManager : MonoBehaviour
                 }
             }
         }
-        ChangeState(BATTLESTATE.EnemyTurn);
+        StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EnemyTurn, 3));
     }
 
     private void CheckEnemyStatus()
@@ -449,4 +453,16 @@ public class CombatManager : MonoBehaviour
     }
 
     #endregion
+
+    public void SpawnFloatingDamage(Vector2 pos, int damage)
+    {
+        GameObject fD = Instantiate(FloatingDamagePre, pos, Quaternion.identity);
+        fD.GetComponent<TextMeshPro>().text = "-" + damage.ToString();
+    }
+
+    private IEnumerator ChangeStateWithDelay(BATTLESTATE newState, float secs)
+    {
+        yield return new WaitForSeconds(secs);
+        ChangeState(newState);
+    }
 }

@@ -9,11 +9,11 @@ C:\Program Files\Unity\Hub\Editor\2021.3.10f1\Editor\Unity.exe
 -batchMode
 -noUpm
 -name
-AssetImportWorker2
+AssetImportWorker5
 -projectPath
 E:/Juunishi_Zodiacs/Juunishi Zodiacs v2
 -logFile
-Logs/AssetImportWorker2.log
+Logs/AssetImportWorker5.log
 -srvPort
 60448
 Successfully changed project path to: E:/Juunishi_Zodiacs/Juunishi Zodiacs v2
@@ -47,7 +47,7 @@ E:/Juunishi_Zodiacs/Juunishi Zodiacs v2
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 91.77 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 118.42 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.10f1 (1c7d0df0160b)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/Resources/UnitySubsystems
@@ -63,87 +63,87 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56636
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56164
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.015129 seconds.
+Registered in 0.014436 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 92.66 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 60.53 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.143 seconds
+- Completed reload, in  1.098 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1144ms)
-		BeginReloadAssembly (154ms)
+	ReloadAssembly (1098ms)
+		BeginReloadAssembly (179ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (774ms)
-			LoadAssemblies (148ms)
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (667ms)
+			LoadAssemblies (171ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (241ms)
+			SetupTypeCache (198ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (48ms)
-			SetupLoadedEditorAssemblies (402ms)
+			RebuildScriptCaches (42ms)
+			SetupLoadedEditorAssemblies (347ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (14ms)
+				InitializePlatformSupportModulesInManaged (10ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (93ms)
+				RefreshPlugins (61ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (227ms)
-				ProcessInitializeOnLoadMethodAttributes (66ms)
+				ProcessInitializeOnLoadAttributes (202ms)
+				ProcessInitializeOnLoadMethodAttributes (72ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.009526 seconds.
+Registered in 0.010017 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 60.23 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 73.62 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.510 seconds
+- Completed reload, in  1.530 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1512ms)
-		BeginReloadAssembly (177ms)
+	ReloadAssembly (1531ms)
+		BeginReloadAssembly (188ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (13ms)
+			DisableScriptedObjects (7ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (25ms)
+			CreateAndSetChildDomain (28ms)
 		EndReloadAssembly (1173ms)
-			LoadAssemblies (144ms)
+			LoadAssemblies (153ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (374ms)
+			SetupTypeCache (298ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (70ms)
-			SetupLoadedEditorAssemblies (536ms)
+			RebuildScriptCaches (83ms)
+			SetupLoadedEditorAssemblies (599ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (60ms)
-				BeforeProcessingInitializeOnLoad (104ms)
-				ProcessInitializeOnLoadAttributes (287ms)
-				ProcessInitializeOnLoadMethodAttributes (63ms)
+				RefreshPlugins (74ms)
+				BeforeProcessingInitializeOnLoad (102ms)
+				ProcessInitializeOnLoadAttributes (326ms)
+				ProcessInitializeOnLoadMethodAttributes (75ms)
 				AfterProcessingInitializeOnLoad (14ms)
-				EditorAssembliesLoaded (1ms)
+				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 0.63 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.23 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2546 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 33 unused Assets / (56.1 KB). Loaded Objects now: 3009.
-Memory consumption went from 113.4 MB to 113.3 MB.
-Total: 4.217700 ms (FindLiveObjects: 0.317200 ms CreateObjectMapping: 0.245200 ms MarkObjects: 3.540900 ms  DeleteObjects: 0.113500 ms)
+Memory consumption went from 113.3 MB to 113.3 MB.
+Total: 5.275400 ms (FindLiveObjects: 0.327900 ms CreateObjectMapping: 0.274600 ms MarkObjects: 4.563600 ms  DeleteObjects: 0.108100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -157,30 +157,41 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 108108.312088 seconds.
-  path: Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Outfit 1/ex_Akira_v1_1mtfeliz.png
-  artifactKey: Guid(867fa0951aa062b4e857d143affcab9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Outfit 1/ex_Akira_v1_1mtfeliz.png using Guid(867fa0951aa062b4e857d143affcab9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c67c8a0a0d09fc595a036f29bd7fb99c') in 0.483989 seconds 
+  Time since last request: 108268.906774 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/ex_Fumiko_v1_3surpreso.png
+  artifactKey: Guid(8d5ddb98c98465f48a10f265f3722c8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/ex_Fumiko_v1_3surpreso.png using Guid(8d5ddb98c98465f48a10f265f3722c8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ba5f3ea0eb0ba71799e2b54141ef3a2') in 0.398128 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Outfit 1/ex_Akira_v1_8serio.png
-  artifactKey: Guid(02581caf9fb388a4cab8409cca39f0a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Outfit 1/ex_Akira_v1_8serio.png using Guid(02581caf9fb388a4cab8409cca39f0a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecf59959718bd47ba71bff200962a6c2') in 0.333013 seconds 
+  Time since last request: 0.000031 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/ex_Fumiko_v2_2feliz.png
+  artifactKey: Guid(4865527827cee9e45a78052df871173d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/ex_Fumiko_v2_2feliz.png using Guid(4865527827cee9e45a78052df871173d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '427fde36f29e2449c9e524702a76877c') in 0.161807 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Outfit 1/ex_Akira_v1_6choro.png
-  artifactKey: Guid(93adc3ff0b4ed154786b2a48f843273e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Outfit 1/ex_Akira_v1_6choro.png using Guid(93adc3ff0b4ed154786b2a48f843273e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62031508d368af45ea25165ec7cdb92d') in 0.281885 seconds 
+  Time since last request: 30.704699 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_damage_fire.png
+  artifactKey: Guid(02c9b0e38126c644e9bf257405d08611) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_damage_fire.png using Guid(02c9b0e38126c644e9bf257405d08611) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aad92fe0cc930ea26da6170a7f4fd76d') in 0.325361 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Outfit 1/ex_Akira_v1_3surpreso.png
-  artifactKey: Guid(62673a48404c5f84999c22a88bbc46d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Outfit 1/ex_Akira_v1_3surpreso.png using Guid(62673a48404c5f84999c22a88bbc46d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45fd1e71141b16618280ac308cc3ba5f') in 0.199094 seconds 
+  Time since last request: 0.000026 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_damage_water.png
+  artifactKey: Guid(38f875fef3b8eed42967ae791c8f0905) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_damage_water.png using Guid(38f875fef3b8eed42967ae791c8f0905) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67a781990f57640bd8e7ff2650cde2ea') in 0.248334 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_healing.png
+  artifactKey: Guid(40aca81eb6d20274caadd5947ed377e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_healing.png using Guid(40aca81eb6d20274caadd5947ed377e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35326f4462fcd31362850bd26bbc713c') in 0.273881 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_damage_physical.png
+  artifactKey: Guid(6881ebc50f7bd6445ac2840f492a53f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_damage_physical.png using Guid(6881ebc50f7bd6445ac2840f492a53f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e7e88eefdeb97d335a4d4432e327c16') in 0.207425 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
 AssetImportWorker is now disconnected from the server
 Process exiting
 Exiting without the bug reporter. Application will terminate with return code 0

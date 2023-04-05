@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.TextCore.Text;
@@ -46,6 +47,21 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     [SerializeField] protected int _caracterNumber;
     [SerializeField] protected GameEvent takeDamageEV;
     [SerializeField] bool isShielded;
+    [SerializeField] SpriteRenderer sRenderer;
+    [SerializeField] string spritePath;
+
+    [Header("Sprites")]
+
+    [SerializeField] Sprite OriginalSp;
+    [SerializeField] Sprite damageEarthSp;
+    [SerializeField] Sprite damageFireSp;
+    [SerializeField] Sprite damageMetalSp;
+    [SerializeField] Sprite damagePhysicalSp;
+    [SerializeField] Sprite damagePlantSp;
+    [SerializeField] Sprite damageWaterSp;
+    [SerializeField] Sprite deathSp;
+    [SerializeField] Sprite healingSp;
+
 
     public Dictionary<StatusFx, int> currentStatus = new Dictionary<StatusFx, int>();
 
@@ -57,6 +73,9 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     {
         combatMg = CombatManager.combatInstance;
         uIManager = CombatUiManager.uiInstance;
+        sRenderer = GetComponent<SpriteRenderer>();
+        spritePath = AssetDatabase.GetAssetPath(GetComponent<SpriteRenderer>().sprite);
+        spritePath = spritePath.Replace(".png", "");
         //StartCoroutine(WaitASec());
     }
 
@@ -77,7 +96,14 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     {
         if (IsShielded == false)
         {
-            myCaracter.HpMax.value -= dmToTake * ElementInteractions.CheckInteraction(MyCaracter.Type, dmType); ;
+            float val = ElementInteractions.CheckInteraction(MyCaracter.Type, dmType);
+            if(val != 0)
+            {
+                float finalDamage = dmToTake * val;
+                myCaracter.HpMax.value -= (int)finalDamage;
+                SpriteChange(dmType);
+                combatMg.SpawnFloatingDamage(transform.position + new Vector3(2,0,0), (int)finalDamage);
+            }
             takeDamageEV.Raise();
         }
         else
@@ -90,6 +116,7 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     public virtual void HealCaracter(int healingAmount)
     {
         myCaracter.HpMax.value += healingAmount;
+        StartCoroutine(SpriteChangor(healingSp));
         if (myCaracter.HpMax.value > myCaracter.HpMax.resetValue)
         {
             myCaracter.HpMax.value = myCaracter.HpMax.resetValue;
@@ -97,5 +124,41 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
         takeDamageEV.Raise();
     }
 
-    
+    private void SpriteChange(DAMAGETYPE dmType)
+    {
+        switch (dmType)
+        {
+            case DAMAGETYPE.Physical:
+                StartCoroutine(SpriteChangor(damagePhysicalSp));
+                break;
+            case DAMAGETYPE.Fire:
+                StartCoroutine(SpriteChangor(damageFireSp));
+                break;
+            case DAMAGETYPE.Water:
+                StartCoroutine(SpriteChangor(damageWaterSp));
+                break;
+            case DAMAGETYPE.Rock:
+                StartCoroutine(SpriteChangor(damageEarthSp));
+                break;
+            case DAMAGETYPE.Nature:
+                StartCoroutine(SpriteChangor(damagePlantSp));
+                break;
+            case DAMAGETYPE.Metal:
+                StartCoroutine(SpriteChangor(damageMetalSp));
+                break;
+            default:    
+                break;
+        }
+    }
+
+    private IEnumerator SpriteChangor(Sprite sp)
+    {
+        sRenderer.sprite = sp; 
+        yield return new WaitForSeconds(1.5f);
+        sRenderer.sprite = OriginalSp;
+    }
+
+
 }
+
+// Asset bundle e Addressables
