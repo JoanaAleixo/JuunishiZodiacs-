@@ -154,7 +154,7 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     private IEnumerator SpriteChangor(Sprite sp)
     {
         sRenderer.sprite = sp; 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         sRenderer.sprite = OriginalSp;
     }
 

@@ -10,7 +10,8 @@ public enum DAMAGETYPE
     Water,
     Rock,
     Nature,
-    Metal
+    Metal,
+    None
 }
 
 [System.Serializable]

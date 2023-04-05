@@ -135,18 +135,22 @@ public class CombatManager : MonoBehaviour
                 }
                 uIManager.EnableCaracterSelection();
                 uIManager.UnlockCaracterSelection();
+                uIManager.CloseAbilityUsedPrompt();
                 break;
             case BATTLESTATE.SelectingTarget:
                 uIManager.LockCaracterSelection();
                 uIManager.DisableCaracterSelection();
                 break;
             case BATTLESTATE.ExecuteAbility:
+                uIManager.CloseAbilityInfo();
+                uIManager.ShowAbilityUsedPrompt(_actions[_actions.Count-1], _caracters[SelectedCaracter]);
                 ExecuteModifiers();
                 break;
             case BATTLESTATE.EndOfPlayerTurn:
                 CheckPlayerStatus();
                 break;
             case BATTLESTATE.EnemyTurn:
+                uIManager.CloseAbilityUsedPrompt();
                 if (CheckIfRoundDone())
                 {
                     _actions.Clear();
@@ -161,6 +165,7 @@ public class CombatManager : MonoBehaviour
                 }
                 break;
             case BATTLESTATE.EnemyExecuteAbility:
+                uIManager.ShowAbilityUsedPrompt(_actions[_actions.Count - 1], Enemies[tempEnemy]);
                 ExecuteEnemyModifiers();
                 break;
             case BATTLESTATE.EndOfEnemyTurn:
@@ -184,6 +189,7 @@ public class CombatManager : MonoBehaviour
     private void ChangeSelectedCaracter(int oldValue, int newValue)
     {
         _selectedCaracter = newValue;
+        uIManager.CloseSelectedCaracter(oldValue);
         uIManager.OpenActionMenu();
     }
 
@@ -191,9 +197,14 @@ public class CombatManager : MonoBehaviour
 
     #region AbilitySelection
 
+    public void ShowAbilityInfo(int _abilityNumb)
+    {
+        uIManager.OpenAbilityInfo(_caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb]);
+    }
+
     public void SelectAbility(int _abilityNumb)   // Quando um botão de habilidade é clicado
     {
-
+        
         if (_abilityNumb >= 0 && _abilityNumb <= 2)
         {
             _actions.Add(_caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb]);
@@ -220,7 +231,8 @@ public class CombatManager : MonoBehaviour
                 case TARGETING.self:
                         temporaryTargets = new GameObject[] { _caracters[SelectedCaracter].gameObject };
                         AddToMods(temporaryMods[tempIndex], temporaryTargets);
-                    break;
+                        uIManager.CloseSelectedCaracter(SelectedCaracter);
+                        break;
                 case TARGETING.multipleAlly:
                         temporaryTargets = new GameObject[_caracters.Length];
                         for (int u = 0; u < _caracters.Length; u++)
@@ -228,6 +240,7 @@ public class CombatManager : MonoBehaviour
                             temporaryTargets[u] = _caracters[u].gameObject;
                         }
                         AddToMods(temporaryMods[tempIndex], temporaryTargets);
+                        uIManager.CloseSelectedCaracter(SelectedCaracter);
                     break;
                 case TARGETING.multipleEnemy:
                         temporaryTargets = new GameObject[Enemies.Length];
@@ -236,6 +249,7 @@ public class CombatManager : MonoBehaviour
                             temporaryTargets[u] = Enemies[u].gameObject;
                         }
                         AddToMods(temporaryMods[tempIndex], temporaryTargets);
+                        uIManager.CloseSelectedCaracter(SelectedCaracter);
                     break;
                 case TARGETING.singleEnemy:
                     if (temporaryTargets != null)
@@ -288,7 +302,7 @@ public class CombatManager : MonoBehaviour
         if(_actions.Count >= Caracters.Length)
         {
             _actions.Clear();
-            StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EndOfPlayerTurn,2.5f));
+            StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EndOfPlayerTurn,0));
         }
     }
 
@@ -303,7 +317,7 @@ public class CombatManager : MonoBehaviour
             _modifiers[i].ModifierToExecute.ExecuteMod(_modifiers[i].Targets);
         }
         _modifiers.Clear();
-        ChangeState(BATTLESTATE.PlayerTurn);
+        StartCoroutine(ChangeStateWithDelay(BATTLESTATE.PlayerTurn,3));
     }
 
     private void ExecuteEnemyModifiers()     // Executa todos os modifiers na lista de modifiers dos inimigos
@@ -314,7 +328,7 @@ public class CombatManager : MonoBehaviour
         }
         _modifiers.Clear();
         tempEnemy++;
-        StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EnemyTurn, 3));
+        StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EnemyTurn,3));
     }
 
     #endregion
@@ -375,7 +389,7 @@ public class CombatManager : MonoBehaviour
             temporaryTargets = null;
             temporaryMods = null;
             tempIndex = 0;
-            ChangeState(BATTLESTATE.EnemyExecuteAbility);
+            StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EnemyExecuteAbility, 2));
         }
     }
 
@@ -408,10 +422,12 @@ public class CombatManager : MonoBehaviour
 
     private void CheckPlayerStatus()
     {
+        bool isAny = false;
         foreach (PlayableCaracter caracterRef in _caracters)
         {
             foreach(StatusFx effect in caracterRef.currentStatus.Keys)
             {
+                isAny = true;
                 if (effect.HasEndRoundFx)
                 {
                     effect.ApplyEffect(caracterRef);
@@ -426,7 +442,15 @@ public class CombatManager : MonoBehaviour
                 }
             }
         }
-        StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EnemyTurn, 3));
+        if(isAny == true)
+        {
+            StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EnemyTurn, 3));
+        }
+        else
+        {
+            ChangeState(BATTLESTATE.EnemyTurn);
+        }
+        
     }
 
     private void CheckEnemyStatus()
