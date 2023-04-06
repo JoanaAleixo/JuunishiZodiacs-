@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2021.3/staging' branch; Version is '2021.3.10f1 (1c7d0df0160b) revision 1867021'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22621) 64bit Professional' Language: 'pt' Physical Memory: 16221 MB
+OS: 'Windows 10  (10.0.19044) 64bit Core' Language: 'en' Physical Memory: 16348 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2021.3.10f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/Aluno/Documents/Kings/Juunishi/Juunishi Zodiacs v2
+E:/Juunishi_Zodiacs/Juunishi Zodiacs v2
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58147
-Successfully changed project path to: C:/Users/Aluno/Documents/Kings/Juunishi/Juunishi Zodiacs v2
-C:/Users/Aluno/Documents/Kings/Juunishi/Juunishi Zodiacs v2
+57967
+Successfully changed project path to: E:/Juunishi_Zodiacs/Juunishi Zodiacs v2
+E:/Juunishi_Zodiacs/Juunishi Zodiacs v2
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,117 +47,103 @@ C:/Users/Aluno/Documents/Kings/Juunishi/Juunishi Zodiacs v2
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 33.18 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 55.26 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.10f1 (1c7d0df0160b)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/Aluno/Documents/Kings/Juunishi/Juunishi Zodiacs v2/Assets
+[Subsystems] Discovering subsystems at path E:/Juunishi_Zodiacs/Juunishi Zodiacs v2/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3060 Ti (ID=0x2489)
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
     Vendor:   NVIDIA
-    VRAM:     8038 MB
-    Driver:   31.0.15.2824
+    VRAM:     8081 MB
+    Driver:   31.0.15.3129
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56320
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56576
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Registered in 0.004219 seconds.
-Native extension for UWP target not found
+Registered in 0.007854 seconds.
 Native extension for WindowsStandalone target not found
-[usbmuxd] Start listen thread
-[usbmuxd] Listen thread started
-Native extension for iOS target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 30.87 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 54.92 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.414 seconds
+- Completed reload, in  0.683 seconds
 Domain Reload Profiling:
-	ReloadAssembly (414ms)
-		BeginReloadAssembly (48ms)
+	ReloadAssembly (683ms)
+		BeginReloadAssembly (79ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (295ms)
-			LoadAssemblies (48ms)
+		EndReloadAssembly (497ms)
+			LoadAssemblies (77ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (69ms)
+			SetupTypeCache (110ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (20ms)
-			SetupLoadedEditorAssemblies (173ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (302ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (44ms)
+				InitializePlatformSupportModulesInManaged (11ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (31ms)
+				RefreshPlugins (55ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (67ms)
-				ProcessInitializeOnLoadMethodAttributes (29ms)
+				ProcessInitializeOnLoadAttributes (186ms)
+				ProcessInitializeOnLoadMethodAttributes (48ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003484 seconds.
+Registered in 0.006676 seconds.
 Begin MonoManager ReloadAssembly
-Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
-Native extension for iOS target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 34.98 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 42.30 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.857 seconds
+- Completed reload, in  1.128 seconds
 Domain Reload Profiling:
-	ReloadAssembly (858ms)
-		BeginReloadAssembly (189ms)
+	ReloadAssembly (1129ms)
+		BeginReloadAssembly (126ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (120ms)
-		EndReloadAssembly (580ms)
-			LoadAssemblies (62ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (876ms)
+			LoadAssemblies (100ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (144ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (38ms)
-			SetupLoadedEditorAssemblies (305ms)
+			SetupTypeCache (256ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (54ms)
+			SetupLoadedEditorAssemblies (409ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (18ms)
+				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (35ms)
-				BeforeProcessingInitializeOnLoad (50ms)
-				ProcessInitializeOnLoadAttributes (166ms)
-				ProcessInitializeOnLoadMethodAttributes (32ms)
-				AfterProcessingInitializeOnLoad (4ms)
+				RefreshPlugins (42ms)
+				BeforeProcessingInitializeOnLoad (75ms)
+				ProcessInitializeOnLoadAttributes (231ms)
+				ProcessInitializeOnLoadMethodAttributes (47ms)
+				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (4ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2549 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 33 unused Assets / (56.1 KB). Loaded Objects now: 3014.
-Memory consumption went from 113.4 MB to 113.4 MB.
-Total: 3.162300 ms (FindLiveObjects: 0.424100 ms CreateObjectMapping: 0.116000 ms MarkObjects: 2.552500 ms  DeleteObjects: 0.065700 ms)
+Unloading 33 unused Assets / (56.2 KB). Loaded Objects now: 3012.
+Memory consumption went from 113.3 MB to 113.3 MB.
+Total: 2.732000 ms (FindLiveObjects: 0.230100 ms CreateObjectMapping: 0.190000 ms MarkObjects: 2.238800 ms  DeleteObjects: 0.072200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -171,136 +157,136 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 173044.730924 seconds.
-  path: Assets/_ScriptableObjects/CaractersSO/Enemies/EnemySet1/PrefEnemySet1.prefab
-  artifactKey: Guid(85d78676966196f40980beb4d4739e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_ScriptableObjects/CaractersSO/Enemies/EnemySet1/PrefEnemySet1.prefab using Guid(85d78676966196f40980beb4d4739e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd23414c89a5aebfa9e752a6402f6f2f8') in 0.189521 seconds 
+  Time since last request: 358982.314380 seconds.
+  path: Assets/_Scenes/CombatScene.unity
+  artifactKey: Guid(6d74d0b000e035b4cb9939e40f9d155b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scenes/CombatScene.unity using Guid(6d74d0b000e035b4cb9939e40f9d155b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5c1a95b70b31e3ad630d03aaed40412') in 0.011450 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.620677 seconds.
-  path: Assets/_ScriptableObjects/CaractersSO/Enemies/EnemySet1/PrefEnemySet1.prefab
-  artifactKey: Guid(85d78676966196f40980beb4d4739e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_ScriptableObjects/CaractersSO/Enemies/EnemySet1/PrefEnemySet1.prefab using Guid(85d78676966196f40980beb4d4739e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c850d32aedb9a389a1584d40f9074fec') in 0.093038 seconds 
+  Time since last request: 48.495532 seconds.
+  path: Assets/_Scripts/Combat/HoverSpiritSprite.cs
+  artifactKey: Guid(21ab1b554fa40ac4ab8455366306696e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scripts/Combat/HoverSpiritSprite.cs using Guid(21ab1b554fa40ac4ab8455366306696e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f15b098c73bfa93c34f9371cf635cb24') in 0.043032 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.545665 seconds.
-  path: Assets/_ScriptableObjects/CaractersSO/Enemies/EnemySet1/PrefEnemySet1.prefab
-  artifactKey: Guid(85d78676966196f40980beb4d4739e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_ScriptableObjects/CaractersSO/Enemies/EnemySet1/PrefEnemySet1.prefab using Guid(85d78676966196f40980beb4d4739e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c885673d7fea4e7bc96dc5a0991c042b') in 0.087538 seconds 
+  Time since last request: 107.471929 seconds.
+  path: Assets/_Scripts/Combat/HoverSpiritSprite.cs
+  artifactKey: Guid(21ab1b554fa40ac4ab8455366306696e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scripts/Combat/HoverSpiritSprite.cs using Guid(21ab1b554fa40ac4ab8455366306696e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '240b2bc05aba8b5ad8e1bf827f4e646d') in 0.002859 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.778704 seconds.
-  path: Assets/_ScriptableObjects/CaractersSO/Enemies/EnemySet1/PrefEnemySet1.prefab
-  artifactKey: Guid(85d78676966196f40980beb4d4739e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_ScriptableObjects/CaractersSO/Enemies/EnemySet1/PrefEnemySet1.prefab using Guid(85d78676966196f40980beb4d4739e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6efe1de5743a52e3b2766b03da46069') in 0.083145 seconds 
+  Time since last request: 3.275315 seconds.
+  path: Assets/_Scripts/Combat/HoverSpiritSprite.cs
+  artifactKey: Guid(21ab1b554fa40ac4ab8455366306696e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scripts/Combat/HoverSpiritSprite.cs using Guid(21ab1b554fa40ac4ab8455366306696e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3184375adf08b8e8bf69cb2ed98ce1b') in 0.002380 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007437 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.101 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1101ms)
+		BeginReloadAssembly (146ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (830ms)
+			LoadAssemblies (111ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (234ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (56ms)
+			SetupLoadedEditorAssemblies (382ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (80ms)
+				ProcessInitializeOnLoadAttributes (234ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.13 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2526 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (24.7 KB). Loaded Objects now: 3016.
+Memory consumption went from 111.3 MB to 111.3 MB.
+Total: 2.725500 ms (FindLiveObjects: 0.194700 ms CreateObjectMapping: 0.107900 ms MarkObjects: 2.399700 ms  DeleteObjects: 0.022000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.940005 seconds.
-  path: Assets/_ScriptableObjects/CaractersSO/Enemies/EnemySet1/PrefEnemySet1.prefab
-  artifactKey: Guid(85d78676966196f40980beb4d4739e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_ScriptableObjects/CaractersSO/Enemies/EnemySet1/PrefEnemySet1.prefab using Guid(85d78676966196f40980beb4d4739e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec8431fbf41f6e29a6eaa89ef528261b') in 0.084186 seconds 
+  Time since last request: 33.486108 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_Bar_Player_HP_darkRedVer.png
+  artifactKey: Guid(6684f7550b558c24880d877a089404d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_Bar_Player_HP_darkRedVer.png using Guid(6684f7550b558c24880d877a089404d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1033e7f461114a8faf8fb713a3e702e9') in 0.332498 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.956825 seconds.
-  path: Assets/_ScriptableObjects/CaractersSO/Enemies/EnemySet1/PrefEnemySet1.prefab
-  artifactKey: Guid(85d78676966196f40980beb4d4739e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_ScriptableObjects/CaractersSO/Enemies/EnemySet1/PrefEnemySet1.prefab using Guid(85d78676966196f40980beb4d4739e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6127df7f996e3fc496c3bd84009e7ec6') in 0.088042 seconds 
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_Menu_Action_Explanation.png
+  artifactKey: Guid(faa361a2f2f1bc94bb767b6bc3bc52f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_Menu_Action_Explanation.png using Guid(faa361a2f2f1bc94bb767b6bc3bc52f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca8ba4df6483330907f1ce82dca4238b') in 0.025771 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 45.577139 seconds.
-  path: Assets/_ScriptableObjects/CaractersSO/Enemies/EnemySet1/PrefEnemySet1.prefab
-  artifactKey: Guid(85d78676966196f40980beb4d4739e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_ScriptableObjects/CaractersSO/Enemies/EnemySet1/PrefEnemySet1.prefab using Guid(85d78676966196f40980beb4d4739e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a46da883c7d500b71422287daeeed3d7') in 0.081587 seconds 
+  Time since last request: 0.000036 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_icon_paralize.png
+  artifactKey: Guid(4766d1c1964e1f4458c6f0a99978c119) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_icon_paralize.png using Guid(4766d1c1964e1f4458c6f0a99978c119) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c75c4ba636496ec27788390a33e0e467') in 0.024223 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 21.566553 seconds.
-  path: Assets/Sprites/Characters/Full Body/Enemies/Ittan Momen/en_ittanMomen_water_damage_physical.png
-  artifactKey: Guid(ba77bb93d3737644f9ee956af5a12838) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Characters/Full Body/Enemies/Ittan Momen/en_ittanMomen_water_damage_physical.png using Guid(ba77bb93d3737644f9ee956af5a12838) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ce042d916cfbc119548a9b6c5671462') in 0.260956 seconds 
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_icon_healBlock.png
+  artifactKey: Guid(60714418ffaabb44a9549335c72e8008) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_icon_healBlock.png using Guid(60714418ffaabb44a9549335c72e8008) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47606b34fa7b6ff34d98ba82942fef1d') in 0.020587 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Sprites/Characters/Full Body/Enemies/Kameosa/en_kameosa_damage_fire.png
-  artifactKey: Guid(4281db3f00d0bcf4e865e2c2f3b21d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Characters/Full Body/Enemies/Kameosa/en_kameosa_damage_fire.png using Guid(4281db3f00d0bcf4e865e2c2f3b21d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8461dd62649d3b923257aa5b1a07bf5') in 0.133512 seconds 
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_isAttacking_Fumiko.png
+  artifactKey: Guid(7744ef44e7eaebd4083ab94716257c90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_isAttacking_Fumiko.png using Guid(7744ef44e7eaebd4083ab94716257c90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46fcc80f16e7ff2763abc7cc110337fa') in 0.035961 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_icon_rage.png
+  artifactKey: Guid(a35b255200525cf489be683260506348) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_icon_rage.png using Guid(a35b255200525cf489be683260506348) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64836b841c7773fd16c1acc3263ac269') in 0.021288 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_isAttacking_Akira.png
+  artifactKey: Guid(a5b1fa5daa8df534d9e94df1c0827e72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_isAttacking_Akira.png using Guid(a5b1fa5daa8df534d9e94df1c0827e72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba80ef0164d65a72b07e24cecfb799c4') in 0.035321 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_icon_protectiveWard.png
+  artifactKey: Guid(098b8ffc31921b948a4fc584639c1396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_icon_protectiveWard.png using Guid(098b8ffc31921b948a4fc584639c1396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c177915c392bf6216b4c098afa46222') in 0.030617 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000038 seconds.
-  path: Assets/Sprites/Characters/Full Body/Enemies/Kameosa/en_kameosa.png
-  artifactKey: Guid(d081aff5174e2364ab77e00485b170da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Characters/Full Body/Enemies/Kameosa/en_kameosa.png using Guid(d081aff5174e2364ab77e00485b170da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3920ed6550521a6f435447a3a0efb59') in 0.126344 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Sprites/Characters/Full Body/Enemies/Kameosa/en_kameosa_damage_earth.png
-  artifactKey: Guid(a0eae704220b0cf4c9f0cba01d9c718c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Characters/Full Body/Enemies/Kameosa/en_kameosa_damage_earth.png using Guid(a0eae704220b0cf4c9f0cba01d9c718c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ceed6090a21ef916977def3d394464c') in 0.122179 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Sprites/Characters/Full Body/Enemies/Kameosa/en_kameosa_damage_plant.png
-  artifactKey: Guid(13531647e83657c499f85ddcddc22d1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Characters/Full Body/Enemies/Kameosa/en_kameosa_damage_plant.png using Guid(13531647e83657c499f85ddcddc22d1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c0d97a4188ab1a89c7785932ff23832') in 0.131490 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Sprites/Characters/Full Body/Enemies/Kameosa/en_kameosa_damage_metal.png
-  artifactKey: Guid(d8c2b36d436787048b4259983e701d20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Characters/Full Body/Enemies/Kameosa/en_kameosa_damage_metal.png using Guid(d8c2b36d436787048b4259983e701d20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73dec8b12d436a07b80b6cfb70bbe280') in 0.126047 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.999274 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Sprite_Influence@2x.png
-  artifactKey: Guid(80f77a76467b24d1a856328afa989eb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Sprite_Influence@2x.png using Guid(80f77a76467b24d1a856328afa989eb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a1be9b19d85a03bfae6a650fadb538f') in 0.012604 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Sprite_Influence@4x.png
-  artifactKey: Guid(0e0d5e38f19194a978d2f42b0b806775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Light/Sprite_Influence@4x.png using Guid(0e0d5e38f19194a978d2f42b0b806775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3775beff9ee25d097b3a361a52230c22') in 0.011138 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Sprite_Influence@3x.png
-  artifactKey: Guid(7ce16c63ba627427cab935593c090e34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/Editor/Assets/SkinningModule/Icons/Selected/Sprite_Influence@3x.png using Guid(7ce16c63ba627427cab935593c090e34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89f9587c64981d16363429c8eb160b41') in 0.011451 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.269706 seconds.
-  path: Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Animal/fu_NezukoRat_Divine.png
-  artifactKey: Guid(879d64434b58790488e4631089afea4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Animal/fu_NezukoRat_Divine.png using Guid(879d64434b58790488e4631089afea4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bef8714274203aa527539605dd7c114') in 0.129488 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Sprites/Characters/Full Body/Gods/Sun&Moon/fu_SunGodess_2feliz.png
-  artifactKey: Guid(5b944841dea29884882abdbd850661a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Characters/Full Body/Gods/Sun&Moon/fu_SunGodess_2feliz.png using Guid(5b944841dea29884882abdbd850661a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a739d4103727c98945f77b6af42604f') in 0.182332 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Sprites/Characters/Full Body/Spirits/Others/fu_Uji_2feliz.png
-  artifactKey: Guid(3e43fa551f814574bbe23289288e3396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Characters/Full Body/Spirits/Others/fu_Uji_2feliz.png using Guid(3e43fa551f814574bbe23289288e3396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c65d9a64de7708db48dd1aeb105bf91') in 0.178169 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.032997 seconds.
-  path: Assets/Sprites/Characters/Full Body/Gods/Bosses/God of Words/fu_Fushimi_God_damage_metal.png
-  artifactKey: Guid(a40e7702fc3429a4e93613364b9c91ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Characters/Full Body/Gods/Bosses/God of Words/fu_Fushimi_God_damage_metal.png using Guid(a40e7702fc3429a4e93613364b9c91ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddba65d74c9f71f4fd1b90c98514eefe') in 0.184986 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Sprites/Characters/Full Body/Gods/Bosses/God of Words/fu_Fushimi_God_damage_water.png
-  artifactKey: Guid(30ad75d6e4e48734f9f6671621eba246) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Characters/Full Body/Gods/Bosses/God of Words/fu_Fushimi_God_damage_water.png using Guid(30ad75d6e4e48734f9f6671621eba246) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fadee395162b9cb141fa629346a04005') in 0.189463 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.092762 seconds.
-  path: Assets/Sprites/Characters/Full Body/Gods/Fushimi/fu_Fushimi_God_7irritado.png
-  artifactKey: Guid(498ee097c889e3045921c64b3b83e339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Characters/Full Body/Gods/Fushimi/fu_Fushimi_God_7irritado.png using Guid(498ee097c889e3045921c64b3b83e339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17de705cef0046af221e7ef6d03be18d') in 0.173482 seconds 
+  path: Assets/Sprites/Interface/Combat/comb_icon_taunting.png
+  artifactKey: Guid(75cfb981476849441893c1116f25accc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_icon_taunting.png using Guid(75cfb981476849441893c1116f25accc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aca359746e91684097e1056c20a0b2a7') in 0.032160 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting

@@ -11,8 +11,10 @@ enum STATUSTYPES
 public class StatusModifier : Modifiers
 {
     [SerializeField] int Quantity;
-    [SerializeField] string yes;
+    [SerializeField] bool isBuff;
     [SerializeField] STATUSTYPES status;
+
+    public bool IsBuff { get => isBuff; set => isBuff = value; }
 
     public override void Draw()
     {
@@ -33,9 +35,7 @@ public class StatusModifier : Modifiers
                 effect = new BoundFx(true, false, false, 5);
                 Quantity = 0;
                 break;
-                
         }
-
 
         if (TargetType == TARGETING.singleEnemy || TargetType == TARGETING.singleAlly || TargetType == TARGETING.self)
         {
