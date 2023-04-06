@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60273dc35858ef04aa950a041ea1afe0, type: 3}
+  m_Name: Nav_Dialog_4actAkiraRoom
+  m_EditorClassIdentifier: 
+  _background: {fileID: 21300000, guid: 5e6053543daa67447954340650c8358b, type: 3}
+  _backgroundName: {fileID: 21300000, guid: 3ae30f3a5e71f7f48be58514a7e85ea1, type: 3}
+  _dialogueStr:
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - I feel a weight on my chest, jumping and jumping.
+    - What the heck?...
+    myExpressions: 6
+    myFullbody: 6
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - I open my eyes and see a white toy with yellow dots in a shape of a mouse,
+      squealing and waving.
+    - His bell shakes while he jumps, causing more noise.
+    - It looks like a maneki neko but mouse version?... What am I seeing?
+    - '"What are you?... Is this a dream?..."'
+    myExpressions: 6
+    myFullbody: 6
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: c6b500cc3e0ece545ba93c57be0802ec, type: 2}
+    _dialogueMessages:
+    - '"I''ll give you the dream! Have you already forgotten?!!"'
+    - '"Get up! We have a lot to do!"'
+    myExpressions: 5
+    myFullbody: 5
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: f9cb58de52f6082498205d2f0ce3b776, type: 2}
+    _dialogueMessages:
+    - '"..... Nezuko? What the hell... is that?'
+    myExpressions: 1
+    myFullbody: 1
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: c6b500cc3e0ece545ba93c57be0802ec, type: 2}
+    _dialogueMessages:
+    - '"It''s my animal form, is there a problem?"'
+    - '"It costs me less energy to maintain and this way I can ride on your shoulders."'
+    - '"Yesterday we agreed to train, so get up and hurry up!"'
+    - '"I''m not your mother to tell you that..."'
+    myExpressions: 1
+    myFullbody: 1
+    myPositions: 0
+  _changeBrench: 0
+  _choiseDialogueToChange1: 0
+  _question1: 
+  _TrustValueToIncrese1: 0
+  _choiseDialogueToChange2: 0
+  _question2: 
+  _TrustValueToIncrese2: 0
+  _choiseDialogueToChange3: 0
+  _question3: 
+  _TrustValueToIncrese3: 0
+  _isEndDialogueOnNav: 0
+  _sceneTransition: 1
+  _nextScene: Nav_4_ActResidencial
