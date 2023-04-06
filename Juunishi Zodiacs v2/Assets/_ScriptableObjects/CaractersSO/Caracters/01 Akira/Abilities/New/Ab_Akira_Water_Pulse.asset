@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f78d8c580e23784b97cf833a9cb3662, type: 3}
+  m_Name: Ab_Akira_Water_Pulse
+  m_EditorClassIdentifier: 
+  _mods:
+  - rid: 3818156578291843075
+  description: Light Water damage to All Enemies
+  references:
+    version: 2
+    RefIds:
+    - rid: 3818156578291843075
+      type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
+      data:
+        _targetType: 4
+        _quantity: 15
+        _damageType: 2
