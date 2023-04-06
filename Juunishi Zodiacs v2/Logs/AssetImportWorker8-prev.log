@@ -9,13 +9,13 @@ C:\Program Files\Unity\Hub\Editor\2021.3.10f1\Editor\Unity.exe
 -batchMode
 -noUpm
 -name
-AssetImportWorker5
+AssetImportWorker8
 -projectPath
 C:/Users/pikia/OneDrive/Documentos/.Documentos/21-23 ETIC/Modulo 18 Projeto Final/Projeto em GitHub e Sourcetree/Juunishi Zodiacs v2
 -logFile
-Logs/AssetImportWorker5.log
+Logs/AssetImportWorker8.log
 -srvPort
-63589
+56743
 Successfully changed project path to: C:/Users/pikia/OneDrive/Documentos/.Documentos/21-23 ETIC/Modulo 18 Projeto Final/Projeto em GitHub e Sourcetree/Juunishi Zodiacs v2
 C:/Users/pikia/OneDrive/Documentos/.Documentos/21-23 ETIC/Modulo 18 Projeto Final/Projeto em GitHub e Sourcetree/Juunishi Zodiacs v2
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/pikia/OneDrive/Documentos/.Documentos/21-23 ETIC/Modulo 18 Projeto Fina
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 43.07 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 39.13 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.10f1 (1c7d0df0160b)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/Resources/UnitySubsystems
@@ -63,73 +63,73 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56328
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56600
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005452 seconds.
+Registered in 0.004505 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 40.27 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 35.31 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.514 seconds
+- Completed reload, in  0.456 seconds
 Domain Reload Profiling:
-	ReloadAssembly (515ms)
-		BeginReloadAssembly (63ms)
+	ReloadAssembly (456ms)
+		BeginReloadAssembly (57ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (359ms)
-			LoadAssemblies (61ms)
+		EndReloadAssembly (319ms)
+			LoadAssemblies (55ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (85ms)
+			SetupTypeCache (72ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (24ms)
-			SetupLoadedEditorAssemblies (208ms)
+			RebuildScriptCaches (23ms)
+			SetupLoadedEditorAssemblies (182ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
+				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (40ms)
+				RefreshPlugins (35ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (119ms)
-				ProcessInitializeOnLoadMethodAttributes (39ms)
+				ProcessInitializeOnLoadAttributes (105ms)
+				ProcessInitializeOnLoadMethodAttributes (34ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006925 seconds.
+Registered in 0.005660 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 39.27 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 36.08 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.864 seconds
+- Completed reload, in  0.769 seconds
 Domain Reload Profiling:
-	ReloadAssembly (864ms)
-		BeginReloadAssembly (98ms)
+	ReloadAssembly (770ms)
+		BeginReloadAssembly (89ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (23ms)
-		EndReloadAssembly (674ms)
-			LoadAssemblies (71ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (594ms)
+			LoadAssemblies (66ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (166ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (42ms)
-			SetupLoadedEditorAssemblies (352ms)
+			SetupTypeCache (140ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (319ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (39ms)
-				BeforeProcessingInitializeOnLoad (65ms)
-				ProcessInitializeOnLoadAttributes (196ms)
-				ProcessInitializeOnLoadMethodAttributes (42ms)
+				RefreshPlugins (36ms)
+				BeforeProcessingInitializeOnLoad (60ms)
+				ProcessInitializeOnLoadAttributes (177ms)
+				ProcessInitializeOnLoadMethodAttributes (36ms)
 				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -137,13 +137,13 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2566 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 33 unused Assets / (56.5 KB). Loaded Objects now: 3028.
 Memory consumption went from 114.9 MB to 114.8 MB.
-Total: 3.800500 ms (FindLiveObjects: 0.267400 ms CreateObjectMapping: 0.183800 ms MarkObjects: 3.243300 ms  DeleteObjects: 0.103500 ms)
+Total: 3.376400 ms (FindLiveObjects: 0.251800 ms CreateObjectMapping: 0.119100 ms MarkObjects: 2.915900 ms  DeleteObjects: 0.088100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -158,84 +158,25 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 334834.933671 seconds.
-  path: Assets/_AndrePlayGround/Dialogues/BackAlleyDialogue.asset
-  artifactKey: Guid(b2306b84952d03546ba3b3cbe592789d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_AndrePlayGround/Dialogues/BackAlleyDialogue.asset using Guid(b2306b84952d03546ba3b3cbe592789d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83d481b35a5eef8e378a695d48cfa365') in 0.063117 seconds 
+  Time since last request: 309866.497491 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/02 Fumiko/Abilities/New/Ab_Fumiko_Rock_Blast.asset
+  artifactKey: Guid(b20fe7f8d6499e346967f4f233079552) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/02 Fumiko/Abilities/New/Ab_Fumiko_Rock_Blast.asset using Guid(b20fe7f8d6499e346967f4f233079552) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '764f060a793dc212500084a518be96ce') in 0.047640 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/_AndrePlayGround/Dialogues/NearTemple.asset
-  artifactKey: Guid(559109e9c8cd9ea4ebb3fa7b510a1c35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_AndrePlayGround/Dialogues/NearTemple.asset using Guid(559109e9c8cd9ea4ebb3fa7b510a1c35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18b1a238d04639c70832ad400a9dfa3c') in 0.008776 seconds 
+  Time since last request: 201.557315 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/02 Fumiko/Abilities/New/Ab_Fumiko_Rock_Blast.asset
+  artifactKey: Guid(707c0662f5d31854d9960a31edfb11bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/02 Fumiko/Abilities/New/Ab_Fumiko_Rock_Blast.asset using Guid(707c0662f5d31854d9960a31edfb11bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29fcf8f0ec44d639756e2d98302557ee') in 0.003411 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/_AndrePlayGround/Dialogues/NearRiverDialogue.asset
-  artifactKey: Guid(81494b771a6f1794e8565ff745678878) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_AndrePlayGround/Dialogues/NearRiverDialogue.asset using Guid(81494b771a6f1794e8565ff745678878) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96bcfd221c4a5d75fa18f9ca7c590c48') in 0.013071 seconds 
+  Time since last request: 99.394477 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/02 Fumiko/Abilities/New/Ab_Fumiko_Mud_Shield.asset
+  artifactKey: Guid(d93aa074cf0e445429cda0d23012a6f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/02 Fumiko/Abilities/New/Ab_Fumiko_Mud_Shield.asset using Guid(d93aa074cf0e445429cda0d23012a6f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bda7d06e4b43dd8a110fa19ef0e79b5') in 0.004728 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 7.223835 seconds.
-  path: Assets/_AndrePlayGround/ExplorationSO/Place3.asset
-  artifactKey: Guid(75ad957c98f8d3e48af27dc296250221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_AndrePlayGround/ExplorationSO/Place3.asset using Guid(75ad957c98f8d3e48af27dc296250221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e26b4308e11380960a310513b3d93cb8') in 0.012960 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006719 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.24 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.853 seconds
-Domain Reload Profiling:
-	ReloadAssembly (854ms)
-		BeginReloadAssembly (113ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (32ms)
-		EndReloadAssembly (664ms)
-			LoadAssemblies (72ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (164ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (39ms)
-			SetupLoadedEditorAssemblies (341ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (11ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (62ms)
-				ProcessInitializeOnLoadAttributes (215ms)
-				ProcessInitializeOnLoadMethodAttributes (43ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.71 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2542 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 20 unused Assets / (24.6 KB). Loaded Objects now: 3034.
-Memory consumption went from 113.0 MB to 113.0 MB.
-Total: 3.494600 ms (FindLiveObjects: 0.212900 ms CreateObjectMapping: 0.145300 ms MarkObjects: 3.106200 ms  DeleteObjects: 0.028900 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+  Time since last request: 62.815347 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/02 Fumiko/Abilities/New/Ab_Fumiko_Rock_Wall.asset
+  artifactKey: Guid(4bf2e2e2675ed2849b28f0785076e4fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/02 Fumiko/Abilities/New/Ab_Fumiko_Rock_Wall.asset using Guid(4bf2e2e2675ed2849b28f0785076e4fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b12087f11a8dde78d91040086cf1253d') in 0.003005 seconds 
