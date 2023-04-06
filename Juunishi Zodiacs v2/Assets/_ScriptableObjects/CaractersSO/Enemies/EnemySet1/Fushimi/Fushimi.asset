@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 708ac14df4315de4ca53a133efb74328, type: 3}
-  m_Name: Enemy 1
+  m_Name: Fushimi
   m_EditorClassIdentifier: 
-  _name: Kameosa1
-  _type: 0
-  _hpMax: {fileID: 11400000, guid: 427532b71770e37419170a10ac2e8578, type: 2}
-  _shieldHp: {fileID: 11400000, guid: e45c2662b67cb8e43831736cc5d6b117, type: 2}
+  _name: Fushimi
+  _type: 3
+  _hpMax: {fileID: 11400000, guid: 743f139028e565648b44285d5101e238, type: 2}
+  _shieldHp: {fileID: 0}
   _physicalAbility: {fileID: 0}
   _abilities:
-  - {fileID: 11400000, guid: 4f9131f43d6387b4fb7f30ef949eab19, type: 2}
-  takeDamageEv: {fileID: 0}
+  - {fileID: 11400000, guid: 9d4e18388cee15a449f0d583af87202e, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  takeDamageEv: {fileID: 11400000, guid: 455d05a3b1835e646bd379b202d8c61e, type: 2}

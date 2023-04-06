@@ -29,6 +29,8 @@ public class CombatUiManager : MonoBehaviour
     [Header("AbilityUsed")]
     [SerializeField] GameObject _abilityUsed;
     [SerializeField] TextMeshProUGUI _abilityUsedText;
+    [Header("ChangeTurn")]
+    [SerializeField] GameObject _changeTurnObj;
 
     //[Header("Other")]
 
@@ -217,4 +219,9 @@ public class CombatUiManager : MonoBehaviour
     }
 
     #endregion
+
+    public void ChangeTurnUIPrompt()
+    {
+        _changeTurnObj.GetComponent<ChangeTurn>().ChangeTurnPrompt();
+    }
 }

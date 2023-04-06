@@ -58,6 +58,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] GameObject[] temporaryTargets;
     [SerializeField] int tempEnemy = 0;
     [SerializeField] GameObject FloatingDamagePre;
+    
 
     public int SelectedCaracter { get => _selectedCaracter; set { ChangeSelectedCaracter(_selectedCaracter, value);} }
 
@@ -442,15 +443,17 @@ public class CombatManager : MonoBehaviour
                 }
             }
         }
-        if(isAny == true)
+        /*if(isAny == true)
         {
             StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EnemyTurn, 3));
         }
         else
         {
             ChangeState(BATTLESTATE.EnemyTurn);
-        }
-        
+        }*/
+        uIManager.ChangeTurnUIPrompt();
+        StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EnemyTurn, 3));
+
     }
 
     private void CheckEnemyStatus()
@@ -473,7 +476,8 @@ public class CombatManager : MonoBehaviour
                 }
             }
         }
-        ChangeState(BATTLESTATE.PlayerTurn);
+        uIManager.ChangeTurnUIPrompt();
+        StartCoroutine(ChangeStateWithDelay(BATTLESTATE.PlayerTurn, 3));
     }
 
     #endregion
