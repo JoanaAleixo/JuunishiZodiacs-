@@ -391,14 +391,14 @@ public class DialogueManager : MonoBehaviour
                     SceneManager.LoadScene(DialogueTree1.NextScene);
 
                 }
+
             }
-            
+            if(DialogNumber < DialogueTree1.DialogueStr.Length)
+            {
+                UpdateOnUI();
 
-            UpdateOnUI();
-
-        }
-
-        
+            }
+        }     
     }
     #endregion
 
