@@ -15,7 +15,7 @@ public class NavigationManager : MonoBehaviour
     [SerializeField] GameObject _placesCanvas;
     [SerializeField] GameObject _DialogueCanvas;
 
-    int _currentPlaceIndex;
+    [SerializeField] int _currentPlaceIndex;
     ScriptablePlace _placesList;
 
     [Header("ElementsToUI")]

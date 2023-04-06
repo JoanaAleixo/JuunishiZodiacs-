@@ -51,23 +51,17 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
 
             _diaManager.DisableDialgue();
 
-            if (_navManager.PlacesList.DislocationStr[positionInButton].HasDialogue == true)
+           if (_navManager.PlacesList.DislocationStr[positionInButton].HasDialogue == true)
             {
-                ChangeButtonColorInvisible();
+              //  ChangeButtonColorInvisible();
                 _diaManager.MyDialogTree[0] = dialogue;
                 _diaManager.UpdateOnUI();
                 _navManager.DialogueCanvas.SetActive(true);
-                _diaManager.CanChangePlace = false;
-               
-
+                _diaManager.CanChangePlace = false;              
             }
-
             //abrir o novo Place
-            _navManager.NewPlace(changePlace);
-            
+            _navManager.NewPlace(changePlace);          
         }
-
-
     }
     public void ChangeButtonColorVisible()
     {
