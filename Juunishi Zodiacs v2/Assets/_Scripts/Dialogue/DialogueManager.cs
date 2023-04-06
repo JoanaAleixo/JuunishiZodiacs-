@@ -33,6 +33,7 @@ public class DialogueManager : MonoBehaviour
     Color DialogColor;
     Sprite SpriteBackground;
     Sprite Background;
+    Sprite NamePlace;
 
     //Variaveis de Expressoes
     Sprite ExpressionsToDisplay;
@@ -244,6 +245,8 @@ public class DialogueManager : MonoBehaviour
         SpriteBackground = DialogueTree1.DialogueStr[DialogNumber].MyCharacter.BackGround;
         Background = DialogueTree1.Background;
         DialogToDisplay = DialogueTree1.DialogueStr[DialogNumber].DialogueMessages[_positionInDialog]; //Referencia ao texto dos dialgos
+        NamePlace = DialogueTree1.BackgroundName;
+
 
         //encapsulamento das questoes
         _questionToUi1 = (DialogueTree1.Question1);
@@ -255,7 +258,7 @@ public class DialogueManager : MonoBehaviour
 
 
         //Atualização de informação no UI: Nome do personagem, Fonte do texto, Cor do nome, cor do Dialogo, Background, Expressoes de texto, background do texto do personagem.
-        DialogUIManager.instance.DialogOnScrene(CharacterName, font, NameColor, DialogColor, SpriteBackground, ExpressionsToDisplay, Background, fontOfCharacter);
+        DialogUIManager.instance.DialogOnScrene(CharacterName, font, NameColor, DialogColor, SpriteBackground, ExpressionsToDisplay, Background, fontOfCharacter, NamePlace);
 
 
         //Atualização de informação no UI: Introdução do Texto dos dialogos

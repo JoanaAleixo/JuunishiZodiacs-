@@ -62,7 +62,7 @@ public class DialogUIManager : MonoBehaviour
 
     #region Informação para UI
     //Passa a informação do dialogo para o UI
-    public void DialogOnScrene(string characterName, Font font, Color NameColor, Color DialogColor, Sprite diaBackground, Sprite character, Sprite background, Font characterFont)
+    public void DialogOnScrene(string characterName, Font font, Color NameColor, Color DialogColor, Sprite diaBackground, Sprite character, Sprite background, Font characterFont, Sprite namePlace)
     {
 
         _charName.text = characterName; //Passa o nome do Personagem para o UI
@@ -71,6 +71,7 @@ public class DialogUIManager : MonoBehaviour
         _charDialog.font = font; 
         _charName.font = characterFont;
         _backgroundUI.sprite = background;
+        _backgroundNameUI.sprite = namePlace;
     
 
         _charDialog.color = DialogColor;
