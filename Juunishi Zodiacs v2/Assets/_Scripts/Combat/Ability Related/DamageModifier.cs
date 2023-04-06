@@ -10,7 +10,8 @@ public enum DAMAGETYPE
     Water,
     Rock,
     Nature,
-    Metal
+    Metal,
+    None
 }
 
 [System.Serializable]
@@ -45,9 +46,5 @@ public class DamageModifier : Modifiers
         }
     }
 
-    /*public void ExecuteDamageMod(GameObject[] target)
-    {
-        
-    }*/
 }
 

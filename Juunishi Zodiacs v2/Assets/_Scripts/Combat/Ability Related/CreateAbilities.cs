@@ -38,7 +38,7 @@ public class CreateAbilities : EditorWindow
         if (GUILayout.Button("Create ScriptableObj"))
         {
             Ability newAbility = ScriptableObject.CreateInstance<Ability>();
-            string path = "Assets/ScriptableObjects/Abilities/" + _abilityName + ".asset";
+            string path = "Assets/_ScriptableObjects/" + _abilityName + ".asset";
             AssetDatabase.CreateAsset(newAbility, path);
             yesAbility = newAbility;
         }
@@ -65,16 +65,35 @@ public class CreateAbilities : EditorWindow
             }
         }
 
-        if (GUILayout.Button("Add Stun Modifier"))
+        if (yesAbility == null)
         {
-            StunModifier damage = new StunModifier();
-            yesAbility.Mods.Add(damage);
+            return;
+        }
+        if (GUILayout.Button("Add Healing Modifier"))
+        {
+            HealModifier healing = new HealModifier();
+            yesAbility.Mods.Add(healing);
+        }
+
+        for (int i = 0; i < yesAbility.Mods.Count; i++)
+        {
+            Debug.Log(yesAbility.Mods[i].GetType());
+            if (yesAbility.Mods[i] is HealModifier)
+            {
+                yesAbility.Mods[i].Draw();
+            }
+        }
+
+        if (GUILayout.Button("Add Status Modifier"))
+        {
+            StatusModifier status = new StatusModifier();
+            yesAbility.Mods.Add(status);
         }
 
 
         for (int i = 0; i < yesAbility.Mods.Count; i++)
         {
-            if (yesAbility.Mods[i] is StunModifier)
+            if (yesAbility.Mods[i] is StatusModifier)
             {
                 yesAbility.Mods[i].Draw();
             }

@@ -22,9 +22,17 @@ public class CombatUiManager : MonoBehaviour
     [SerializeField] float _targetTimer;
     [SerializeField] bool _enemyTargetSelecting = false;
     [SerializeField] bool _allyTargetSelecting = false;
+    [Header("AbilityInformation")]
+    [SerializeField] GameObject _abilitiInfo;
+    [SerializeField] TextMeshProUGUI _abilitiName;
+    [SerializeField] TextMeshProUGUI _abilitiDesc;
+    [Header("AbilityUsed")]
+    [SerializeField] GameObject _abilityUsed;
+    [SerializeField] TextMeshProUGUI _abilityUsedText;
+
     //[Header("Other")]
 
-    public BaseStats TemporarySelectedTarget { get => _temporarySelectedTarget; set => _temporarySelectedTarget = value; }
+    public BaseStats TemporarySelectedTarget { get => _temporarySelectedTarget; set { _temporarySelectedTarget = value; _targetTimer = 0; } }
     public bool EnemyTargetSelecting { get => _enemyTargetSelecting; set => _enemyTargetSelecting = value; }
     public bool AllyTargetSelecting { get => _allyTargetSelecting; set => _allyTargetSelecting = value; }
 
@@ -50,12 +58,12 @@ public class CombatUiManager : MonoBehaviour
 
     void Update()
     {
-        if (EnemyTargetSelecting == true)
+        if (EnemyTargetSelecting == true || AllyTargetSelecting == true)
         {
             _targetTimer += Time.deltaTime;
             if (_targetTimer > 1)
             {
-                _temporarySelectedTarget.transform.GetChild(0).gameObject.SetActive(!_temporarySelectedTarget.transform.GetChild(0).gameObject.activeSelf);
+                _temporarySelectedTarget.transform.GetChild(1).gameObject.SetActive(!_temporarySelectedTarget.transform.GetChild(1).gameObject.activeSelf);
                 _targetTimer = 0;
             }   
         }
@@ -74,16 +82,45 @@ public class CombatUiManager : MonoBehaviour
         }
     }
 
+    public void OpenAbilityInfo(Ability ab)
+    {
+        _abilitiInfo.SetActive(true);
+        _abilitiName.text = ab.name;
+        _abilitiDesc.text = ab.Description;
+    }
+
+    public void CloseAbilityInfo()
+    {
+        _abilitiInfo.SetActive(false);
+    }
+
     public void OpenActionMenu()
     {
+        combatMg.Caracters[combatMg.SelectedCaracter].transform.GetChild(0).gameObject.SetActive(true);
         _actionMenu.SetActive(true);
         _abilitiesMenu.SetActive(false);
         _attackBut.GetComponentInChildren<TextMeshProUGUI>().text = combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.PhysicalAbility.name;
     }
 
+    public void CloseSelectedCaracter(int value)
+    {
+        combatMg.Caracters[value].transform.GetChild(0).gameObject.SetActive(false);
+    }
+
     public void CloseActionMenu()
     {
         _actionMenu.SetActive(false);
+    }
+
+    public void ShowAbilityUsedPrompt(Ability ab, BaseStats caracter)
+    {
+        _abilityUsed.SetActive(true);
+        _abilityUsedText.text = caracter.name + " used\n" + ab.name;
+    }
+
+    public void CloseAbilityUsedPrompt()
+    {
+        _abilityUsed.SetActive(false);
     }
 
     #endregion
@@ -92,30 +129,46 @@ public class CombatUiManager : MonoBehaviour
 
     public void OpenEnemyTargetSelection()
     {
-        _temporarySelectedTarget.transform.GetChild(0).gameObject.SetActive(true);
+        for (int i = 0; i < combatMg.Enemies.Length; i++)
+        {
+            combatMg.Enemies[i].transform.GetChild(0).gameObject.SetActive(true);
+        }
+        _temporarySelectedTarget.transform.GetChild(1).gameObject.SetActive(true);
         EnemyTargetSelecting = true;
     }
 
     public void OpenAllyTargetSelection()
     {
-        _temporarySelectedTarget.transform.GetChild(0).gameObject.SetActive(true);
+        for (int i = 0; i < combatMg.Caracters.Length; i++)
+        {
+            combatMg.Caracters[i].transform.GetChild(0).gameObject.SetActive(true);
+        }
+        _temporarySelectedTarget.transform.GetChild(1).gameObject.SetActive(true);
         AllyTargetSelecting = true;
     }
 
     public void ChangeTarget(BaseStats baseStat)
     {
-        _temporarySelectedTarget.transform.GetChild(0).gameObject.SetActive(false);
+        _temporarySelectedTarget.transform.GetChild(1).gameObject.SetActive(false);
         TemporarySelectedTarget = baseStat;
-        _temporarySelectedTarget.transform.GetChild(0).gameObject.SetActive(true);
+        _temporarySelectedTarget.transform.GetChild(1).gameObject.SetActive(true);
     }
 
     public void LockTarget(BaseStats baseStat)
     {
         EnemyTargetSelecting = false;
         AllyTargetSelecting = false;
-        _temporarySelectedTarget.transform.GetChild(0).gameObject.SetActive(false);
+        for (int i = 0; i < combatMg.Enemies.Length; i++)
+        {
+            combatMg.Enemies[i].transform.GetChild(0).gameObject.SetActive(false);
+        }
+        for (int i = 0; i < combatMg.Caracters.Length; i++)
+        {
+            combatMg.Caracters[i].transform.GetChild(0).gameObject.SetActive(false);
+        }
+        _temporarySelectedTarget.transform.GetChild(1).gameObject.SetActive(false);
         TemporarySelectedTarget = baseStat;
-        _temporarySelectedTarget.transform.GetChild(0).gameObject.SetActive(false);
+        _temporarySelectedTarget.transform.GetChild(1).gameObject.SetActive(false);
         combatMg.RecieveTarget(_temporarySelectedTarget.gameObject);
         _temporarySelectedTarget = null;
     }
