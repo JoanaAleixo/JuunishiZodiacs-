@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour
 
     //boolan que dita caso haja ramificação no dialogo ou nao
     [SerializeField] bool _dialogueCanChange = true;
-    [SerializeField] GameObject _chosesButtons;
+    [SerializeField] GameObject _choisesButtons;
 
     //Dialogue Position 
     [SerializeField] int _dialogNumber;
@@ -193,7 +193,7 @@ public class DialogueManager : MonoBehaviour
         FullBodyToDisplay = MyDialogTree[_dialogTreeNumber].DialogueStr[DialogNumber].MyCharacter.FullBodyPoses[_fullbodyExpressionNumber];
     }
 
-    void PisitonSwitch()
+    void PositonSwitch()
     {
         switch (MyDialogTree[_dialogTreeNumber].DialogueStr[DialogNumber].myPositions)
         {
@@ -267,7 +267,7 @@ public class DialogueManager : MonoBehaviour
 
         //Iformação dos Enums dos Fullbody.
         FullbodySwitch();
-        PisitonSwitch();
+        PositonSwitch();
 
         //Atualização de informação no UI: Posição dos FullBody e Sprite dos Fullbody nas posições.
         if(FullBodyToDisplay != null)
@@ -278,9 +278,6 @@ public class DialogueManager : MonoBehaviour
 
         //questoes para ui
         DialogUIManager.instance.QuestionsToUi(_questionToUi1, _questionToUi2, _questionToUi3);
-
-      
-  
     }
 
     #endregion
@@ -294,7 +291,7 @@ public class DialogueManager : MonoBehaviour
             _dialogueCanChange = false;
             DialogNumber = DialogueTree1.DialogueStr.Length;
            
-                _chosesButtons.SetActive(true);
+                _choisesButtons.SetActive(true);
         
     }
 
@@ -310,7 +307,7 @@ public class DialogueManager : MonoBehaviour
 
 
         }
-        _chosesButtons.SetActive(false);
+        _choisesButtons.SetActive(false);
     }
 
    
@@ -392,13 +389,12 @@ public class DialogueManager : MonoBehaviour
 
                 }
             }
-            
+            if(DialogNumber < DialogueTree1.DialogueStr.Length)
+            {
+                UpdateOnUI();
 
-            UpdateOnUI();
-
-        }
-
-        
+            }
+        }     
     }
     #endregion
 
@@ -408,5 +404,14 @@ public class DialogueManager : MonoBehaviour
         DialogNumber = 0;
         _dialogTreeNumber = 0;
         _dialogueGameObject.SetActive(false);
+    }
+
+    public void ButtonDisable()
+    {
+        _dialogueCanChange = true;
+        CanChangePlace = true;
+        _choisesButtons.SetActive(false);
+        _placesButtons1.ChangeButtonColorVisible();
+        DisableDialgue();
     }
 }

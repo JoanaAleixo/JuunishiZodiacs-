@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogUIManager : MonoBehaviour
@@ -35,6 +36,9 @@ public class DialogUIManager : MonoBehaviour
     [Header("Places")]
     [SerializeField] Image _placeBackgroundUI;
     [SerializeField] Image _namePlace;
+
+
+
 
     #endregion
 
@@ -172,5 +176,8 @@ public class DialogUIManager : MonoBehaviour
 
     #endregion
 
-  
+  public void LoadScene(string newScene)
+    {
+        SceneManager.LoadScene(newScene);
+    }
 }
