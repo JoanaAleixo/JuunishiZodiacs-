@@ -1,0 +1,470 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.10f1 (1c7d0df0160b) revision 1867021'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22621) 64bit Core' Language: 'pt' Physical Memory: 15628 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.10f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker4
+-projectPath
+C:/Users/pikia/OneDrive/Documentos/.Documentos/21-23 ETIC/Modulo 18 Projeto Final/Projeto em GitHub e Sourcetree/Juunishi Zodiacs v2
+-logFile
+Logs/AssetImportWorker4.log
+-srvPort
+56743
+Successfully changed project path to: C:/Users/pikia/OneDrive/Documentos/.Documentos/21-23 ETIC/Modulo 18 Projeto Final/Projeto em GitHub e Sourcetree/Juunishi Zodiacs v2
+C:/Users/pikia/OneDrive/Documentos/.Documentos/21-23 ETIC/Modulo 18 Projeto Final/Projeto em GitHub e Sourcetree/Juunishi Zodiacs v2
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 57.40 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.10f1 (1c7d0df0160b)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/pikia/OneDrive/Documentos/.Documentos/21-23 ETIC/Modulo 18 Projeto Final/Projeto em GitHub e Sourcetree/Juunishi Zodiacs v2/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon(TM) Graphics (ID=0x1681)
+    Vendor:   ATI
+    VRAM:     7814 MB
+    Driver:   31.0.12024.2005
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56872
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004948 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 37.09 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.478 seconds
+Domain Reload Profiling:
+	ReloadAssembly (479ms)
+		BeginReloadAssembly (71ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (326ms)
+			LoadAssemblies (69ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (77ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (21ms)
+			SetupLoadedEditorAssemblies (186ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (37ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (106ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005932 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 34.57 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.774 seconds
+Domain Reload Profiling:
+	ReloadAssembly (775ms)
+		BeginReloadAssembly (89ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (598ms)
+			LoadAssemblies (66ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (145ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (315ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (35ms)
+				BeforeProcessingInitializeOnLoad (62ms)
+				ProcessInitializeOnLoadAttributes (170ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.61 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2566 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 33 unused Assets / (56.5 KB). Loaded Objects now: 3028.
+Memory consumption went from 114.9 MB to 114.8 MB.
+Total: 2.928500 ms (FindLiveObjects: 0.178400 ms CreateObjectMapping: 0.064900 ms MarkObjects: 2.601300 ms  DeleteObjects: 0.082900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 307910.448076 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_Bar_Player_Back.png
+  artifactKey: Guid(35272877535b5c342bb85a2f268fff3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_Bar_Player_Back.png using Guid(35272877535b5c342bb85a2f268fff3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca4de49cf83b4da21613edaf16366da9') in 0.195179 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_icon_drowsy.png
+  artifactKey: Guid(25821724eef9f924e8565daad5946e29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_icon_drowsy.png using Guid(25821724eef9f924e8565daad5946e29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdfa82e9e57bf29e8cd047a3bf6328e5') in 0.030159 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.075773 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_icon_healBlock.png
+  artifactKey: Guid(60714418ffaabb44a9549335c72e8008) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_icon_healBlock.png using Guid(60714418ffaabb44a9549335c72e8008) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47606b34fa7b6ff34d98ba82942fef1d') in 0.019910 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.010734 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_icon_protectiveWard.png
+  artifactKey: Guid(098b8ffc31921b948a4fc584639c1396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_icon_protectiveWard.png using Guid(098b8ffc31921b948a4fc584639c1396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c177915c392bf6216b4c098afa46222') in 0.019930 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.011374 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_icon_taunting.png
+  artifactKey: Guid(75cfb981476849441893c1116f25accc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_icon_taunting.png using Guid(75cfb981476849441893c1116f25accc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aca359746e91684097e1056c20a0b2a7') in 0.020760 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_isAttacking_enemy.png
+  artifactKey: Guid(a72be02148d7143489232dc198c28735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_isAttacking_enemy.png using Guid(a72be02148d7143489232dc198c28735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1f1f29cbef61ef16bace0929dd50a51') in 0.024203 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.264581 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_isAttacking_Hana.png
+  artifactKey: Guid(2c69ae12388bc2d438875c5283f8431c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_isAttacking_Hana.png using Guid(2c69ae12388bc2d438875c5283f8431c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '789359d782f3512edee43f1f53c51029') in 0.031596 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_Select_Blue_Player.png
+  artifactKey: Guid(97310b3608987aa4ca000a04c60b2f52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_Select_Blue_Player.png using Guid(97310b3608987aa4ca000a04c60b2f52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1940311e88c7d22e3ce16132aab28a6') in 0.031004 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.006859 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_Select_Red_Player.png
+  artifactKey: Guid(c04832c3398bd4648be461e0a85a35cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_Select_Red_Player.png using Guid(c04832c3398bd4648be461e0a85a35cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b023805c69d95fa4c6ddf8a5e3754b9') in 0.030702 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.289776 seconds.
+  path: Assets/Sprites/Interface/Navigation/04 April
+  artifactKey: Guid(ac06cf141e042624d8e6d140cd6aa929) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Navigation/04 April using Guid(ac06cf141e042624d8e6d140cd6aa929) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19dfbc193534c28542fb0cc4234b3a71') in 0.010313 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.326351 seconds.
+  path: Assets/Sprites/Interface/Dialogue/d_Akira.PNG
+  artifactKey: Guid(53d00c5f52142284cb42bac33715bfae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Dialogue/d_Akira.PNG using Guid(53d00c5f52142284cb42bac33715bfae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20767ee9407c003f8bd141c99eeb2386') in 0.078792 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Sprites/Interface/Dialogue/d_MoonGod.PNG
+  artifactKey: Guid(ebd734523107cd74bb9cbf26d8c83130) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Dialogue/d_MoonGod.PNG using Guid(ebd734523107cd74bb9cbf26d8c83130) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37472f4337cfd495cdfa72dadebb9d35') in 0.060629 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000131 seconds.
+  path: Assets/Sprites/Interface/Dialogue/d_Nezuko.PNG
+  artifactKey: Guid(152fa238407d6c44bae8795c4f6b8521) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Dialogue/d_Nezuko.PNG using Guid(152fa238407d6c44bae8795c4f6b8521) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d3421489b7d3b6cf1a4ddfdd9c32086') in 0.040303 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.460061 seconds.
+  path: Assets/Sprites/Interface/Others
+  artifactKey: Guid(72bc7b5b0fadc434ab446578443c619b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Others using Guid(72bc7b5b0fadc434ab446578443c619b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60cd63e162a03fce104ffc89ba2054ce') in 0.012340 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.059450 seconds.
+  path: Assets/Sprites/Interface/Others/HP barra 2.png
+  artifactKey: Guid(1ed208253bb4bb041a4fd222d93f935f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Others/HP barra 2.png using Guid(1ed208253bb4bb041a4fd222d93f935f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5e348b6177ac4f1cdb7acbd10abc929') in 0.033221 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.129419 seconds.
+  path: Assets/Sprites/Interface/Navigation/Arrows
+  artifactKey: Guid(9dcac8df2571166498dcb619eb401c2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Navigation/Arrows using Guid(9dcac8df2571166498dcb619eb401c2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fb66ea254185035112b2a6a4d598055') in 0.011000 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 46.747227 seconds.
+  path: Assets/Sprites/Interface/Navigation/03 March/n Cafe.png
+  artifactKey: Guid(6dc8178313afd4a43ad25279361e1e91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Navigation/03 March/n Cafe.png using Guid(6dc8178313afd4a43ad25279361e1e91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '140bc8e66d11df563eb0c7a582a0d921') in 0.043242 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 31.874733 seconds.
+  path: Assets/Sprites/Interface/Navigation/04 April/n_13Temple_april 1.png
+  artifactKey: Guid(17b61f5605eeb09458f58c22ea8b1733) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Navigation/04 April/n_13Temple_april 1.png using Guid(17b61f5605eeb09458f58c22ea8b1733) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db0e29d43583559440b2a91ad341b57e') in 0.023130 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 152.309949 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/Water Self 1.asset
+  artifactKey: Guid(934034aa7e284c540b9beb1ed76e4314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/Water Self 1.asset using Guid(934034aa7e284c540b9beb1ed76e4314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f6193a8071f3e362db1829bcde74551') in 0.017240 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.673403 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/Test
+  artifactKey: Guid(d8e48371cc79b724dac62364dea55438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/Test using Guid(d8e48371cc79b724dac62364dea55438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cf7bcf2948d68091d14e8b87c2033d3') in 0.009236 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.046260 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New
+  artifactKey: Guid(f5228b04dbbcf564987120ea01c35773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New using Guid(f5228b04dbbcf564987120ea01c35773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72b7731e25ffd3002292a4790e2caf1c') in 0.009604 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.078391 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Blast.asset
+  artifactKey: Guid(934034aa7e284c540b9beb1ed76e4314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Blast.asset using Guid(934034aa7e284c540b9beb1ed76e4314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '421f5ff3b65770e97a4e42d49be7ce1f') in 0.010098 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.205941 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Blast 1.asset
+  artifactKey: Guid(e5c24aa34bbf8c14a87e2c608a04502f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Blast 1.asset using Guid(e5c24aa34bbf8c14a87e2c608a04502f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73557427e4caedc113c92bd407ddc7e7') in 0.007670 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Blast.asset
+  artifactKey: Guid(934034aa7e284c540b9beb1ed76e4314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Blast.asset using Guid(934034aa7e284c540b9beb1ed76e4314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8be28f2eb9c82dd307cadadcde6a7c68') in 0.003482 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.047022 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Pulse.asset
+  artifactKey: Guid(e5c24aa34bbf8c14a87e2c608a04502f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Pulse.asset using Guid(e5c24aa34bbf8c14a87e2c608a04502f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3a52ae604e440349fa03e149c32e3c3') in 0.009660 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 51.177202 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Pulse 1.asset
+  artifactKey: Guid(bb01cea789a775f4ab3f6491150476c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Pulse 1.asset using Guid(bb01cea789a775f4ab3f6491150476c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abe9b6c19b66ea308090b967ac720fc6') in 0.012161 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Pulse.asset
+  artifactKey: Guid(e5c24aa34bbf8c14a87e2c608a04502f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Pulse.asset using Guid(e5c24aa34bbf8c14a87e2c608a04502f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5da2c01bedee2743c33ca437d772e61c') in 0.003426 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.881180 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Divine.asset
+  artifactKey: Guid(e5c24aa34bbf8c14a87e2c608a04502f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Divine.asset using Guid(e5c24aa34bbf8c14a87e2c608a04502f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4d6562856091b309bbf868ff627f4d4') in 0.009739 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.374437 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Divine_Punch.asset
+  artifactKey: Guid(e5c24aa34bbf8c14a87e2c608a04502f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Divine_Punch.asset using Guid(e5c24aa34bbf8c14a87e2c608a04502f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3bc5fdf251ff1d613c0d4bfe1de3632') in 0.010192 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.193998 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Divine_Punch 1.asset
+  artifactKey: Guid(a3f753e157dfbe548a565f192b747379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Divine_Punch 1.asset using Guid(a3f753e157dfbe548a565f192b747379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53cbe08a50b0e62d776ef6a9dde2b6e7') in 0.008284 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.050344 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Divine_Slash.asset
+  artifactKey: Guid(bb01cea789a775f4ab3f6491150476c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Divine_Slash.asset using Guid(bb01cea789a775f4ab3f6491150476c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1ae079ae6094455091ad9e1c32aba5a') in 0.009877 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.183881 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Pulse.asset
+  artifactKey: Guid(bb01cea789a775f4ab3f6491150476c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Pulse.asset using Guid(bb01cea789a775f4ab3f6491150476c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a16f3bd02fd90230210732cdcca271ae') in 0.004042 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.869437 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Divine_Slash.asset
+  artifactKey: Guid(a3f753e157dfbe548a565f192b747379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Divine_Slash.asset using Guid(a3f753e157dfbe548a565f192b747379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a9c736231651cfb4a03f1517355570d') in 0.003578 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 136.549864 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/HealingAbility.asset
+  artifactKey: Guid(685fa85e422bbd14485b2495cba554a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/HealingAbility.asset using Guid(685fa85e422bbd14485b2495cba554a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca3c7219b637d63d1b6c23c14789840a') in 0.009657 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.536188 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_.asset
+  artifactKey: Guid(685fa85e422bbd14485b2495cba554a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_.asset using Guid(685fa85e422bbd14485b2495cba554a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5a0eba3d708f06ec423690368430559') in 0.011127 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.484493 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Lily.asset
+  artifactKey: Guid(685fa85e422bbd14485b2495cba554a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Lily.asset using Guid(685fa85e422bbd14485b2495cba554a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02fa3f885b453e98987d6e5bb151530f') in 0.010100 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.695991 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/New Ability.asset
+  artifactKey: Guid(01ce41adcfbfaaa4988d0b8f33d71539) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/New Ability.asset using Guid(01ce41adcfbfaaa4988d0b8f33d71539) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87f06d2bd6a1b57f4db7bf4bfa4d3788') in 0.009585 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 36.046095 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Lily.asset
+  artifactKey: Guid(685fa85e422bbd14485b2495cba554a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Lily.asset using Guid(685fa85e422bbd14485b2495cba554a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40ca41d639663cb2c5c35b526dd7935d') in 0.004721 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.861541 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/Test/HealingAbility.asset
+  artifactKey: Guid(573dce9e5ecccdf4c80b745cd45fc565) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/Test/HealingAbility.asset using Guid(573dce9e5ecccdf4c80b745cd45fc565) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd030b0ea727b299eda012a8ab47ce332') in 0.003762 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.215307 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/GiveSelfCancer.asset
+  artifactKey: Guid(b806840d10873ea4897c857f9c42d9d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/GiveSelfCancer.asset using Guid(b806840d10873ea4897c857f9c42d9d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bf126a0bbd3a5854553a0aad722739b') in 0.008206 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.742539 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_.asset
+  artifactKey: Guid(b806840d10873ea4897c857f9c42d9d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_.asset using Guid(b806840d10873ea4897c857f9c42d9d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a35d81812a21a58f6112fbd764801b4') in 0.003574 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.164150 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Bubble.asset
+  artifactKey: Guid(b806840d10873ea4897c857f9c42d9d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Bubble.asset using Guid(b806840d10873ea4897c857f9c42d9d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ecefe9fd0822c7a4a77576049f062bf') in 0.010671 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 148.459264 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/GiveSelfCancer.asset
+  artifactKey: Guid(274894c895882624c8a33bab685e88a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/GiveSelfCancer.asset using Guid(274894c895882624c8a33bab685e88a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6b33f26fd09ef744e0bcbd449069d6e') in 0.006976 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.004269 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_GiveSelfCancer.asset
+  artifactKey: Guid(274894c895882624c8a33bab685e88a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_GiveSelfCancer.asset using Guid(274894c895882624c8a33bab685e88a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0575d7b42cd53398e0afc03d0eafd98f') in 0.009298 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.757461 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Bubble.asset
+  artifactKey: Guid(274894c895882624c8a33bab685e88a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Bubble.asset using Guid(274894c895882624c8a33bab685e88a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fd76f696dba659a339d2ebd11e338dc') in 0.003198 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 281.556931 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Divine_Slash.asset
+  artifactKey: Guid(a3f753e157dfbe548a565f192b747379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Divine_Slash.asset using Guid(a3f753e157dfbe548a565f192b747379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a97ad5c7506cbf3a74dc6acae805746') in 0.010991 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.012724 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Lily.asset
+  artifactKey: Guid(685fa85e422bbd14485b2495cba554a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Lily.asset using Guid(685fa85e422bbd14485b2495cba554a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e8b05be1047cad16b829a0db0523765') in 0.011842 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Pulse.asset
+  artifactKey: Guid(bb01cea789a775f4ab3f6491150476c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Pulse.asset using Guid(bb01cea789a775f4ab3f6491150476c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da7f81d2bbbcf3850ae5bca5e1514cb0') in 0.003454 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 142.052746 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Pulse 1.asset
+  artifactKey: Guid(2f1842b1532dbdc4981ac2f87c3d9d12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Pulse 1.asset using Guid(2f1842b1532dbdc4981ac2f87c3d9d12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '814eee5c663d6e11a0b40a3cf45e82c1') in 0.009590 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.322077 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Bubble 1.asset
+  artifactKey: Guid(38ad9eb168ed1d943b2f88db403936a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Water_Bubble 1.asset using Guid(38ad9eb168ed1d943b2f88db403936a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db4db1872ef56a24bcb54f57b3a9524a') in 0.010315 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.219664 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Purification.asset
+  artifactKey: Guid(38ad9eb168ed1d943b2f88db403936a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Purification.asset using Guid(38ad9eb168ed1d943b2f88db403936a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be8346e529b6e153fece6ef1f0d33894') in 0.009662 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 37.810231 seconds.
+  path: Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Purification.asset
+  artifactKey: Guid(38ad9eb168ed1d943b2f88db403936a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_ScriptableObjects/CaractersSO/Caracters/01 Akira/Abilities/New/Ab_Purification.asset using Guid(38ad9eb168ed1d943b2f88db403936a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08f9aafe5eb6022dd29dc4db8a639f65') in 0.003898 seconds 
