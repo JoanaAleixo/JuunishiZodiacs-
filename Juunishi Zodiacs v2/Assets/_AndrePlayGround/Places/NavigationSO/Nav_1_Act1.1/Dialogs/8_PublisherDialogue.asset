@@ -10,30 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60273dc35858ef04aa950a041ea1afe0, type: 3}
-  m_Name: NearRiverDialogue
+  m_Name: 8_PublisherDialogue
   m_EditorClassIdentifier: 
   _background: {fileID: 0}
   _backgroundName: {fileID: 0}
   _dialogueStr:
   - myCharacter: {fileID: 11400000, guid: f9cb58de52f6082498205d2f0ce3b776, type: 2}
     _dialogueMessages:
-    - The cold, damp breeze from the river cools my face.
-    - "This river comes from District 12 \u2013 I always found it curious how it
-      connects us, sometimes certain objects pass through the wall and tell stories.
-      It's a shame that even neighbors, we are so far apart."
+    - Is there still something left to say goodbye, or should I enter the publisher
+      now?
     myExpressions: 0
     myFullbody: 0
     myPositions: 0
-  _changeBrench: 0
+  _changeBrench: 1
   _choiseDialogueToChange1: 0
-  _question1: 
+  _question1: It's better to enter now.
   _TrustValueToIncrese1: 0
   _choiseDialogueToChange2: 0
-  _question2: 
+  _question2: I will still go for a walk.
   _TrustValueToIncrese2: 0
   _choiseDialogueToChange3: 0
   _question3: 
   _TrustValueToIncrese3: 0
-  _isEndDialogueOnNav: 1
+  _isEndDialogueOnNav: 0
   _sceneTransition: 0
   _nextScene: 
