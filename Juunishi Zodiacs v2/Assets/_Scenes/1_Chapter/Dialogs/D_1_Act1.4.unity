@@ -238,7 +238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: 18}
+  m_AnchoredPosition: {x: 3, y: -64}
   m_SizeDelta: {x: 662.5021, y: 937.4404}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &39842591
@@ -417,7 +417,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: de06ac01e893e6f42b26212c148ca3a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99f0c38268bca3b448251fcdfa60f4c1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1042,42 +1042,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863680329}
   m_CullTransparentMesh: 1
---- !u!1 &873159973
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 873159974}
-  m_Layer: 5
-  m_Name: Buttons
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &873159974
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 873159973}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2081256450}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1032011894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2020,7 +1984,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f72fc2d0bcd32a54992ccc0330961584, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 00eb17c5417cdab4e9ffe9a353c80b09, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2361,10 +2325,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myDialogTree:
-  - {fileID: 11400000, guid: dd1e9d47783a56c48acd91dcaf6e1a3b, type: 2}
+  - {fileID: 11400000, guid: 52354de88d04c5848b9eab7234023533, type: 2}
+  - {fileID: 11400000, guid: 96524af7a24dc534680c44d850fcfdf4, type: 2}
+  - {fileID: 11400000, guid: 96524af7a24dc534680c44d850fcfdf4, type: 2}
   _dialogueGameObject: {fileID: 2081256446}
   _dialogueCanChange: 1
-  _chosesButtons: {fileID: 1824447027}
+  _choisesButtons: {fileID: 0}
   _dialogNumber: 0
   _positionInDialog: 0
   _dialogTreeNumber: 0
@@ -2468,7 +2434,6 @@ RectTransform:
   - {fileID: 435434956}
   - {fileID: 1862025017}
   - {fileID: 835642335}
-  - {fileID: 873159974}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
