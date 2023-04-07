@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03ef3ce84a51bf143a248a6830d11064, type: 3}
+  m_Name: 1_Elevator
+  m_EditorClassIdentifier: 
+  _background: {fileID: 21300000, guid: f2d22239913dd754895bfc0fcd63df65, type: 3}
+  _namePlace: {fileID: 21300000, guid: 88d10e360e33242469efe7a11310f70d, type: 3}
+  _thisPlaceHasDialogue: 0
+  _dislocationStr:
+  - _buttonDirectionName: Publisher
+    _nextPlaceValue: 0
+    _textColor: {r: 0.03137255, g: 0.07450981, b: 0.227451, a: 1}
+    _buttonPosition: {x: 0.06, y: -3.8, z: 0}
+    _hasDialogue: 0
+    _dialogueToPlace: {fileID: 0}
+  - _buttonDirectionName: 
+    _nextPlaceValue: 0
+    _textColor: {r: 1, g: 1, b: 1, a: 1}
+    _buttonPosition: {x: -10.26, y: -1.08, z: 0}
+    _hasDialogue: 0
+    _dialogueToPlace: {fileID: 11400000, guid: 4176746f345e5e847a4b2408b5c6fe02, type: 2}
+  - _buttonDirectionName: Rooftop
+    _nextPlaceValue: 2
+    _textColor: {r: 0.030758264, g: 0.07466908, b: 0.2264151, a: 1}
+    _buttonPosition: {x: 3.5, y: -0.05, z: 0}
+    _hasDialogue: 1
+    _dialogueToPlace: {fileID: 11400000, guid: c4c2a4921db5d61498686441e6351076, type: 2}

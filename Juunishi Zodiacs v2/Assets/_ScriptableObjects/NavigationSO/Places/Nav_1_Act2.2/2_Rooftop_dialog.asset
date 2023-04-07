@@ -10,21 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60273dc35858ef04aa950a041ea1afe0, type: 3}
-  m_Name: Nav_Dialog_2actTemple
+  m_Name: 2_Rooftop_dialog
   m_EditorClassIdentifier: 
-  _background: {fileID: 21300000, guid: b7aff2ecfd3bec045ad0d02df406d6bc, type: 3}
-  _backgroundName: {fileID: 21300000, guid: 69eead8b320c5774aa386f7e44e4ace2, type: 3}
+  _background: {fileID: 0}
+  _backgroundName: {fileID: 0}
   _dialogueStr:
   - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
     _dialogueMessages:
-    - Me and Fushimi come here to write sometimes, it's calmer and here you can let
-      go the trauma of the incident...
-    - 'We take turns, one speaks while the other writes... He makes me laught by
-      saying that now both of us have terrible handwritting. '
-    - And his is now worst than mine.
-    - Thank you... Fushimi...
-    myExpressions: 0
-    myFullbody: 0
+    - ..............
+    myExpressions: 3
+    myFullbody: 3
     myPositions: 0
   _changeBrench: 0
   _choiseDialogueToChange1: 0
@@ -38,4 +33,5 @@ MonoBehaviour:
   _TrustValueToIncrese3: 0
   _isEndDialogueOnNav: 0
   _sceneTransition: 1
-  _nextScene: N_2_ActTempleNav
+  _loadingScene: 0
+  _nextScene: D_1_Act2.3
