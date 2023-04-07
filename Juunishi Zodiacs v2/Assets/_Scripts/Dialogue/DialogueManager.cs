@@ -384,9 +384,14 @@ public class DialogueManager : MonoBehaviour
                 }
                 else if(DialogNumber >= DialogueTree1.DialogueStr.Length && DialogueTree1.SceneTransition == true)
                 {
-
-                    SceneManager.LoadScene(DialogueTree1.NextScene);
-
+                    if(DialogueTree1.LoadingScene)
+                    {
+                        LoadingSceneManager.sceneInstance.LoadScene(DialogueTree1.NextScene);
+                    }
+                    else
+                    {
+                        SceneManager.LoadScene(DialogueTree1.NextScene);
+                    }
                 }
             }
             if(DialogNumber < DialogueTree1.DialogueStr.Length)

@@ -37,6 +37,7 @@ public class ScriptableDialogue : ScriptableObject
 
     [Header("EndDia")]
     [SerializeField] bool _sceneTransition;
+    [SerializeField] bool _loadingScene; //Andre não me mates, ordens do Leandro <3
     [SerializeField] String _nextScene;
 
     #endregion
@@ -58,6 +59,7 @@ public class ScriptableDialogue : ScriptableObject
     public bool IsEndDialogue { get => _isEndDialogueOnNav; set => _isEndDialogueOnNav = value; }
     public bool SceneTransition { get => _sceneTransition; set => _sceneTransition = value; }
     public string NextScene { get => _nextScene; set => _nextScene = value; }
+    public bool LoadingScene { get => _loadingScene; set => _loadingScene = value; }
 
     #endregion
 }

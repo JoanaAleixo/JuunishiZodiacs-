@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
     public void NewGameButton(string sceneName)
     {
         //SceneManager.LoadScene(sceneName);
-        sceneInstance.LoadScene(1);
+        sceneInstance.LoadScene(sceneName);
     }
 
     public void CombatSceneButton()

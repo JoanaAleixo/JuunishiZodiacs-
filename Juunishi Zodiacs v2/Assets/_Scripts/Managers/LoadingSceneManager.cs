@@ -32,7 +32,7 @@ public class LoadingSceneManager : MonoBehaviour
             timer += Time.deltaTime;
     }
 
-    public void LoadScene(int sceneId)
+    public void LoadScene(string sceneId)
     {
         StartCoroutine(LoadSceneAsync(sceneId));
     }
@@ -42,7 +42,7 @@ public class LoadingSceneManager : MonoBehaviour
         StartCoroutine(LoadCombatSceneAsync(enemyPrefab));
     }
 
-    IEnumerator LoadSceneAsync(int sceneId)
+    IEnumerator LoadSceneAsync(string sceneId)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId, LoadSceneMode.Single);
         _loadingScreen.SetActive(true);
