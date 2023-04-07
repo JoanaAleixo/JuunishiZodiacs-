@@ -12,7 +12,8 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
     [SerializeField] DialogueManager _diaManager;
 
     [SerializeField] GameObject _text;
-     Color _textColor;
+    [SerializeField] GameObject _textBox;
+    Color _textColor;
     string _nextPlaceName;
     Vector3 _newButtonPosition;
 
@@ -88,6 +89,7 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
     public void OnPointerEnter(PointerEventData eventData)
     {
         _text.SetActive(true);
+        _textBox.SetActive(true);
        Text textRef = _text.GetComponent<Text>();
         textRef.text = _nextPlaceName;
         textRef.color = _textColor;
@@ -97,7 +99,8 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
     public void OnPointerExit(PointerEventData eventData)
     {
         _text.SetActive(false);
-    
+        _textBox.SetActive(false);
+
     }
     #endregion
 }
