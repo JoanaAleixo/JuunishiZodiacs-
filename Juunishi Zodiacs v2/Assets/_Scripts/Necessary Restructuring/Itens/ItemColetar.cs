@@ -17,7 +17,7 @@ public class ItemColetar : MonoBehaviour
 
 
     [SerializeField] Transform mensagemParent;
-    [SerializeField] MensagemInfoInterface mensagemPrefab;
+    //[SerializeField] MensagemInfoInterface mensagemPrefab;
 
     Album album;
 
@@ -54,17 +54,17 @@ public class ItemColetar : MonoBehaviour
                 }
                 dialogoDesbloqueado.SetActive(true);
             }
-            AparecerMensagem(info);
+            //AparecerMensagem(info);
             ColetarItem();
         //}
         //else
         //    return;
     }
-    void AparecerMensagem(Item item)
-    {
-        MensagemInfoInterface mensagem = Instantiate(mensagemPrefab, mensagemParent.transform);
-        mensagem.Mensagem(item);
-    }
+    //void AparecerMensagem(Item item)
+    //{
+    //    MensagemInfoInterface mensagem = Instantiate(mensagemPrefab, mensagemParent.transform);
+    //    mensagem.Mensagem(item);
+    //}
 
     void ColetarItem()
     {
