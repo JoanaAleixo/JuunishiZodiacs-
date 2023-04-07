@@ -26,9 +26,14 @@ public class CombatUiManager : MonoBehaviour
     [SerializeField] GameObject _abilitiInfo;
     [SerializeField] TextMeshProUGUI _abilitiName;
     [SerializeField] TextMeshProUGUI _abilitiDesc;
+    [SerializeField] Image[] _abilitiImage;
+    [Header("IconSprites")]
+    [SerializeField] Sprite[] _abilitySprites;
     [Header("AbilityUsed")]
     [SerializeField] GameObject _abilityUsed;
     [SerializeField] TextMeshProUGUI _abilityUsedText;
+    [Header("ChangeTurn")]
+    [SerializeField] GameObject _changeTurnObj;
 
     //[Header("Other")]
 
@@ -79,6 +84,51 @@ public class CombatUiManager : MonoBehaviour
         for (int i = 0; i < _magicalAttack.Length; i++)
         {
             _magicalAttack[i].GetComponentInChildren<TextMeshProUGUI>().text = combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.Abilities[i].name;
+
+            if(combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.Abilities[i].Mods[0] is DamageModifier)
+            {
+                DamageModifier dm = (DamageModifier)combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.Abilities[i].Mods[0];
+                switch (dm.DamageType)
+                {
+                    case DAMAGETYPE.Physical:
+                        _abilitiImage[i].sprite = _abilitySprites[0];
+                        break;
+                    case DAMAGETYPE.Fire:
+                        _abilitiImage[i].sprite = _abilitySprites[1];
+                        break;
+                    case DAMAGETYPE.Water:
+                        _abilitiImage[i].sprite = _abilitySprites[2];
+                        break;
+                    case DAMAGETYPE.Rock:
+                        _abilitiImage[i].sprite = _abilitySprites[3];
+                        break;
+                    case DAMAGETYPE.Nature:
+                        _abilitiImage[i].sprite = _abilitySprites[4];
+                        break;
+                    case DAMAGETYPE.Metal:
+                        _abilitiImage[i].sprite = _abilitySprites[5];
+                        break;
+                    case DAMAGETYPE.None:
+                        _abilitiImage[i].sprite = null;
+                        break;
+                }
+            }
+            if(combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.Abilities[i].Mods[0] is HealModifier)
+            {
+                _abilitiImage[i].sprite = _abilitySprites[6];
+            }
+            if(combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.Abilities[i].Mods[0] is StatusModifier)
+            {
+                StatusModifier sM = (StatusModifier)combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.Abilities[i].Mods[0];
+                if (sM.IsBuff)
+                {
+                    _abilitiImage[i].sprite = _abilitySprites[7];
+                }
+                else
+                {
+                    _abilitiImage[i].sprite = _abilitySprites[8];
+                }
+            }
         }
     }
 
@@ -217,4 +267,9 @@ public class CombatUiManager : MonoBehaviour
     }
 
     #endregion
+
+    public void ChangeTurnUIPrompt()
+    {
+        _changeTurnObj.GetComponent<ChangeTurn>().ChangeTurnPrompt();
+    }
 }
