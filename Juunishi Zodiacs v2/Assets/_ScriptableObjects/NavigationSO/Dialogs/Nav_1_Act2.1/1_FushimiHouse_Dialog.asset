@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60273dc35858ef04aa950a041ea1afe0, type: 3}
+  m_Name: 1_FushimiHouse_Dialog
+  m_EditorClassIdentifier: 
+  _background: {fileID: 21300000, guid: 1f3038d885c81164ab1263387818179e, type: 3}
+  _backgroundName: {fileID: 0}
+  _dialogueStr:
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - Fushimi has already been discharged from the hospital and is recovering at
+      home. I feel useless...  I can't even help myself let alone my best friend...
+    myExpressions: 3
+    myFullbody: 3
+    myPositions: 0
+  - myCharacter: {fileID: 0}
+    _dialogueMessages:
+    - '"It will be better for everyone if I''m not here anymore to get in the way..."'
+    myExpressions: 3
+    myFullbody: 3
+    myPositions: 0
+  _changeBrench: 0
+  _choiseDialogueToChange1: 0
+  _question1: 
+  _TrustValueToIncrese1: 0
+  _choiseDialogueToChange2: 0
+  _question2: 
+  _TrustValueToIncrese2: 0
+  _choiseDialogueToChange3: 0
+  _question3: 
+  _TrustValueToIncrese3: 0
+  _isEndDialogueOnNav: 1
+  _sceneTransition: 0
+  _loadingScene: 0
+  _nextScene: 
