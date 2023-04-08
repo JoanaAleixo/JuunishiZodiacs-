@@ -62,6 +62,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] NextScenarioButton _placesButtons3;
     [SerializeField] NextScenarioButton _placesButtons4;
 
+    [SerializeField] GameObject _phoneButton;
+
     [Header("SceneCombate")]
     [SerializeField] GameObject _prefabCombat;
 
@@ -377,12 +379,14 @@ public class DialogueManager : MonoBehaviour
                 else if(DialogNumber >= DialogueTree1.DialogueStr.Length && DialogueTree1.IsEndDialogue == true)
                 {
                   DialogUIManager.instance.CanOpenPhone = true;
+                    //Debug.Log("AAA");
                     DisableDialgue();
                     CanChangePlace = true;
                     _placesButtons1.ChangeButtonColorVisible();
                     _placesButtons2.ChangeButtonColorVisible();
                     _placesButtons3.ChangeButtonColorVisible();
                     _placesButtons4.ChangeButtonColorVisible();
+                    _phoneButton.SetActive(true);
                 }
                 else if(DialogNumber >= DialogueTree1.DialogueStr.Length && DialogueTree1.SceneTransition == true)
                 {
@@ -390,7 +394,7 @@ public class DialogueManager : MonoBehaviour
                     {
                         if(_prefabCombat != null)
                         {
-                            Debug.Log("sda");
+                            //Debug.Log("sda");
                             LoadingSceneManager.sceneInstance.LoadScene(DialogueTree1.NextScene, _prefabCombat);
                         }
                         else

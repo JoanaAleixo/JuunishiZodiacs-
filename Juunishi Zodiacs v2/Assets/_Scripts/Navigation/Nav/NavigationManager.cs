@@ -24,6 +24,7 @@ public class NavigationManager : MonoBehaviour
 
     [Header("Buttons")]
     [SerializeField] GameObject[] _buttons;
+    [SerializeField] GameObject _phoneButton;
 
     #endregion
 
@@ -59,6 +60,8 @@ public class NavigationManager : MonoBehaviour
             if (PlacesList.ThisPlaceHasDialogue == true)
             {
                 _buttons[i].GetComponent<NextScenarioButton>().ChangeButtonColorInvisible();
+                _phoneButton.SetActive(false);
+                //botão desaparecer 
             }
               
             
