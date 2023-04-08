@@ -3,17 +3,24 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+
 public class HealModifier : Modifiers
 {
     [SerializeField] int _quantity;
 
     public int Quantity { get => _quantity; set => _quantity = value; }
 
+
+
     public override void Draw()
     {
+#if UNITY_EDITOR
         Quantity = (int)EditorGUILayout.IntField("Healing Amount: ", Quantity);
         TargetType = (TARGETING)EditorGUILayout.EnumPopup("Targeting Type: ", TargetType);
+#endif
     }
+
+
 
     public override void ExecuteMod(GameObject[] target)
     {

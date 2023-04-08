@@ -74,8 +74,6 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
         combatMg = CombatManager.combatInstance;
         uIManager = CombatUiManager.uiInstance;
         sRenderer = GetComponent<SpriteRenderer>();
-        spritePath = AssetDatabase.GetAssetPath(GetComponent<SpriteRenderer>().sprite);
-        spritePath = spritePath.Replace(".png", "");
         //StartCoroutine(WaitASec());
     }
 

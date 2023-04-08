@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class ShieldModifier : Modifiers
 {
+
     public override void Draw()
     {
+#if UNITY_EDITOR
         TargetType = (TARGETING)EditorGUILayout.EnumPopup("Targeting Type: ", TargetType);
+#endif
     }
+
 
     public override void ExecuteMod(GameObject[] target)
     {

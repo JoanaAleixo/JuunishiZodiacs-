@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
+#if UNITY_EDITOR
+using UnityEditor;
 public class CreateAbilities : EditorWindow
 {
     Ability yesAbility;
     string _abilityName;
     string _abilityDesc;
-    
+
     int count = 0;
     public enum MODIFIERTYPE
     {
@@ -23,10 +24,10 @@ public class CreateAbilities : EditorWindow
         Create,
         Edit
     }
-    public  TESTE teste;
+    public TESTE teste;
     [MenuItem("Tools/AbilityMenu")]
- 
-      static void Init()
+
+    static void Init()
     {
         var window = GetWindow<CreateAbilities>();
         window.Show();
@@ -34,7 +35,7 @@ public class CreateAbilities : EditorWindow
     private void OnGUI()
     {
         _abilityName = (string)EditorGUILayout.TextField("Name: ", _abilityName);
-        
+
         if (GUILayout.Button("Create ScriptableObj"))
         {
             Ability newAbility = ScriptableObject.CreateInstance<Ability>();
@@ -50,7 +51,7 @@ public class CreateAbilities : EditorWindow
         {
             return;
         }
-        if(GUILayout.Button("Add Damage Modifier"))
+        if (GUILayout.Button("Add Damage Modifier"))
         {
             DamageModifier damage = new DamageModifier();
             yesAbility.Mods.Add(damage);
@@ -59,7 +60,7 @@ public class CreateAbilities : EditorWindow
         for (int i = 0; i < yesAbility.Mods.Count; i++)
         {
             Debug.Log(yesAbility.Mods[i].GetType());
-            if(yesAbility.Mods[i] is DamageModifier)
+            if (yesAbility.Mods[i] is DamageModifier)
             {
                 yesAbility.Mods[i].Draw();
             }
@@ -99,13 +100,13 @@ public class CreateAbilities : EditorWindow
             }
         }
 
-        if(GUILayout.Button("Save"))
+        if (GUILayout.Button("Save"))
         {
             EditorUtility.SetDirty(yesAbility);
         }
 
-        
-        
+
+
         /*if (teste == TESTE.Create)
         {
             _lastCheckPoint = (Transform)EditorGUILayout.ObjectField("Previous Waypoint", _lastCheckPoint, typeof(Transform), true);
@@ -268,6 +269,9 @@ public class CreateAbilities : EditorWindow
                     }
                 }
             }
-        } */ 
+        } */
     }
 }
+
+#endif
+

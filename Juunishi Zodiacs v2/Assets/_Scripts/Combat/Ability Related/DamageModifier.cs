@@ -24,12 +24,16 @@ public class DamageModifier : Modifiers
     
     internal DAMAGETYPE DamageType { get => _damageType; set => _damageType = value; }
 
+
     public override void Draw()
     {
+#if UNITY_EDITOR
         Quantity = (int)EditorGUILayout.IntField("Damage: ", Quantity);
         DamageType = (DAMAGETYPE)EditorGUILayout.EnumPopup("Damage Type: ",DamageType);
         TargetType = (TARGETING)EditorGUILayout.EnumPopup("Targeting Type: ",TargetType);
+#endif
     }
+
 
     public override void ExecuteMod(GameObject[] target)
     {

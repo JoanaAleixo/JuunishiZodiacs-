@@ -16,11 +16,15 @@ public class StatusModifier : Modifiers
 
     public bool IsBuff { get => isBuff; set => isBuff = value; }
 
+
     public override void Draw()
     {
+#if UNITY_EDITOR
         status = (STATUSTYPES)EditorGUILayout.EnumPopup("Status: ", status);
         TargetType = (TARGETING)EditorGUILayout.EnumPopup("Targeting Type: ", TargetType);
+#endif
     }
+
 
     public override void ExecuteMod(GameObject[] target)
     {
