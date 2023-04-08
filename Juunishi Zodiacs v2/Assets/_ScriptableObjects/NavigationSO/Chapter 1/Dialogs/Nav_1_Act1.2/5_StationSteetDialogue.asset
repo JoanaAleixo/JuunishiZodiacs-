@@ -15,21 +15,27 @@ MonoBehaviour:
   _background: {fileID: 21300000, guid: f82307f17bea6644db96d1e233137d0d, type: 3}
   _backgroundName: {fileID: 21300000, guid: 2fb265da374cf7143b51f3118f49523e, type: 3}
   _dialogueStr:
-  - myCharacter: {fileID: 11400000, guid: f9cb58de52f6082498205d2f0ce3b776, type: 2}
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
     _dialogueMessages:
-    - Even the station is calm, everyone is on the avenue.
-    - It's strange to think that this railway line is the only thing that connects
-      the 12 Aoishima Wards, even though they are next to each other. We are separated
-      by walls to facilitate the distribution and management of Etheria energy (according
-      to GenBase), powered by the District 0 reactor, which is responsible for all
-      our electricity.
+    - ' Even the station is calm, everyone is on the avenue.'
+    - 'It''s strange to think that this railway line is the only thing that connects
+      the 12 Aoishima Wards, even  though they are next to each other. '
+    - 'We are separated by walls to facilitate the distribution and  management of
+      Etheria energy (according to GenBase), powered by the District 0 reactor, '
+    - which is  responsible for all our electricity.
+    myExpressions: 6
+    myFullbody: 6
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
     - "If only this \u201Cgreat\u201D energy really helped us to protect from the
-      Variants, instead of adulterated soldiers injected by it, maybe our lives would
-      be better... Maybe that accident never happened..."
+      Variants, instead of adulterated  soldiers injected by it, maybe our lives
+      would be better\u2026"
+    - " Maybe the accident never happened\u2026"
     - What am I saying?... they're just wild creatures, most likely they don't even
-      know what they're doing... I just wish they'd taken me too...
-    myExpressions: 0
-    myFullbody: 0
+      know what they're doing...  I just wish they'd taken me too...
+    myExpressions: 3
+    myFullbody: 3
     myPositions: 0
   _changeBrench: 0
   _choiseDialogueToChange1: 0
@@ -43,4 +49,5 @@ MonoBehaviour:
   _TrustValueToIncrese3: 0
   _isEndDialogueOnNav: 1
   _sceneTransition: 0
+  _loadingScene: 0
   _nextScene: 

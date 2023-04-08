@@ -10,23 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60273dc35858ef04aa950a041ea1afe0, type: 3}
-  m_Name: 2_FushimiHouseDialgue
+  m_Name: 2_FushimiHouseDialgue 3
   m_EditorClassIdentifier: 
-  _background: {fileID: 0}
-  _backgroundName: {fileID: 0}
+  _background: {fileID: 21300000, guid: 849d06f2af8f5504f815b68285dc8669, type: 3}
+  _backgroundName: {fileID: 21300000, guid: f72fc2d0bcd32a54992ccc0330961584, type: 3}
   _dialogueStr:
-  - myCharacter: {fileID: 11400000, guid: f9cb58de52f6082498205d2f0ce3b776, type: 2}
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
     _dialogueMessages:
-    - The lights are off; he must be at the festival.
-    - Who would have thought that we would have a 15-year friendship... I still remember
-      you coming up to me, on this same street, coming from school, inviting me to
-      play, after you spent the whole day behind me and I ignored you...
     - I will always be grateful to you, Fushimi, my best friend, for everything you've
-      done for me in my life, all your support, and for helping me to be who I am...
-      I hope that one day you know how important you are, and you get everything
-      that you deserve and want in your future...
-    - And it's with one last look and a prayer, I say goodbye to you, Fushimi, you'll
-      be better off without me.
+      done for me in my life, all  your support, and for helping me to be who I am...
+    - 'I hope that one day you know how important you  are, and you get everything
+      that you deserve and want in your future... '
     myExpressions: 0
     myFullbody: 0
     myPositions: 0
@@ -40,6 +34,7 @@ MonoBehaviour:
   _choiseDialogueToChange3: 0
   _question3: 
   _TrustValueToIncrese3: 0
-  _isEndDialogueOnNav: 1
+  _isEndDialogueOnNav: 0
   _sceneTransition: 0
+  _loadingScene: 0
   _nextScene: 

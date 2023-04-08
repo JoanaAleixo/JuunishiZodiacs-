@@ -15,14 +15,19 @@ MonoBehaviour:
   _background: {fileID: 21300000, guid: c00811d56c8458c4f96e8d007956f738, type: 3}
   _backgroundName: {fileID: 21300000, guid: 2f619b71eb0899f4289ff4097c0d54b0, type: 3}
   _dialogueStr:
-  - myCharacter: {fileID: 11400000, guid: f9cb58de52f6082498205d2f0ce3b776, type: 2}
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
     _dialogueMessages:
-    - Everyone is excited about the festival... I can see a bit of the parade between
-      the heads, I hear the children's laughter, the flashes of cell phones, and
-      the lively conversations in the crowded crowd.
-    - It's better for me not to join, Fushimi can see me.
+    - "Everyone is excited about the festival\u2026"
+    - I can see a bit of the parade between the heads, I hear  the children's laughter,
+      the flashes of cell phones, and the lively conversations in the crowded crowd.
     myExpressions: 0
     myFullbody: 0
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - ' It''s better for me not to join, Fushimi can see me.'
+    myExpressions: 3
+    myFullbody: 3
     myPositions: 0
   _changeBrench: 0
   _choiseDialogueToChange1: 0
@@ -36,4 +41,5 @@ MonoBehaviour:
   _TrustValueToIncrese3: 0
   _isEndDialogueOnNav: 1
   _sceneTransition: 0
+  _loadingScene: 0
   _nextScene: 
