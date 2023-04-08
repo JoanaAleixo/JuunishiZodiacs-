@@ -37,6 +37,18 @@ public class LoadingSceneManager : MonoBehaviour
         StartCoroutine(LoadSceneAsync(sceneId));
     }
 
+    public void LoadScene(string sceneId, GameObject gm)
+    {
+        if(sceneId == "CombatScene")
+        {
+            LoadCombatScene(gm);
+        }
+        else
+        {
+            LoadScene(sceneId);
+        }
+    }
+
     public void LoadCombatScene(GameObject enemyPrefab)
     {
         StartCoroutine(LoadCombatSceneAsync(enemyPrefab));
