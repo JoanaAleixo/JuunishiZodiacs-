@@ -376,7 +376,7 @@ public class DialogueManager : MonoBehaviour
                 }
                 else if(DialogNumber >= DialogueTree1.DialogueStr.Length && DialogueTree1.IsEndDialogue == true)
                 {
-                    DialogUIManager.instance.CanOpenPhone = true;
+                  DialogUIManager.instance.CanOpenPhone = true;
                     DisableDialgue();
                     CanChangePlace = true;
                     _placesButtons1.ChangeButtonColorVisible();
