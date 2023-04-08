@@ -62,6 +62,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] NextScenarioButton _placesButtons3;
     [SerializeField] NextScenarioButton _placesButtons4;
 
+    [Header("SceneCombate")]
+    [SerializeField] GameObject _prefabCombat;
+
     public int TrustValue { get => _trustValue; set => _trustValue = value; }
     public ScriptableDialogue[] MyDialogTree { get => myDialogTree; set => myDialogTree = value; }
     public ScriptableDialogue DialogueTree1 { get => DialogueTree; set => DialogueTree = value; }
@@ -383,7 +386,16 @@ public class DialogueManager : MonoBehaviour
                 {
                     if(DialogueTree1.LoadingScene)
                     {
-                        LoadingSceneManager.sceneInstance.LoadScene(DialogueTree1.NextScene);
+                        if(_prefabCombat != null)
+                        {
+                            Debug.Log("sda");
+                            LoadingSceneManager.sceneInstance.LoadScene(DialogueTree1.NextScene, _prefabCombat);
+                        }
+                        else
+                        {
+                            LoadingSceneManager.sceneInstance.LoadScene(DialogueTree1.NextScene);
+                        }
+
                     }
                     else
                     {
