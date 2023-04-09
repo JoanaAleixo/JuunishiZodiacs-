@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f78d8c580e23784b97cf833a9cb3662, type: 3}
-  m_Name: Ab_Hana_Spike_Vines
+  m_Name: Poison Spikes
   m_EditorClassIdentifier: 
   _mods:
   - rid: 4869796908226576384
-  description: Light plant damage to All enemies, inflicts paralise - inflicted cannot
-    act next turn
+  description: Light plant damage to 1 enemy, inflicts bound - inflicted will lose
+    light damage over 3 turns
   references:
     version: 2
     RefIds:
     - rid: 4869796908226576384
       type: {class: StatusModifier, ns: , asm: Assembly-CSharp}
       data:
-        _targetType: 4
+        _targetType: 2
         Quantity: 1
         isBuff: 0
         status: 0
