@@ -405,15 +405,14 @@ public class CombatManager : MonoBehaviour
 
     public void LocateEnemies()
     {
-        
         GameObject parent = GameObject.FindGameObjectWithTag("EnemySet");
         int enemiesCount = 0;
-        Enemies = new Enemy[parent.transform.childCount];
-        for (int i = 0; i < parent.transform.childCount; i++)
+        Enemies = new Enemy[parent.transform.GetChild(0).childCount];
+        for (int i = 0; i < parent.transform.GetChild(0).childCount; i++)
         {
-            if (parent.transform.GetChild(i).CompareTag("Enemy"))
+            if (parent.transform.GetChild(0).GetChild(i).CompareTag("Enemy"))
             {
-                Enemies[enemiesCount] = parent.transform.GetChild(i).GetComponent<Enemy>();
+                Enemies[enemiesCount] = parent.transform.GetChild(0).GetChild(i).GetComponent<Enemy>();
                 enemiesCount++;
             }
         }
