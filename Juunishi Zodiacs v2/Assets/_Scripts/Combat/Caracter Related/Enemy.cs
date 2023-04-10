@@ -24,12 +24,21 @@ public class Enemy : BaseStats
 
     public int ChoseEnemyTarget()
     {
-        return Random.Range(0, combatMg.Caracters.Length);
+        return Random.Range(0, combatMg.Caracters.Count);
     }
 
     public int ChoseAllyTarget()
     {
-        return Random.Range(0, combatMg.Enemies.Length);
+        return Random.Range(0, combatMg.Enemies.Count);
+    }
+
+    protected override void CheckIfDead()
+    {
+        base.CheckIfDead();
+        if(myCaracter.HpMax.value <= 0)
+        {
+            combatMg.Enemies.Remove(this);
+        }
     }
 
     public override void OnPointerClick(PointerEventData eventData)

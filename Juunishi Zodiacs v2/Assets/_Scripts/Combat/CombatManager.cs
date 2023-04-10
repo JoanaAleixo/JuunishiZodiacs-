@@ -46,12 +46,13 @@ public class CombatManager : MonoBehaviour
     [SerializeField] CombatUiManager uIManager;
     [SerializeField] BATTLESTATE _curState;
     [Header("Players")]
-    [SerializeField] PlayableCaracter[] _caracters = new PlayableCaracter[3];
-    [SerializeField] Enemy[] _enemies;
+    [SerializeField] List<PlayableCaracter> _caracters;
+    [SerializeField] List<Enemy> _enemies;
     [SerializeField] List<Ability> _actions;
     [SerializeField] List<SelectedModifiers> _modifiers;
     [SerializeField] int _selectedCaracter;
     [SerializeField] GameObject _actionMenu;
+    [SerializeField] int playersOnRoundStart;
     [Header("TemporaryStuff")]
     [SerializeField] int tempIndex;
     [SerializeReference] Modifiers[] temporaryMods;
@@ -62,9 +63,9 @@ public class CombatManager : MonoBehaviour
 
     public int SelectedCaracter { get => _selectedCaracter; set { ChangeSelectedCaracter(_selectedCaracter, value);} }
 
-    public PlayableCaracter[] Caracters { get => _caracters; set => _caracters = value; }
     internal BATTLESTATE CurState { get => _curState; set => _curState = value; }
-    public Enemy[] Enemies { get => _enemies; set => _enemies = value; }
+    public List<PlayableCaracter> Caracters { get => _caracters; set => _caracters = value; }
+    public List<Enemy> Enemies { get => _enemies; set => _enemies = value; }
 
     #region Awake + Start
 
@@ -95,6 +96,7 @@ public class CombatManager : MonoBehaviour
         switch (CurState)
         {
             case BATTLESTATE.StartBattle:
+                CheckPlayers();
                 ChangeState(BATTLESTATE.PlayerTurn);
                 break;
             case BATTLESTATE.PlayerTurn:
@@ -127,6 +129,7 @@ public class CombatManager : MonoBehaviour
         switch (CurState)
         {
             case BATTLESTATE.StartBattle:
+                CheckPlayers();
                 ChangeState(BATTLESTATE.PlayerTurn);
                 break;
             case BATTLESTATE.PlayerTurn:
@@ -144,7 +147,7 @@ public class CombatManager : MonoBehaviour
                 break;
             case BATTLESTATE.ExecuteAbility:
                 uIManager.CloseAbilityInfo();
-                uIManager.ShowAbilityUsedPrompt(_actions[_actions.Count-1], _caracters[SelectedCaracter]);
+                uIManager.ShowAbilityUsedPrompt(_actions[_actions.Count-1], Caracters[SelectedCaracter]);
                 ExecuteModifiers();
                 break;
             case BATTLESTATE.EndOfPlayerTurn:
@@ -171,6 +174,7 @@ public class CombatManager : MonoBehaviour
                 break;
             case BATTLESTATE.EndOfEnemyTurn:
                 CheckEnemyStatus();
+                CheckPlayers();
                 break;
             case BATTLESTATE.Victory:
                 break;
@@ -182,9 +186,9 @@ public class CombatManager : MonoBehaviour
 
     #region CaracterSelection
 
-    public void SelectCaracter(int caracterNum)
+    public void SelectCaracter(PlayableCaracter caracter)
     {
-        SelectedCaracter = caracterNum;
+        SelectedCaracter = caracter.CaracterNumber;
     }
 
     private void ChangeSelectedCaracter(int oldValue, int newValue)
@@ -200,7 +204,7 @@ public class CombatManager : MonoBehaviour
 
     public void ShowAbilityInfo(int _abilityNumb)
     {
-        uIManager.OpenAbilityInfo(_caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb]);
+        uIManager.OpenAbilityInfo(Caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb]);
     }
 
     public void SelectAbility(int _abilityNumb)   // Quando um botão de habilidade é clicado
@@ -208,14 +212,14 @@ public class CombatManager : MonoBehaviour
         
         if (_abilityNumb >= 0 && _abilityNumb <= 2)
         {
-            _actions.Add(_caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb]);
-            temporaryMods = _caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb].Mods.ToArray();
+            _actions.Add(Caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb]);
+            temporaryMods = Caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb].Mods.ToArray();
             ChangeState(BATTLESTATE.SelectingTarget);
         }
         else
         {
-            _actions.Add(_caracters[SelectedCaracter].MyCaracter.PhysicalAbility);
-            temporaryMods = _caracters[SelectedCaracter].MyCaracter.PhysicalAbility.Mods.ToArray();
+            _actions.Add(Caracters[SelectedCaracter].MyCaracter.PhysicalAbility);
+            temporaryMods = Caracters[SelectedCaracter].MyCaracter.PhysicalAbility.Mods.ToArray();
             ChangeState(BATTLESTATE.SelectingTarget);
         }
 
@@ -230,22 +234,22 @@ public class CombatManager : MonoBehaviour
             switch (temporaryMods[tempIndex].TargetType)
             {
                 case TARGETING.self:
-                        temporaryTargets = new GameObject[] { _caracters[SelectedCaracter].gameObject };
+                        temporaryTargets = new GameObject[] { Caracters[SelectedCaracter].gameObject };
                         AddToMods(temporaryMods[tempIndex], temporaryTargets);
                         uIManager.CloseSelectedCaracter(SelectedCaracter);
                         break;
                 case TARGETING.multipleAlly:
-                        temporaryTargets = new GameObject[_caracters.Length];
-                        for (int u = 0; u < _caracters.Length; u++)
+                        temporaryTargets = new GameObject[Caracters.Count];
+                        for (int u = 0; u < Caracters.Count; u++)
                         {
-                            temporaryTargets[u] = _caracters[u].gameObject;
+                            temporaryTargets[u] = Caracters[u].gameObject;
                         }
                         AddToMods(temporaryMods[tempIndex], temporaryTargets);
                         uIManager.CloseSelectedCaracter(SelectedCaracter);
                     break;
                 case TARGETING.multipleEnemy:
-                        temporaryTargets = new GameObject[Enemies.Length];
-                        for (int u = 0; u < Enemies.Length; u++)
+                        temporaryTargets = new GameObject[Enemies.Count];
+                        for (int u = 0; u < Enemies.Count; u++)
                         {
                             temporaryTargets[u] = Enemies[u].gameObject;
                         }
@@ -269,7 +273,7 @@ public class CombatManager : MonoBehaviour
                         AddToMods(temporaryMods[tempIndex], temporaryTargets);
                     }else if (uIManager.TemporarySelectedTarget == null)
                     {
-                        uIManager.TemporarySelectedTarget = _caracters[0];
+                        uIManager.TemporarySelectedTarget = Caracters[0];
                         uIManager.OpenAllyTargetSelection();
                     }
                     break;
@@ -300,7 +304,7 @@ public class CombatManager : MonoBehaviour
 
     private void CheckForAbilities()  //Conta quantas habilidades foram utilizadas para passar o turno.
     {
-        if(_actions.Count >= Caracters.Length)
+        if(_actions.Count >= playersOnRoundStart)
         {
             _actions.Clear();
             StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EndOfPlayerTurn,0));
@@ -360,23 +364,23 @@ public class CombatManager : MonoBehaviour
                     AddToMods(temporaryMods[tempIndex], temporaryTargets);
                     break;
                 case TARGETING.multipleAlly:
-                    temporaryTargets = new GameObject[Enemies.Length];
-                    for (int u = 0; u < Enemies.Length; u++)
+                    temporaryTargets = new GameObject[Enemies.Count];
+                    for (int u = 0; u < Enemies.Count; u++)
                     {
                         temporaryTargets[u] = Enemies[u].gameObject;
                     }
                     AddToMods(temporaryMods[tempIndex], temporaryTargets);
                     break;
                 case TARGETING.multipleEnemy:
-                    temporaryTargets = new GameObject[_caracters.Length];
-                    for (int u = 0; u < _caracters.Length; u++)
+                    temporaryTargets = new GameObject[Caracters.Count];
+                    for (int u = 0; u < Caracters.Count; u++)
                     {
-                        temporaryTargets[u] = _caracters[u].gameObject;
+                        temporaryTargets[u] = Caracters[u].gameObject;
                     }
                     AddToMods(temporaryMods[tempIndex], temporaryTargets);
                     break;
                 case TARGETING.singleEnemy:
-                    temporaryTargets = new GameObject[] { _caracters[Enemies[tempEnemy].ChoseEnemyTarget()].gameObject };
+                    temporaryTargets = new GameObject[] { Caracters[Enemies[tempEnemy].ChoseEnemyTarget()].gameObject };
                     AddToMods(temporaryMods[tempIndex], temporaryTargets);
                     break;
                 case TARGETING.singleAlly:
@@ -396,7 +400,7 @@ public class CombatManager : MonoBehaviour
 
     private bool CheckIfRoundDone()
     {
-        if(tempEnemy >= _enemies.Length)
+        if(tempEnemy >= Enemies.Count)
         {
             return true;
         }
@@ -407,13 +411,13 @@ public class CombatManager : MonoBehaviour
     {
         GameObject parent = GameObject.FindGameObjectWithTag("EnemySet");
         int enemiesCount = 0;
-        Enemies = new Enemy[parent.transform.GetChild(0).childCount];
+        //Enemies = new Enemy[parent.transform.GetChild(0).childCount];
         for (int i = 0; i < parent.transform.GetChild(0).childCount; i++)
         {
             if (parent.transform.GetChild(0).GetChild(i).CompareTag("Enemy"))
             {
-                Enemies[enemiesCount] = parent.transform.GetChild(0).GetChild(i).GetComponent<Enemy>();
                 enemiesCount++;
+                Enemies.Add(parent.transform.GetChild(0).GetChild(i).GetComponent<Enemy>());
             }
         }
     }
@@ -423,7 +427,7 @@ public class CombatManager : MonoBehaviour
     private void CheckPlayerStatus()
     {
         bool isAny = false;
-        foreach (PlayableCaracter caracterRef in _caracters)
+        foreach (PlayableCaracter caracterRef in Caracters)
         {
             foreach(StatusFx effect in caracterRef.currentStatus.Keys)
             {
@@ -457,7 +461,7 @@ public class CombatManager : MonoBehaviour
 
     private void CheckEnemyStatus()
     {
-        foreach (Enemy enemyRef in _enemies)
+        foreach (Enemy enemyRef in Enemies)
         {
             foreach (StatusFx effect in enemyRef.currentStatus.Keys)
             {
@@ -491,5 +495,23 @@ public class CombatManager : MonoBehaviour
     {
         yield return new WaitForSeconds(secs);
         ChangeState(newState);
+    }
+
+    public void AdjustCaracterNumbers(int value)
+    {
+        
+        for (int i = 0; i < _caracters.Count; i++)
+        {
+            if (_caracters[i].CaracterNumber > value)
+            {
+                Debug.Log("123");
+                _caracters[i].CaracterNumber--;
+            }
+        }
+    }
+
+    private void CheckPlayers()
+    {
+        playersOnRoundStart = Caracters.Count;
     }
 }
