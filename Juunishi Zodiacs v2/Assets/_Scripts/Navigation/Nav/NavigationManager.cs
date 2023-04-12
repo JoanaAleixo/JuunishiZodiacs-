@@ -79,7 +79,12 @@ public class NavigationManager : MonoBehaviour
     //Metudo que troca de Place quando o butão é percionado
     public void NewPlace(int placeIndex)
     {
-       
+        for (int i = 0; i < _buttons.Length; i++)
+       {
+           NextScenarioButton button = _buttons[i].GetComponent<NextScenarioButton>();
+           button.Text.SetActive(false);
+           button.TextBox.SetActive(false);
+        }
        
         //novo Place
         _currentPlaceIndex = placeIndex;
