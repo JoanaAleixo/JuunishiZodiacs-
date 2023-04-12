@@ -17,7 +17,10 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
     string _nextPlaceName;
     Vector3 _newButtonPosition;
 
-  
+    public GameObject Text { get => _text; set => _text = value; }
+    public GameObject TextBox { get => _textBox; set => _textBox = value; }
+
+
     #endregion
 
     #region Informação do Butão
@@ -88,9 +91,9 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
     //rato por cima do Butão
     public void OnPointerEnter(PointerEventData eventData)
     {
-        _text.SetActive(true);
-        _textBox.SetActive(true);
-       Text textRef = _text.GetComponent<Text>();
+        Text.SetActive(true);
+        TextBox.SetActive(true);
+       Text textRef = Text.GetComponent<Text>();
         textRef.text = _nextPlaceName;
         textRef.color = _textColor;
     }
@@ -98,8 +101,8 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
     //rato sai de cima do butão
     public void OnPointerExit(PointerEventData eventData)
     {
-        _text.SetActive(false);
-        _textBox.SetActive(false);
+        Text.SetActive(false);
+        TextBox.SetActive(false);
 
     }
     #endregion
