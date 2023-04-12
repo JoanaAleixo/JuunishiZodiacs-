@@ -8,11 +8,11 @@ public class CaractersInformation : MonoBehaviour
 {
     [SerializeField] ActiveCaracters _allCaracters;
     [SerializeField] int caracterNumber;
-    [SerializeField] private CaracterCreation myCaracter;
+    [SerializeField] private PlayableCaracterScptObj myCaracter;
     [Header("References")]
     [SerializeField] GameObject _nameTag;
 
-    public CaracterCreation MyCaracter { get => myCaracter; set => myCaracter = value; }
+    public PlayableCaracterScptObj MyCaracter { get => myCaracter; set => myCaracter = value; }
 
     void Start()
     {

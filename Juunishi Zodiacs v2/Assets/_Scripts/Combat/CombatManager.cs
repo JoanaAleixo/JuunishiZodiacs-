@@ -204,7 +204,14 @@ public class CombatManager : MonoBehaviour
 
     public void ShowAbilityInfo(int _abilityNumb)
     {
-        uIManager.OpenAbilityInfo(Caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb]);
+        if (_abilityNumb == 3)
+        {
+            uIManager.OpenAbilityInfo(Caracters[SelectedCaracter].MyCaracter.PhysicalAbility);
+        }
+        else
+        {
+            uIManager.OpenAbilityInfo(Caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb]);
+        }
     }
 
     public void SelectAbility(int _abilityNumb)   // Quando um botão de habilidade é clicado

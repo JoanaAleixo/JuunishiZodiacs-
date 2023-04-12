@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mods:
   - rid: 3818156578291843075
+  - rid: 7633445517126270980
+  abilityName: Rock Throw
   description: Medium Earth damage to All Enemies
   references:
     version: 2
@@ -24,3 +26,9 @@ MonoBehaviour:
         _targetType: 4
         _quantity: 15
         _damageType: 0
+    - rid: 7633445517126270980
+      type: {class: CostModifier, ns: , asm: Assembly-CSharp}
+      data:
+        _targetType: 0
+        _quantity: -10
+        _costType: 1

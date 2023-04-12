@@ -65,6 +65,13 @@ public class PlayableCaracter : BaseStats
         }
     }
 
+    public void UpdateSp(int value)
+    {
+        PlayableCaracterScptObj myCaracterScpt = (PlayableCaracterScptObj)myCaracter;
+        myCaracterScpt.SpMax.value += value;
+        takeDamageEV.Raise();
+    }
+
     IEnumerator WaitASec()
     {
         yield return new WaitForSeconds(2);
