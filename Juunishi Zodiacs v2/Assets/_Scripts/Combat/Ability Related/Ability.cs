@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class Ability : ScriptableObject
 {
     [SerializeReference] List<Modifiers> _mods = new List<Modifiers>();
-    [TextArea]
-    [SerializeReference] string description;
+    [SerializeReference] string abilityName;
+    [SerializeReference, TextArea] string description;
     public List<Modifiers> Mods { get => _mods; set => _mods = value; }
     public string Description { get => description; set => description = value; }
+    public string AbilityName { get => abilityName; set => abilityName = value; }
 }

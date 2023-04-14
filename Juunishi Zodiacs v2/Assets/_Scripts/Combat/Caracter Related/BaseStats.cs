@@ -43,8 +43,8 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     //[SerializeField] Sprite iconElementoSprite;
     //[SerializeField] Image iconElementoImage;
 
-    [SerializeField] private CaracterCreation myCaracter;
-    [SerializeField] protected int _caracterNumber;
+    [SerializeField] protected CaracterCreation myCaracter;
+    [SerializeField] private int caracterNumber;
     [SerializeField] protected GameEvent takeDamageEV;
     [SerializeField] bool isShielded;
     [SerializeField] SpriteRenderer sRenderer;
@@ -59,7 +59,7 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     [SerializeField] Sprite damagePhysicalSp;
     [SerializeField] Sprite damagePlantSp;
     [SerializeField] Sprite damageWaterSp;
-    [SerializeField] Sprite deathSp;
+    [SerializeField] protected Sprite deathSp;
     [SerializeField] Sprite healingSp;
 
 
@@ -68,6 +68,7 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
 
     public CaracterCreation MyCaracter { get => myCaracter; set => myCaracter = value; }
     public bool IsShielded { get => isShielded; set => isShielded = value; }
+    public int CaracterNumber { get => caracterNumber; set => caracterNumber = value; }
 
     protected virtual void Start()
     {
@@ -99,7 +100,10 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
             {
                 float finalDamage = dmToTake * val;
                 myCaracter.HpMax.value -= (int)finalDamage;
-                SpriteChange(dmType);
+                if(myCaracter.HpMax.value > 0)
+                {
+                    SpriteChange(dmType);
+                }
                 combatMg.SpawnFloatingDamage(transform.position + new Vector3(2,0,0), (int)finalDamage);
             }
             takeDamageEV.Raise();
@@ -108,7 +112,12 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
         {
             IsShielded = false;
         }
-        
+        CheckIfDead();
+    }
+
+    protected virtual void CheckIfDead()
+    {
+
     }
 
     public virtual void HealCaracter(int healingAmount)

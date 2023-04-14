@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mods:
   - rid: 7633445325267795968
-  description: "- 50 Fire Damage \n- Self"
+  abilityName: Fire Self
+  description: "- 100 Fire Damage \n- Self"
   references:
     version: 2
     RefIds:
@@ -22,5 +23,5 @@ MonoBehaviour:
       type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
       data:
         _targetType: 0
-        _quantity: 50
-        _damageType: 1
+        _quantity: 100
+        _damageType: 0

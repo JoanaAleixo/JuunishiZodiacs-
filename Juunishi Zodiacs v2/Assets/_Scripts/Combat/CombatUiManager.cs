@@ -34,6 +34,8 @@ public class CombatUiManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI _abilityUsedText;
     [Header("ChangeTurn")]
     [SerializeField] GameObject _changeTurnObj;
+    [Header("LoseMenu")]
+    [SerializeField] GameObject _loseMenu;
 
     //[Header("Other")]
 
@@ -83,7 +85,7 @@ public class CombatUiManager : MonoBehaviour
         _abilitiesMenu.SetActive(true);
         for (int i = 0; i < _magicalAttack.Length; i++)
         {
-            _magicalAttack[i].GetComponentInChildren<TextMeshProUGUI>().text = combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.Abilities[i].name;
+            _magicalAttack[i].GetComponentInChildren<TextMeshProUGUI>().text = combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.Abilities[i].AbilityName;
 
             if(combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.Abilities[i].Mods[0] is DamageModifier)
             {
@@ -135,7 +137,7 @@ public class CombatUiManager : MonoBehaviour
     public void OpenAbilityInfo(Ability ab)
     {
         _abilitiInfo.SetActive(true);
-        _abilitiName.text = ab.name;
+        _abilitiName.text = ab.AbilityName;
         _abilitiDesc.text = ab.Description;
     }
 
@@ -146,15 +148,20 @@ public class CombatUiManager : MonoBehaviour
 
     public void OpenActionMenu()
     {
+        Debug.Log(combatMg.SelectedCaracter);
         combatMg.Caracters[combatMg.SelectedCaracter].transform.GetChild(0).gameObject.SetActive(true);
         _actionMenu.SetActive(true);
         _abilitiesMenu.SetActive(false);
-        _attackBut.GetComponentInChildren<TextMeshProUGUI>().text = combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.PhysicalAbility.name;
+        _attackBut.GetComponentInChildren<TextMeshProUGUI>().text = combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.PhysicalAbility.AbilityName;
     }
 
     public void CloseSelectedCaracter(int value)
     {
-        combatMg.Caracters[value].transform.GetChild(0).gameObject.SetActive(false);
+        if (combatMg.Caracters[value] != null)
+        {
+            combatMg.Caracters[value].transform.GetChild(0).gameObject.SetActive(false);
+        }
+        
     }
 
     public void CloseActionMenu()
@@ -165,7 +172,7 @@ public class CombatUiManager : MonoBehaviour
     public void ShowAbilityUsedPrompt(Ability ab, BaseStats caracter)
     {
         _abilityUsed.SetActive(true);
-        _abilityUsedText.text = caracter.name + " used\n" + ab.name;
+        _abilityUsedText.text = caracter.name + " used\n" + ab.AbilityName;
     }
 
     public void CloseAbilityUsedPrompt()
@@ -179,7 +186,7 @@ public class CombatUiManager : MonoBehaviour
 
     public void OpenEnemyTargetSelection()
     {
-        for (int i = 0; i < combatMg.Enemies.Length; i++)
+        for (int i = 0; i < combatMg.Enemies.Count; i++)
         {
             combatMg.Enemies[i].transform.GetChild(0).gameObject.SetActive(true);
         }
@@ -189,7 +196,7 @@ public class CombatUiManager : MonoBehaviour
 
     public void OpenAllyTargetSelection()
     {
-        for (int i = 0; i < combatMg.Caracters.Length; i++)
+        for (int i = 0; i < combatMg.Caracters.Count; i++)
         {
             combatMg.Caracters[i].transform.GetChild(0).gameObject.SetActive(true);
         }
@@ -208,11 +215,11 @@ public class CombatUiManager : MonoBehaviour
     {
         EnemyTargetSelecting = false;
         AllyTargetSelecting = false;
-        for (int i = 0; i < combatMg.Enemies.Length; i++)
+        for (int i = 0; i < combatMg.Enemies.Count; i++)
         {
             combatMg.Enemies[i].transform.GetChild(0).gameObject.SetActive(false);
         }
-        for (int i = 0; i < combatMg.Caracters.Length; i++)
+        for (int i = 0; i < combatMg.Caracters.Count; i++)
         {
             combatMg.Caracters[i].transform.GetChild(0).gameObject.SetActive(false);
         }
@@ -271,5 +278,10 @@ public class CombatUiManager : MonoBehaviour
     public void ChangeTurnUIPrompt()
     {
         _changeTurnObj.GetComponent<ChangeTurn>().ChangeTurnPrompt();
+    }
+
+    public void OpenLoseMenu()
+    {
+        _loseMenu.SetActive(true);
     }
 }

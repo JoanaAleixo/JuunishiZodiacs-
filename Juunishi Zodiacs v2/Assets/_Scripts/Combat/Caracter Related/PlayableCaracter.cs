@@ -13,7 +13,7 @@ public class PlayableCaracter : BaseStats
 
     protected override void Start()
     {
-        MyCaracter = _allCaracters.ActiveCaractersInGame[_caracterNumber];
+        MyCaracter = _allCaracters.ActiveCaractersInGame[CaracterNumber];
         StartCoroutine(WaitASec());
         
         base.Start();
@@ -45,6 +45,31 @@ public class PlayableCaracter : BaseStats
                 uIManager.ChangeTarget(this);
             }
         }
+    }
+
+    protected override void CheckIfDead()
+    {
+        base.CheckIfDead();
+        if (myCaracter.HpMax.value <= 0)
+        {
+            combatMg.Caracters.Remove(this);
+            combatMg.AdjustCaracterNumbers(CaracterNumber);
+            if (deathSp != null)
+            {
+                GetComponent<SpriteRenderer>().sprite = deathSp;
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().sprite = null;
+            }
+        }
+    }
+
+    public void UpdateSp(int value)
+    {
+        PlayableCaracterScptObj myCaracterScpt = (PlayableCaracterScptObj)myCaracter;
+        myCaracterScpt.SpMax.value += value;
+        takeDamageEV.Raise();
     }
 
     IEnumerator WaitASec()

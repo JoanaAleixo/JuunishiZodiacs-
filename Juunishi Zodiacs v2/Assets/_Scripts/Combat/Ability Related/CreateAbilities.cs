@@ -100,6 +100,21 @@ public class CreateAbilities : EditorWindow
             }
         }
 
+        if (GUILayout.Button("Add Cost Modifier"))
+        {
+            CostModifier cost = new CostModifier();
+            yesAbility.Mods.Add(cost);
+        }
+
+
+        for (int i = 0; i < yesAbility.Mods.Count; i++)
+        {
+            if (yesAbility.Mods[i] is CostModifier)
+            {
+                yesAbility.Mods[i].Draw();
+            }
+        }
+
         if (GUILayout.Button("Save"))
         {
             EditorUtility.SetDirty(yesAbility);
