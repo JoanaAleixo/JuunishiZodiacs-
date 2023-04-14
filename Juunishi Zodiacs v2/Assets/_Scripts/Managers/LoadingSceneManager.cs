@@ -11,6 +11,8 @@ public class LoadingSceneManager : MonoBehaviour
     public static LoadingSceneManager sceneInstance;
     [SerializeField] private float timer;
     private bool canTimer = false;
+    [SerializeField] string sceneAfterCombat;
+    [SerializeField] GameObject enemiesPrefabForCombat;
 
     private void Awake()
     {
@@ -38,19 +40,24 @@ public class LoadingSceneManager : MonoBehaviour
 
     public void LoadScene(string sceneId, GameObject gm)
     {
-        if(sceneId == "CombatScene")
-        {
-            LoadCombatScene(gm);
-        }
-        else
-        {
-            LoadScene(sceneId);
-        }
+        sceneAfterCombat = sceneId;
+        LoadCombatScene(gm);
     }
 
     public void LoadCombatScene(GameObject enemyPrefab)
     {
+        enemiesPrefabForCombat = enemyPrefab;
         StartCoroutine(LoadCombatSceneAsync(enemyPrefab));
+    }
+
+    public void LoadSceneAfterCombat()
+    {
+        StartCoroutine(LoadSceneAsync(sceneAfterCombat));
+    }
+
+    public void ReloadCombatScene()
+    {
+        StartCoroutine(LoadCombatSceneAsync(enemiesPrefabForCombat));
     }
 
     IEnumerator LoadSceneAsync(string sceneId)

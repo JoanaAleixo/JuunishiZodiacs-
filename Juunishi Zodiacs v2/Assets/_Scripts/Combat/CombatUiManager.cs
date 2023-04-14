@@ -34,6 +34,8 @@ public class CombatUiManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI _abilityUsedText;
     [Header("ChangeTurn")]
     [SerializeField] GameObject _changeTurnObj;
+    [Header("LoseMenu")]
+    [SerializeField] GameObject _loseMenu;
 
     //[Header("Other")]
 
@@ -276,5 +278,10 @@ public class CombatUiManager : MonoBehaviour
     public void ChangeTurnUIPrompt()
     {
         _changeTurnObj.GetComponent<ChangeTurn>().ChangeTurnPrompt();
+    }
+
+    public void OpenLoseMenu()
+    {
+        _loseMenu.SetActive(true);
     }
 }

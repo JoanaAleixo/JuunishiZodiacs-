@@ -941,9 +941,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1294851775}
         m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
-        m_MethodName: RestartCombateBotao
+        m_MethodName: LoseRetryButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3392,6 +3392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisCaracter: {fileID: 0}
+  caracterIns: {fileID: 0}
   hpImg: {fileID: 179651927}
   spImg: {fileID: 2131073340}
   hpText: {fileID: 1504369429}
@@ -5075,9 +5076,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1294851775}
         m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
-        m_MethodName: TelaInicialBotao
+        m_MethodName: LoseTitleScreenButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6853,6 +6854,7 @@ MonoBehaviour:
   _abilityUsed: {fileID: 1423862252}
   _abilityUsedText: {fileID: 175306370}
   _changeTurnObj: {fileID: 1487841961}
+  _loseMenu: {fileID: 2044149474}
 --- !u!4 &1585714648
 Transform:
   m_ObjectHideFlags: 0
@@ -7485,6 +7487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisCaracter: {fileID: 0}
+  caracterIns: {fileID: 0}
   hpImg: {fileID: 1987245978}
   spImg: {fileID: 177174819}
   hpText: {fileID: 130404402}
@@ -8899,6 +8902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisCaracter: {fileID: 0}
+  caracterIns: {fileID: 0}
   hpImg: {fileID: 8548130047693074845}
   spImg: {fileID: 567436858270276497}
   hpText: {fileID: 8548130049065999043}

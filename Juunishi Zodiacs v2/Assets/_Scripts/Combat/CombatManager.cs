@@ -97,7 +97,7 @@ public class CombatManager : MonoBehaviour
         {
             case BATTLESTATE.StartBattle:
                 CheckPlayers();
-                ChangeState(BATTLESTATE.PlayerTurn);
+                StartCoroutine(WaitTwoSeconds());
                 break;
             case BATTLESTATE.PlayerTurn:
                 CheckForAbilities();
@@ -117,11 +117,24 @@ public class CombatManager : MonoBehaviour
                 break;
         }
 
-        if (Input.GetKeyDown(KeyCode.M))
+        if(_curState != BATTLESTATE.StartBattle)
         {
-            LocateEnemies();
+            CombatEndVerification();
+        }
+        
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            ChangeState(BATTLESTATE.Defeat);
+        }
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            ChangeState(BATTLESTATE.Victory);
         }
     }
+
+    
 
     void ChangeState(BATTLESTATE _newState)
     {
@@ -177,8 +190,12 @@ public class CombatManager : MonoBehaviour
                 CheckPlayers();
                 break;
             case BATTLESTATE.Victory:
+                StopAllCoroutines();
+                WinCombat();
                 break;
             case BATTLESTATE.Defeat:
+                StopAllCoroutines();
+                uIManager.OpenLoseMenu();
                 break;
         }
     }
@@ -520,5 +537,38 @@ public class CombatManager : MonoBehaviour
     private void CheckPlayers()
     {
         playersOnRoundStart = Caracters.Count;
+    }
+
+    private void CombatEndVerification()
+    {
+        if(Enemies.Count <= 0)
+        {
+            ChangeState(BATTLESTATE.Victory);
+        }
+        else if(Caracters.Count <= 0)
+        {
+            ChangeState(BATTLESTATE.Defeat);
+        }
+    }
+
+    public void LoseRetryButton()
+    {
+        LoadingSceneManager.sceneInstance.ReloadCombatScene();
+    }
+
+    public void LoseTitleScreenButton()
+    {
+        LoadingSceneManager.sceneInstance.LoadScene("Title Screen");
+    }
+
+    private void WinCombat()
+    {
+        LoadingSceneManager.sceneInstance.LoadSceneAfterCombat();
+    }
+
+    IEnumerator WaitTwoSeconds()
+    {
+        yield return new WaitForSeconds(2);
+        ChangeState(BATTLESTATE.PlayerTurn);
     }
 }

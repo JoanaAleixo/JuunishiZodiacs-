@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
 
     public void CombatSceneButton()
     {
-        sceneInstance.LoadCombatScene(EnemyPreTest);
+        sceneInstance.LoadScene("Title Screen",EnemyPreTest);
     }
 
     public void OptionsMenuButton()
