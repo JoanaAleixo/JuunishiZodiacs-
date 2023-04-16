@@ -10,46 +10,53 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60273dc35858ef04aa950a041ea1afe0, type: 3}
-  m_Name: 2_PublisherStreet_Dialogue
+  m_Name: 1_FushimiHouse_Dialogue
   m_EditorClassIdentifier: 
-  _background: {fileID: 21300000, guid: de06ac01e893e6f42b26212c148ca3a6, type: 3}
-  _backgroundName: {fileID: 21300000, guid: 678af9815929d70499cdec302b9f56b8, type: 3}
+  _background: {fileID: 21300000, guid: 08c525155a482fc45a4a2c51f8b2e83c, type: 3}
+  _backgroundName: {fileID: 21300000, guid: f72fc2d0bcd32a54992ccc0330961584, type: 3}
   _dialogueStr:
   - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
     _dialogueMessages:
-    - " \u201CNezuko, can I ask you why do you have that bell?\u201D"
+    - I just hope Fushimi is okay...
+    myExpressions: 3
+    myFullbody: 0
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: c6b500cc3e0ece545ba93c57be0802ec, type: 2}
+    _dialogueMessages:
+    - '"Worried about him?"'
+    myExpressions: 0
+    myFullbody: 0
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - '"I just-... I just don''t want him to be upset with me..."'
+    myExpressions: 3
+    myFullbody: 0
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: c6b500cc3e0ece545ba93c57be0802ec, type: 2}
+    _dialogueMessages:
+    - '"Ring the bell and check it out while we''re here."'
+    myExpressions: 0
+    myFullbody: 0
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - '"Okay..."'
+    - Press the round button of the doorbell. I can hear the high-pitched chime echo,
+      but nothing else happens...
+    - I ring again, and just hear my footsteps on the metal floor.
     myExpressions: 2
-    myFullbody: 2
-    myPositions: 0
-  - myCharacter: {fileID: 11400000, guid: c6b500cc3e0ece545ba93c57be0802ec, type: 2}
-    _dialogueMessages:
-    - " \u201CIt was a gift that the Sun Goddess herself. She gave one to all Animal
-      Spirits, to  hear us and know where we are, it is also a way of communicating.\u201D"
-    myExpressions: 7
     myFullbody: 0
     myPositions: 0
   - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
     _dialogueMessages:
-    - "\u201COh! I wasn't expecting that...\""
-    - "\"You mean there are more spirits?\u201D"
-    myExpressions: 1
-    myFullbody: 1
-    myPositions: 0
-  - myCharacter: {fileID: 11400000, guid: c6b500cc3e0ece545ba93c57be0802ec, type: 2}
-    _dialogueMessages:
-    - ' "In total we are 12, each with their Zodiac."'
-    myExpressions: 0
-    myFullbody: 0
-    myPositions: 0
-  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
-    _dialogueMessages:
-    - '"It would be interesting to meet other Zodiacs..."'
-    myExpressions: 0
+    - '"He must be at the music conservatory by now..."'
+    myExpressions: 3
     myFullbody: 0
     myPositions: 0
   - myCharacter: {fileID: 11400000, guid: c6b500cc3e0ece545ba93c57be0802ec, type: 2}
     _dialogueMessages:
-    - " \u201CEh\u2026 Maybe\u2026 Well, let's focus on what we were doing!\u201D "
+    - '"Good, then let''s continue our journey!"'
     myExpressions: 0
     myFullbody: 0
     myPositions: 0
