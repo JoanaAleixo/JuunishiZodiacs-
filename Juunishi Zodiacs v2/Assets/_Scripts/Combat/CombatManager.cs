@@ -117,7 +117,7 @@ public class CombatManager : MonoBehaviour
                 break;
         }
 
-        if(_curState != BATTLESTATE.StartBattle)
+        if(_curState != BATTLESTATE.StartBattle && _curState != BATTLESTATE.Defeat && _curState != BATTLESTATE.Victory)
         {
             CombatEndVerification();
         }
