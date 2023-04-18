@@ -264,7 +264,12 @@ public class DialogueManager : MonoBehaviour
 
 
         //Atualização de informação no UI: Introdução do Texto dos dialogos
-        DialogUIManager.instance.PlayCoroutine(DialogToDisplay);
+        
+            DialogUIManager.instance.PlayCoroutine(DialogToDisplay);
+        
+          
+        
+       
 
 
         //Iformação dos Enums dos Fullbody.
@@ -410,7 +415,7 @@ public class DialogueManager : MonoBehaviour
                 }
             }
             if(DialogNumber < DialogueTree1.DialogueStr.Length)
-            {
+           {
                 UpdateOnUI();
 
             }

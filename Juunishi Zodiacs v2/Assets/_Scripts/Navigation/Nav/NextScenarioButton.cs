@@ -51,15 +51,27 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
 
       if(_diaManager.CanChangePlace == true)
         {
-           
-
             _diaManager.DisableDialgue();
 
-           if (_navManager.PlacesList.DislocationStr[positionInButton].HasDialogue == true)
+           if (_navManager.PlacesList.DislocationStr[positionInButton].HasDialogue == true) //bool, se tiver dialogo neste local
             {
-              //  ChangeButtonColorInvisible();
+             
                 _diaManager.MyDialogTree[0] = dialogue;
-                _diaManager.UpdateOnUI();
+
+                //nesta parte seguinte, em função de um erro no texto ser excrito pos o dialogo ser encerrado, o dialogo que é escrito,
+                //enquanto ainda esta em typing effect e executado duas vezes, para que termine esse dialogo e escreva o novo
+
+               if( DialogUIManager.instance.typingeffectCoroutine == null)
+                {
+                    _diaManager.UpdateOnUI();
+                }
+                else
+                {
+                    _diaManager.UpdateOnUI();
+                    _diaManager.UpdateOnUI();
+
+                }
+
                 _navManager.DialogueCanvas.SetActive(true);
                 _diaManager.CanChangePlace = false;              
             }
@@ -106,4 +118,7 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     }
     #endregion
+
+
+    
 }

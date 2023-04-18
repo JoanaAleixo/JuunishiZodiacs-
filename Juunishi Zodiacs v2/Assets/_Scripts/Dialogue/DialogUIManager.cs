@@ -50,6 +50,7 @@ public class DialogUIManager : MonoBehaviour
     #region Propriedades
     public Image[] CharactersPositions { get => _charactersPositions; set => _charactersPositions = value; }
     public bool CanOpenPhone { get => _canOpenPhone; set => _canOpenPhone = value; }
+    public Text CharDialog { get => _charDialog; set => _charDialog = value; }
 
     #endregion
 
@@ -78,13 +79,13 @@ public class DialogUIManager : MonoBehaviour
         _charName.text = characterName; //Passa o nome do Personagem para o UI
         _diaBackgroundUI.sprite = diaBackground;
         _characterUI.sprite = character;
-        _charDialog.font = font; 
+        CharDialog.font = font; 
         _charName.font = characterFont;
         _backgroundUI.sprite = background;
         _backgroundNameUI.sprite = namePlace;
     
 
-        _charDialog.color = DialogColor;
+        CharDialog.color = DialogColor;
         _charName.color = NameColor;
     }
 
@@ -115,16 +116,17 @@ public class DialogUIManager : MonoBehaviour
             typingeffectCoroutine = Typing(dialogToDisplay);
             StartCoroutine(typingeffectCoroutine);
         }
+     
 
     }
     IEnumerator Typing(string dialog)
     {
-        _charDialog.text = "";
+        CharDialog.text = "";
         _currentMensage = dialog;
 
         foreach (char letra in dialog.ToCharArray())
         {
-            _charDialog.text += letra;
+            CharDialog.text += letra;
             yield return new WaitForSeconds(_textVelocity);
         }
         typingeffectCoroutine = null;
@@ -136,7 +138,7 @@ public class DialogUIManager : MonoBehaviour
     {
         StopCoroutine(typingeffectCoroutine);
 
-        _charDialog.text = _currentMensage;
+        CharDialog.text = _currentMensage;
 
         typingeffectCoroutine = null;
         //dar display do texto completo
