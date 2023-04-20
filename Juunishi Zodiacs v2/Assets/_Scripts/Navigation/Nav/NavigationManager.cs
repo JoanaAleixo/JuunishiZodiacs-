@@ -27,8 +27,8 @@ public class NavigationManager : MonoBehaviour
     [Header("Itens")]
     [SerializeField] GameObject _itemPrefab;
     [SerializeField] List<GameObject> _itensList = new List<GameObject>();
-    [SerializeField] List<GameObject> _itensVerification = new List<GameObject>();
-    Dictionary<int,  List<ScriptableItem>> dici = new Dictionary<int, List<ScriptableItem>> ();
+    Dictionary<int, int> _itemDic = new Dictionary<int, int> ();
+    
 
     #endregion
 
@@ -42,10 +42,11 @@ public class NavigationManager : MonoBehaviour
     #region Start
     private void Start()
     {
+        SpawnItems();
         NewPlace(0);
+       
 
-      
-        
+
     }
     #endregion
 
@@ -59,7 +60,7 @@ public class NavigationManager : MonoBehaviour
 
         _uiManager.PlaceOnScrene(_background, _namePlace); //Implementação dos elementos simples
 
-        SpawnItems();
+        
 
         //Para cada Butão na lista de butões do ScriptablePlace
         for (int i = 0; i < PlacesList.DislocationStr.Length; i++)
@@ -78,6 +79,24 @@ public class NavigationManager : MonoBehaviour
             DislocationButtons buttonProperties = PlacesList.DislocationStr[i];
             _buttons[i].GetComponent<NextScenarioButton>().SetButtonInfo(buttonProperties.NextPlaceValue, buttonProperties.ButtonDirectionName, buttonProperties.TextColor, buttonProperties.ButtonPosition, i, buttonProperties.DialogueToPlace);   //Info para o butão     
           
+        }
+
+        foreach (var itensToDisable in _itensList)
+        {
+            itensToDisable.SetActive(false);
+        }
+        foreach (var item in _itemDic)
+        {
+           if(item.Value == _currentPlaceIndex)
+            {
+                foreach (var itensList in _itensList)
+                {
+                    if(itensList.GetComponent<ItemCollect>().ItemId == item.Key)
+                    {
+                        itensList.SetActive(true);
+                    }
+                }
+            }
         }
        
     }
@@ -114,39 +133,43 @@ public class NavigationManager : MonoBehaviour
 
     public void SpawnItems()
     {
-        // foreach (var posInIntens in _myPlaces[_currentPlaceIndex].Itens)
-        //  {
-        //    Image newItemImage = _itemPrefab.GetComponent<Image>();
-        //    _myPlaces[_currentPlaceIndex].Itens[posInIntens].Icon = newItemImage.sprite;
+    
+        
 
-        //    Button newItem = _itemPrefab.GetComponent<Button>();
-        //  }
-        Debug.Log("ee");
-   
-            for (int i = 0; i <PlacesList.Itens.Length; i++)
+        int idCounter = 0;
+
+        for (int e = 0; e < _myPlaces.Length; e++)
+        {
+           
+
+            for (int i = 0; i < _myPlaces[e].Itens.Length; i++)
             {
 
-
+              
                 GameObject Item = Instantiate(_itemPrefab, _itemPrefab.transform.position, _itemPrefab.transform.rotation) as GameObject;
                 Item.transform.SetParent(_placesCanvas.transform, false);
-                Item.transform.position = Camera.main.WorldToScreenPoint(PlacesList.Itens[i].ItemPositionInNav);
-           
-                _itensList.Add(Item);
+                Item.transform.position = Camera.main.WorldToScreenPoint(_myPlaces[e].Itens[i].ItemPositionInNav);
 
-            
 
-            //  dici.Add(_currentPlaceIndex, PlacesList.Itens[i]);
-           // Debug.Log(dici[_currentPlaceIndex]);
+                 _itensList.Add(Item);
 
-            //Item.SetActive(false);
+                idCounter++;
 
-            Image newItemImage = Item.GetComponent<Image>();
-                newItemImage.sprite = PlacesList.Itens[i].Icon;
+                Item.GetComponent<ItemCollect>().ItemId = idCounter;
+                _itemDic.Add(idCounter, e);
 
-                
+                Item.SetActive(false);
+
+                Image newItemImage = Item.GetComponent<Image>();
+                newItemImage.sprite = _myPlaces[e].Itens[i].Icon;
 
             }
-        
+        }
+
+      //  foreach (var item in _itemDic)
+     //   {
+       //     Debug.Log(item.Key + " " + item.Value);
+      //  }
     }
    
 }
