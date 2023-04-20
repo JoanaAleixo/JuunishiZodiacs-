@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static DislocationButtons;
 using UnityEngine.UI;
-using System.Linq;
 
 public class NavigationManager : MonoBehaviour
 {
@@ -30,6 +27,8 @@ public class NavigationManager : MonoBehaviour
     [Header("Itens")]
     [SerializeField] GameObject _itemPrefab;
     [SerializeField] List<GameObject> _itensList = new List<GameObject>();
+    [SerializeField] List<GameObject> _itensVerification = new List<GameObject>();
+    Dictionary<int,  List<ScriptableItem>> dici = new Dictionary<int, List<ScriptableItem>> ();
 
     #endregion
 
@@ -44,6 +43,9 @@ public class NavigationManager : MonoBehaviour
     private void Start()
     {
         NewPlace(0);
+
+      
+        
     }
     #endregion
 
@@ -56,6 +58,8 @@ public class NavigationManager : MonoBehaviour
         _namePlace = PlacesList.NamePlace;
 
         _uiManager.PlaceOnScrene(_background, _namePlace); //Implementação dos elementos simples
+
+        SpawnItems();
 
         //Para cada Butão na lista de butões do ScriptablePlace
         for (int i = 0; i < PlacesList.DislocationStr.Length; i++)
@@ -75,6 +79,7 @@ public class NavigationManager : MonoBehaviour
             _buttons[i].GetComponent<NextScenarioButton>().SetButtonInfo(buttonProperties.NextPlaceValue, buttonProperties.ButtonDirectionName, buttonProperties.TextColor, buttonProperties.ButtonPosition, i, buttonProperties.DialogueToPlace);   //Info para o butão     
           
         }
+       
     }
 
     #endregion
@@ -107,24 +112,41 @@ public class NavigationManager : MonoBehaviour
     #endregion
 
 
-    public void SpawnItensOnPlace()
+    public void SpawnItems()
     {
-       // foreach (var posInIntens in _myPlaces[_currentPlaceIndex].Itens)
-      //  {
+        // foreach (var posInIntens in _myPlaces[_currentPlaceIndex].Itens)
+        //  {
         //    Image newItemImage = _itemPrefab.GetComponent<Image>();
         //    _myPlaces[_currentPlaceIndex].Itens[posInIntens].Icon = newItemImage.sprite;
 
-       //    Button newItem = _itemPrefab.GetComponent<Button>();
-      //  }
+        //    Button newItem = _itemPrefab.GetComponent<Button>();
+        //  }
+        Debug.Log("ee");
+   
+            for (int i = 0; i <PlacesList.Itens.Length; i++)
+            {
 
-        for (int i = 0; i < _myPlaces[_currentPlaceIndex].Itens.Length; i++)
-        {
-           GameObject Item = Instantiate(_itemPrefab, _myPlaces[_currentPlaceIndex].Itens[i].ItemPositionInNav, _itemPrefab.transform.rotation);
-            Item.transform.SetParent(_placesCanvas.transform, true);
 
-            Image newItemImage = _itemPrefab.GetComponent<Image>();
-            _myPlaces[_currentPlaceIndex].Itens[i].Icon = newItemImage.sprite;
-        }
+                GameObject Item = Instantiate(_itemPrefab, _itemPrefab.transform.position, _itemPrefab.transform.rotation) as GameObject;
+                Item.transform.SetParent(_placesCanvas.transform, false);
+                Item.transform.position = Camera.main.WorldToScreenPoint(PlacesList.Itens[i].ItemPositionInNav);
+           
+                _itensList.Add(Item);
+
+            
+
+            //  dici.Add(_currentPlaceIndex, PlacesList.Itens[i]);
+           // Debug.Log(dici[_currentPlaceIndex]);
+
+            //Item.SetActive(false);
+
+            Image newItemImage = Item.GetComponent<Image>();
+                newItemImage.sprite = PlacesList.Itens[i].Icon;
+
+                
+
+            }
+        
     }
    
 }
