@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static DislocationButtons;
 using UnityEngine.UI;
+using System.Linq;
 
 public class NavigationManager : MonoBehaviour
 {
@@ -25,6 +26,10 @@ public class NavigationManager : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] GameObject[] _buttons;
     [SerializeField] GameObject _phoneButton;
+
+    [Header("Itens")]
+    [SerializeField] GameObject _itemPrefab;
+    [SerializeField] List<GameObject> _itensList = new List<GameObject>();
 
     #endregion
 
@@ -69,8 +74,7 @@ public class NavigationManager : MonoBehaviour
             DislocationButtons buttonProperties = PlacesList.DislocationStr[i];
             _buttons[i].GetComponent<NextScenarioButton>().SetButtonInfo(buttonProperties.NextPlaceValue, buttonProperties.ButtonDirectionName, buttonProperties.TextColor, buttonProperties.ButtonPosition, i, buttonProperties.DialogueToPlace);   //Info para o butão     
           
-        } 
-       
+        }
     }
 
     #endregion
@@ -102,5 +106,25 @@ public class NavigationManager : MonoBehaviour
     }
     #endregion
 
+
+    public void SpawnItensOnPlace()
+    {
+       // foreach (var posInIntens in _myPlaces[_currentPlaceIndex].Itens)
+      //  {
+        //    Image newItemImage = _itemPrefab.GetComponent<Image>();
+        //    _myPlaces[_currentPlaceIndex].Itens[posInIntens].Icon = newItemImage.sprite;
+
+       //    Button newItem = _itemPrefab.GetComponent<Button>();
+      //  }
+
+        for (int i = 0; i < _myPlaces[_currentPlaceIndex].Itens.Length; i++)
+        {
+           GameObject Item = Instantiate(_itemPrefab, _myPlaces[_currentPlaceIndex].Itens[i].ItemPositionInNav, _itemPrefab.transform.rotation);
+            Item.transform.SetParent(_placesCanvas.transform, true);
+
+            Image newItemImage = _itemPrefab.GetComponent<Image>();
+            _myPlaces[_currentPlaceIndex].Itens[i].Icon = newItemImage.sprite;
+        }
+    }
    
 }

@@ -6,9 +6,11 @@ using static Dialogue;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] GameObject[] _mainMenuElements;
-    [SerializeField] int test;
 
-   public static MenuManager instance;
+   
+
+
+    public static MenuManager instance;
 
     private void Awake()
     {
@@ -25,11 +27,13 @@ public class MenuManager : MonoBehaviour
     }
    public void Option(int switchNumb)
     {
-        test = switchNumb;
+       
         foreach (var item in _mainMenuElements)
         {
             item.SetActive(false);
         }
         _mainMenuElements[switchNumb].SetActive(true);
     }
+
+  
 }

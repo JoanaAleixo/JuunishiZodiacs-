@@ -11,6 +11,8 @@ public class ScriptablePlace : ScriptableObject
     [SerializeField] Sprite _namePlace;
     [SerializeField] bool _thisPlaceHasDialogue;
 
+    [SerializeField] ScriptableItem[] _itens;
+
     [SerializeField] DislocationButtons[] _dislocationStr;
 
     #endregion
@@ -20,6 +22,7 @@ public class ScriptablePlace : ScriptableObject
     public Sprite NamePlace { get => _namePlace; set => _namePlace = value; }
     public DislocationButtons[] DislocationStr { get => _dislocationStr; set => _dislocationStr = value; }
     public bool ThisPlaceHasDialogue { get => _thisPlaceHasDialogue; set => _thisPlaceHasDialogue = value; }
+    public ScriptableItem[] Itens { get => _itens; set => _itens = value; }
     #endregion
 }
 
