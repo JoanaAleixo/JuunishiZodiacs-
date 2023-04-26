@@ -82,9 +82,31 @@ public class CombatUiManager : MonoBehaviour
 
     public void OpenAbilitiesMenu()
     {
-        _abilitiesMenu.SetActive(true);
+        foreach (var but in _magicalAttack)
+        {
+            but.GetComponent<Button>().interactable = true;
+        }
+
         for (int i = 0; i < _magicalAttack.Length; i++)
         {
+
+            PlayableCaracterScptObj car = (PlayableCaracterScptObj)combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter;
+            
+            foreach (var mod in combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.Abilities[i].Mods)
+            {
+                if(mod is CostModifier)
+                {
+                    CostModifier costModifier = (CostModifier)mod;
+                    if(costModifier.CostType == COSTTYPE.Sp)
+                    {
+                        if(car.SpMax.value < costModifier.Quantity)
+                        {
+                            _magicalAttack[i].GetComponent<Button>().interactable = false;
+                        }
+                    }
+                }
+            } 
+
             _magicalAttack[i].GetComponentInChildren<TextMeshProUGUI>().text = combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.Abilities[i].AbilityName;
 
             if(combatMg.Caracters[combatMg.SelectedCaracter].MyCaracter.Abilities[i].Mods[0] is DamageModifier)
@@ -132,6 +154,7 @@ public class CombatUiManager : MonoBehaviour
                 }
             }
         }
+        _abilitiesMenu.SetActive(true);
     }
 
     public void OpenAbilityInfo(Ability ab)

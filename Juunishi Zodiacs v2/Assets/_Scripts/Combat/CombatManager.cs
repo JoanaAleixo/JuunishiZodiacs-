@@ -450,23 +450,24 @@ public class CombatManager : MonoBehaviour
 
     private void CheckPlayerStatus()
     {
-        bool isAny = false;
-        foreach (PlayableCaracter caracterRef in Caracters)
+        if(Caracters != null)
         {
-            foreach(StatusFx effect in caracterRef.currentStatus.Keys)
+            foreach (PlayableCaracter caracterRef in Caracters)
             {
-                isAny = true;
-                if (effect.HasEndRoundFx)
+                foreach (StatusFx effect in caracterRef.currentStatus.Keys)
                 {
-                    effect.ApplyEffect(caracterRef);
-                }
-                if (effect.LoseStackOnEndRound)
-                {
-                    caracterRef.currentStatus[effect]--;
-                }
-                if (caracterRef.currentStatus[effect] <= 0)
-                {
-                    caracterRef.currentStatus.Remove(effect);
+                    if (effect.HasEndRoundFx)
+                    {
+                        effect.ApplyEffect(caracterRef);
+                    }
+                    if (effect.LoseStackOnEndRound)
+                    {
+                        caracterRef.currentStatus[effect]--;
+                    }
+                    if (caracterRef.currentStatus[effect] <= 0)
+                    {
+                        caracterRef.currentStatus.Remove(effect);
+                    }
                 }
             }
         }
@@ -485,26 +486,34 @@ public class CombatManager : MonoBehaviour
 
     private void CheckEnemyStatus()
     {
-        foreach (Enemy enemyRef in Enemies)
+        if(Enemies != null)
         {
-            foreach (StatusFx effect in enemyRef.currentStatus.Keys)
+            foreach (Enemy enemyRef in Enemies)
             {
-                if (effect.HasEndRoundFx)
+                foreach (StatusFx effect in enemyRef.currentStatus.Keys)
                 {
-                    effect.ApplyEffect(enemyRef);
-                }
-                if (effect.LoseStackOnEndRound)
-                {
-                    enemyRef.currentStatus[effect]--;
-                }
-                if (enemyRef.currentStatus[effect] <= 0)
-                {
-                    enemyRef.currentStatus.Remove(effect);
+                    if (effect.HasEndRoundFx)
+                    {
+                        effect.ApplyEffect(enemyRef);
+                    }
+                    if (effect.LoseStackOnEndRound)
+                    {
+                        enemyRef.currentStatus[effect]--;
+                    }
+                    if (enemyRef.currentStatus[effect] <= 0)
+                    {
+                        enemyRef.currentStatus.Remove(effect);
+                    }
                 }
             }
+            uIManager.ChangeTurnUIPrompt();
+            StartCoroutine(ChangeStateWithDelay(BATTLESTATE.PlayerTurn, 3));
         }
-        uIManager.ChangeTurnUIPrompt();
-        StartCoroutine(ChangeStateWithDelay(BATTLESTATE.PlayerTurn, 3));
+        else
+        {
+
+        }
+        
     }
 
     #endregion
