@@ -28,20 +28,30 @@ public class NavigationManager : MonoBehaviour
     [SerializeField] GameObject _itemPrefab;
     [SerializeField] List<GameObject> _itensList = new List<GameObject>();
     Dictionary<int, int> _itemDic = new Dictionary<int, int> ();
-    
 
+    public static NavigationManager instance;
     #endregion
 
     #region Propriedades
     public ScriptablePlace PlacesList { get => _placesList; set => _placesList = value; }
     public GameObject DialogueCanvas { get => _DialogueCanvas; set => _DialogueCanvas = value; }
-  
+    public Dictionary<int, int> ItemDic { get => _itemDic; set => _itemDic = value; }
+
 
     #endregion
 
     #region Start
     private void Start()
     {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+
+        }
         SpawnItems();
         NewPlace(0);
        
@@ -85,7 +95,7 @@ public class NavigationManager : MonoBehaviour
         {
             itensToDisable.SetActive(false);
         }
-        foreach (var item in _itemDic)
+        foreach (var item in ItemDic)
         {
            if(item.Value == _currentPlaceIndex)
             {
@@ -156,12 +166,16 @@ public class NavigationManager : MonoBehaviour
                 idCounter++;
 
                 Item.GetComponent<ItemCollect>().ItemId = idCounter;
-                _itemDic.Add(idCounter, e);
+                ItemDic.Add(idCounter, e);
 
                 Item.SetActive(false);
 
+
+
                 Image newItemImage = Item.GetComponent<Image>();
                 newItemImage.sprite = _myPlaces[e].Itens[i].Icon;
+
+                Item.GetComponent<ItemCollect>().ThisItem = _myPlaces[e].Itens[i];
 
             }
         }
