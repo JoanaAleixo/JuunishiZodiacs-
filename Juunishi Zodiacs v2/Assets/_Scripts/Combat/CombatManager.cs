@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using System;
 using TMPro;
+using System.Linq;
 
 enum BATTLESTATE
 {
@@ -53,6 +54,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] int _selectedCaracter;
     [SerializeField] GameObject _actionMenu;
     [SerializeField] int playersOnRoundStart;
+    [SerializeField] Ability emptyAbility;
     [Header("TemporaryStuff")]
     [SerializeField] int tempIndex;
     [SerializeReference] Modifiers[] temporaryMods;
@@ -149,6 +151,7 @@ public class CombatManager : MonoBehaviour
                 if(_actions.Count == 0)
                 {
                     uIManager.UnlockAllSelectionButtons();
+                    PreRoundStatusCheck();
                 }
                 uIManager.EnableCaracterSelection();
                 uIManager.UnlockCaracterSelection();
@@ -178,7 +181,15 @@ public class CombatManager : MonoBehaviour
                 {
                     uIManager.LockCaracterSelection();
                     uIManager.CloseActionMenu();
-                    Enemies[tempEnemy].ChoseAbility();
+                    if (EnemyStatusCheck(tempEnemy))
+                    {
+                        Enemies[tempEnemy].ChoseAbility();
+                    }
+                    else
+                    {
+                        tempEnemy++;
+                        StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EnemyTurn, 1));
+                    }
                 }
                 break;
             case BATTLESTATE.EnemyExecuteAbility:
@@ -379,7 +390,8 @@ public class CombatManager : MonoBehaviour
 
     private void EnemyTargetAbility()    // Toda a lógica de seleção de targets das habilidades dos inimigos
     {
-        if (tempIndex < temporaryMods.Length)
+        /*if (tempIndex < temporaryMods.Length)*/
+        foreach (var ab in temporaryMods) 
         {
             switch (temporaryMods[tempIndex].TargetType)
             {
@@ -409,6 +421,7 @@ public class CombatManager : MonoBehaviour
                     break;
                 case TARGETING.singleAlly:
                     temporaryTargets = new GameObject[] { Enemies[Enemies[tempEnemy].ChoseAllyTarget()].gameObject };
+                    AddToMods(temporaryMods[tempIndex], temporaryTargets);
                     break;
             }
         }
@@ -454,7 +467,7 @@ public class CombatManager : MonoBehaviour
         {
             foreach (PlayableCaracter caracterRef in Caracters)
             {
-                foreach (StatusFx effect in caracterRef.currentStatus.Keys)
+                foreach (StatusFx effect in caracterRef.currentStatus.Keys.ToList())
                 {
                     if (effect.HasEndRoundFx)
                     {
@@ -490,7 +503,7 @@ public class CombatManager : MonoBehaviour
         {
             foreach (Enemy enemyRef in Enemies)
             {
-                foreach (StatusFx effect in enemyRef.currentStatus.Keys)
+                foreach (StatusFx effect in enemyRef.currentStatus.Keys.ToList())
                 {
                     if (effect.HasEndRoundFx)
                     {
@@ -579,5 +592,34 @@ public class CombatManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         ChangeState(BATTLESTATE.PlayerTurn);
+    }
+
+    void PreRoundStatusCheck()
+    {
+        foreach (var carac in Caracters)
+        {
+            foreach (var status in carac.currentStatus)
+            {
+                if(status.Key is ParalizeFx)
+                {
+                    _actions.Add(emptyAbility);
+                    uIManager.LockSelectionButton(carac.CaracterNumber);
+                }
+            }
+        }
+    }
+
+    bool EnemyStatusCheck(int enemyId)
+    {
+        foreach(var status in Enemies[enemyId].currentStatus)
+        {
+            if (status.Key is ParalizeFx)
+            {
+                _actions.Add(emptyAbility);
+                print("He is paralized");
+                return false;
+            }
+        }
+        return true;
     }
 }

@@ -5,7 +5,8 @@ using UnityEditor;
 
 enum STATUSTYPES
 {
-    Bound
+    Bound,
+    Paralize
 }
 
 public class StatusModifier : Modifiers
@@ -35,6 +36,10 @@ public class StatusModifier : Modifiers
                 effect = new BoundFx(true, false, false, 5);
                 Quantity = 1;
                 break;
+            case STATUSTYPES.Paralize:
+                effect = new ParalizeFx(false,true,false);
+                Quantity = 1;
+                break;
             default:
                 effect = new BoundFx(true, false, false, 5);
                 Quantity = 0;
@@ -43,7 +48,6 @@ public class StatusModifier : Modifiers
 
         if (TargetType == TARGETING.singleEnemy || TargetType == TARGETING.singleAlly || TargetType == TARGETING.self)
         {
-            Debug.Log("Status Mod Executed!");
             target[0].GetComponent<BaseStats>().currentStatus.Add(effect, Quantity);
         }
         else if (TargetType == TARGETING.multipleEnemy || TargetType == TARGETING.multipleAlly)
