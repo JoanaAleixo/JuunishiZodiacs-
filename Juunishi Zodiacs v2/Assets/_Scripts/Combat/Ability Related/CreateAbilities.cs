@@ -45,7 +45,7 @@ public class CreateAbilities : EditorWindow
         }
 
         yesAbility = (Ability)EditorGUILayout.ObjectField("Scriptable Obj: ", yesAbility, typeof(Ability), false);
-        _abilityDesc = (string)EditorGUILayout.TextField("Desc: ", _abilityDesc);
+        //_abilityDesc = (string)EditorGUILayout.TextField("Desc: ", _abilityDesc);
 
         if (yesAbility == null)
         {

@@ -18,9 +18,62 @@ public class Enemy : BaseStats
 
     public void ChoseAbility()
     {
-        Ability abi = MyCaracter.Abilities[Random.Range(0, MyCaracter.Abilities.Length)];
-        Debug.Log(abi.name);
-        combatMg.EnemyAbility(abi);
+        bool rollDrowsy = false;
+        bool passedRoll = true;
+        int chance = 0;
+        foreach (var status in currentStatus)
+        {
+            if (status.Key is DrowsyFx)
+            {
+                rollDrowsy = true;
+                switch (status.Value)
+                {
+                    case 1:
+                        chance = 90;
+                        break;
+                    case 2:
+                        chance = 80;
+                        break;
+                    case 3:
+                        chance = 0;
+                        break;
+                    case 4:
+                        chance = 60;
+                        break;
+                    case 5:
+                        chance = 50;
+                        break;
+                    default:
+                        chance = 100;
+                        break;
+                }
+            }
+        }
+        if (rollDrowsy)
+        {
+            int rand = UnityEngine.Random.Range(1, 101);
+            if (rand <= chance)
+            {
+                Debug.Log("Passed chance of " + chance + "% with a " + rand);
+                passedRoll = true;
+            }
+            else
+            {
+                Debug.Log("Did not pass chance of " + chance + "% with a " + rand);
+                passedRoll = false;
+            }
+        }
+        if (passedRoll)
+        {
+            Ability abi = MyCaracter.Abilities[Random.Range(0, MyCaracter.Abilities.Length)];
+            Debug.Log(abi.name);
+            combatMg.EnemyAbility(abi);
+        }
+        else
+        {
+            combatMg.EnemyAbility(combatMg.EmptyAbility);
+        }
+        
     }
 
     public int ChoseEnemyTarget()

@@ -68,6 +68,7 @@ public class CombatManager : MonoBehaviour
     internal BATTLESTATE CurState { get => _curState; set => _curState = value; }
     public List<PlayableCaracter> Caracters { get => _caracters; set => _caracters = value; }
     public List<Enemy> Enemies { get => _enemies; set => _enemies = value; }
+    public Ability EmptyAbility { get => emptyAbility; set => emptyAbility = value; }
 
     #region Awake + Start
 
@@ -244,18 +245,71 @@ public class CombatManager : MonoBehaviour
 
     public void SelectAbility(int _abilityNumb)   // Quando um botão de habilidade é clicado
     {
-        
-        if (_abilityNumb >= 0 && _abilityNumb <= 2)
+        bool rollDrowsy = false;
+        bool passedRoll = true;
+        int chance = 0;
+        foreach (var status in Caracters[SelectedCaracter].currentStatus)
         {
-            _actions.Add(Caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb]);
-            temporaryMods = Caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb].Mods.ToArray();
-            ChangeState(BATTLESTATE.SelectingTarget);
+            if(status.Key is DrowsyFx)
+            {
+                rollDrowsy = true;
+                switch (status.Value) 
+                {
+                    case 1:
+                        chance = 90;
+                        break;
+                    case 2:
+                        chance = 80;
+                        break;
+                    case 3:
+                        chance = 0;
+                        break;
+                    case 4:
+                        chance = 60;
+                        break;
+                    case 5:
+                        chance = 50;
+                        break;
+                    default:
+                        chance = 100;
+                        break;
+                }
+            }
+        }
+        if (rollDrowsy)
+        {
+            int rand = UnityEngine.Random.Range(1,101);
+            if(rand <= chance)
+            {
+                Debug.Log("Passed chance of " + chance + "% with a " + rand);
+                passedRoll = true;
+            }
+            else
+            {
+                Debug.Log("Did not pass chance of " + chance + "% with a " + rand);
+                passedRoll = false;
+            }
+        }
+        if (passedRoll)
+        {
+            if (_abilityNumb >= 0 && _abilityNumb <= 2)
+            {
+                _actions.Add(Caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb]);
+                temporaryMods = Caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb].Mods.ToArray();
+                ChangeState(BATTLESTATE.SelectingTarget);
+            }
+            else
+            {
+                _actions.Add(Caracters[SelectedCaracter].MyCaracter.PhysicalAbility);
+                temporaryMods = Caracters[SelectedCaracter].MyCaracter.PhysicalAbility.Mods.ToArray();
+                ChangeState(BATTLESTATE.SelectingTarget);
+            }
         }
         else
         {
-            _actions.Add(Caracters[SelectedCaracter].MyCaracter.PhysicalAbility);
-            temporaryMods = Caracters[SelectedCaracter].MyCaracter.PhysicalAbility.Mods.ToArray();
-            ChangeState(BATTLESTATE.SelectingTarget);
+            _actions.Add(EmptyAbility);
+            uIManager.CloseSelectedCaracter(SelectedCaracter);
+            StartCoroutine(ChangeStateWithDelay(BATTLESTATE.PlayerTurn, 2));
         }
 
         uIManager.CloseActionMenu();
@@ -602,7 +656,7 @@ public class CombatManager : MonoBehaviour
             {
                 if(status.Key is ParalizeFx)
                 {
-                    _actions.Add(emptyAbility);
+                    _actions.Add(EmptyAbility);
                     uIManager.LockSelectionButton(carac.CaracterNumber);
                 }
             }
@@ -615,7 +669,7 @@ public class CombatManager : MonoBehaviour
         {
             if (status.Key is ParalizeFx)
             {
-                _actions.Add(emptyAbility);
+                _actions.Add(EmptyAbility);
                 print("He is paralized");
                 return false;
             }
