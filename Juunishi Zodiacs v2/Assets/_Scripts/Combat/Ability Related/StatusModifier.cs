@@ -9,7 +9,8 @@ enum STATUSTYPES
     Bound,
     Paralize,
     Drowsy,
-    Shield
+    Shield,
+    CureDebuff
 }
 
 public class StatusModifier : Modifiers
@@ -17,6 +18,7 @@ public class StatusModifier : Modifiers
     [SerializeField] int Quantity;
     [SerializeField] bool isBuff;
     [SerializeField] STATUSTYPES status;
+    [SerializeField] int maxQuant;
 
     public bool IsBuff { get => isBuff; set => isBuff = value; }
 
@@ -38,22 +40,32 @@ public class StatusModifier : Modifiers
             case STATUSTYPES.Bound:
                 effect = new BoundFx(true, false, false, 5);
                 Quantity = 1;
+                maxQuant = 100;
                 break;
             case STATUSTYPES.Paralize:
                 effect = new ParalizeFx(false,true,false);
                 Quantity = 1;
+                maxQuant = 100;
                 break;
             case STATUSTYPES.Drowsy:
                 effect = new DrowsyFx(false, true, false);
                 Quantity = 3;
+                maxQuant = 5;
                 break;
             case STATUSTYPES.Shield:
                 effect = new ShieldFx(false, false, true); 
-                Quantity = 1; 
+                Quantity = 1;
+                maxQuant = 1;
+                break;
+            case STATUSTYPES.CureDebuff:
+                effect = new CureDebuffFx(true, false, true);
+                Quantity = 1;
+                maxQuant = 1;
                 break;
             default:
                 effect = new BoundFx(true, false, false, 5);
                 Quantity = 0;
+                maxQuant = 100;
                 break;
         }
 
@@ -65,8 +77,11 @@ public class StatusModifier : Modifiers
                 if(curstatus.Key.GetType() == effect.GetType() )
                 {
                     foundEffect = true;
-                    Debug.Log("should add stacks");
                     target[0].GetComponent<BaseStats>().currentStatus[curstatus.Key] += Quantity;
+                    if(target[0].GetComponent<BaseStats>().currentStatus[curstatus.Key] > maxQuant)
+                    {
+                        target[0].GetComponent<BaseStats>().currentStatus[curstatus.Key] -= target[0].GetComponent<BaseStats>().currentStatus[curstatus.Key] - maxQuant;
+                    }
                 }
             }
             if (foundEffect == false)
@@ -85,8 +100,11 @@ public class StatusModifier : Modifiers
                     if (curstatus.Key.GetType() == effect.GetType())
                     {
                         foundEffect = true;
-                        Debug.Log("should add stacks");
                         target[i].GetComponent<BaseStats>().currentStatus[curstatus.Key] += Quantity;
+                        if (target[i].GetComponent<BaseStats>().currentStatus[curstatus.Key] > maxQuant)
+                        {
+                            target[i].GetComponent<BaseStats>().currentStatus[curstatus.Key] -= target[i].GetComponent<BaseStats>().currentStatus[curstatus.Key] - maxQuant;
+                        }
                     }
                 }
                 if (foundEffect == false)
