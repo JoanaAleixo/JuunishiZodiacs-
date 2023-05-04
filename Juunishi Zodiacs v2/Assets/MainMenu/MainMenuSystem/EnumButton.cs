@@ -31,7 +31,8 @@ public class EnumButton : MonoBehaviour
 
                 case Options.Inventory:
                     MenuManager.instance.Option((int)Options.Inventory);
-                    break;
+                
+                break;
 
                 case Options.Contacts:
                     MenuManager.instance.Option((int)Options.Contacts);
@@ -65,7 +66,18 @@ public class EnumButton : MonoBehaviour
             default:
                     break;
             }
-        
+
+        if (myOptions == Options.MainMenu)
+        {
+            MenuManager.instance.CloseInventory();
+        }
+
+        if (myOptions == Options.Inventory)
+        {
+            MenuManager.instance.InventorySystem();
+        }
+
+      
        
     }
 }

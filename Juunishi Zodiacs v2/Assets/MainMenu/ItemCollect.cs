@@ -7,7 +7,7 @@ public class ItemCollect : MonoBehaviour
 {
     [SerializeField] int itemId;
     [SerializeField] ScriptableItem _thisItem;
-    [SerializeField] int _itemAmmount = 1;
+    [SerializeField] int _itemAmount = 1;
 
     public int ItemId { get => itemId; set => itemId = value; }
     public ScriptableItem ThisItem { get => _thisItem; set => _thisItem = value; }
@@ -23,16 +23,16 @@ public class ItemCollect : MonoBehaviour
             if (MenuManager.instance.Inventory.ContainsKey(ThisItem))
             {
           
-            _itemAmmount++;
+            _itemAmount++;
             //  MenuManager.instance.Inventory.TryGetValue(ThisItem, out _itemAmmount);
-            MenuManager.instance.Inventory[ThisItem] = _itemAmmount;
+            MenuManager.instance.Inventory[ThisItem] = _itemAmount;
 
 
         }
             else
             {
            
-            MenuManager.instance.Inventory.Add(ThisItem, _itemAmmount);
+            MenuManager.instance.Inventory.Add(ThisItem, _itemAmount);
 
           
         }

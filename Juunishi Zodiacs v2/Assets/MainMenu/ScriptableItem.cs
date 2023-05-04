@@ -13,5 +13,5 @@ public class ScriptableItem : ScriptableObject
 
     public Vector3 ItemPositionInNav { get => _itemPositionInNav; set => _itemPositionInNav = value; }
     public Sprite Icon { get => _icon; set => _icon = value; }
-
+    public string ItemName { get => _itemName; set => _itemName = value; }
 }

@@ -42,6 +42,7 @@ public class DialogUIManager : MonoBehaviour
     [SerializeField] Image _phoneUI;
     bool _phoneIsOpen = false;
     bool _canOpenPhone = true;
+    [SerializeField] GameObject _fakeBackground;
 
 
 
@@ -197,11 +198,16 @@ public class DialogUIManager : MonoBehaviour
             {
                 _phoneUI.gameObject.SetActive(false);
                 _phoneIsOpen = false;
+                _fakeBackground.gameObject.SetActive(false);
+               
             }
             else
             {
                 _phoneUI.gameObject.SetActive(true);
                 _phoneIsOpen = true;
+                _fakeBackground.gameObject.SetActive(true);
+
+               
             }
 
         }

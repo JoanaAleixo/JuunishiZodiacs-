@@ -26,6 +26,7 @@ public class NavigationManager : MonoBehaviour
 
     [Header("Itens")]
     [SerializeField] GameObject _itemPrefab;
+    [SerializeField] GameObject _itemDisplay;
     [SerializeField] List<GameObject> _itensList = new List<GameObject>();
     Dictionary<int, int> _itemDic = new Dictionary<int, int> ();
 
@@ -157,7 +158,7 @@ public class NavigationManager : MonoBehaviour
 
               
                 GameObject Item = Instantiate(_itemPrefab, _itemPrefab.transform.position, _itemPrefab.transform.rotation) as GameObject;
-                Item.transform.SetParent(_placesCanvas.transform, false);
+                Item.transform.SetParent(_itemDisplay.transform, false);
                 Item.transform.position = Camera.main.WorldToScreenPoint(_myPlaces[e].Itens[i].ItemPositionInNav);
 
 
