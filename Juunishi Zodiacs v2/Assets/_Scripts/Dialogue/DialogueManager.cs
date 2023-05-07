@@ -67,6 +67,8 @@ public class DialogueManager : MonoBehaviour
     [Header("SceneCombate")]
     [SerializeField] GameObject _prefabCombat;
 
+  
+
     public int TrustValue { get => _trustValue; set => _trustValue = value; }
     public ScriptableDialogue[] MyDialogTree { get => myDialogTree; set => myDialogTree = value; }
     public ScriptableDialogue DialogueTree1 { get => DialogueTree; set => DialogueTree = value; }
@@ -438,5 +440,6 @@ public class DialogueManager : MonoBehaviour
         _choisesButtons.SetActive(false);
         _placesButtons1.ChangeButtonColorVisible();
         DisableDialgue();
+      
     }
 }

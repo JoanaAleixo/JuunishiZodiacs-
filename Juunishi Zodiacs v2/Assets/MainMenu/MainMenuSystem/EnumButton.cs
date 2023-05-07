@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnumButton : MonoBehaviour
 {
 
+    [SerializeField] GameObject _appBlock;
+
     public Options myOptions;
     public enum Options
     {
@@ -27,39 +29,47 @@ public class EnumButton : MonoBehaviour
             {
                 case Options.MainMenu:
                     MenuManager.instance.Option((int)Options.MainMenu);
+                _appBlock.SetActive(false);
                     break;
 
                 case Options.Inventory:
                     MenuManager.instance.Option((int)Options.Inventory);
-                
+                _appBlock.SetActive(true);
                 break;
 
                 case Options.Contacts:
                     MenuManager.instance.Option((int)Options.Contacts);
-                    break;
+                _appBlock.SetActive(true);
+                break;
 
                  case Options.Messages:
                       MenuManager.instance.Option((int)Options.Messages);
-                      break;
+                _appBlock.SetActive(true);
+                break;
 
             case Options.Notes:
                 MenuManager.instance.Option((int)Options.Notes);
+                _appBlock.SetActive(true);
                 break;
 
             case Options.Photos:
                 MenuManager.instance.Option((int)Options.Photos);
+                _appBlock.SetActive(true);
                 break;
 
             case Options.Reminders:
                 MenuManager.instance.Option((int)Options.Reminders);
+                _appBlock.SetActive(true);
                 break;
 
             case Options.Options:
                 MenuManager.instance.Option((int)Options.Options);
+                _appBlock.SetActive(true);
                 break;
 
             case Options.Map:
                 MenuManager.instance.Option((int)Options.Map);
+                _appBlock.SetActive(true);
                 break;
 
 
@@ -70,6 +80,7 @@ public class EnumButton : MonoBehaviour
         if (myOptions == Options.MainMenu)
         {
             MenuManager.instance.CloseInventory();
+            
         }
 
         if (myOptions == Options.Inventory)
