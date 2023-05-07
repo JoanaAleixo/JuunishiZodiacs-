@@ -101,6 +101,15 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
                 currentStatus.Remove(status.Key);
             }
         }
+        if (this.GetComponent<BaseStats>() is PlayableCaracter)
+        {
+            Debug.Log("WTF");
+            uIManager.RepresentStatusFx(this);
+        }
+        else if (this.GetComponent<BaseStats>() is Enemy)
+        {
+            this.GetComponent<Enemy>().EnemyStatusFx();
+        }
         if (isShielded == false)
         {
             float val = ElementInteractions.CheckInteraction(MyCaracter.Type, dmType);

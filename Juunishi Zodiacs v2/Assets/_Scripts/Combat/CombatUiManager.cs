@@ -36,12 +36,27 @@ public class CombatUiManager : MonoBehaviour
     [SerializeField] GameObject _changeTurnObj;
     [Header("LoseMenu")]
     [SerializeField] GameObject _loseMenu;
+    [Header("StatusFx")]
+    [SerializeField] GameObject[] _player0StatusFx;
+    [SerializeField] GameObject[] _player1StatusFx;
+    [SerializeField] GameObject[] _player2StatusFx;
+    [SerializeField] Sprite boundFxSprite;
+    [SerializeField] Sprite paralizeFxSprite;
+    [SerializeField] Sprite drowsyFxSprite;
+    [SerializeField] Sprite shieldFxSprite;
+    [SerializeField] Sprite rageFxSprite;
+    [SerializeField] Sprite cureDebuffFxSprite;
 
     //[Header("Other")]
 
     public BaseStats TemporarySelectedTarget { get => _temporarySelectedTarget; set { _temporarySelectedTarget = value; _targetTimer = 0; } }
     public bool EnemyTargetSelecting { get => _enemyTargetSelecting; set => _enemyTargetSelecting = value; }
     public bool AllyTargetSelecting { get => _allyTargetSelecting; set => _allyTargetSelecting = value; }
+    public Sprite BoundFxSprite { get => boundFxSprite;}
+    public Sprite ParalizeFxSprite { get => paralizeFxSprite;}
+    public Sprite DrowsyFxSprite { get => drowsyFxSprite; }
+    public Sprite ShieldFxSprite { get => shieldFxSprite; }
+    public Sprite CureDebuffFxSprite { get => cureDebuffFxSprite; }
 
     #region Awake + Start + Update
 
@@ -306,5 +321,140 @@ public class CombatUiManager : MonoBehaviour
     public void OpenLoseMenu()
     {
         _loseMenu.SetActive(true);
+    }
+
+    public void AddStatusFxUi()
+    {
+
+    }
+
+    public void RepresentStatusFx(BaseStats car)
+    {
+        int cont = 0;
+
+        if(car is PlayableCaracter)
+        {
+            switch (car.CaracterNumber)
+            {
+                case 0:
+                    foreach (var status in car.currentStatus)
+                    {
+                        Debug.Log(status);
+                        _player0StatusFx[cont].SetActive(true);
+                        if (status.Key is BoundFx)
+                        {
+                            _player0StatusFx[cont].GetComponent<Image>().sprite = BoundFxSprite;
+                        }
+                        else if (status.Key is ParalizeFx)
+                        {
+                            _player0StatusFx[cont].GetComponent<Image>().sprite = ParalizeFxSprite;
+                        }
+                        else if (status.Key is DrowsyFx)
+                        {
+                            _player0StatusFx[cont].GetComponent<Image>().sprite = DrowsyFxSprite;
+                        }
+                        else if (status.Key is ShieldFx)
+                        {
+                            Debug.Log("Vi um shield");
+                            _player0StatusFx[cont].GetComponent<Image>().sprite = ShieldFxSprite;
+                        }
+                        else if (status.Key is CureDebuffFx)
+                        {
+                            _player0StatusFx[cont].GetComponent<Image>().sprite = CureDebuffFxSprite;
+                        }
+                        /*else if (status.Key is RageFx)
+                        {
+
+                        }
+                        else if (status.Key is OutroFx)
+                        {
+                        
+                        }*/
+                        _player0StatusFx[cont].GetComponentInChildren<TextMeshProUGUI>().text = status.Value.ToString();
+                        cont++;
+                    }
+                    for (int i = cont; i < 5; i++)
+                    {
+                        _player0StatusFx[i].SetActive(false);
+                    }
+                    break;
+                case 1:
+                    foreach (var status in car.currentStatus)
+                    {
+                        _player1StatusFx[cont].SetActive(true);
+                        if (status.Key is BoundFx)
+                        {
+                            _player1StatusFx[cont].GetComponent<Image>().sprite = BoundFxSprite;
+                        }
+                        else if (status.Key is ParalizeFx)
+                        {
+                            _player1StatusFx[cont].GetComponent<Image>().sprite = ParalizeFxSprite;
+                        }
+                        else if (status.Key is DrowsyFx)
+                        {
+                            _player1StatusFx[cont].GetComponent<Image>().sprite = DrowsyFxSprite;
+                        }
+                        else if (status.Key is ShieldFx)
+                        {
+                            _player1StatusFx[cont].GetComponent<Image>().sprite = shieldFxSprite;
+                        }
+                        else if (status.Key is CureDebuffFx)
+                        {
+                            _player1StatusFx[cont].GetComponent<Image>().sprite = CureDebuffFxSprite;
+                        }
+                        /*else if (status.Key is RageFx)
+                        {
+
+                        }
+                        else if (status.Key is OutroFx)
+                        {
+                        
+                        }*/
+                        _player1StatusFx[cont].GetComponentInChildren<TextMeshProUGUI>().text = status.Value.ToString();
+                        cont++;
+                    }
+                    for (int i = cont + 1; i < 5; i++)
+                    {
+                        _player1StatusFx[i].SetActive(false);
+                    }
+                    break;
+                case 2:
+                    foreach (var status in car.currentStatus)
+                    {
+                        _player2StatusFx[cont].SetActive(true);
+                        if (status.Key is BoundFx)
+                        {
+                            _player2StatusFx[cont].GetComponent<Image>().sprite = BoundFxSprite;
+                        }
+                        else if (status.Key is ParalizeFx)
+                        {
+                            _player2StatusFx[cont].GetComponent<Image>().sprite = ParalizeFxSprite;
+                        }
+                        else if (status.Key is DrowsyFx)
+                        {
+                            _player2StatusFx[cont].GetComponent<Image>().sprite = DrowsyFxSprite;
+                        }
+                        else if (status.Key is ShieldFx)
+                        {
+                            _player2StatusFx[cont].GetComponent<Image>().sprite = shieldFxSprite;
+                        }
+                        else if (status.Key is CureDebuffFx)
+                        {
+                            _player2StatusFx[cont].GetComponent<Image>().sprite = CureDebuffFxSprite;
+                        }
+                        /*else if (status.Key is OutroFx)
+                        {
+                        
+                        }*/
+                        _player2StatusFx[cont].GetComponentInChildren<TextMeshProUGUI>().text = status.Value.ToString();
+                        cont++;
+                    }
+                    for (int i = cont + 1; i < 5; i++)
+                    {
+                        _player2StatusFx[i].SetActive(false);
+                    }
+                    break;
+            }
+        }
     }
 }

@@ -11,6 +11,7 @@ public class PlayableCaracter : BaseStats
     
     [SerializeField] ActiveCaracters _allCaracters;
 
+
     protected override void Start()
     {
         MyCaracter = _allCaracters.ActiveCaractersInGame[CaracterNumber];

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CureDebuffFx : StatusFx
@@ -10,13 +11,14 @@ public class CureDebuffFx : StatusFx
 
     public override void ApplyEffect(BaseStats chara)
     {
-        foreach (var status in chara.currentStatus)
+        foreach (var status in chara.currentStatus.ToList())
         {
-            if (!status.Key.IsBuff)
+            if (!status.Key.IsBuff || status.Key is CureDebuffFx)
             {
                 chara.currentStatus[status.Key] -= 1;
             }
         }
+        CombatUiManager.uiInstance.RepresentStatusFx(chara);
     }
 
 }

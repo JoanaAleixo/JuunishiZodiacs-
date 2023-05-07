@@ -60,7 +60,7 @@ public class CombatManager : MonoBehaviour
     [SerializeReference] Modifiers[] temporaryMods;
     [SerializeField] GameObject[] temporaryTargets;
     [SerializeField] int tempEnemy = 0;
-    [SerializeField] GameObject FloatingDamagePre;
+    [SerializeField] GameObject floatingDamagePre;
     
 
     public int SelectedCaracter { get => _selectedCaracter; set { ChangeSelectedCaracter(_selectedCaracter, value);} }
@@ -86,7 +86,7 @@ public class CombatManager : MonoBehaviour
     void Start()
     {
         uIManager = CombatUiManager.uiInstance;
-        CurState = BATTLESTATE.StartBattle;
+        ChangeState(BATTLESTATE.StartBattle);
         temporaryTargets = null;
     }
 
@@ -99,8 +99,7 @@ public class CombatManager : MonoBehaviour
         switch (CurState)
         {
             case BATTLESTATE.StartBattle:
-                CheckPlayers();
-                StartCoroutine(WaitTwoSeconds());
+
                 break;
             case BATTLESTATE.PlayerTurn:
                 CheckForAbilities();
@@ -146,7 +145,7 @@ public class CombatManager : MonoBehaviour
         {
             case BATTLESTATE.StartBattle:
                 CheckPlayers();
-                ChangeState(BATTLESTATE.PlayerTurn);
+                StartCoroutine(WaitTwoSeconds());
                 break;
             case BATTLESTATE.PlayerTurn:
                 if(_actions.Count == 0)
@@ -262,7 +261,7 @@ public class CombatManager : MonoBehaviour
                         chance = 80;
                         break;
                     case 3:
-                        chance = 0;
+                        chance = 70;
                         break;
                     case 4:
                         chance = 60;
@@ -534,8 +533,10 @@ public class CombatManager : MonoBehaviour
                     if (caracterRef.currentStatus[effect] <= 0)
                     {
                         caracterRef.currentStatus.Remove(effect);
+                        
                     }
                 }
+                uIManager.RepresentStatusFx(caracterRef);
             }
         }
         /*if(isAny == true)
@@ -570,8 +571,10 @@ public class CombatManager : MonoBehaviour
                     if (enemyRef.currentStatus[effect] <= 0)
                     {
                         enemyRef.currentStatus.Remove(effect);
+      
                     }
                 }
+                enemyRef.EnemyStatusFx();
             }
             uIManager.ChangeTurnUIPrompt();
             StartCoroutine(ChangeStateWithDelay(BATTLESTATE.PlayerTurn, 3));
@@ -580,14 +583,13 @@ public class CombatManager : MonoBehaviour
         {
 
         }
-        
     }
 
     #endregion
 
     public void SpawnFloatingDamage(Vector2 pos, int damage)
     {
-        GameObject fD = Instantiate(FloatingDamagePre, pos, Quaternion.identity);
+        GameObject fD = Instantiate(floatingDamagePre, pos, Quaternion.identity);
         fD.GetComponent<TextMeshPro>().text = "-" + damage.ToString();
     }
 
@@ -650,27 +652,35 @@ public class CombatManager : MonoBehaviour
 
     void PreRoundStatusCheck()
     {
+        Debug.Log("checking");
         foreach (var carac in Caracters)
         {
-            foreach (var status in carac.currentStatus)
+            foreach (var status in carac.currentStatus.ToList())
             {
-                if(status.Key is ParalizeFx)
+                Debug.Log(carac);
+                if (status.Key is ParalizeFx)
                 {
+                    Debug.Log("Paralized");
                     _actions.Add(EmptyAbility);
                     uIManager.LockSelectionButton(carac.CaracterNumber);
+                    carac.currentStatus.Remove(status.Key);
+                    
                 }
             }
+            uIManager.RepresentStatusFx(carac);
         }
     }
 
     bool EnemyStatusCheck(int enemyId)
     {
-        foreach(var status in Enemies[enemyId].currentStatus)
+        foreach(var status in Enemies[enemyId].currentStatus.ToList())
         {
             if (status.Key is ParalizeFx)
             {
                 _actions.Add(EmptyAbility);
                 print("He is paralized");
+                Enemies[enemyId].currentStatus.Remove(status.Key);
+                Enemies[enemyId].EnemyStatusFx();
                 return false;
             }
         }

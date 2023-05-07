@@ -43,7 +43,7 @@ public class StatusModifier : Modifiers
                 maxQuant = 100;
                 break;
             case STATUSTYPES.Paralize:
-                effect = new ParalizeFx(false,true,false);
+                effect = new ParalizeFx(false,false,false);
                 Quantity = 1;
                 maxQuant = 100;
                 break;
@@ -74,7 +74,7 @@ public class StatusModifier : Modifiers
             bool foundEffect = false;
             foreach (var curstatus in target[0].GetComponent<BaseStats>().currentStatus.ToList())
             {
-                if(curstatus.Key.GetType() == effect.GetType() )
+                if(curstatus.Key.GetType() == effect.GetType())
                 {
                     foundEffect = true;
                     target[0].GetComponent<BaseStats>().currentStatus[curstatus.Key] += Quantity;
@@ -88,7 +88,15 @@ public class StatusModifier : Modifiers
             {
                 target[0].GetComponent<BaseStats>().currentStatus.Add(effect, Quantity);
             }
-
+            if (target[0].GetComponent<BaseStats>() is PlayableCaracter)
+            {
+                CombatUiManager.uiInstance.RepresentStatusFx(target[0].GetComponent<BaseStats>());
+            } 
+            else if (target[0].GetComponent<BaseStats>() is Enemy)
+            {
+                target[0].GetComponent<Enemy>().EnemyStatusFx();
+            }
+            
         }
         else if (TargetType == TARGETING.multipleEnemy || TargetType == TARGETING.multipleAlly)
         {
@@ -113,5 +121,6 @@ public class StatusModifier : Modifiers
                 }
             }
         }
+        
     }
 }
