@@ -19,6 +19,13 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] GameObject _itemDescriptionBox;
 
+    [Header("AbilitySwitching")]
+    [SerializeField] GameObject[] _abilityButtons;
+    [SerializeField] PlayableCaracterScptObj _akira;
+    [SerializeField] Sprite[] _abilitySprites;
+    [SerializeField] GameObject _abilityInfo;
+    [SerializeField] TextMeshProUGUI _abilityDesc;
+    [SerializeField] TextMeshProUGUI _abilityName;
 
     public static MenuManager instance;
 
@@ -26,6 +33,7 @@ public class MenuManager : MonoBehaviour
     public List<GameObject> ItensInStorage { get => _itensInStorage; set => _itensInStorage = value; }
     public GameObject ItemDescriptionBox { get => _itemDescriptionBox; set => _itemDescriptionBox = value; }
     public Inventory InventoryInfo { get => _inventoryInfo; set => _inventoryInfo = value; }
+    public Sprite[] AbilitySprites { get => _abilitySprites; set => _abilitySprites = value; }
 
     private void Awake()
     {
@@ -37,10 +45,7 @@ public class MenuManager : MonoBehaviour
         else
         {
             instance = this;
-
-        }
-
-        
+        } 
     }
 
     private void Update()
@@ -96,6 +101,41 @@ public class MenuManager : MonoBehaviour
         _itensInStorage.Clear();
     }
 
-  
+    #region AbilitiesStuff
+
+    public void OpenCloseAbilities()
+    {
+        if (_abilityButtons[0].activeSelf == true)
+        {
+            foreach(var item in _abilityButtons)
+            {
+                item.SetActive(false); 
+            }
+        }
+        else
+        {
+            int cont = 0;
+            foreach (var item in _abilityButtons)
+            {
+                item.SetActive(true);
+                item.GetComponent<AbilityInformation>().UpdateInfo(_akira, cont);
+                cont++;
+            }
+        }
+    }
+
+    public void ShowAbilityInfo(int _abilityNumb)
+    {
+        _abilityInfo.SetActive(true);
+        _abilityName.text = _akira.Abilities[_abilityNumb].AbilityName;
+        _abilityDesc.text = _akira.Abilities[_abilityNumb].Description;
+    }
+
+    public void CloseAbilityInfo()
+    {
+        _abilityInfo.SetActive(false);
+    }
+
+    #endregion
 }
 
