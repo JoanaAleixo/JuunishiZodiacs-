@@ -7,6 +7,8 @@ public class ZoneDebugger : MonoBehaviour
 {
     [SerializeField] private ScriptablePlace activePlace;
 
+    [SerializeField] ScriptableItem _itemInPlace;
+
     private void OnDrawGizmos()
     {
         for (int i = 0; i < activePlace.DislocationStr.Length; i++)
@@ -16,5 +18,11 @@ public class ZoneDebugger : MonoBehaviour
             finalPos.z = -10;
             Gizmos.DrawWireSphere(finalPos, 25f);
         }
+
+        Gizmos.color = Color.yellow;
+        Vector3 itemFinalPos = Camera.main.WorldToScreenPoint(_itemInPlace.ItemPositionInNav);
+        itemFinalPos.z = -10;
+        Gizmos.DrawWireSphere(itemFinalPos, 25f);
     }
+
 }

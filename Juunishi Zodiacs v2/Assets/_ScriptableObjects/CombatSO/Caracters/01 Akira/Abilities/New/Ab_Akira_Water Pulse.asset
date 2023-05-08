@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mods:
   - rid: 3818156578291843075
+  - rid: 5145046109220503554
   abilityName: Water Pulse
   description: Light Water damage to All Enemies
   references:
@@ -23,5 +24,11 @@ MonoBehaviour:
       type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
       data:
         _targetType: 4
-        _quantity: 15
+        _quantity: 9
         _damageType: 2
+    - rid: 5145046109220503554
+      type: {class: CostModifier, ns: , asm: Assembly-CSharp}
+      data:
+        _targetType: 0
+        _quantity: 10
+        _costType: 1

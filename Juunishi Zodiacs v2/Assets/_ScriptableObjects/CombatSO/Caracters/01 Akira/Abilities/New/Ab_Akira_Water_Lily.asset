@@ -13,15 +13,21 @@ MonoBehaviour:
   m_Name: Ab_Akira_Water_Lily
   m_EditorClassIdentifier: 
   _mods:
-  - rid: 3818156578291843075
+  - rid: 5145046109220503555
+  - rid: 5145046109220503556
   abilityName: Water Lily
   description: 'Regenerates a slight portion of HP for yourself or an Ally '
   references:
     version: 2
     RefIds:
-    - rid: 3818156578291843075
-      type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
+    - rid: 5145046109220503555
+      type: {class: HealModifier, ns: , asm: Assembly-CSharp}
       data:
         _targetType: 1
+        _quantity: 10
+    - rid: 5145046109220503556
+      type: {class: CostModifier, ns: , asm: Assembly-CSharp}
+      data:
+        _targetType: 0
         _quantity: 15
-        _damageType: 2
+        _costType: 1

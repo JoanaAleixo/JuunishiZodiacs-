@@ -16,7 +16,9 @@ MonoBehaviour:
   - rid: 3818156578291843075
   - rid: 7633445517126270980
   abilityName: Rock Throw
-  description: Medium Earth damage to All Enemies
+  description: 'Medium Earth damage to All Enemies
+
+    Cost: 60 SP'
   references:
     version: 2
     RefIds:
@@ -30,5 +32,5 @@ MonoBehaviour:
       type: {class: CostModifier, ns: , asm: Assembly-CSharp}
       data:
         _targetType: 0
-        _quantity: -10
+        _quantity: 60
         _costType: 1

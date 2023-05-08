@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -46,7 +47,6 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     [SerializeField] protected CaracterCreation myCaracter;
     [SerializeField] private int caracterNumber;
     [SerializeField] protected GameEvent takeDamageEV;
-    [SerializeField] bool isShielded;
     [SerializeField] SpriteRenderer sRenderer;
     [SerializeField] string spritePath;
 
@@ -67,7 +67,6 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
 
 
     public CaracterCreation MyCaracter { get => myCaracter; set => myCaracter = value; }
-    public bool IsShielded { get => isShielded; set => isShielded = value; }
     public int CaracterNumber { get => caracterNumber; set => caracterNumber = value; }
 
     protected virtual void Start()
@@ -93,7 +92,25 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
 
     public virtual void TakeDamage(int dmToTake, DAMAGETYPE dmType)
     {
-        if (IsShielded == false)
+        bool isShielded = false;
+        foreach (var status in currentStatus.ToList())
+        {
+            if(status.Key is ShieldFx)
+            {
+                isShielded = true;
+                currentStatus.Remove(status.Key);
+            }
+        }
+        if (this.GetComponent<BaseStats>() is PlayableCaracter)
+        {
+            Debug.Log("WTF");
+            uIManager.RepresentStatusFx(this);
+        }
+        else if (this.GetComponent<BaseStats>() is Enemy)
+        {
+            this.GetComponent<Enemy>().EnemyStatusFx();
+        }
+        if (isShielded == false)
         {
             float val = ElementInteractions.CheckInteraction(MyCaracter.Type, dmType);
             if(val != 0)
@@ -110,7 +127,7 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
         }
         else
         {
-            IsShielded = false;
+            Debug.Log("Was shielded");
         }
         CheckIfDead();
     }
