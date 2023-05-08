@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayableCaracterScptObj : CaracterCreation
 {
     [SerializeField] FloatVariable _spMax;
+    [SerializeField] Ability[] _allCaracterAbilities;
 
     public FloatVariable SpMax { get => _spMax; set => _spMax = value; }
 }

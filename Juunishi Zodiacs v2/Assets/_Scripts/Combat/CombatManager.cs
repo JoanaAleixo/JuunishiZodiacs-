@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using System;
 using TMPro;
+using System.Linq;
 
 enum BATTLESTATE
 {
@@ -53,12 +54,13 @@ public class CombatManager : MonoBehaviour
     [SerializeField] int _selectedCaracter;
     [SerializeField] GameObject _actionMenu;
     [SerializeField] int playersOnRoundStart;
+    [SerializeField] Ability emptyAbility;
     [Header("TemporaryStuff")]
     [SerializeField] int tempIndex;
     [SerializeReference] Modifiers[] temporaryMods;
     [SerializeField] GameObject[] temporaryTargets;
     [SerializeField] int tempEnemy = 0;
-    [SerializeField] GameObject FloatingDamagePre;
+    [SerializeField] GameObject floatingDamagePre;
     
 
     public int SelectedCaracter { get => _selectedCaracter; set { ChangeSelectedCaracter(_selectedCaracter, value);} }
@@ -66,6 +68,7 @@ public class CombatManager : MonoBehaviour
     internal BATTLESTATE CurState { get => _curState; set => _curState = value; }
     public List<PlayableCaracter> Caracters { get => _caracters; set => _caracters = value; }
     public List<Enemy> Enemies { get => _enemies; set => _enemies = value; }
+    public Ability EmptyAbility { get => emptyAbility; set => emptyAbility = value; }
 
     #region Awake + Start
 
@@ -83,7 +86,7 @@ public class CombatManager : MonoBehaviour
     void Start()
     {
         uIManager = CombatUiManager.uiInstance;
-        CurState = BATTLESTATE.StartBattle;
+        ChangeState(BATTLESTATE.StartBattle);
         temporaryTargets = null;
     }
 
@@ -96,8 +99,7 @@ public class CombatManager : MonoBehaviour
         switch (CurState)
         {
             case BATTLESTATE.StartBattle:
-                CheckPlayers();
-                StartCoroutine(WaitTwoSeconds());
+
                 break;
             case BATTLESTATE.PlayerTurn:
                 CheckForAbilities();
@@ -143,12 +145,13 @@ public class CombatManager : MonoBehaviour
         {
             case BATTLESTATE.StartBattle:
                 CheckPlayers();
-                ChangeState(BATTLESTATE.PlayerTurn);
+                StartCoroutine(WaitTwoSeconds());
                 break;
             case BATTLESTATE.PlayerTurn:
                 if(_actions.Count == 0)
                 {
                     uIManager.UnlockAllSelectionButtons();
+                    PreRoundStatusCheck();
                 }
                 uIManager.EnableCaracterSelection();
                 uIManager.UnlockCaracterSelection();
@@ -178,7 +181,15 @@ public class CombatManager : MonoBehaviour
                 {
                     uIManager.LockCaracterSelection();
                     uIManager.CloseActionMenu();
-                    Enemies[tempEnemy].ChoseAbility();
+                    if (EnemyStatusCheck(tempEnemy))
+                    {
+                        Enemies[tempEnemy].ChoseAbility();
+                    }
+                    else
+                    {
+                        tempEnemy++;
+                        StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EnemyTurn, 1));
+                    }
                 }
                 break;
             case BATTLESTATE.EnemyExecuteAbility:
@@ -233,18 +244,71 @@ public class CombatManager : MonoBehaviour
 
     public void SelectAbility(int _abilityNumb)   // Quando um botão de habilidade é clicado
     {
-        
-        if (_abilityNumb >= 0 && _abilityNumb <= 2)
+        bool rollDrowsy = false;
+        bool passedRoll = true;
+        int chance = 0;
+        foreach (var status in Caracters[SelectedCaracter].currentStatus)
         {
-            _actions.Add(Caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb]);
-            temporaryMods = Caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb].Mods.ToArray();
-            ChangeState(BATTLESTATE.SelectingTarget);
+            if(status.Key is DrowsyFx)
+            {
+                rollDrowsy = true;
+                switch (status.Value) 
+                {
+                    case 1:
+                        chance = 90;
+                        break;
+                    case 2:
+                        chance = 80;
+                        break;
+                    case 3:
+                        chance = 70;
+                        break;
+                    case 4:
+                        chance = 60;
+                        break;
+                    case 5:
+                        chance = 50;
+                        break;
+                    default:
+                        chance = 100;
+                        break;
+                }
+            }
+        }
+        if (rollDrowsy)
+        {
+            int rand = UnityEngine.Random.Range(1,101);
+            if(rand <= chance)
+            {
+                Debug.Log("Passed chance of " + chance + "% with a " + rand);
+                passedRoll = true;
+            }
+            else
+            {
+                Debug.Log("Did not pass chance of " + chance + "% with a " + rand);
+                passedRoll = false;
+            }
+        }
+        if (passedRoll)
+        {
+            if (_abilityNumb >= 0 && _abilityNumb <= 2)
+            {
+                _actions.Add(Caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb]);
+                temporaryMods = Caracters[SelectedCaracter].MyCaracter.Abilities[_abilityNumb].Mods.ToArray();
+                ChangeState(BATTLESTATE.SelectingTarget);
+            }
+            else
+            {
+                _actions.Add(Caracters[SelectedCaracter].MyCaracter.PhysicalAbility);
+                temporaryMods = Caracters[SelectedCaracter].MyCaracter.PhysicalAbility.Mods.ToArray();
+                ChangeState(BATTLESTATE.SelectingTarget);
+            }
         }
         else
         {
-            _actions.Add(Caracters[SelectedCaracter].MyCaracter.PhysicalAbility);
-            temporaryMods = Caracters[SelectedCaracter].MyCaracter.PhysicalAbility.Mods.ToArray();
-            ChangeState(BATTLESTATE.SelectingTarget);
+            _actions.Add(EmptyAbility);
+            uIManager.CloseSelectedCaracter(SelectedCaracter);
+            StartCoroutine(ChangeStateWithDelay(BATTLESTATE.PlayerTurn, 2));
         }
 
         uIManager.CloseActionMenu();
@@ -379,7 +443,8 @@ public class CombatManager : MonoBehaviour
 
     private void EnemyTargetAbility()    // Toda a lógica de seleção de targets das habilidades dos inimigos
     {
-        if (tempIndex < temporaryMods.Length)
+        /*if (tempIndex < temporaryMods.Length)*/
+        foreach (var ab in temporaryMods) 
         {
             switch (temporaryMods[tempIndex].TargetType)
             {
@@ -409,6 +474,7 @@ public class CombatManager : MonoBehaviour
                     break;
                 case TARGETING.singleAlly:
                     temporaryTargets = new GameObject[] { Enemies[Enemies[tempEnemy].ChoseAllyTarget()].gameObject };
+                    AddToMods(temporaryMods[tempIndex], temporaryTargets);
                     break;
             }
         }
@@ -450,24 +516,27 @@ public class CombatManager : MonoBehaviour
 
     private void CheckPlayerStatus()
     {
-        bool isAny = false;
-        foreach (PlayableCaracter caracterRef in Caracters)
+        if(Caracters != null)
         {
-            foreach(StatusFx effect in caracterRef.currentStatus.Keys)
+            foreach (PlayableCaracter caracterRef in Caracters)
             {
-                isAny = true;
-                if (effect.HasEndRoundFx)
+                foreach (StatusFx effect in caracterRef.currentStatus.Keys.ToList())
                 {
-                    effect.ApplyEffect(caracterRef);
+                    if (effect.HasEndRoundFx)
+                    {
+                        effect.ApplyEffect(caracterRef);
+                    }
+                    if (effect.LoseStackOnEndRound)
+                    {
+                        caracterRef.currentStatus[effect]--;
+                    }
+                    if (caracterRef.currentStatus[effect] <= 0)
+                    {
+                        caracterRef.currentStatus.Remove(effect);
+                        
+                    }
                 }
-                if (effect.LoseStackOnEndRound)
-                {
-                    caracterRef.currentStatus[effect]--;
-                }
-                if (caracterRef.currentStatus[effect] <= 0)
-                {
-                    caracterRef.currentStatus.Remove(effect);
-                }
+                uIManager.RepresentStatusFx(caracterRef);
             }
         }
         /*if(isAny == true)
@@ -485,33 +554,42 @@ public class CombatManager : MonoBehaviour
 
     private void CheckEnemyStatus()
     {
-        foreach (Enemy enemyRef in Enemies)
+        if(Enemies != null)
         {
-            foreach (StatusFx effect in enemyRef.currentStatus.Keys)
+            foreach (Enemy enemyRef in Enemies)
             {
-                if (effect.HasEndRoundFx)
+                foreach (StatusFx effect in enemyRef.currentStatus.Keys.ToList())
                 {
-                    effect.ApplyEffect(enemyRef);
+                    if (effect.HasEndRoundFx)
+                    {
+                        effect.ApplyEffect(enemyRef);
+                    }
+                    if (effect.LoseStackOnEndRound)
+                    {
+                        enemyRef.currentStatus[effect]--;
+                    }
+                    if (enemyRef.currentStatus[effect] <= 0)
+                    {
+                        enemyRef.currentStatus.Remove(effect);
+      
+                    }
                 }
-                if (effect.LoseStackOnEndRound)
-                {
-                    enemyRef.currentStatus[effect]--;
-                }
-                if (enemyRef.currentStatus[effect] <= 0)
-                {
-                    enemyRef.currentStatus.Remove(effect);
-                }
+                enemyRef.EnemyStatusFx();
             }
+            uIManager.ChangeTurnUIPrompt();
+            StartCoroutine(ChangeStateWithDelay(BATTLESTATE.PlayerTurn, 3));
         }
-        uIManager.ChangeTurnUIPrompt();
-        StartCoroutine(ChangeStateWithDelay(BATTLESTATE.PlayerTurn, 3));
+        else
+        {
+
+        }
     }
 
     #endregion
 
     public void SpawnFloatingDamage(Vector2 pos, int damage)
     {
-        GameObject fD = Instantiate(FloatingDamagePre, pos, Quaternion.identity);
+        GameObject fD = Instantiate(floatingDamagePre, pos, Quaternion.identity);
         fD.GetComponent<TextMeshPro>().text = "-" + damage.ToString();
     }
 
@@ -570,5 +648,42 @@ public class CombatManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         ChangeState(BATTLESTATE.PlayerTurn);
+    }
+
+    void PreRoundStatusCheck()
+    {
+        Debug.Log("checking");
+        foreach (var carac in Caracters)
+        {
+            foreach (var status in carac.currentStatus.ToList())
+            {
+                Debug.Log(carac);
+                if (status.Key is ParalizeFx)
+                {
+                    Debug.Log("Paralized");
+                    _actions.Add(EmptyAbility);
+                    uIManager.LockSelectionButton(carac.CaracterNumber);
+                    carac.currentStatus.Remove(status.Key);
+                    
+                }
+            }
+            uIManager.RepresentStatusFx(carac);
+        }
+    }
+
+    bool EnemyStatusCheck(int enemyId)
+    {
+        foreach(var status in Enemies[enemyId].currentStatus.ToList())
+        {
+            if (status.Key is ParalizeFx)
+            {
+                _actions.Add(EmptyAbility);
+                print("He is paralized");
+                Enemies[enemyId].currentStatus.Remove(status.Key);
+                Enemies[enemyId].EnemyStatusFx();
+                return false;
+            }
+        }
+        return true;
     }
 }
