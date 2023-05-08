@@ -144,14 +144,10 @@ public class NavigationManager : MonoBehaviour
 
     public void SpawnItems()
     {
-    
-        
-
         int idCounter = 0;
 
         for (int e = 0; e < _myPlaces.Length; e++)
         {
-           
 
             for (int i = 0; i < _myPlaces[e].Itens.Length; i++)
             {

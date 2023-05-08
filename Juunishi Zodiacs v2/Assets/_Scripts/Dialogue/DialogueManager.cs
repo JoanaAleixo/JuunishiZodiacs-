@@ -385,7 +385,7 @@ public class DialogueManager : MonoBehaviour
                 }
                 else if(DialogNumber >= DialogueTree1.DialogueStr.Length && DialogueTree1.IsEndDialogue == true)
                 {
-                  DialogUIManager.instance.CanOpenPhone = true;
+                 
                     //Debug.Log("AAA");
                     DisableDialgue();
                     CanChangePlace = true;
@@ -393,7 +393,7 @@ public class DialogueManager : MonoBehaviour
                     _placesButtons2.ChangeButtonColorVisible();
                     _placesButtons3.ChangeButtonColorVisible();
                     _placesButtons4.ChangeButtonColorVisible();
-                    _phoneButton.SetActive(true);
+                   
                 }
                 else if(DialogNumber >= DialogueTree1.DialogueStr.Length && DialogueTree1.SceneTransition == true)
                 {
@@ -427,6 +427,8 @@ public class DialogueManager : MonoBehaviour
 
     public void DisableDialgue()
     {
+        _phoneButton.SetActive(true);
+        DialogUIManager.instance.CanOpenPhone = true;
         _positionInDialog = 0;
         DialogNumber = 0;
         _dialogTreeNumber = 0;

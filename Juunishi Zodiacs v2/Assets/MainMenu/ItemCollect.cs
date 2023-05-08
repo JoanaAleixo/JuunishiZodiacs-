@@ -20,24 +20,24 @@ public class ItemCollect : MonoBehaviour
             NavigationManager.instance.ItemDic.Remove(itemId);
 
        
-            if (MenuManager.instance.Inventory.ContainsKey(ThisItem))
+            if (MenuManager.instance.InventoryInfo.InventoryDic.ContainsKey(ThisItem))
             {
           
             _itemAmount++;
             //  MenuManager.instance.Inventory.TryGetValue(ThisItem, out _itemAmmount);
-            MenuManager.instance.Inventory[ThisItem] = _itemAmount;
+            MenuManager.instance.InventoryInfo.InventoryDic[ThisItem] = _itemAmount;
 
 
         }
             else
             {
            
-            MenuManager.instance.Inventory.Add(ThisItem, _itemAmount);
+            MenuManager.instance.InventoryInfo.InventoryDic.Add(ThisItem, _itemAmount);
 
           
         }
 
-        foreach (var item in MenuManager.instance.Inventory)
+        foreach (var item in MenuManager.instance.InventoryInfo.InventoryDic)
         {
           Debug.Log(item.Key + " " + item.Value);
       }
