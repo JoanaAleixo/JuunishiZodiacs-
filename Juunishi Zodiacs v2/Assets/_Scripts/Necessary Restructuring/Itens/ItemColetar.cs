@@ -70,7 +70,7 @@ public class ItemColetar : MonoBehaviour
     {
         if(categoriaItem == ItemCategoria.Photo)
         {
-         //   album = MenuManager.Instance.Album;
+            album = MainMenuManager.Instance.Album;
             album.Imagens.Add(spriteRenderer.sprite);
         }
         else

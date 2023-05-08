@@ -41,8 +41,8 @@ public class CostModifier : Modifiers
                 }
                 else if(CostType == COSTTYPE.Sp)
                 {
-                    int total = -Quantity;
-                    caracter.UpdateSp(total);
+                    Quantity -= Quantity * 2;
+                    caracter.UpdateSp(Quantity);
                 }
             }
             else

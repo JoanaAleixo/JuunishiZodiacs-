@@ -18,13 +18,13 @@ public class ShieldModifier : Modifiers
     {
         if (TargetType == TARGETING.singleEnemy || TargetType == TARGETING.singleAlly || TargetType == TARGETING.self)
         {
-            //target[0].GetComponent<BaseStats>().IsShielded = true;
+            target[0].GetComponent<BaseStats>().IsShielded = true;
         }
         else if (TargetType == TARGETING.multipleEnemy || TargetType == TARGETING.multipleAlly)
         {
             for (int i = 0; i < target.Length; i++)
             {
-                //target[i].GetComponent<BaseStats>().IsShielded = true;
+                target[i].GetComponent<BaseStats>().IsShielded = true;
             }
         }
     }

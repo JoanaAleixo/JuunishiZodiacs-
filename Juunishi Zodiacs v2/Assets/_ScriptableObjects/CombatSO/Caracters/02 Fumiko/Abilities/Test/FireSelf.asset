@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mods:
   - rid: 7633445325267795968
-  - rid: 7633445842342641664
   abilityName: Fire Self
-  description: "- 100 Fire Damage \n- Self\n- Cost: 120 SP"
+  description: "- 100 Fire Damage \n- Self"
   references:
     version: 2
     RefIds:
@@ -26,9 +25,3 @@ MonoBehaviour:
         _targetType: 4
         _quantity: 100
         _damageType: 0
-    - rid: 7633445842342641664
-      type: {class: CostModifier, ns: , asm: Assembly-CSharp}
-      data:
-        _targetType: 0
-        _quantity: 120
-        _costType: 1

@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mods:
   - rid: 4869796908226576384
-  - rid: 5145046109220503553
   abilityName: Water Bubble
   description: 'Water Shield to protect yourself or an Ally '
   references:
@@ -26,11 +25,4 @@ MonoBehaviour:
         _targetType: 1
         Quantity: 1
         isBuff: 1
-        status: 3
-        maxQuant: 0
-    - rid: 5145046109220503553
-      type: {class: CostModifier, ns: , asm: Assembly-CSharp}
-      data:
-        _targetType: 0
-        _quantity: 25
-        _costType: 1
+        status: 0

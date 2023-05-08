@@ -27,7 +27,7 @@ public class Inventário : MonoBehaviour
     public void AdicionarItemInventario(Item itemAdcionar)
     {
         listaCoisasInventario.Add(itemAdcionar);
-      //  MainMenuManager.Instance.AdicionarItemInventario(itemAdcionar);
+        MainMenuManager.Instance.AdicionarItemInventario(itemAdcionar);
     }
 
     public void LimparInventario()
