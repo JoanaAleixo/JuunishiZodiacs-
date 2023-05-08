@@ -237,7 +237,8 @@ public class DialogueManager : MonoBehaviour
     #region Mandar informação para o UI
     public void UpdateOnUI()
     {
-
+        if (MyDialogTree[_dialogTreeNumber] == null)
+            return;
         DialogueTree1 = MyDialogTree[_dialogTreeNumber];
 
         //Encapsulamento de informação do Scriptable Dialogue e Character Scriptable Object

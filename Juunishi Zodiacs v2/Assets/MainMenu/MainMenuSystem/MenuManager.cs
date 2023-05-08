@@ -19,6 +19,8 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] GameObject _itemDescriptionBox;
 
+    [Header("AbilitySwitching")]
+    [SerializeField] GameObject[] _abilityButtons;
 
     public static MenuManager instance;
 
@@ -96,6 +98,22 @@ public class MenuManager : MonoBehaviour
         _itensInStorage.Clear();
     }
 
-  
+    public void OpenCloseAbilities()
+    {
+        if (_abilityButtons[0].activeSelf == true)
+        {
+            foreach(var item in _abilityButtons)
+            {
+                item.SetActive(false);
+            }
+        }
+        else
+        {
+            foreach (var item in _abilityButtons)
+            {
+                item.SetActive(true);
+            }
+        }
+    }
 }
 
