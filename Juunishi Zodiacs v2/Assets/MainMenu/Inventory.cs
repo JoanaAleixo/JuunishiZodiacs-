@@ -10,5 +10,4 @@ public class Inventory : ScriptableObject
 
     public Dictionary<ScriptableItem, int> InventoryDic { get => _inventoryDic; set => _inventoryDic = value; }
 
-
 }

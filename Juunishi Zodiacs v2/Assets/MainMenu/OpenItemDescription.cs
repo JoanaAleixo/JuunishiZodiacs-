@@ -13,22 +13,19 @@ public class OpenItemDescription : MonoBehaviour
 
     public void ItemDescription()
     {
-        if(_isActive == false)
-        {
+       
             GameObject itemDescriptionObject = MenuManager.instance.ItemDescriptionBox;
             itemDescriptionObject.SetActive(true);
             TextMeshProUGUI descriptionText = itemDescriptionObject.GetComponentInChildren<TextMeshProUGUI>();
             descriptionText.text = _thisItemOnButton.ItemDescription;
          itemDescriptionObject.transform.position = new Vector3(itemDescriptionObject.transform.position.x, transform.position.y, itemDescriptionObject.transform.position.z);
-          
-            
-            _isActive = true;
-        }
-        else
-        {
-            _isActive = false;
-            MenuManager.instance.ItemDescriptionBox.SetActive(false);
-        }
+
        
     }
+    public void CloseItemDescription()
+    {
+  
+        MenuManager.instance.ItemDescriptionBox.SetActive(false);
+    }
+    
 }
