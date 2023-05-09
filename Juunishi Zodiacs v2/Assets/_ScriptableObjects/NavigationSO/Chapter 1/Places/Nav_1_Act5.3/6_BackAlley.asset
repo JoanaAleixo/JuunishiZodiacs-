@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03ef3ce84a51bf143a248a6830d11064, type: 3}
+  m_Name: 6_BackAlley
+  m_EditorClassIdentifier: 
+  _background: {fileID: 21300000, guid: ddd1e03ddf2f2164499c3581e487dc8a, type: 3}
+  _namePlace: {fileID: 21300000, guid: 2f619b71eb0899f4289ff4097c0d54b0, type: 3}
+  _thisPlaceHasDialogue: 0
+  _dislocationStr:
+  - _buttonDirectionName: Publisher Steet
+    _nextPlaceValue: 5
+    _textColor: {r: 0.03787824, g: 0.038558736, b: 0.1792453, a: 1}
+    _buttonPosition: {x: -0.27, y: -3.8, z: 0}
+    _hasDialogue: 0
+    _dialogueToPlace: {fileID: 0}
+  - _buttonDirectionName: ' '
+    _nextPlaceValue: 2
+    _textColor: {r: 0.039215688, g: 0.039215688, b: 0.18039216, a: 1}
+    _buttonPosition: {x: -9.93, y: -3.8, z: 0}
+    _hasDialogue: 0
+    _dialogueToPlace: {fileID: 0}
+  - _buttonDirectionName: Central Avenue
+    _nextPlaceValue: 7
+    _textColor: {r: 0.039215688, g: 0.039215688, b: 0.18039216, a: 1}
+    _buttonPosition: {x: 0.27, y: 0.37, z: 0}
+    _hasDialogue: 1
+    _dialogueToPlace: {fileID: 11400000, guid: a7dc142256cde564a9a7bda3861f7c6d, type: 2}

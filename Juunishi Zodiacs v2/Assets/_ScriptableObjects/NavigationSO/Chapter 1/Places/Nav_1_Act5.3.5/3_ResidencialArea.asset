@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03ef3ce84a51bf143a248a6830d11064, type: 3}
+  m_Name: 3_ResidencialArea
+  m_EditorClassIdentifier: 
+  _background: {fileID: 21300000, guid: a0da74c257d384f4ba0f93e59ff86882, type: 3}
+  _namePlace: {fileID: 21300000, guid: f72fc2d0bcd32a54992ccc0330961584, type: 3}
+  _thisPlaceHasDialogue: 1
+  _dislocationStr:
+  - _buttonDirectionName: 
+    _nextPlaceValue: 0
+    _textColor: {r: 0.03787824, g: 0.038558736, b: 0.1792453, a: 1}
+    _buttonPosition: {x: -9.8, y: 0, z: 0}
+    _hasDialogue: 0
+    _dialogueToPlace: {fileID: 0}
+  - _buttonDirectionName: Fushimi's House
+    _nextPlaceValue: 1
+    _textColor: {r: 0.039215688, g: 0.039215688, b: 0.18039216, a: 1}
+    _buttonPosition: {x: -6.32, y: -3.23, z: 0}
+    _hasDialogue: 0
+    _dialogueToPlace: {fileID: 11400000, guid: ed0f9ee132b074d44bbf47cf1a7631f8, type: 2}
+  - _buttonDirectionName: Publisher Street
+    _nextPlaceValue: 2
+    _textColor: {r: 0.039215688, g: 0.039215688, b: 0.18039216, a: 1}
+    _buttonPosition: {x: -0.3, y: -3.23, z: 0}
+    _hasDialogue: 0
+    _dialogueToPlace: {fileID: 11400000, guid: 720c3a24a497bf441a10d559647a815c, type: 2}
