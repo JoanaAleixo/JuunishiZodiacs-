@@ -14,8 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mods:
   - rid: 3818156578291843075
+  - rid: 7084498899987857423
   abilityName: Divine Slash
-  description: Light Physical damage to All Enemies
+  description: 'Light Physical damage to All Enemies
+
+    -7 Hp Physical to all enemies
+
+    -40
+    Sp'
   references:
     version: 2
     RefIds:
@@ -23,5 +29,11 @@ MonoBehaviour:
       type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
       data:
         _targetType: 4
-        _quantity: 6
+        _quantity: 7
         _damageType: 0
+    - rid: 7084498899987857423
+      type: {class: CostModifier, ns: , asm: Assembly-CSharp}
+      data:
+        _targetType: 0
+        _quantity: 40
+        _costType: 1

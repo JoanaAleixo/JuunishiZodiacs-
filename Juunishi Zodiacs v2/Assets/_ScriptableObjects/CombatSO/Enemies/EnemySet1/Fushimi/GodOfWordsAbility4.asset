@@ -10,31 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f78d8c580e23784b97cf833a9cb3662, type: 3}
-  m_Name: Ab_Akira_Debuff
+  m_Name: GodOfWordsAbility4
   m_EditorClassIdentifier: 
   _mods:
-  - rid: 5145046136485576704
-  - rid: 7084498899987857424
-  abilityName: Water Vortex
-  description: 'Gives Bound to 1 Enemy
-
-    +Bound to one Enemy
-
-    - 20 Sp'
+  - rid: 7084498899987857419
+  abilityName: Silence
+  description: 
   references:
     version: 2
     RefIds:
-    - rid: 5145046136485576704
+    - rid: 7084498899987857419
       type: {class: StatusModifier, ns: , asm: Assembly-CSharp}
       data:
         _targetType: 2
         Quantity: 0
         isBuff: 0
-        status: 0
+        status: 1
         maxQuant: 0
-    - rid: 7084498899987857424
-      type: {class: CostModifier, ns: , asm: Assembly-CSharp}
-      data:
-        _targetType: 0
-        _quantity: 20
-        _costType: 1

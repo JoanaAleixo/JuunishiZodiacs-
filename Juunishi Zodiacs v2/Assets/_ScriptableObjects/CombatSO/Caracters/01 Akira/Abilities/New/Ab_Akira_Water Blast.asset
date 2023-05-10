@@ -16,7 +16,12 @@ MonoBehaviour:
   - rid: 3818156578291843075
   - rid: 5145046109220503557
   abilityName: Water Blast
-  description: Light Water damage to One Enemy
+  description: 'Water damage to One Enemy
+
+    -14 Hp Water to one Enemy
+
+    -40
+    Sp'
   references:
     version: 2
     RefIds:
@@ -24,11 +29,11 @@ MonoBehaviour:
       type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
       data:
         _targetType: 2
-        _quantity: 13
+        _quantity: 14
         _damageType: 2
     - rid: 5145046109220503557
       type: {class: CostModifier, ns: , asm: Assembly-CSharp}
       data:
         _targetType: 0
-        _quantity: 12
+        _quantity: 40
         _costType: 1

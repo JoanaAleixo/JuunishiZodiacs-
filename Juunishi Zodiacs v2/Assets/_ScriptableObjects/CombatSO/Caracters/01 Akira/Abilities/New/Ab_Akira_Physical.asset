@@ -10,30 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f78d8c580e23784b97cf833a9cb3662, type: 3}
-  m_Name: Ab_Akira_Water Pulse
+  m_Name: Ab_Akira_Physical
   m_EditorClassIdentifier: 
   _mods:
-  - rid: 3818156578291843075
-  - rid: 5145046109220503554
-  abilityName: Water Pulse
-  description: 'Water damage to All Enemies
+  - rid: 7084498899987857420
+  abilityName: Pocket Knife
+  description: 'Low Physical Damage to 1 Enemy
 
-    -7 Hp Water to all Enemies
-
-    -50
-    Sp'
+    -10 Hp Physical to one Enemy'
   references:
     version: 2
     RefIds:
-    - rid: 3818156578291843075
+    - rid: 7084498899987857420
       type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
       data:
-        _targetType: 4
-        _quantity: 7
-        _damageType: 2
-    - rid: 5145046109220503554
-      type: {class: CostModifier, ns: , asm: Assembly-CSharp}
-      data:
-        _targetType: 0
-        _quantity: 50
-        _costType: 1
+        _targetType: 2
+        _quantity: 10
+        _damageType: 0

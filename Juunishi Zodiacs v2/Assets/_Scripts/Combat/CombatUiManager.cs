@@ -17,6 +17,7 @@ public class CombatUiManager : MonoBehaviour
     [SerializeField] GameObject _caracterSelection;
     [SerializeField] GameObject[] _magicalAttack = new GameObject[3];
     [SerializeField] GameObject[] _selectionButtons;
+    [SerializeField] GameObject _caractersInfo;
     [Header("TemporaryTargetSelection")]
     [SerializeField] BaseStats _temporarySelectedTarget;
     [SerializeField] float _targetTimer;
@@ -456,5 +457,15 @@ public class CombatUiManager : MonoBehaviour
                     break;
             }
         }
+    }
+
+    public void OnOneCaracter()
+    {
+        _caractersInfo.transform.GetChild(0).gameObject.SetActive(false);
+        _caractersInfo.transform.GetChild(2).gameObject.SetActive(false);
+        /*_caracterSelection.transform.GetChild(0).gameObject.SetActive(false);
+        _caracterSelection.transform.GetChild(2).gameObject.SetActive(false);*/
+        _selectionButtons[0].GetComponent<Button>().interactable = false;
+        _selectionButtons[2].GetComponent<Button>().interactable = false;
     }
 }
