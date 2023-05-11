@@ -1076,8 +1076,8 @@ RectTransform:
   m_GameObject: {fileID: 602645397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1837215214}
   - {fileID: 1715775585}
@@ -1459,6 +1459,7 @@ MonoBehaviour:
   _placeBackgroundUI: {fileID: 901387132}
   _namePlace: {fileID: 975096130}
   _phoneUI: {fileID: 106012692}
+  _fakeBackground: {fileID: 0}
 --- !u!1 &785131133
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,8 +2640,8 @@ RectTransform:
   m_GameObject: {fileID: 1651597966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 985820282}
   - {fileID: 235449549}
@@ -2780,8 +2781,8 @@ RectTransform:
   m_GameObject: {fileID: 1668735683}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 501533238}
   - {fileID: 1924898563}
@@ -2921,8 +2922,8 @@ RectTransform:
   m_GameObject: {fileID: 1670688552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1909461799}
   - {fileID: 1332360321}
@@ -3159,6 +3160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activePlace: {fileID: 11400000, guid: 83ec1e87f8197544caa8be855c477452, type: 2}
+  _itemInPlace: {fileID: 0}
 --- !u!114 &1757018511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3186,6 +3188,9 @@ MonoBehaviour:
   - {fileID: 602645397}
   - {fileID: 1670688552}
   _phoneButton: {fileID: 785131133}
+  _itemPrefab: {fileID: 0}
+  _itemDisplay: {fileID: 0}
+  _itensList: []
 --- !u!1 &1837215213
 GameObject:
   m_ObjectHideFlags: 0
