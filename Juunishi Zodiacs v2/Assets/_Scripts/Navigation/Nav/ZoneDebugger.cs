@@ -7,7 +7,7 @@ public class ZoneDebugger : MonoBehaviour
 {
     [SerializeField] private ScriptablePlace activePlace;
 
-    [SerializeField] ScriptableItem _itemInPlace;
+    [SerializeField] BaseItem _itemInPlace;
 
     private void OnDrawGizmos()
     {

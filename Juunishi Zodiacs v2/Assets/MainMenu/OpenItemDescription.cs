@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class OpenItemDescription : MonoBehaviour
 {
-    ScriptableItem _thisItemOnButton;
+    BaseItem _thisItemOnButton;
   
     bool _isActive = false;
 
-    public ScriptableItem ThisItemOnButton { get => _thisItemOnButton; set => _thisItemOnButton = value; }
+    public BaseItem ThisItemOnButton { get => _thisItemOnButton; set => _thisItemOnButton = value; }
 
     public void ItemDescription()
     {
@@ -17,7 +17,18 @@ public class OpenItemDescription : MonoBehaviour
             GameObject itemDescriptionObject = MenuManager.instance.ItemDescriptionBox;
             itemDescriptionObject.SetActive(true);
             TextMeshProUGUI descriptionText = itemDescriptionObject.GetComponentInChildren<TextMeshProUGUI>();
-            descriptionText.text = _thisItemOnButton.ItemDescription;
+
+        if(_thisItemOnButton is KeyItem)
+        {
+            KeyItem keyItem = (KeyItem)_thisItemOnButton;
+            descriptionText.text = keyItem.ItemDescription;
+        }
+        else if(_thisItemOnButton is UsableItem)
+        {
+            UsableItem usableItem = (UsableItem)_thisItemOnButton;
+            descriptionText.text = usableItem.ItemDescription;
+        }
+         
          itemDescriptionObject.transform.position = new Vector3(itemDescriptionObject.transform.position.x, transform.position.y, itemDescriptionObject.transform.position.z);
 
        

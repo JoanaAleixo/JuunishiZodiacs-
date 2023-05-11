@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class Inventory : ScriptableObject
 {
-    Dictionary<ScriptableItem, int> _inventoryDic = new Dictionary<ScriptableItem, int>();
+    Dictionary<BaseItem, int> _inventoryDic = new Dictionary<BaseItem, int>();
 
-    public Dictionary<ScriptableItem, int> InventoryDic { get => _inventoryDic; set => _inventoryDic = value; }
+    public Dictionary<BaseItem, int> InventoryDic { get => _inventoryDic; set => _inventoryDic = value; }
 
 }

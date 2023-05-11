@@ -6,11 +6,11 @@ using static UnityEditor.Progress;
 public class ItemCollect : MonoBehaviour
 {
     [SerializeField] int itemId;
-    [SerializeField] ScriptableItem _thisItem;
+    [SerializeField] BaseItem _thisItem;
     [SerializeField] int _itemAmount = 1;
 
     public int ItemId { get => itemId; set => itemId = value; }
-    public ScriptableItem ThisItem { get => _thisItem; set => _thisItem = value; }
+    public BaseItem ThisItem { get => _thisItem; set => _thisItem = value; }
 
     public void CollectItem()
     {
@@ -19,32 +19,42 @@ public class ItemCollect : MonoBehaviour
 
             NavigationManager.instance.ItemDic.Remove(itemId);
 
-       
-            if (MenuManager.instance.InventoryInfo.InventoryDic.ContainsKey(ThisItem))
-            {
-          
+        if (_thisItem is KeyItem || _thisItem is UsableItem)
+        {
+            AddInventory();
+        }
+        else if( _thisItem is PhotoItem)
+        {
+
+        }
+
+        gameObject.SetActive(false);
+    }
+
+    void AddInventory()
+    {
+        if (MenuManager.instance.InventoryInfo.InventoryDic.ContainsKey(ThisItem))
+        {
+
             _itemAmount++;
             //  MenuManager.instance.Inventory.TryGetValue(ThisItem, out _itemAmmount);
             MenuManager.instance.InventoryInfo.InventoryDic[ThisItem] = _itemAmount;
 
 
         }
-            else
-            {
-           
+        else
+        {
+
             MenuManager.instance.InventoryInfo.InventoryDic.Add(ThisItem, _itemAmount);
 
-          
+
         }
 
         foreach (var item in MenuManager.instance.InventoryInfo.InventoryDic)
         {
-          Debug.Log(item.Key + " " + item.Value);
-      }
-
-        gameObject.SetActive(false);
+            Debug.Log(item.Key + " " + item.Value);
+        }
     }
-
 
     //  Dictionary<string, int> dic = new Dictionary<string, int>();
 

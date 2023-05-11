@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.UI;
 using static Dialogue;
@@ -76,7 +77,16 @@ public class MenuManager : MonoBehaviour
             ItensInStorage.Add(Item);
 
            Image itemIcon = Item.transform.GetChild(0).GetChild(0).GetComponent<Image>();
-            itemIcon.sprite = item.IconForBag;
+            if (item is KeyItem)
+            {
+                KeyItem keyItem = (KeyItem)item;
+                itemIcon.sprite = keyItem.IconForBag;
+            }
+            else if (item is UsableItem)
+            {
+                UsableItem usableItem = (UsableItem)item;
+                itemIcon.sprite = usableItem.IconForBag;
+            }
 
             TextMeshProUGUI itemToName = Item.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();        
             itemToName.text = item.ItemName;
