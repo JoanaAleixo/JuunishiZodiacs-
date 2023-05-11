@@ -10,7 +10,9 @@ public class PlayableCaracter : BaseStats
     [SerializeField] int _sp;*/
     
     [SerializeField] ActiveCaracters _allCaracters;
+    [SerializeField] int numberRetracted = 0;
 
+    public int NumberRetracted { get => numberRetracted; set => numberRetracted = value; }
 
     protected override void Start()
     {

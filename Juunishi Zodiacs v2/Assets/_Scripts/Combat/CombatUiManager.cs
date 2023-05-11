@@ -335,7 +335,8 @@ public class CombatUiManager : MonoBehaviour
 
         if(car is PlayableCaracter)
         {
-            switch (car.CaracterNumber)
+            PlayableCaracter carec = (PlayableCaracter)car;
+            switch (car.CaracterNumber+carec.NumberRetracted)
             {
                 case 0:
                     foreach (var status in car.currentStatus)
@@ -352,6 +353,7 @@ public class CombatUiManager : MonoBehaviour
                         }
                         else if (status.Key is DrowsyFx)
                         {
+                            Debug.Log("Vi um drowsy");
                             _player0StatusFx[cont].GetComponent<Image>().sprite = DrowsyFxSprite;
                         }
                         else if (status.Key is ShieldFx)

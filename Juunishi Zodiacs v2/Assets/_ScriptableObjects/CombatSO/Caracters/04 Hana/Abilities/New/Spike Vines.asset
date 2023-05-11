@@ -15,19 +15,27 @@ MonoBehaviour:
   _mods:
   - rid: 4869796908226576384
   - rid: 7633445517126270977
+  - rid: 5145046174327898115
   abilityName: Spike Vines
-  description: Light plant damage to All enemies, inflicts paralise - inflicted cannot
-    act next turn
+  description: "Light plant damage to All enemies, inflicts paralise \n- 10 Hp to
+    one enemy\n+ Paralize"
   references:
     version: 2
     RefIds:
     - rid: 4869796908226576384
       type: {class: StatusModifier, ns: , asm: Assembly-CSharp}
       data:
-        _targetType: 4
+        _targetType: 2
         Quantity: 1
         isBuff: 0
-        status: 0
+        status: 1
+        maxQuant: 0
+    - rid: 5145046174327898115
+      type: {class: CostModifier, ns: , asm: Assembly-CSharp}
+      data:
+        _targetType: 0
+        _quantity: 70
+        _costType: 1
     - rid: 7633445517126270977
       type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
       data:

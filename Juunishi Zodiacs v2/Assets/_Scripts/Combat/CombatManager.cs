@@ -639,6 +639,7 @@ public class CombatManager : MonoBehaviour
             {
                 Debug.Log("123");
                 _caracters[i].CaracterNumber--;
+                _caracters[i].NumberRetracted++;
             }
         }
     }

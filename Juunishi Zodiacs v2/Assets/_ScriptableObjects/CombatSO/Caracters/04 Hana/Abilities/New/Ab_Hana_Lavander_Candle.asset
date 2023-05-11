@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mods:
   - rid: 4869796908226576384
+  - rid: 5145046174327898116
   abilityName: Lavander Candle
-  description: Throws a candle at an enemy that inflicts Drowsy - inflicted will
-    have chances to miss attacks for the next 5 turns
+  description: "Throws a candle at an enemy that inflicts Drowsy \n+ Drowsy"
   references:
     version: 2
     RefIds:
@@ -26,4 +26,11 @@ MonoBehaviour:
         _targetType: 2
         Quantity: 1
         isBuff: 0
-        status: 0
+        status: 2
+        maxQuant: 0
+    - rid: 5145046174327898116
+      type: {class: CostModifier, ns: , asm: Assembly-CSharp}
+      data:
+        _targetType: 0
+        _quantity: 30
+        _costType: 1

@@ -24,7 +24,7 @@ public class HpUpdate : MonoBehaviour
 
     public void EnemyUpdateUI()
     {
-        hpImg.fillAmount = thisCaracter.HpMax.value / 100;
+        hpImg.fillAmount = thisCaracter.HpMax.value / thisCaracter.HpMax.resetValue;
     }
 
     public void UpdateUI()
@@ -35,8 +35,8 @@ public class HpUpdate : MonoBehaviour
             caracterIns = (PlayableCaracterScptObj)thisCaracter;
         }
         //gameObject.GetComponentInChildren<Image>().fillAmount = thisCaracter.HpMax.value / 100;
-        hpImg.fillAmount = caracterIns.HpMax.value / 100;
-        spImg.fillAmount = caracterIns.SpMax.value / 100;
+        hpImg.fillAmount = caracterIns.HpMax.value / caracterIns.HpMax.resetValue;
+        spImg.fillAmount = caracterIns.SpMax.value / caracterIns.SpMax.resetValue;
         hpText.text = caracterIns.HpMax.value.ToString();
         spText.text = caracterIns.SpMax.value.ToString();
     }

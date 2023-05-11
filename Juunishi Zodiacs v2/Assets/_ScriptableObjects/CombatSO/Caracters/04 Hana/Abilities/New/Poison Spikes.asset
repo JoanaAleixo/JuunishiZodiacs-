@@ -15,9 +15,10 @@ MonoBehaviour:
   _mods:
   - rid: 4869796908226576384
   - rid: 7633445517126270976
+  - rid: 5145046174327898114
   abilityName: Poison Spikes
-  description: Light plant damage to 1 enemy, inflicts bound - inflicted will lose
-    light damage over 3 turns
+  description: "Light plant damage to 1 enemy, inflicts bound \n- 6 Hp to one enemy\n+
+    Bound"
   references:
     version: 2
     RefIds:
@@ -28,9 +29,16 @@ MonoBehaviour:
         Quantity: 1
         isBuff: 0
         status: 0
+        maxQuant: 0
+    - rid: 5145046174327898114
+      type: {class: CostModifier, ns: , asm: Assembly-CSharp}
+      data:
+        _targetType: 0
+        _quantity: 40
+        _costType: 1
     - rid: 7633445517126270976
       type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
       data:
         _targetType: 2
-        _quantity: 10
+        _quantity: 6
         _damageType: 4
