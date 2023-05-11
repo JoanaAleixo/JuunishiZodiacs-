@@ -13,23 +13,15 @@ MonoBehaviour:
   m_Name: GiveParalize
   m_EditorClassIdentifier: 
   _mods:
-  - rid: 7633445910229811200
-  - rid: 7633445910229811201
+  - rid: 7084498899987857408
   abilityName: 'Paralize '
   description: yeet
   references:
     version: 2
     RefIds:
-    - rid: 7633445910229811200
-      type: {class: StatusModifier, ns: , asm: Assembly-CSharp}
+    - rid: 7084498899987857408
+      type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
       data:
         _targetType: 2
-        Quantity: 1
-        isBuff: 0
-        status: 1
-    - rid: 7633445910229811201
-      type: {class: CostModifier, ns: , asm: Assembly-CSharp}
-      data:
-        _targetType: 0
-        _quantity: 10
-        _costType: 0
+        _quantity: 100
+        _damageType: 0

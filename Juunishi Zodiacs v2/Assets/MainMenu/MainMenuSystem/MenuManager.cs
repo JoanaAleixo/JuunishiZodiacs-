@@ -27,7 +27,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject _abilityInfo;
     [SerializeField] TextMeshProUGUI _abilityDesc;
     [SerializeField] TextMeshProUGUI _abilityName;
-
+    [SerializeField] GameObject _extraAbilitiesParent;
+    [SerializeField] GameObject[] _extraAbilities;
+    [SerializeField] int _selectedAbility;
     public static MenuManager instance;
 
    
@@ -141,10 +143,59 @@ public class MenuManager : MonoBehaviour
         _abilityDesc.text = _akira.Abilities[_abilityNumb].Description;
     }
 
+    public void ShowAbilityInfo(Ability ability)
+    {
+        _abilityInfo.SetActive(true);
+        _abilityName.text = ability.AbilityName;
+        _abilityDesc.text = ability.Description;
+    }
+
     public void CloseAbilityInfo()
     {
         _abilityInfo.SetActive(false);
     }
+
+    public void OpenAbilitySwitch(int index)
+    {
+        _selectedAbility = index;
+        _extraAbilitiesParent.SetActive(true);
+
+        switch (index)
+        {
+            case 0:
+                _extraAbilitiesParent.GetComponent<RectTransform>().localPosition = new Vector2(_extraAbilitiesParent.GetComponent<RectTransform>().localPosition.x,100);
+                break;
+            case 1:
+                _extraAbilitiesParent.GetComponent<RectTransform>().localPosition = new Vector2(_extraAbilitiesParent.GetComponent<RectTransform>().localPosition.x, 40);
+                break;
+            case 2:
+                _extraAbilitiesParent.GetComponent<RectTransform>().localPosition = new Vector2(_extraAbilitiesParent.GetComponent<RectTransform>().localPosition.x, -20);
+                break;
+        }
+
+        int cont = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                if (_akira.AllCaracterAbilities[i+cont] == _akira.Abilities[j])
+                {
+                    cont++;
+                }
+            }
+            _extraAbilities[i].GetComponent<AbilityInformation>().UpdateInfoExtra(_akira, i+cont);
+        }
+    }
+
+    public void ChangeAbility(Ability newAbility)
+    {
+        _akira.Abilities[_selectedAbility] = newAbility;
+        _extraAbilitiesParent.SetActive(false);
+        OpenCloseAbilities();
+        OpenCloseAbilities();
+    }
+
+    
 
     #endregion
 }

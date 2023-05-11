@@ -15,19 +15,32 @@ MonoBehaviour:
   _mods:
   - rid: 5145046109220503555
   - rid: 5145046109220503556
+  - rid: 7084498899987857422
   abilityName: Water Lily
-  description: 'Regenerates a slight portion of HP for yourself or an Ally '
+  description: 'Regenerates Hp
+
+    +10 Hp to Himself
+
+    +10 Hp to an Ally
+
+    -70
+    Sp'
   references:
     version: 2
     RefIds:
     - rid: 5145046109220503555
       type: {class: HealModifier, ns: , asm: Assembly-CSharp}
       data:
-        _targetType: 1
+        _targetType: 0
         _quantity: 10
     - rid: 5145046109220503556
       type: {class: CostModifier, ns: , asm: Assembly-CSharp}
       data:
         _targetType: 0
-        _quantity: 15
+        _quantity: 70
         _costType: 1
+    - rid: 7084498899987857422
+      type: {class: HealModifier, ns: , asm: Assembly-CSharp}
+      data:
+        _targetType: 1
+        _quantity: 10

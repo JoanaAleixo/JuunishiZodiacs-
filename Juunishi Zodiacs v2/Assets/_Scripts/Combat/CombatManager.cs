@@ -61,6 +61,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] GameObject[] temporaryTargets;
     [SerializeField] int tempEnemy = 0;
     [SerializeField] GameObject floatingDamagePre;
+    [SerializeField] bool oneCaracter;
     
 
     public int SelectedCaracter { get => _selectedCaracter; set { ChangeSelectedCaracter(_selectedCaracter, value);} }
@@ -88,6 +89,26 @@ public class CombatManager : MonoBehaviour
         uIManager = CombatUiManager.uiInstance;
         ChangeState(BATTLESTATE.StartBattle);
         temporaryTargets = null;
+
+        if (oneCaracter)
+        {
+            StartCoroutine(DiePls());
+        }
+    }
+
+    public IEnumerator DiePls()
+    {
+        oneCaracter = true;
+        yield return new WaitForSeconds(0.3f);
+        foreach (var car in Caracters.ToList())
+        {
+            if (car.name != "Akira")
+            {
+                car.TakeDamage(1000, DAMAGETYPE.None);
+                car.gameObject.SetActive(false);
+                uIManager.OnOneCaracter();
+            }
+        }
     }
 
     #endregion
@@ -145,6 +166,7 @@ public class CombatManager : MonoBehaviour
         {
             case BATTLESTATE.StartBattle:
                 CheckPlayers();
+                
                 StartCoroutine(WaitTwoSeconds());
                 break;
             case BATTLESTATE.PlayerTurn:
@@ -202,10 +224,12 @@ public class CombatManager : MonoBehaviour
                 break;
             case BATTLESTATE.Victory:
                 StopAllCoroutines();
+                PlayersReset();
                 WinCombat();
                 break;
             case BATTLESTATE.Defeat:
                 StopAllCoroutines();
+                PlayersReset();
                 uIManager.OpenLoseMenu();
                 break;
         }
@@ -392,6 +416,8 @@ public class CombatManager : MonoBehaviour
 
     private void CheckForAbilities()  //Conta quantas habilidades foram utilizadas para passar o turno.
     {
+        if (oneCaracter)
+            playersOnRoundStart = 1;
         if(_actions.Count >= playersOnRoundStart)
         {
             _actions.Clear();
@@ -499,15 +525,20 @@ public class CombatManager : MonoBehaviour
 
     public void LocateEnemies()
     {
+        print("Locating Enemies");
         GameObject parent = GameObject.FindGameObjectWithTag("EnemySet");
         int enemiesCount = 0;
         //Enemies = new Enemy[parent.transform.GetChild(0).childCount];
         for (int i = 0; i < parent.transform.GetChild(0).childCount; i++)
         {
+            print("Enemy "+i);
             if (parent.transform.GetChild(0).GetChild(i).CompareTag("Enemy"))
             {
                 enemiesCount++;
-                Enemies.Add(parent.transform.GetChild(0).GetChild(i).GetComponent<Enemy>());
+                Enemy enem = parent.transform.GetChild(0).GetChild(i).GetComponent<Enemy>();
+                Enemies.Add(enem);
+                enem.MyCaracter.HpMax.value = enem.MyCaracter.HpMax.resetValue;
+
             }
         }
     }
@@ -608,6 +639,7 @@ public class CombatManager : MonoBehaviour
             {
                 Debug.Log("123");
                 _caracters[i].CaracterNumber--;
+                _caracters[i].NumberRetracted++;
             }
         }
     }
@@ -621,11 +653,13 @@ public class CombatManager : MonoBehaviour
     {
         if(Enemies.Count <= 0)
         {
-            ChangeState(BATTLESTATE.Victory);
+            StartCoroutine(ChangeStateWithDelay(BATTLESTATE.Victory, 2));
+            //ChangeState(BATTLESTATE.Victory);
         }
         else if(Caracters.Count <= 0)
         {
-            ChangeState(BATTLESTATE.Defeat);
+            //ChangeState(BATTLESTATE.Defeat);
+            StartCoroutine(ChangeStateWithDelay(BATTLESTATE.Defeat, 2));
         }
     }
 
@@ -647,6 +681,7 @@ public class CombatManager : MonoBehaviour
     IEnumerator WaitTwoSeconds()
     {
         yield return new WaitForSeconds(2);
+        PlayersReset();
         ChangeState(BATTLESTATE.PlayerTurn);
     }
 
@@ -685,5 +720,15 @@ public class CombatManager : MonoBehaviour
             }
         }
         return true;
+    }
+
+    private void PlayersReset()
+    {
+        foreach (var item in Caracters)
+        {
+            PlayableCaracterScptObj carac = (PlayableCaracterScptObj)item.MyCaracter;
+            carac.HpMax.value = carac.HpMax.resetValue;
+            carac.SpMax.value = carac.SpMax.resetValue;
+        }
     }
 }

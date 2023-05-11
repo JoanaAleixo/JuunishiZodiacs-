@@ -13,6 +13,7 @@ public class LoadingSceneManager : MonoBehaviour
     private bool canTimer = false;
     [SerializeField] string sceneAfterCombat;
     [SerializeField] GameObject enemiesPrefabForCombat;
+    [SerializeField] bool oneCaracterOnCombat;
 
     private void Awake()
     {
@@ -38,16 +39,17 @@ public class LoadingSceneManager : MonoBehaviour
         StartCoroutine(LoadSceneAsync(sceneId));
     }
 
-    public void LoadScene(string sceneId, GameObject gm)
+    public void LoadScene(string sceneId, GameObject gm, bool oneCarac)
     {
         sceneAfterCombat = sceneId;
-        LoadCombatScene(gm);
+        LoadCombatScene(gm,oneCarac);
     }
 
-    public void LoadCombatScene(GameObject enemyPrefab)
+    public void LoadCombatScene(GameObject enemyPrefab, bool oneCar)
     {
         enemiesPrefabForCombat = enemyPrefab;
-        StartCoroutine(LoadCombatSceneAsync(enemyPrefab));
+        StartCoroutine(LoadCombatSceneAsync(enemyPrefab, oneCar));
+        oneCaracterOnCombat = oneCar;
     }
 
     public void LoadSceneAfterCombat()
@@ -57,7 +59,9 @@ public class LoadingSceneManager : MonoBehaviour
 
     public void ReloadCombatScene()
     {
-        StartCoroutine(LoadCombatSceneAsync(enemiesPrefabForCombat));
+        Destroy(CombatManager.combatInstance.gameObject);
+        Destroy(CombatUiManager.uiInstance.gameObject);
+        StartCoroutine(LoadCombatSceneAsync(enemiesPrefabForCombat, oneCaracterOnCombat));
     }
 
     IEnumerator LoadSceneAsync(string sceneId)
@@ -85,12 +89,11 @@ public class LoadingSceneManager : MonoBehaviour
         
     }
 
-    IEnumerator LoadCombatSceneAsync(GameObject enemyPref)
+    IEnumerator LoadCombatSceneAsync(GameObject enemyPref, bool onCaracter)
     {
         UnityEngine.SceneManagement.Scene sceneID = SceneManager.GetActiveScene();
         AsyncOperation operation = SceneManager.LoadSceneAsync("CombatScene", LoadSceneMode.Additive);
         _loadingScreen.SetActive(true);
-        
         //operation.allowSceneActivation = false;
 
         while (!operation.isDone)
@@ -102,15 +105,24 @@ public class LoadingSceneManager : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.UnloadSceneAsync(sceneID);
+        AsyncOperation operation2 = SceneManager.UnloadSceneAsync(sceneID);
+
+        while (!operation2.isDone)
+        {
+            yield return null;
+        }
 
         GameObject cM = GameObject.Find("CombatManager");
         Instantiate(enemyPref);
         cM.GetComponent<CombatManager>().LocateEnemies();
+        if (onCaracter)
+        {
+            StartCoroutine(cM.GetComponent<CombatManager>().DiePls());
+        }
         canTimer = true;
         Debug.Log("123plaese");
         
-        while (timer < 2)
+        while (timer < 3)
         {
             yield return null;
         }
@@ -121,4 +133,5 @@ public class LoadingSceneManager : MonoBehaviour
         operation.allowSceneActivation = true;
 
     }
+
 }

@@ -9,4 +9,5 @@ public class PlayableCaracterScptObj : CaracterCreation
     [SerializeField] Ability[] _allCaracterAbilities;
 
     public FloatVariable SpMax { get => _spMax; set => _spMax = value; }
+    public Ability[] AllCaracterAbilities { get => _allCaracterAbilities; set => _allCaracterAbilities = value; }
 }

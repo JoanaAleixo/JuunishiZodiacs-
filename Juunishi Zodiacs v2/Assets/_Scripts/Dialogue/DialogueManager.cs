@@ -66,6 +66,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("SceneCombate")]
     [SerializeField] GameObject _prefabCombat;
+    [SerializeField] bool _oneCaracter;
 
   
 
@@ -403,7 +404,7 @@ public class DialogueManager : MonoBehaviour
                         if(_prefabCombat != null)
                         {
                             //Debug.Log("sda");
-                            LoadingSceneManager.sceneInstance.LoadScene(DialogueTree1.NextScene, _prefabCombat);
+                            LoadingSceneManager.sceneInstance.LoadScene(DialogueTree1.NextScene, _prefabCombat, _oneCaracter);
                         }
                         else
                         {

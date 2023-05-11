@@ -14,13 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mods:
   - rid: 7633445517126270979
+  - rid: 5145046174327898112
   abilityName: Mud Shield
-  description: Gives a shield and receives a small portion of HP
+  description: 'Gives a shield and receives a small portion of HP
+
+    +Shield
+
+    +15
+    Hp to himself'
   references:
     version: 2
     RefIds:
+    - rid: 5145046174327898112
+      type: {class: StatusModifier, ns: , asm: Assembly-CSharp}
+      data:
+        _targetType: 0
+        Quantity: 0
+        isBuff: 0
+        status: 3
+        maxQuant: 0
     - rid: 7633445517126270979
       type: {class: HealModifier, ns: , asm: Assembly-CSharp}
       data:
         _targetType: 0
-        _quantity: 10
+        _quantity: 5
