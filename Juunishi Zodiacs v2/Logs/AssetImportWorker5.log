@@ -1,0 +1,764 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.10f1 (1c7d0df0160b) revision 1867021'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22621) 64bit Core' Language: 'pt' Physical Memory: 7103 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.10f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker5
+-projectPath
+C:/Users/carla/Documents/_Documentos/Escola/21-22 ETIC/Ano 2/Projeto Final/Projeto GitHub & Sourcetree/Juunishi Zodiacs v2
+-logFile
+Logs/AssetImportWorker5.log
+-srvPort
+51478
+Successfully changed project path to: C:/Users/carla/Documents/_Documentos/Escola/21-22 ETIC/Ano 2/Projeto Final/Projeto GitHub & Sourcetree/Juunishi Zodiacs v2
+C:/Users/carla/Documents/_Documentos/Escola/21-22 ETIC/Ano 2/Projeto Final/Projeto GitHub & Sourcetree/Juunishi Zodiacs v2
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 70.21 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.10f1 (1c7d0df0160b)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/carla/Documents/_Documentos/Escola/21-22 ETIC/Ano 2/Projeto Final/Projeto GitHub & Sourcetree/Juunishi Zodiacs v2/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon(TM) RX Vega 10 Graphics (ID=0x15d8)
+    Vendor:   ATI
+    VRAM:     3551 MB
+    Driver:   26.20.11030.22001
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56012
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.006945 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 58.42 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.805 seconds
+Domain Reload Profiling:
+	ReloadAssembly (806ms)
+		BeginReloadAssembly (113ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (528ms)
+			LoadAssemblies (110ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (137ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (292ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (59ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (166ms)
+				ProcessInitializeOnLoadMethodAttributes (56ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.007315 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 60.48 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.377 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1379ms)
+		BeginReloadAssembly (163ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (1054ms)
+			LoadAssemblies (119ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (257ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (61ms)
+			SetupLoadedEditorAssemblies (560ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (61ms)
+				BeforeProcessingInitializeOnLoad (106ms)
+				ProcessInitializeOnLoadAttributes (315ms)
+				ProcessInitializeOnLoadMethodAttributes (64ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 1.82 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2577 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 33 unused Assets / (56.1 KB). Loaded Objects now: 3039.
+Memory consumption went from 117.3 MB to 117.3 MB.
+Total: 9.549000 ms (FindLiveObjects: 0.783000 ms CreateObjectMapping: 0.482300 ms MarkObjects: 8.127300 ms  DeleteObjects: 0.154400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 2049057.802052 seconds.
+  path: Assets/MainMenu/MainMenuSprites/mainMenu_v0_mapUI.png
+  artifactKey: Guid(cd63396d13ce6b84dbc593bc2cb3f5fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MainMenu/MainMenuSprites/mainMenu_v0_mapUI.png using Guid(cd63396d13ce6b84dbc593bc2cb3f5fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3975e794cd43c35902c44b20cd9551e') in 0.423042 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008199 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.51 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.796 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1798ms)
+		BeginReloadAssembly (187ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (50ms)
+		EndReloadAssembly (1453ms)
+			LoadAssemblies (133ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (302ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (79ms)
+			SetupLoadedEditorAssemblies (804ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (27ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (140ms)
+				ProcessInitializeOnLoadAttributes (518ms)
+				ProcessInitializeOnLoadMethodAttributes (101ms)
+				AfterProcessingInitializeOnLoad (14ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (20ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 5.46 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2553 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (24.5 KB). Loaded Objects now: 3049.
+Memory consumption went from 119.2 MB to 119.2 MB.
+Total: 6.620100 ms (FindLiveObjects: 0.335300 ms CreateObjectMapping: 0.165900 ms MarkObjects: 6.047900 ms  DeleteObjects: 0.068900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 590.768687 seconds.
+  path: Assets/Sprites/Interface/Title Screen/ts_bg_characters.png
+  artifactKey: Guid(3ca13372b0542424b968dca798efc042) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Title Screen/ts_bg_characters.png using Guid(3ca13372b0542424b968dca798efc042) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b0e7215de16937d54d3ad2e9c7aea6f') in 0.492328 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.042030 seconds.
+  path: Assets/Sprites/Backgrounds/District_1/bg_3D_PublisherStreet.png
+  artifactKey: Guid(de06ac01e893e6f42b26212c148ca3a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Backgrounds/District_1/bg_3D_PublisherStreet.png using Guid(de06ac01e893e6f42b26212c148ca3a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13cf08f7a334026c075988a1a74ca510') in 0.427826 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Sprites/Backgrounds/District_1/bg_16D_VendingMach.png
+  artifactKey: Guid(82c6c365106499346a8a6db84dd424c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Backgrounds/District_1/bg_16D_VendingMach.png using Guid(82c6c365106499346a8a6db84dd424c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '876306ce7eb88dfaa62f971ffa06f664') in 0.532474 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/Sprites/Characters/Full Body/Enemies/Ittan Momen/en_ittanMomen_damage_fire.png
+  artifactKey: Guid(61ccdc7584d90a04290b71d7e52701c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Enemies/Ittan Momen/en_ittanMomen_damage_fire.png using Guid(61ccdc7584d90a04290b71d7e52701c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72cc3b20e1e15f66e2fe4d01559ce677') in 0.424867 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Sprites/Characters/Full Body/Enemies/Ittan Momen/en_ittanMomen.png
+  artifactKey: Guid(01b342d74d0ee99449793e1bc7cce77d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Enemies/Ittan Momen/en_ittanMomen.png using Guid(01b342d74d0ee99449793e1bc7cce77d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a9dc5498ce430810822f47f87b94fb5') in 0.400517 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Sprites/Characters/Full Body/Enemies/Kameosa/en_kameosa_water_damage_physical.png
+  artifactKey: Guid(aa17ae6ee9763bc41bb3028ed07761db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Enemies/Kameosa/en_kameosa_water_damage_physical.png using Guid(aa17ae6ee9763bc41bb3028ed07761db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff15535fa8398fe222bcf75ebe0157a1') in 0.335971 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Sprites/Backgrounds/District_1/bg_14C_BehindTemple.png
+  artifactKey: Guid(4bb7dbfffa269dd4a85d4245b37b5942) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Backgrounds/District_1/bg_14C_BehindTemple.png using Guid(4bb7dbfffa269dd4a85d4245b37b5942) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0affd8495be787c1e1ea6644eac4e13d') in 0.513846 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Hana/Combat/ex_Hana_healing.png
+  artifactKey: Guid(b3c738e02731c4741aaae9dd7157a2f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Hana/Combat/ex_Hana_healing.png using Guid(b3c738e02731c4741aaae9dd7157a2f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7841f550aa10487f1f3358f7b6d6a92') in 0.252851 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Sprites/Characters/Full Body/Zodiacs/Hana/fu_Hana_5triste.png
+  artifactKey: Guid(e9d45f0772370844ba3b5bf52a76596b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Zodiacs/Hana/fu_Hana_5triste.png using Guid(e9d45f0772370844ba3b5bf52a76596b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a233b77b5e76a73f9ebf704e7b6fe03') in 0.410299 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000065 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1.png
+  artifactKey: Guid(6cf661e179afec94bbb26cd3c00c5d77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1.png using Guid(6cf661e179afec94bbb26cd3c00c5d77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a9e8f3db48d4c441000e252b9b2aa07') in 0.255430 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/ex_Fumiko_v1_5triste.png
+  artifactKey: Guid(70bc0b693d900934a9e1f6b0dfbf102f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/ex_Fumiko_v1_5triste.png using Guid(70bc0b693d900934a9e1f6b0dfbf102f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a51f307acdb29fadcd348b736628f55f') in 0.204651 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_damage_earth.png
+  artifactKey: Guid(3032dcb8e61530243a7a04ce0f57cc5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_damage_earth.png using Guid(3032dcb8e61530243a7a04ce0f57cc5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ce2fb31a3bfefeec303eb486bd84a89') in 0.176187 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 2 Chain/fu_Nezuko_v2_4nervoso_chain.png
+  artifactKey: Guid(1888b168484df344184fefd8b1972e65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 2 Chain/fu_Nezuko_v2_4nervoso_chain.png using Guid(1888b168484df344184fefd8b1972e65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c3dd2d14d84cc666b3c94850f4501f5') in 0.300893 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Sprites/Characters/Full Body/Gods/Bosses/God of Mischief/fu_mischiefGod_healing.png
+  artifactKey: Guid(84787e869785e864fb9e6a4b1dda440b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Gods/Bosses/God of Mischief/fu_mischiefGod_healing.png using Guid(84787e869785e864fb9e6a4b1dda440b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bda9380fa81390dd46fe3b793d742e08') in 0.372613 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Sprites/Characters/Full Body/Enemies/Kameosa/en_kameosa_damage_physical.png
+  artifactKey: Guid(f39ebc493077a1f45a944ae1d6386009) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Enemies/Kameosa/en_kameosa_damage_physical.png using Guid(f39ebc493077a1f45a944ae1d6386009) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3786a6cc85d1b3726413840337b4659b') in 0.247228 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Sprites/Characters/Full Body/Zodiacs/Akira/Outfit 1/fu_Akira_v1_8serio.png
+  artifactKey: Guid(7c9ca83566dc2634482bcc1a3be40d99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Zodiacs/Akira/Outfit 1/fu_Akira_v1_8serio.png using Guid(7c9ca83566dc2634482bcc1a3be40d99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd334d1cd797bd61fc6cc190e35d20075') in 0.378752 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Sprites/Characters/Full Body/Enemies/Ningen/en_ningen_damage_water.png
+  artifactKey: Guid(8c91250628a82e245b797fcb730a63b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Enemies/Ningen/en_ningen_damage_water.png using Guid(8c91250628a82e245b797fcb730a63b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eec353467603539da11be0cd4170a50f') in 0.284464 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Sprites/Characters/Full Body/Enemies/Ittan Momen/en_ittanMomen_damage_earth.png
+  artifactKey: Guid(177eb6796a3a71740803317c6c0c19dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Enemies/Ittan Momen/en_ittanMomen_damage_earth.png using Guid(177eb6796a3a71740803317c6c0c19dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85dd131f3b6ec8d2e044251b399bfb94') in 0.454049 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 2 Chain/fu_Nezuko_v2_5triste_chain.png
+  artifactKey: Guid(cc68e93b8cf1c604b833da2e373e625f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 2 Chain/fu_Nezuko_v2_5triste_chain.png using Guid(cc68e93b8cf1c604b833da2e373e625f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '765626aefd63637fd8ebc44a23a7b5b8') in 0.412825 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Rat/ex_Nezuko_RatDivine.png
+  artifactKey: Guid(8f5e2cc3332165c47ab7f3f4f035c418) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Spirits/Nezuko/Rat/ex_Nezuko_RatDivine.png using Guid(8f5e2cc3332165c47ab7f3f4f035c418) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d21136e34d57d8106de596bfa903740') in 0.141784 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Hana/Combat/ex_Hana_damage_physical.png
+  artifactKey: Guid(49e8a1929f58d884b9853b613c083dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Hana/Combat/ex_Hana_damage_physical.png using Guid(49e8a1929f58d884b9853b613c083dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2756cf56c296986c6b2cf4cfa56fae76') in 0.203586 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Sprites/Characters/Full Body/Zodiacs/Akira/Outfit 2/fu_Akira_v2_2feliz.png
+  artifactKey: Guid(2a8cba2c217be384ba40fe647f6aed0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Zodiacs/Akira/Outfit 2/fu_Akira_v2_2feliz.png using Guid(2a8cba2c217be384ba40fe647f6aed0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1148acb6a7d79cb2af2711a22c4a9826') in 0.319483 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v2_damage_metal.png
+  artifactKey: Guid(38ef8a3f2e4d0d9468dcc43e6e2ca1c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v2_damage_metal.png using Guid(38ef8a3f2e4d0d9468dcc43e6e2ca1c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7875833c5ef09ca331b7ef4a878754f0') in 0.172948 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_damage_water.png
+  artifactKey: Guid(38f875fef3b8eed42967ae791c8f0905) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_damage_water.png using Guid(38f875fef3b8eed42967ae791c8f0905) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67a781990f57640bd8e7ff2650cde2ea') in 0.186827 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Sprites/Characters/Full Body/Enemies/Omukade/en_omukade.png
+  artifactKey: Guid(be36c7f61f37807449b8ad87a1c89101) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Enemies/Omukade/en_omukade.png using Guid(be36c7f61f37807449b8ad87a1c89101) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0204867b07439dee628fb56a8330e11') in 0.473809 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000111 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Hana/ex_Hana_5triste.png
+  artifactKey: Guid(c854a83ab3000b64c8c0d5cf7c6cb9c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Hana/ex_Hana_5triste.png using Guid(c854a83ab3000b64c8c0d5cf7c6cb9c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c8af4d56658dcaa324406a1f026167d') in 0.217207 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 1/fu_Nezuko_v1_1mtfeliz.png
+  artifactKey: Guid(cc7750bf2aab0d94f98e195d023058c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 1/fu_Nezuko_v1_1mtfeliz.png using Guid(cc7750bf2aab0d94f98e195d023058c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfc55536af675a94acfc964b80777fcc') in 0.386035 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_damage_plant.png
+  artifactKey: Guid(e2aa10236e6d15a49bac4821c0bb25e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_damage_plant.png using Guid(e2aa10236e6d15a49bac4821c0bb25e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2ef4811d4a16b608b2dacdc724cd875') in 0.185416 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Sprites/Characters/Full Body/Enemies/Kameosa/en_kameosa_damage_plant.png
+  artifactKey: Guid(13531647e83657c499f85ddcddc22d1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Enemies/Kameosa/en_kameosa_damage_plant.png using Guid(13531647e83657c499f85ddcddc22d1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1047e981c6769152f94c6f403b47e2d3') in 0.386025 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Outfit 2/ex_Akira_v2_2feliz.png
+  artifactKey: Guid(c5e7459fbb305bd46b65e5b62c055e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Outfit 2/ex_Akira_v2_2feliz.png using Guid(c5e7459fbb305bd46b65e5b62c055e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '400432f9eddbe8e229a3b3c4cb186030') in 0.168581 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Hana/Combat/ex_Hana_death.png
+  artifactKey: Guid(43fda6cbac8f4384b9e9a9148cf43c35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Hana/Combat/ex_Hana_death.png using Guid(43fda6cbac8f4384b9e9a9148cf43c35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9949e5c9dc4a8068249f5046bd0f17a4') in 0.261503 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 1/fu_Nezuko_v1_2feliz.png
+  artifactKey: Guid(7982ab4867b0bcb43bfd7d39c29c499f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 1/fu_Nezuko_v1_2feliz.png using Guid(7982ab4867b0bcb43bfd7d39c29c499f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a60c5264af9f07aa61d38b2f1ec5be0') in 0.412590 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Sprites/Characters/Full Body/Zodiacs/Akira/Outfit 2/fu_Akira_v2_1mtfeliz.png
+  artifactKey: Guid(f2aec1032b4033643a81545472940893) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Zodiacs/Akira/Outfit 2/fu_Akira_v2_1mtfeliz.png using Guid(f2aec1032b4033643a81545472940893) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e31ba3e791ca0253c8c6b545f957e1a7') in 0.386704 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000109 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_healing.png
+  artifactKey: Guid(40aca81eb6d20274caadd5947ed377e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_healing.png using Guid(40aca81eb6d20274caadd5947ed377e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35326f4462fcd31362850bd26bbc713c') in 0.215359 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_Menu_Action_Select_Arrow.png
+  artifactKey: Guid(4cbafb48f6e98fb4e81ba3147bbaf20d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_Menu_Action_Select_Arrow.png using Guid(4cbafb48f6e98fb4e81ba3147bbaf20d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b98399f6dc9dd259d8979bba7328801') in 0.052704 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v2_damage_earth.png
+  artifactKey: Guid(a0ffbf5ed512f404c843b29c22ff8417) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v2_damage_earth.png using Guid(a0ffbf5ed512f404c843b29c22ff8417) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe7d4bba1e0a9a53a05664bb1c26e264') in 0.231485 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v1_damage_water.png
+  artifactKey: Guid(de62bf013c160be4e89555a94b99c502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Combat/ex_Akira_v1_damage_water.png using Guid(de62bf013c160be4e89555a94b99c502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22a287ca885302eb57e496af42003f6a') in 0.213724 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Sprites/Characters/Full Body/Zodiacs/Hana/fu_Hana_2feliz.png
+  artifactKey: Guid(543f8de7335e590468c71fc516374f98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Zodiacs/Hana/fu_Hana_2feliz.png using Guid(543f8de7335e590468c71fc516374f98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22a139dddcba58a97cf41e06b78714f0') in 0.406339 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Outfit 2/ex_Akira_v2_6choro.png
+  artifactKey: Guid(f0199ea713574044caededeef5574e81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Akira/Outfit 2/ex_Akira_v2_6choro.png using Guid(f0199ea713574044caededeef5574e81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f24c8b1d427cd4200e1fb8aa2f665ce') in 0.179880 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_damage_metal.png
+  artifactKey: Guid(d26589392ea85fc41acbbe96124f8043) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/Zodiacs/Fumiko/Combat/ex_Fumiko_v1_damage_metal.png using Guid(d26589392ea85fc41acbbe96124f8043) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '479d7c07d29191eafc42f4f79d10c1d7') in 0.171722 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Sprites/Characters/Full Body/Enemies/Ningen/en_ningen_damage_fire.png
+  artifactKey: Guid(be715bf7b4b1de84c9cf1ae68e15a4ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Enemies/Ningen/en_ningen_damage_fire.png using Guid(be715bf7b4b1de84c9cf1ae68e15a4ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2615509f300ba09986eea72add07c81') in 0.367050 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Sprites/Characters/Full Body/Enemies/Omukade/en_omukade_damage_plant.png
+  artifactKey: Guid(6e37da6071016e94587a2c82082e12ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Enemies/Omukade/en_omukade_damage_plant.png using Guid(6e37da6071016e94587a2c82082e12ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4123a1bc00ca60897be867f0cfba8e0d') in 0.510445 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 2 Chain/fu_Nezuko_v2_3surpresa_chain.png
+  artifactKey: Guid(02e41798bb9cf3a459e76253fe2bc0a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Spirits/Nezuko/Human/Outfit 2 Chain/fu_Nezuko_v2_3surpresa_chain.png using Guid(02e41798bb9cf3a459e76253fe2bc0a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '928bb6cbb001bfd178f74d5fe85f36aa') in 0.371781 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Sprites/Characters/Full Body/Enemies/Ningen/en_ningen_damage_metal.png
+  artifactKey: Guid(a5ebca4bdcc68b841a7f140835ef751c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Full Body/Enemies/Ningen/en_ningen_damage_metal.png using Guid(a5ebca4bdcc68b841a7f140835ef751c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71e5a438ea353c5f52b373089b6a2e4e') in 0.399038 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 59.928615 seconds.
+  path: Assets/Fonts/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF 1.asset
+  artifactKey: Guid(e0e8e22ffab25fc44aa8abf897fbf308) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF 1.asset using Guid(e0e8e22ffab25fc44aa8abf897fbf308) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a08ac5627cacdf3dc475406a08532824') in 0.167469 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009440 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.13 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.099 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2101ms)
+		BeginReloadAssembly (272ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (14ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (71ms)
+		EndReloadAssembly (1594ms)
+			LoadAssemblies (197ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (432ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (81ms)
+			SetupLoadedEditorAssemblies (779ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (28ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (133ms)
+				ProcessInitializeOnLoadAttributes (495ms)
+				ProcessInitializeOnLoadMethodAttributes (105ms)
+				AfterProcessingInitializeOnLoad (14ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (19ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 4.48 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2553 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (24.7 KB). Loaded Objects now: 3102.
+Memory consumption went from 119.7 MB to 119.7 MB.
+Total: 6.842600 ms (FindLiveObjects: 0.382500 ms CreateObjectMapping: 0.142100 ms MarkObjects: 6.257900 ms  DeleteObjects: 0.057900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.011257 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.15 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.776 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1778ms)
+		BeginReloadAssembly (187ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (11ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (51ms)
+		EndReloadAssembly (1433ms)
+			LoadAssemblies (140ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (289ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (96ms)
+			SetupLoadedEditorAssemblies (753ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (22ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (129ms)
+				ProcessInitializeOnLoadAttributes (497ms)
+				ProcessInitializeOnLoadMethodAttributes (88ms)
+				AfterProcessingInitializeOnLoad (14ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (20ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 5.61 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2553 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (24.7 KB). Loaded Objects now: 3105.
+Memory consumption went from 119.7 MB to 119.7 MB.
+Total: 8.723900 ms (FindLiveObjects: 0.676400 ms CreateObjectMapping: 0.215600 ms MarkObjects: 7.783700 ms  DeleteObjects: 0.044400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.010374 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.96 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.605 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1607ms)
+		BeginReloadAssembly (189ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (51ms)
+		EndReloadAssembly (1265ms)
+			LoadAssemblies (130ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (281ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (73ms)
+			SetupLoadedEditorAssemblies (682ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (20ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (114ms)
+				ProcessInitializeOnLoadAttributes (448ms)
+				ProcessInitializeOnLoadMethodAttributes (83ms)
+				AfterProcessingInitializeOnLoad (15ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (21ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 4.72 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2553 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (24.7 KB). Loaded Objects now: 3108.
+Memory consumption went from 119.7 MB to 119.7 MB.
+Total: 6.788000 ms (FindLiveObjects: 0.305300 ms CreateObjectMapping: 0.103500 ms MarkObjects: 6.314500 ms  DeleteObjects: 0.062500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.011983 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.76 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.943 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1945ms)
+		BeginReloadAssembly (266ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (16ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (76ms)
+		EndReloadAssembly (1479ms)
+			LoadAssemblies (187ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (403ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (110ms)
+			SetupLoadedEditorAssemblies (686ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (25ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (138ms)
+				ProcessInitializeOnLoadAttributes (418ms)
+				ProcessInitializeOnLoadMethodAttributes (87ms)
+				AfterProcessingInitializeOnLoad (15ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (16ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.71 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2553 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (24.6 KB). Loaded Objects now: 3111.
+Memory consumption went from 119.6 MB to 119.6 MB.
+Total: 4.563400 ms (FindLiveObjects: 0.379200 ms CreateObjectMapping: 0.113100 ms MarkObjects: 4.036900 ms  DeleteObjects: 0.032500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007296 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.595 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1596ms)
+		BeginReloadAssembly (172ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (45ms)
+		EndReloadAssembly (1269ms)
+			LoadAssemblies (118ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (293ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (65ms)
+			SetupLoadedEditorAssemblies (692ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (16ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (85ms)
+				ProcessInitializeOnLoadAttributes (472ms)
+				ProcessInitializeOnLoadMethodAttributes (99ms)
+				AfterProcessingInitializeOnLoad (18ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (20ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2553 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (24.7 KB). Loaded Objects now: 3114.
+Memory consumption went from 119.7 MB to 119.7 MB.
+Total: 7.067100 ms (FindLiveObjects: 0.518200 ms CreateObjectMapping: 0.196700 ms MarkObjects: 6.314100 ms  DeleteObjects: 0.035300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
