@@ -148,15 +148,16 @@ public class NavigationManager : MonoBehaviour
 
         for (int e = 0; e < _myPlaces.Length; e++)
         {
-
+            if(_myPlaces == null)
+            {
+                return;
+            }
+            else
+            {
             for (int i = 0; i < _myPlaces[e].Itens.Length; i++)
             {
-                if(_myPlaces[e].Itens == null)
-                {
-                    return;
-                }
-                else
-                {
+               
+                
                     GameObject Item = Instantiate(_itemPrefab, _itemPrefab.transform.position, _itemPrefab.transform.rotation) as GameObject;
                     Item.transform.SetParent(_itemDisplay.transform, false);
                     Item.transform.position = Camera.main.WorldToScreenPoint(_myPlaces[e].Itens[i].ItemPositionInNav);
@@ -177,10 +178,8 @@ public class NavigationManager : MonoBehaviour
                     newItemImage.sprite = _myPlaces[e].Itens[i].Icon;
 
                     Item.GetComponent<ItemCollect>().ThisItem = _myPlaces[e].Itens[i];
-                }
-              
-               
-
+                
+            }
             }
         }
 
