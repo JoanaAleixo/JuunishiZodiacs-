@@ -15,8 +15,6 @@ public class ItemCollect : MonoBehaviour
     public void CollectItem()
     {
 
-      
-
             NavigationManager.instance.ItemDic.Remove(itemId);
 
         if (_thisItem is KeyItem || _thisItem is UsableItem)
@@ -37,7 +35,7 @@ public class ItemCollect : MonoBehaviour
         {
 
             _itemAmount++;
-            //  MenuManager.instance.Inventory.TryGetValue(ThisItem, out _itemAmmount);
+           
             MenuManager.instance.InventoryInfo.InventoryDic[ThisItem] = _itemAmount;
 
 
