@@ -16,9 +16,17 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject _inventoryStorage;
     [SerializeField] GameObject _itemToStorage;
     [SerializeField] Inventory _inventoryInfo;
+
     [SerializeField] List<GameObject> _itensInStorage = new List<GameObject>();
 
     [SerializeField] GameObject _itemDescriptionBox;
+
+    [Header("Gallery")]
+
+
+    [SerializeField] GameObject _galleryStorage;
+    [SerializeField] GameObject _photoPrefab;
+    [SerializeField] List<GameObject> _itensInGallery = new List<GameObject>();
 
     [Header("AbilitySwitching")]
     [SerializeField] GameObject[] _abilityButtons;
@@ -30,11 +38,12 @@ public class MenuManager : MonoBehaviour
 
     public static MenuManager instance;
 
-   
     public List<GameObject> ItensInStorage { get => _itensInStorage; set => _itensInStorage = value; }
     public GameObject ItemDescriptionBox { get => _itemDescriptionBox; set => _itemDescriptionBox = value; }
     public Inventory InventoryInfo { get => _inventoryInfo; set => _inventoryInfo = value; }
     public Sprite[] AbilitySprites { get => _abilitySprites; set => _abilitySprites = value; }
+
+    public List<GameObject> ItensInGallery { get => _itensInGallery; set => _itensInGallery = value; }
 
     private void Awake()
     {
@@ -53,7 +62,7 @@ public class MenuManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))        
         {
-            InventorySystem();
+            Gallery();
         }
     }
     public void Option(int switchNumb)
@@ -77,6 +86,7 @@ public class MenuManager : MonoBehaviour
             ItensInStorage.Add(Item);
 
            Image itemIcon = Item.transform.GetChild(0).GetChild(0).GetComponent<Image>();
+
             if (item is KeyItem)
             {
                 KeyItem keyItem = (KeyItem)item;
@@ -101,6 +111,30 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    public void Gallery()
+    {
+        foreach (var item in InventoryInfo.InventoryDic.Keys)
+        {
+            GameObject Item = Instantiate(_photoPrefab, _galleryStorage.transform.position, _photoPrefab.transform.rotation) as GameObject;
+            Item.transform.SetParent(_galleryStorage.transform, false);
+            Item.transform.position = Camera.main.WorldToScreenPoint(_photoPrefab.transform.position);
+
+            ItensInGallery.Add(Item);
+
+            Image photoImage = Item.GetComponent<Image>();
+
+            if (item is PhotoItem)
+            {
+                PhotoItem photoItem = (PhotoItem)item;
+                photoImage.sprite = photoItem.Icon;
+            }
+            else 
+            {
+                return;
+            }
+        }
+    }
+
     public void CloseInventory()
     {
         foreach (var item in _itensInStorage)
@@ -109,6 +143,15 @@ public class MenuManager : MonoBehaviour
             
         }
         _itensInStorage.Clear();
+    }
+    public void CloseGallery()
+    {
+        foreach (var item in _itensInGallery)
+        {
+            Destroy(item);
+
+        }
+        _itensInGallery.Clear();
     }
 
     #region AbilitiesStuff

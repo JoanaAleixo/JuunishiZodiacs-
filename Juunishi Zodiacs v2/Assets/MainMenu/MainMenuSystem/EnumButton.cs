@@ -80,12 +80,17 @@ public class EnumButton : MonoBehaviour
         if (myOptions == Options.MainMenu)
         {
             MenuManager.instance.CloseInventory();
-            
+            MenuManager.instance.CloseGallery();
         }
 
         if (myOptions == Options.Inventory)
         {
             MenuManager.instance.InventorySystem();
+        }
+
+        if(myOptions == Options.Photos)
+        {
+            MenuManager.instance.Gallery();
         }
 
       
