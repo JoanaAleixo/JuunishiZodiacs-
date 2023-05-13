@@ -2061,6 +2061,7 @@ MonoBehaviour:
   deathSp: {fileID: 21300000, guid: 43fda6cbac8f4384b9e9a9148cf43c35, type: 3}
   healingSp: {fileID: 21300000, guid: b3c738e02731c4741aaae9dd7157a2f3, type: 3}
   _allCaracters: {fileID: 11400000, guid: 93bc55ecfdcecd146b814e81f7de7f4a, type: 2}
+  numberRetracted: 0
 --- !u!212 &360797933
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3599,7 +3600,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Physical Attack
+  m_text: Weapon Attack
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3810,7 +3811,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Itens
+  m_text: Items
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6133,7 +6134,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Magic Attack
+  m_text: Spirit Attack
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8392,6 +8393,7 @@ MonoBehaviour:
   deathSp: {fileID: 21300000, guid: 58f63dfe78a6daf409b0f6aa2f339984, type: 3}
   healingSp: {fileID: 21300000, guid: 94956063e5de11b4c80032967bea346e, type: 3}
   _allCaracters: {fileID: 11400000, guid: 93bc55ecfdcecd146b814e81f7de7f4a, type: 2}
+  numberRetracted: 0
 --- !u!212 &1483627698
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8574,6 +8576,7 @@ MonoBehaviour:
   deathSp: {fileID: 21300000, guid: fc3415f869d060b4a8b006e2106c327a, type: 3}
   healingSp: {fileID: 21300000, guid: 40aca81eb6d20274caadd5947ed377e9, type: 3}
   _allCaracters: {fileID: 11400000, guid: 93bc55ecfdcecd146b814e81f7de7f4a, type: 2}
+  numberRetracted: 0
 --- !u!212 &1502411198
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9939,7 +9942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1821750587
 RectTransform:
   m_ObjectHideFlags: 0

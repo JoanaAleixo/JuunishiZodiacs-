@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
     LoadingSceneManager sceneInstance;
     [SerializeField] GameObject titleScreen;
     [SerializeField] GameObject optionMenu;
-    [SerializeField] GameObject extrasMenu;
+    [SerializeField] GameObject creditssMenu;
 
     [SerializeField] GameObject EnemyPreTest;
 
@@ -41,13 +41,13 @@ public class UIManager : MonoBehaviour
 
     public void ExtrasButton()
     {
-        extrasMenu.gameObject.SetActive(true);
+        creditssMenu.gameObject.SetActive(true);
     }
 
     public void BackButton()
     {
         optionMenu.gameObject.SetActive(false);
-        extrasMenu.gameObject.SetActive(false);
+        creditssMenu.gameObject.SetActive(false);
     }
 
     public void ExitButton()
