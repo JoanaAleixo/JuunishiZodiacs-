@@ -154,32 +154,36 @@ public class NavigationManager : MonoBehaviour
             }
             else
             {
-            for (int i = 0; i < _myPlaces[e].Itens.Length; i++)
-            {
-               
-                
-                    GameObject Item = Instantiate(_itemPrefab, _itemPrefab.transform.position, _itemPrefab.transform.rotation) as GameObject;
-                    Item.transform.SetParent(_itemDisplay.transform, false);
-                    Item.transform.position = Camera.main.WorldToScreenPoint(_myPlaces[e].Itens[i].ItemPositionInNav);
+                if(_myPlaces[e].Itens != null)
+                {
+                    for (int i = 0; i < _myPlaces[e].Itens.Length; i++)
+                    {
 
 
-                    _itensList.Add(Item);
-
-                    idCounter++;
-
-                    Item.GetComponent<ItemCollect>().ItemId = idCounter;
-                    ItemDic.Add(idCounter, e);
-
-                    Item.SetActive(false);
+                        GameObject Item = Instantiate(_itemPrefab, _itemPrefab.transform.position, _itemPrefab.transform.rotation) as GameObject;
+                        Item.transform.SetParent(_itemDisplay.transform, false);
+                        Item.transform.position = Camera.main.WorldToScreenPoint(_myPlaces[e].Itens[i].ItemPositionInNav);
 
 
+                        _itensList.Add(Item);
 
-                    Image newItemImage = Item.GetComponent<Image>();
-                    newItemImage.sprite = _myPlaces[e].Itens[i].Icon;
+                        idCounter++;
 
-                    Item.GetComponent<ItemCollect>().ThisItem = _myPlaces[e].Itens[i];
-                
-            }
+                        Item.GetComponent<ItemCollect>().ItemId = idCounter;
+                        ItemDic.Add(idCounter, e);
+
+                        Item.SetActive(false);
+
+
+
+                        Image newItemImage = Item.GetComponent<Image>();
+                        newItemImage.sprite = _myPlaces[e].Itens[i].Icon;
+
+                        Item.GetComponent<ItemCollect>().ThisItem = _myPlaces[e].Itens[i];
+
+                    }
+                }
+
             }
         }
 
