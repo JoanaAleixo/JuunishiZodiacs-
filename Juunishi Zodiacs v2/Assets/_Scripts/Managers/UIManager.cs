@@ -23,9 +23,15 @@ public class UIManager : MonoBehaviour
 
         if (PlayerPrefs.HasKey("Bright"))
         {
-            Debug.Log("cacete");
-            sliderBrightness.value = PlayerPrefs.GetFloat("Bright");
-            canvasGroupBrightness.alpha = sliderBrightness.value;
+            //Debug.Log("cacete");
+            if(sliderBrightness != null)
+            {
+                sliderBrightness.value = PlayerPrefs.GetFloat("Bright");
+                canvasGroupBrightness.alpha = sliderBrightness.value;
+            }
+            else
+            canvasGroupBrightness.alpha = PlayerPrefs.GetFloat("Bright");
+
         }
     }
 
@@ -83,7 +89,7 @@ public class UIManager : MonoBehaviour
         brightness = sliderBrightness.value;
         canvasGroupBrightness.alpha = sliderBrightness.value;
         PlayerPrefs.SetFloat("Bright", brightness);
-        Debug.Log("cacete2");
+        //Debug.Log("cacete2");
         PlayerPrefs.Save();
     }
     #endregion
