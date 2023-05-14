@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,11 +11,22 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject optionMenu;
     [SerializeField] GameObject creditssMenu;
 
+    [SerializeField] Slider sliderBrightness;
+    [SerializeField] CanvasGroup canvasGroupBrightness;
+
+
     [SerializeField] GameObject EnemyPreTest;
 
     void Start()
     {
         sceneInstance = LoadingSceneManager.sceneInstance;
+
+        if (PlayerPrefs.HasKey("Bright"))
+        {
+            Debug.Log("cacete");
+            sliderBrightness.value = PlayerPrefs.GetFloat("Bright");
+            canvasGroupBrightness.alpha = sliderBrightness.value;
+        }
     }
 
     #region Title Screen Buttons
@@ -54,6 +66,25 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("Sair");
         Application.Quit();
+    }
+    #endregion
+
+    #region Sliders Volume e Brilho
+
+    //public void VolumeSlider(float volume) //guardar os valores de volume
+    //{
+    //    audioMixer.SetFloat("Volume", volume);
+    //    PlayerPrefs.SetFloat("Volume", volume);
+    //    PlayerPrefs.Save(); //<- não esquecer 
+    //}
+
+    public void BrightnessSlider(float brightness) //guardar os valores de brilho
+    {
+        brightness = sliderBrightness.value;
+        canvasGroupBrightness.alpha = sliderBrightness.value;
+        PlayerPrefs.SetFloat("Bright", brightness);
+        Debug.Log("cacete2");
+        PlayerPrefs.Save();
     }
     #endregion
 }
