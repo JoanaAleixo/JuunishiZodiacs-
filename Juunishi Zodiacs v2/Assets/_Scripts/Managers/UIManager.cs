@@ -35,6 +35,19 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            CombatSceneButton();
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            SoundManager.PlaySound(SoundManager.slashSound);
+        }
+    }
+
     #region Title Screen Buttons
     public void PressToStartButton()
     {
@@ -49,7 +62,7 @@ public class UIManager : MonoBehaviour
 
     public void CombatSceneButton()
     {
-        sceneInstance.LoadScene("Title Screen",EnemyPreTest, true);
+        sceneInstance.LoadScene("Title Screen",EnemyPreTest, false);
     }
 
     public void OptionsMenuButton()

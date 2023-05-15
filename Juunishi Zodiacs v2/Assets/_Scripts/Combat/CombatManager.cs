@@ -209,8 +209,9 @@ public class CombatManager : MonoBehaviour
                     }
                     else
                     {
+                        uIManager.ShowTextPrompt(Enemies[tempEnemy].MyCaracter.Name + " is paralized!");
                         tempEnemy++;
-                        StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EnemyTurn, 1));
+                        StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EnemyTurn, 2));
                     }
                 }
                 break;
@@ -285,7 +286,7 @@ public class CombatManager : MonoBehaviour
                         chance = 80;
                         break;
                     case 3:
-                        chance = 70;
+                        chance = 0;
                         break;
                     case 4:
                         chance = 60;
@@ -330,6 +331,8 @@ public class CombatManager : MonoBehaviour
         }
         else
         {
+            uIManager.ShowTextPrompt("Your attack failed!");
+            uIManager.CloseAbilityInfo();
             _actions.Add(EmptyAbility);
             uIManager.CloseSelectedCaracter(SelectedCaracter);
             StartCoroutine(ChangeStateWithDelay(BATTLESTATE.PlayerTurn, 2));
@@ -525,13 +528,11 @@ public class CombatManager : MonoBehaviour
 
     public void LocateEnemies()
     {
-        print("Locating Enemies");
         GameObject parent = GameObject.FindGameObjectWithTag("EnemySet");
         int enemiesCount = 0;
         //Enemies = new Enemy[parent.transform.GetChild(0).childCount];
         for (int i = 0; i < parent.transform.GetChild(0).childCount; i++)
         {
-            print("Enemy "+i);
             if (parent.transform.GetChild(0).GetChild(i).CompareTag("Enemy"))
             {
                 enemiesCount++;
@@ -578,6 +579,7 @@ public class CombatManager : MonoBehaviour
         {
             ChangeState(BATTLESTATE.EnemyTurn);
         }*/
+        uIManager.RepaintSpritesBackToNormal();
         uIManager.ChangeTurnUIPrompt();
         StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EnemyTurn, 3));
 
@@ -687,15 +689,13 @@ public class CombatManager : MonoBehaviour
 
     void PreRoundStatusCheck()
     {
-        Debug.Log("checking");
         foreach (var carac in Caracters)
         {
             foreach (var status in carac.currentStatus.ToList())
             {
-                Debug.Log(carac);
                 if (status.Key is ParalizeFx)
                 {
-                    Debug.Log("Paralized");
+                    uIManager.ShowTextPrompt(Caracters[carac.CaracterNumber].MyCaracter.Name + " is paralized!");
                     _actions.Add(EmptyAbility);
                     uIManager.LockSelectionButton(carac.CaracterNumber);
                     carac.currentStatus.Remove(status.Key);

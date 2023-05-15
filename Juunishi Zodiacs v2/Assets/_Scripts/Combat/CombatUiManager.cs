@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.TextCore.Text;
 
 public class CombatUiManager : MonoBehaviour
 {
@@ -187,7 +188,6 @@ public class CombatUiManager : MonoBehaviour
 
     public void OpenActionMenu()
     {
-        Debug.Log(combatMg.SelectedCaracter);
         combatMg.Caracters[combatMg.SelectedCaracter].transform.GetChild(0).gameObject.SetActive(true);
         _actionMenu.SetActive(true);
         _abilitiesMenu.SetActive(false);
@@ -212,6 +212,12 @@ public class CombatUiManager : MonoBehaviour
     {
         _abilityUsed.SetActive(true);
         _abilityUsedText.text = caracter.name + " used\n" + ab.AbilityName;
+    }
+
+    public void ShowTextPrompt(string textToUse)
+    {
+        _abilityUsed.SetActive(true);
+        _abilityUsedText.text = textToUse;
     }
 
     public void CloseAbilityUsedPrompt()
@@ -292,6 +298,16 @@ public class CombatUiManager : MonoBehaviour
     public void LockSelectionButton(int _buttonInt)
     {
         _selectionButtons[_buttonInt].SetActive(false);
+        combatMg.Caracters[_buttonInt].GetComponent<SpriteRenderer>().color = new Color32(255/2, 255/2, 255/2, 255);
+        Debug.Log("Lokou");
+    }
+
+    public void RepaintSpritesBackToNormal()
+    {
+        for (int i = 0; i < _selectionButtons.Length; i++)
+        {
+            combatMg.Caracters[i].GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+        }
     }
 
     public void UnlockAllSelectionButtons()
@@ -465,8 +481,6 @@ public class CombatUiManager : MonoBehaviour
     {
         _caractersInfo.transform.GetChild(0).gameObject.SetActive(false);
         _caractersInfo.transform.GetChild(2).gameObject.SetActive(false);
-        /*_caracterSelection.transform.GetChild(0).gameObject.SetActive(false);
-        _caracterSelection.transform.GetChild(2).gameObject.SetActive(false);*/
         _selectionButtons[0].GetComponent<Button>().interactable = false;
         _selectionButtons[2].GetComponent<Button>().interactable = false;
     }

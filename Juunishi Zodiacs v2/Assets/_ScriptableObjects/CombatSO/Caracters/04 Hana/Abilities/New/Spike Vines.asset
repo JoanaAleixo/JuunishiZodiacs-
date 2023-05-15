@@ -18,7 +18,7 @@ MonoBehaviour:
   - rid: 5145046174327898115
   abilityName: Spike Vines
   description: "Light plant damage to All enemies, inflicts paralise \n- 10 Hp to
-    one enemy\n+ Paralize"
+    one enemy\n+ Paralize\n-70 Sp"
   references:
     version: 2
     RefIds:
@@ -29,7 +29,7 @@ MonoBehaviour:
         Quantity: 1
         isBuff: 0
         status: 1
-        maxQuant: 0
+        maxQuant: 100
     - rid: 5145046174327898115
       type: {class: CostModifier, ns: , asm: Assembly-CSharp}
       data:

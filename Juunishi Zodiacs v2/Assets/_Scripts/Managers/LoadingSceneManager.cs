@@ -120,7 +120,6 @@ public class LoadingSceneManager : MonoBehaviour
             StartCoroutine(cM.GetComponent<CombatManager>().DiePls());
         }
         canTimer = true;
-        Debug.Log("123plaese");
         
         while (timer < 3)
         {
