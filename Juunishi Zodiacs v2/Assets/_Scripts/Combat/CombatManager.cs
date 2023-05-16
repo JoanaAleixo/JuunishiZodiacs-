@@ -589,7 +589,7 @@ public class CombatManager : MonoBehaviour
     {
         if(Enemies != null)
         {
-            foreach (Enemy enemyRef in Enemies)
+            foreach (Enemy enemyRef in Enemies.ToList())
             {
                 foreach (StatusFx effect in enemyRef.currentStatus.Keys.ToList())
                 {
