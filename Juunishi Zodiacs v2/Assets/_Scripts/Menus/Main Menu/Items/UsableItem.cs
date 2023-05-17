@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class UsableItem : BaseItem
 {
-    [SerializeField] ScriptableDialogue _itemDialogue;
+   
     [SerializeField] Sprite _iconForBag;
     [SerializeField] string _itemDescription;
-    public ScriptableDialogue ItemDialogue { get => _itemDialogue; set => _itemDialogue = value; }
+  
 
     public Sprite IconForBag { get => _iconForBag; set => _iconForBag = value; }
 

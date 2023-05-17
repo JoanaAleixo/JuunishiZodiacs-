@@ -37,6 +37,7 @@ public class NavigationManager : MonoBehaviour
     public ScriptablePlace PlacesList { get => _placesList; set => _placesList = value; }
     public GameObject DialogueCanvas { get => _DialogueCanvas; set => _DialogueCanvas = value; }
     public Dictionary<int, int> ItemDic { get => _itemDic; set => _itemDic = value; }
+    public ScriptablePlace[] MyPlaces { get => _myPlaces; set => _myPlaces = value; }
 
 
     #endregion
@@ -65,7 +66,7 @@ public class NavigationManager : MonoBehaviour
     //Implementação dos elementos do UI
    public void UpdateUI()
     {
-        PlacesList = _myPlaces[_currentPlaceIndex];
+        PlacesList = MyPlaces[_currentPlaceIndex];
         _background = PlacesList.Background;
         _namePlace = PlacesList.NamePlace;
 
@@ -82,9 +83,12 @@ public class NavigationManager : MonoBehaviour
             {
                 _buttons[i].GetComponent<NextScenarioButton>().ChangeButtonColorInvisible();
                 _phoneButton.SetActive(false);
+
                 //botão desaparecer 
+                PlacesList.ThisPlaceHasDialogue = false;
+                
             }
-              
+
             
 
             DislocationButtons buttonProperties = PlacesList.DislocationStr[i];
@@ -146,23 +150,23 @@ public class NavigationManager : MonoBehaviour
     {
         int idCounter = 0;
 
-        for (int e = 0; e < _myPlaces.Length; e++)
+        for (int e = 0; e < MyPlaces.Length; e++)
         {
-            if(_myPlaces == null)
+            if(MyPlaces == null)
             {
                 return;
             }
             else
             {
-                if(_myPlaces[e].Itens != null)
+                if(MyPlaces[e].Itens != null)
                 {
-                    for (int i = 0; i < _myPlaces[e].Itens.Length; i++)
+                    for (int i = 0; i < MyPlaces[e].Itens.Length; i++)
                     {
 
 
                         GameObject Item = Instantiate(_itemPrefab, _itemPrefab.transform.position, _itemPrefab.transform.rotation) as GameObject;
                         Item.transform.SetParent(_itemDisplay.transform, false);
-                        Item.transform.position = Camera.main.WorldToScreenPoint(_myPlaces[e].Itens[i].ItemPositionInNav);
+                        Item.transform.position = Camera.main.WorldToScreenPoint(MyPlaces[e].Itens[i].ItemPositionInNav);
 
 
                         _itensList.Add(Item);
@@ -177,9 +181,9 @@ public class NavigationManager : MonoBehaviour
 
 
                         Image newItemImage = Item.GetComponent<Image>();
-                        newItemImage.sprite = _myPlaces[e].Itens[i].Icon;
+                        newItemImage.sprite = MyPlaces[e].Itens[i].Icon;
 
-                        Item.GetComponent<ItemCollect>().ThisItem = _myPlaces[e].Itens[i];
+                        Item.GetComponent<ItemCollect>().ThisItem = MyPlaces[e].Itens[i];
 
                     }
                 }

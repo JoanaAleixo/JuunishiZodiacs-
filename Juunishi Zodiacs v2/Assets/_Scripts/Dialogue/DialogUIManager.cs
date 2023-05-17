@@ -44,7 +44,7 @@ public class DialogUIManager : MonoBehaviour
     bool _canOpenPhone = true;
     [SerializeField] GameObject _fakeBackground;
 
-
+    bool _itemBackgroundRemove = false;
 
     #endregion
 
@@ -76,9 +76,16 @@ public class DialogUIManager : MonoBehaviour
     //Passa a informação do dialogo para o UI
     public void DialogOnScrene(string characterName, Font font, Color NameColor, Color DialogColor, Sprite diaBackground, Sprite character, Sprite background, Font characterFont, Sprite namePlace)
     {
-
+        if (_itemBackgroundRemove == false)
+        {
+            _diaBackgroundUI.sprite = diaBackground;
+        }
+        else
+        {
+            return;
+        }
         _charName.text = characterName; //Passa o nome do Personagem para o UI
-        _diaBackgroundUI.sprite = diaBackground;
+      
         _characterUI.sprite = character;
         CharDialog.font = font; 
         _charName.font = characterFont;
@@ -212,5 +219,9 @@ public class DialogUIManager : MonoBehaviour
 
         }
 
+    }
+    public void ItemDialogueDisableBackground(bool itsItem)
+    {
+        _itemBackgroundRemove = itsItem;
     }
 }

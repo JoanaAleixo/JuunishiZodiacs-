@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 //using static UnityEditor.Progress;
 
@@ -8,14 +9,15 @@ public class ItemCollect : MonoBehaviour
     [SerializeField] int itemId;
     [SerializeField] BaseItem _thisItem;
     [SerializeField] int _itemAmount = 1;
+    bool _itsItem = false;
 
     public int ItemId { get => itemId; set => itemId = value; }
     public BaseItem ThisItem { get => _thisItem; set => _thisItem = value; }
 
     public void CollectItem()
     {
-
-            NavigationManager.instance.ItemDic.Remove(itemId);
+        OpenDialogue();
+        NavigationManager.instance.ItemDic.Remove(itemId);
 
         if (_thisItem is KeyItem || _thisItem is UsableItem)
         {
@@ -52,6 +54,7 @@ public class ItemCollect : MonoBehaviour
         {
             Debug.Log(item.Key + " " + item.Value);
         }
+   
     }
 
     //  Dictionary<string, int> dic = new Dictionary<string, int>();
@@ -63,5 +66,42 @@ public class ItemCollect : MonoBehaviour
     //     a++;
     //  }
 
+    void OpenDialogue()
+    {
+        if (_thisItem is KeyItem)
+        {
+            KeyItem keyItem = (KeyItem)_thisItem;
+            DialogueManager.instance.MyDialogTree[0] = keyItem.ItemDialogue;
+        }
+        else if (_thisItem is PhotoItem)
+        {
+            PhotoItem photoItem = (PhotoItem)_thisItem;
+            DialogueManager.instance.MyDialogTree[0] = photoItem.ItemDialogue;
+        }
+       else if( _thisItem is UsableItem)
+        {
+            return;
+        }
 
+        _itsItem = true;
+        DialogUIManager.instance.ItemDialogueDisableBackground(_itsItem);
+        //nesta parte seguinte, em função de um erro no texto ser excrito pos o dialogo ser encerrado, o dialogo que é escrito,
+        //enquanto ainda esta em typing effect e executado duas vezes, para que termine esse dialogo e escreva o novo
+
+        if (DialogUIManager.instance.typingeffectCoroutine == null)
+        {
+            DialogueManager.instance.UpdateOnUI();
+        }
+        else
+        {
+            DialogueManager.instance.UpdateOnUI();
+            DialogueManager.instance.UpdateOnUI();
+
+        }
+
+        NavigationManager.instance.DialogueCanvas.SetActive(true);
+
+    }
+
+  
 }

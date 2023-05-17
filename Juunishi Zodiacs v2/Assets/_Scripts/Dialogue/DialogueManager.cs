@@ -68,7 +68,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] GameObject _prefabCombat;
     [SerializeField] bool _oneCaracter;
 
-  
+
+
+    public static DialogueManager instance;
 
     public int TrustValue { get => _trustValue; set => _trustValue = value; }
     public ScriptableDialogue[] MyDialogTree { get => myDialogTree; set => myDialogTree = value; }
@@ -80,6 +82,19 @@ public class DialogueManager : MonoBehaviour
     #endregion
 
     #region Awake
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+
+        }
+    }
     private void Start()
     {
         _positionInDialog = 0;
@@ -261,7 +276,6 @@ public class DialogueManager : MonoBehaviour
 
         //Iformação do Enum das Expressoes.
         ExpressionsSwitch();
-
 
         //Atualização de informação no UI: Nome do personagem, Fonte do texto, Cor do nome, cor do Dialogo, Background, Expressoes de texto, background do texto do personagem.
         DialogUIManager.instance.DialogOnScrene(CharacterName, font, NameColor, DialogColor, SpriteBackground, ExpressionsToDisplay, Background, fontOfCharacter, NamePlace);
@@ -446,4 +460,6 @@ public class DialogueManager : MonoBehaviour
         DisableDialgue();
       
     }
+
+   
 }

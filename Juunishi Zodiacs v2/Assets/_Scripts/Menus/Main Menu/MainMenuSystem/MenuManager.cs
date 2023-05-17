@@ -62,10 +62,7 @@ public class MenuManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))        
-        {
-            Gallery();
-        }
+       
     }
     public void Option(int switchNumb)
     {
@@ -241,5 +238,7 @@ public class MenuManager : MonoBehaviour
     
 
     #endregion
+
+
 }
 

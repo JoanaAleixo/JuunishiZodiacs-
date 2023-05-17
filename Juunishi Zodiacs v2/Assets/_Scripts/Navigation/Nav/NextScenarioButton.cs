@@ -55,7 +55,7 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
 
            if (_navManager.PlacesList.DislocationStr[positionInButton].HasDialogue == true) //bool, se tiver dialogo neste local
             {
-             
+               
                 _diaManager.MyDialogTree[0] = dialogue;
 
                 //nesta parte seguinte, em função de um erro no texto ser excrito pos o dialogo ser encerrado, o dialogo que é escrito,
@@ -73,7 +73,10 @@ public class NextScenarioButton : MonoBehaviour, IPointerEnterHandler, IPointerE
                 }
 
                 _navManager.DialogueCanvas.SetActive(true);
-                _diaManager.CanChangePlace = false;              
+                _diaManager.CanChangePlace = false;
+
+
+             
             }
             //abrir o novo Place
             _navManager.NewPlace(changePlace);          
