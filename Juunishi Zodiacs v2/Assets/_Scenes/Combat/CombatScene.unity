@@ -2317,6 +2317,7 @@ MonoBehaviour:
   damageWaterSp: {fileID: 21300000, guid: 147c5a8a93c0d2346b943273b02b34a4, type: 3}
   deathSp: {fileID: 21300000, guid: 43fda6cbac8f4384b9e9a9148cf43c35, type: 3}
   healingSp: {fileID: 21300000, guid: b3c738e02731c4741aaae9dd7157a2f3, type: 3}
+  blockDamageSp: {fileID: 21300000, guid: b81a7a601cefae94e8adadf45e5cd2fe, type: 3}
   _allCaracters: {fileID: 11400000, guid: 93bc55ecfdcecd146b814e81f7de7f4a, type: 2}
   numberRetracted: 0
 --- !u!212 &360797933
@@ -4587,9 +4588,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ExtrasButton
+      - m_Target: {fileID: 1294851775}
+        m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
+        m_MethodName: LoseTitleScreenButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9312,6 +9313,7 @@ MonoBehaviour:
   damageWaterSp: {fileID: 21300000, guid: 3ef2bdaca397c86409649a45f7747b79, type: 3}
   deathSp: {fileID: 21300000, guid: 58f63dfe78a6daf409b0f6aa2f339984, type: 3}
   healingSp: {fileID: 21300000, guid: 94956063e5de11b4c80032967bea346e, type: 3}
+  blockDamageSp: {fileID: 21300000, guid: 320a348a3d31d454d916ff707c8ae056, type: 3}
   _allCaracters: {fileID: 11400000, guid: 93bc55ecfdcecd146b814e81f7de7f4a, type: 2}
   numberRetracted: 0
 --- !u!212 &1483627698
@@ -9495,6 +9497,7 @@ MonoBehaviour:
   damageWaterSp: {fileID: 21300000, guid: 38f875fef3b8eed42967ae791c8f0905, type: 3}
   deathSp: {fileID: 21300000, guid: fc3415f869d060b4a8b006e2106c327a, type: 3}
   healingSp: {fileID: 21300000, guid: 40aca81eb6d20274caadd5947ed377e9, type: 3}
+  blockDamageSp: {fileID: 21300000, guid: 96f642fdfbe257d489a09bb5462ea153, type: 3}
   _allCaracters: {fileID: 11400000, guid: 93bc55ecfdcecd146b814e81f7de7f4a, type: 2}
   numberRetracted: 0
 --- !u!212 &1502411198
@@ -10864,10 +10867,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: NewGameButton
-        m_Mode: 5
+      - m_Target: {fileID: 1294851775}
+        m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
+        m_MethodName: LoseRetryButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

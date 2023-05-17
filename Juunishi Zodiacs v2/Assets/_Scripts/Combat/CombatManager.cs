@@ -172,6 +172,7 @@ public class CombatManager : MonoBehaviour
             case BATTLESTATE.PlayerTurn:
                 if(_actions.Count == 0)
                 {
+                    GiveSpPls();
                     uIManager.UnlockAllSelectionButtons();
                     PreRoundStatusCheck();
                 }
@@ -533,10 +534,10 @@ public class CombatManager : MonoBehaviour
         //Enemies = new Enemy[parent.transform.GetChild(0).childCount];
         for (int i = 0; i < parent.transform.GetChild(0).childCount; i++)
         {
-            if (parent.transform.GetChild(0).GetChild(i).CompareTag("Enemy"))
+            if (parent.transform.GetChild(0).GetChild(i).GetChild(0).CompareTag("Enemy"))
             {
                 enemiesCount++;
-                Enemy enem = parent.transform.GetChild(0).GetChild(i).GetComponent<Enemy>();
+                Enemy enem = parent.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<Enemy>();
                 Enemies.Add(enem);
                 enem.MyCaracter.HpMax.value = enem.MyCaracter.HpMax.resetValue;
 
@@ -729,6 +730,15 @@ public class CombatManager : MonoBehaviour
             PlayableCaracterScptObj carac = (PlayableCaracterScptObj)item.MyCaracter;
             carac.HpMax.value = carac.HpMax.resetValue;
             carac.SpMax.value = carac.SpMax.resetValue;
+        }
+    }
+
+    private void GiveSpPls()
+    {
+        Debug.Log("123123");
+        foreach (var item in Caracters)
+        {
+            item.UpdateSp(15);
         }
     }
 }
