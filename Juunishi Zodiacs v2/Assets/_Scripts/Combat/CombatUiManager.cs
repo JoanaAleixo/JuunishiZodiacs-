@@ -19,6 +19,7 @@ public class CombatUiManager : MonoBehaviour
     [SerializeField] GameObject[] _magicalAttack = new GameObject[3];
     [SerializeField] GameObject[] _selectionButtons;
     [SerializeField] GameObject _caractersInfo;
+    [SerializeField] GameObject _pauseMenu;
     [Header("TemporaryTargetSelection")]
     [SerializeField] BaseStats _temporarySelectedTarget;
     [SerializeField] float _targetTimer;
@@ -48,6 +49,7 @@ public class CombatUiManager : MonoBehaviour
     [SerializeField] Sprite shieldFxSprite;
     [SerializeField] Sprite rageFxSprite;
     [SerializeField] Sprite cureDebuffFxSprite;
+    
 
     //[Header("Other")]
 
@@ -90,6 +92,23 @@ public class CombatUiManager : MonoBehaviour
                 _temporarySelectedTarget.transform.GetChild(1).gameObject.SetActive(!_temporarySelectedTarget.transform.GetChild(1).gameObject.activeSelf);
                 _targetTimer = 0;
             }   
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OpenClosePauseMenu();
+        }
+    }
+
+    public void OpenClosePauseMenu()
+    {
+        if (_pauseMenu.activeSelf == true)
+        {
+            _pauseMenu.SetActive(false);
+        }
+        else
+        {
+            _pauseMenu.SetActive(true);
         }
     }
 

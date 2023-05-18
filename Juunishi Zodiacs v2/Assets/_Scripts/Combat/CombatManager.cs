@@ -155,6 +155,8 @@ public class CombatManager : MonoBehaviour
         {
             ChangeState(BATTLESTATE.Victory);
         }
+
+        
     }
 
     
@@ -540,7 +542,6 @@ public class CombatManager : MonoBehaviour
                 Enemy enem = parent.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<Enemy>();
                 Enemies.Add(enem);
                 enem.MyCaracter.HpMax.value = enem.MyCaracter.HpMax.resetValue;
-
             }
         }
     }

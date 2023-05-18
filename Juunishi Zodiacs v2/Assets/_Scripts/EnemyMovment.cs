@@ -5,40 +5,20 @@ using UnityEngine;
 public class EnemyMovment : MonoBehaviour
 {
     [SerializeField] Vector2 initialPos;
-    [SerializeField] Vector2 bottomPos;
-    [SerializeField] bool goingDown;
-    [SerializeField] float yeet;
-    [SerializeField] float speed;
+    [SerializeField] float verticalSpeed;
+    [SerializeField] float amplitude;
+    [SerializeField] float pushDown;
 
     void Start()
     {
-        goingDown = true;
         initialPos = transform.position;
-        bottomPos = transform.position - new Vector3(0, -1, 0);
     }
 
     
-    void Update()
+    void FixedUpdate()
     {
-        yeet += Time.deltaTime / speed;
-        if (goingDown)
-        {
-            transform.position = Vector2.Lerp(initialPos, bottomPos, yeet);
-        }
-        else
-        {
-            transform.position = Vector2.Lerp(bottomPos, initialPos, yeet);
-        }
-
-        if(yeet >= 1)
-        {
-            ChangeGoingDown();
-        }
+        initialPos.y = (Mathf.Sin(Time.realtimeSinceStartup * verticalSpeed) * amplitude) - pushDown;
+        transform.position = initialPos;
     }
 
-    private void ChangeGoingDown()
-    {
-        yeet = 0;
-        goingDown = !goingDown;
-    }
 }
