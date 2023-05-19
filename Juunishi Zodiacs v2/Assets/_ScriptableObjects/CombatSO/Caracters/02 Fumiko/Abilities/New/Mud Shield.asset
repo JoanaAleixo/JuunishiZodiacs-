@@ -15,13 +15,16 @@ MonoBehaviour:
   _mods:
   - rid: 7633445517126270979
   - rid: 5145046174327898112
+  - rid: 7084499103198740480
   abilityName: Mud Shield
-  description: 'Gives a shield and receives a small portion of HP
+  description: 'Cover yourself in mud to get a shield and receive a small portion
+    of HP.
 
     +Shield
 
-    +15
-    Hp to himself'
+    +15 Hp to himself
+
+    -50 Sp'
   references:
     version: 2
     RefIds:
@@ -33,6 +36,12 @@ MonoBehaviour:
         isBuff: 0
         status: 3
         maxQuant: 0
+    - rid: 7084499103198740480
+      type: {class: CostModifier, ns: , asm: Assembly-CSharp}
+      data:
+        _targetType: 0
+        _quantity: 50
+        _costType: 1
     - rid: 7633445517126270979
       type: {class: HealModifier, ns: , asm: Assembly-CSharp}
       data:

@@ -8,6 +8,7 @@ public class EnemyMovment : MonoBehaviour
     [SerializeField] float verticalSpeed;
     [SerializeField] float amplitude;
     [SerializeField] float pushDown;
+    [SerializeField] float displace;
 
     void Start()
     {
@@ -17,7 +18,7 @@ public class EnemyMovment : MonoBehaviour
     
     void FixedUpdate()
     {
-        initialPos.y = (Mathf.Sin(Time.realtimeSinceStartup * verticalSpeed) * amplitude) - pushDown;
+        initialPos.y = (Mathf.Sin((Time.realtimeSinceStartup + displace) * verticalSpeed) * amplitude) - pushDown;
         transform.position = initialPos;
     }
 
