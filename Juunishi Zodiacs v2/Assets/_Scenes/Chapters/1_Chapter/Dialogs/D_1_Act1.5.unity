@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 39842590}
   - component: {fileID: 39842592}
   - component: {fileID: 39842591}
+  - component: {fileID: 39842593}
   m_Layer: 5
   m_Name: Position3
   m_TagString: Untagged
@@ -279,6 +280,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39842589}
   m_CullTransparentMesh: 1
+--- !u!95 &39842593
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39842589}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d956d13030955684fb43d4bf199024f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &201815530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,7 +1434,8 @@ MonoBehaviour:
   creditssMenu: {fileID: 0}
   sliderBrightness: {fileID: 0}
   canvasGroupBrightness: {fileID: 326353479}
-  EnemyPreTest: {fileID: 0}
+  enemyPreTest: {fileID: 0}
+  combatBackground: {fileID: 0}
 --- !u!4 &1175554755
 Transform:
   m_ObjectHideFlags: 0
@@ -2500,6 +2522,7 @@ MonoBehaviour:
   _phoneButton: {fileID: 0}
   _prefabCombat: {fileID: 0}
   _oneCaracter: 0
+  _combatBackground: {fileID: 0}
 --- !u!1 &2081256446
 GameObject:
   m_ObjectHideFlags: 0
