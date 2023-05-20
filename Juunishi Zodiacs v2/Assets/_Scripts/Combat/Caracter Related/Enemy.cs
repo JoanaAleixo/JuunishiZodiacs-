@@ -69,7 +69,6 @@ public class Enemy : BaseStats
         if (passedRoll)
         {
             Ability abi = MyCaracter.Abilities[Random.Range(0, MyCaracter.Abilities.Length)];
-            Debug.Log(abi.name);
             combatMg.EnemyAbility(abi);
         }
         else

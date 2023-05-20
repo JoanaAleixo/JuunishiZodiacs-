@@ -84,4 +84,6 @@ public class PlayableCaracter : BaseStats
         yield return new WaitForSeconds(2);
         takeDamageEV.Raise();
     }
+
+    
 }

@@ -86,7 +86,6 @@ public class StatusModifier : Modifiers
             }
             if (foundEffect == false)
             {
-                Debug.Log("Ele fez esta merda");
                 target[0].GetComponent<BaseStats>().currentStatus.Add(effect, Quantity);
             }
             if (target[0].GetComponent<BaseStats>() is PlayableCaracter)

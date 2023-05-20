@@ -49,6 +49,19 @@ public class CombatUiManager : MonoBehaviour
     [SerializeField] Sprite shieldFxSprite;
     [SerializeField] Sprite rageFxSprite;
     [SerializeField] Sprite cureDebuffFxSprite;
+    [Header("FitaCola")]
+    [SerializeField] Sprite originalV2Sp;
+    [SerializeField] Sprite damageEarthV2Sp;
+    [SerializeField] Sprite damageFireV2Sp;
+    [SerializeField] Sprite damageMetalV2Sp;
+    [SerializeField] Sprite damagePhysicalV2Sp;
+    [SerializeField] Sprite damagePlantV2Sp;
+    [SerializeField] Sprite damageWaterV2Sp;
+    [SerializeField] protected Sprite deathV2Sp;
+    [SerializeField] Sprite healingV2Sp;
+    [SerializeField] Sprite blockDamageV2Sp;
+
+
     
 
     //[Header("Other")]
@@ -318,12 +331,11 @@ public class CombatUiManager : MonoBehaviour
     {
         _selectionButtons[_buttonInt].SetActive(false);
         combatMg.Caracters[_buttonInt].GetComponent<SpriteRenderer>().color = new Color32(255/2, 255/2, 255/2, 255);
-        Debug.Log("Lokou");
     }
 
     public void RepaintSpritesBackToNormal()
     {
-        for (int i = 0; i < _selectionButtons.Length; i++)
+        for (int i = 0; i < combatMg.Caracters.Count; i++)
         {
             combatMg.Caracters[i].GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
         }
@@ -348,6 +360,14 @@ public class CombatUiManager : MonoBehaviour
     }
 
     #endregion
+
+    public void TurnOff2Caracters()
+    {
+        _caracterSelection.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = null;
+        _caracterSelection.transform.GetChild(0).GetChild(0).GetComponent<Image>().color = new Color32(0, 0, 0, 0);
+        _caracterSelection.transform.GetChild(2).GetChild(0).GetComponent<Image>().sprite = null;
+        _caracterSelection.transform.GetChild(2).GetChild(0).GetComponent<Image>().color = new Color32(0, 0, 0, 0);
+    }
 
     public void ChangeTurnUIPrompt()
     {
@@ -502,5 +522,11 @@ public class CombatUiManager : MonoBehaviour
         _caractersInfo.transform.GetChild(2).gameObject.SetActive(false);
         _selectionButtons[0].GetComponent<Button>().interactable = false;
         _selectionButtons[2].GetComponent<Button>().interactable = false;
+    }
+
+    public void ChangeAkira(PlayableCaracter akiraPC)
+    {
+        akiraPC.gameObject.GetComponent<SpriteRenderer>().sprite = originalV2Sp;
+        akiraPC.ChangeClothes(originalV2Sp, damageEarthV2Sp, damageFireV2Sp, damageMetalV2Sp, damagePhysicalV2Sp, damagePlantV2Sp, damageWaterV2Sp, deathV2Sp, healingV2Sp, blockDamageV2Sp);
     }
 }
