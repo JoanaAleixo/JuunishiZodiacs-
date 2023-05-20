@@ -85,7 +85,7 @@ public class NavigationManager : MonoBehaviour
                 _phoneButton.SetActive(false);
 
                 //botão desaparecer 
-                PlacesList.ThisPlaceHasDialogue = false;
+                //PlacesList.ThisPlaceHasDialogue = false;
                 
             }
 

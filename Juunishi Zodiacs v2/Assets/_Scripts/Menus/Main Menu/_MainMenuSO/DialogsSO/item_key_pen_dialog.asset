@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60273dc35858ef04aa950a041ea1afe0, type: 3}
-  m_Name: dialog_prologue_1
+  m_Name: item_key_pen_dialog
   m_EditorClassIdentifier: 
-  _background: {fileID: 21300000, guid: 9d3a03d94f333af4a9fc72ebdcff503d, type: 3}
+  _background: {fileID: 0}
   _backgroundName: {fileID: 0}
   _dialogueStr:
-  - myCharacter: {fileID: 11400000, guid: 41b69fd2a06a35e4abc7a4047d78f70f, type: 2}
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
     _dialogueMessages:
-    - "Aoishima, a state born from a powerful magic \u2013 Etheria."
-    - GenBase is the military and government entity that exploits it and makes it
-      possible to use it for electrical consumption, in a nearly destroyed world.
-    myExpressions: 3
-    myFullbody: 2
+    - This is Fushimi's pen...
+    - What is this doing here?
+    myExpressions: 1
+    myFullbody: 1
     myPositions: 0
   _changeBrench: 0
   _choiseDialogueToChange1: 0
@@ -33,7 +32,7 @@ MonoBehaviour:
   _choiseDialogueToChange3: 0
   _question3: 
   _TrustValueToIncrese3: 0
-  _isEndDialogueOnNav: 0
+  _isEndDialogueOnNav: 1
   _sceneTransition: 0
   _loadingScene: 0
-  _nextScene: CombatScene
+  _nextScene: 

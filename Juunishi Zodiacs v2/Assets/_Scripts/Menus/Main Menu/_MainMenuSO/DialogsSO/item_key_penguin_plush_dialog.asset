@@ -10,17 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60273dc35858ef04aa950a041ea1afe0, type: 3}
-  m_Name: item_key_pen
+  m_Name: item_key_penguin_plush_dialog
   m_EditorClassIdentifier: 
   _background: {fileID: 0}
   _backgroundName: {fileID: 0}
   _dialogueStr:
   - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
     _dialogueMessages:
-    - This is Fushimi's pen...
-    - What is this doing here?
+    - '"Hm-?"'
+    - Near the entrance of a house, I see a very cute penguin plush.
+    - But when I touch it, I feel something different...
+    - I seem to see a creature from another world, I can feel magic being emitted...
+      Nezuko doesn't seem to notice...
     myExpressions: 1
     myFullbody: 1
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - Maybe it's things in my head?
+    myExpressions: 2
+    myFullbody: 2
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - At least its pompom is cute. I hope it wasn't thrown away.
+    myExpressions: 0
+    myFullbody: 0
     myPositions: 0
   _changeBrench: 0
   _choiseDialogueToChange1: 0

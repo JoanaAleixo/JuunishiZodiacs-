@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60273dc35858ef04aa950a041ea1afe0, type: 3}
+  m_Name: item_key_necklace_dialog
+  m_EditorClassIdentifier: 
+  _background: {fileID: 0}
+  _backgroundName: {fileID: 0}
+  _dialogueStr:
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - Found on a stone, reflecting the sunlight, a luxurious necklace. I walk closer
+      and see that it's made from solid Etheria.
+    - "When touching its brightest stone, I can feel my heart pounding and butterflies
+      catch in my stomach. This belonged to someone that loved very much\u2026"
+    myExpressions: 1
+    myFullbody: 1
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - 'The owner of this necklace received it from the man who loved her. '
+    - He was a newly formed GenBase soldier, who stole materials from Etheria and
+      made the effort to give her the necklace.
+    myExpressions: 0
+    myFullbody: 0
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - Eventually, she fell ill...
+    - And the cold came...
+    - The necklace was stolen from the soldier, and here it is...
+    myExpressions: 3
+    myFullbody: 3
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: c6b500cc3e0ece545ba93c57be0802ec, type: 2}
+    _dialogueMessages:
+    - "\u201CYou better leave it there, don't touch things with Etheria anymore.\u201D"
+    myExpressions: 0
+    myFullbody: 0
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - "\u201CShouldn't we return it to the police?\u201D"
+    myExpressions: 1
+    myFullbody: 1
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: c6b500cc3e0ece545ba93c57be0802ec, type: 2}
+    _dialogueMessages:
+    - "\u201CIt's not our problem, you don't want to ruin the magic you have, that's
+      enough, let's continue!\u201D"
+    myExpressions: 5
+    myFullbody: 0
+    myPositions: 0
+  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
+    _dialogueMessages:
+    - "\u201COkay....\u201D"
+    myExpressions: 3
+    myFullbody: 0
+    myPositions: 0
+  _changeBrench: 0
+  _choiseDialogueToChange1: 0
+  _question1: 
+  _TrustValueToIncrese1: 0
+  _choiseDialogueToChange2: 0
+  _question2: 
+  _TrustValueToIncrese2: 0
+  _choiseDialogueToChange3: 0
+  _question3: 
+  _TrustValueToIncrese3: 0
+  _isEndDialogueOnNav: 1
+  _sceneTransition: 0
+  _loadingScene: 0
+  _nextScene: 
