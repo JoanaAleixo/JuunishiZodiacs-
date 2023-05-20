@@ -10,33 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60273dc35858ef04aa950a041ea1afe0, type: 3}
-  m_Name: dialog_act5_4
+  m_Name: dialog_act5_5
   m_EditorClassIdentifier: 
   _background: {fileID: 21300000, guid: 7969b2d1a2f4bb44ea6e86e2cf552cb2, type: 3}
   _backgroundName: {fileID: 21300000, guid: 86f509df147427b4d841deccf34b688a, type: 3}
   _dialogueStr:
+  - myCharacter: {fileID: 11400000, guid: 995ffeee7bebb59489e0b0f8c6ccfb82, type: 2}
+    _dialogueMessages:
+    - '"Good jog, kid. Let''s try another one!"'
+    myExpressions: 0
+    myFullbody: 0
+    myPositions: 2
   - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
     _dialogueMessages:
-    - Nezuko moves his hands, water drawn from the ground starts rising into the
-      air, creating the silhouette of several Variations.
-    - "Even knowing that those were illusions, I felt my heart stop\u2026 Since that
-      day I haven't been close to one\u2026 I don't know if I'll be able to\u2026"
+    - '"Again?"'
     myExpressions: 1
     myFullbody: 1
-    myPositions: 0
-  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
-    _dialogueMessages:
-    - "I look at Nezuko and to the chain that binds us together\u2026 I'm not alone,
-      he won't leave me\u2026 and he's immortal\u2026 He's the only one I won't harm\u2026
-      I don't want to disappoint him\u2026 "
-    myExpressions: 2
-    myFullbody: 2
-    myPositions: 0
-  - myCharacter: {fileID: 11400000, guid: 5be25997d5b07af4fbbc8d545282b9e1, type: 2}
-    _dialogueMessages:
-    - "\u2026 I'll try\u2026! Let's go!"
-    myExpressions: 6
-    myFullbody: 2
     myPositions: 0
   _changeBrench: 0
   _choiseDialogueToChange1: 0
@@ -51,4 +40,4 @@ MonoBehaviour:
   _isEndDialogueOnNav: 0
   _sceneTransition: 1
   _loadingScene: 1
-  _nextScene: D_1_Act5.2
+  _nextScene: Nav_1_Act5.3

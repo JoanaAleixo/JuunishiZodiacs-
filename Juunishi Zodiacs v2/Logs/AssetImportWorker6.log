@@ -785,3 +785,159 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008804 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.60 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.01 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.229 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2232ms)
+		BeginReloadAssembly (255ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (13ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (63ms)
+		EndReloadAssembly (1790ms)
+			LoadAssemblies (189ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (383ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (118ms)
+			SetupLoadedEditorAssemblies (971ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (34ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (185ms)
+				ProcessInitializeOnLoadAttributes (608ms)
+				ProcessInitializeOnLoadMethodAttributes (122ms)
+				AfterProcessingInitializeOnLoad (18ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (20ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 6.06 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2544 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (24.6 KB). Loaded Objects now: 3068.
+Memory consumption went from 115.3 MB to 115.2 MB.
+Total: 8.071400 ms (FindLiveObjects: 0.520700 ms CreateObjectMapping: 0.191900 ms MarkObjects: 7.309000 ms  DeleteObjects: 0.047700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 234.493037 seconds.
+  path: Assets/Sprites/Characters/Expressions/drive-download-20230517T085437Z-001/ex_Hana_block.png
+  artifactKey: Guid(b81a7a601cefae94e8adadf45e5cd2fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/drive-download-20230517T085437Z-001/ex_Hana_block.png using Guid(b81a7a601cefae94e8adadf45e5cd2fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '211704b4da2d4f3515bcc8c9d8aaa0a0') in 0.378770 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Sprites/Characters/Expressions/drive-download-20230517T085437Z-001/ex_Fumiko_v1_block.png
+  artifactKey: Guid(96f642fdfbe257d489a09bb5462ea153) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/drive-download-20230517T085437Z-001/ex_Fumiko_v1_block.png using Guid(96f642fdfbe257d489a09bb5462ea153) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbc2d803da4747ca1b3d91ccf91e69d0') in 0.155494 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Sprites/Characters/Expressions/drive-download-20230517T085437Z-001/ex_Akira_v1_block.png
+  artifactKey: Guid(ccbf5bc9b7d0e8549b4a026c1dab4ae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/drive-download-20230517T085437Z-001/ex_Akira_v1_block.png using Guid(ccbf5bc9b7d0e8549b4a026c1dab4ae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd494e4ff44146e7ba1c15090d68e2da') in 0.145569 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000079 seconds.
+  path: Assets/Sprites/Characters/Expressions/drive-download-20230517T085437Z-001/en_kameosa_block.png
+  artifactKey: Guid(02cae8039d3812f4e91fdea0718b252f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/drive-download-20230517T085437Z-001/en_kameosa_block.png using Guid(02cae8039d3812f4e91fdea0718b252f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a03e0175c6381e159363f86c06990bc6') in 0.319169 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Sprites/Characters/Expressions/drive-download-20230517T085437Z-001/en_ittanMomen_block.png
+  artifactKey: Guid(a3a2e3da0bde4e141b603c250f54fb94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Characters/Expressions/drive-download-20230517T085437Z-001/en_ittanMomen_block.png using Guid(a3a2e3da0bde4e141b603c250f54fb94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd48f21aeafd019175252523bd0e37bec') in 0.342993 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.775463 seconds.
+  path: Assets/Sprites/Interface/Combat/comb_icon_bg.png
+  artifactKey: Guid(b0348d3ccd6f4b943afc62623eb1e21c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Interface/Combat/comb_icon_bg.png using Guid(b0348d3ccd6f4b943afc62623eb1e21c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '098165385fcc9f4b41861e66e61ef417') in 0.052742 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.360119 seconds.
+  path: Assets/Sprites/Items/item_consum_soda_money.PNG
+  artifactKey: Guid(8c7974714b857a1459f4e21e0215dae3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Items/item_consum_soda_money.PNG using Guid(8c7974714b857a1459f4e21e0215dae3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e60c38d6bcf8675f0b7d034119bc9bff') in 0.798061 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.015227 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.63 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.612 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2614ms)
+		BeginReloadAssembly (289ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (18ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (77ms)
+		EndReloadAssembly (2115ms)
+			LoadAssemblies (202ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (476ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (107ms)
+			SetupLoadedEditorAssemblies (1149ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (42ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (183ms)
+				ProcessInitializeOnLoadAttributes (716ms)
+				ProcessInitializeOnLoadMethodAttributes (175ms)
+				AfterProcessingInitializeOnLoad (29ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (38ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 8.22 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2544 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (24.7 KB). Loaded Objects now: 3084.
+Memory consumption went from 119.2 MB to 119.2 MB.
+Total: 10.473100 ms (FindLiveObjects: 0.647200 ms CreateObjectMapping: 0.455500 ms MarkObjects: 9.284900 ms  DeleteObjects: 0.082000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
