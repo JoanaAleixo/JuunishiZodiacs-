@@ -63,7 +63,6 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     [SerializeField] Sprite healingSp;
     [SerializeField] Sprite blockDamageSp;
 
-
     public Dictionary<StatusFx, int> currentStatus = new Dictionary<StatusFx, int>();
 
 
@@ -104,7 +103,7 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
         }
         if (this.GetComponent<BaseStats>() is PlayableCaracter)
         {
-            Debug.Log("WTF");
+
             uIManager.RepresentStatusFx(this);
         }
         else if (this.GetComponent<BaseStats>() is Enemy)
@@ -192,7 +191,20 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
         sRenderer.sprite = OriginalSp;
     }
 
-
+    public void ChangeClothes(Sprite orig, Sprite dmgEarth, Sprite dmgFire, Sprite dmgMetal, Sprite dmgPhysical, Sprite dmgPlant, Sprite dmgWater, Sprite death, Sprite heal, Sprite block)
+    {
+        Debug.Log("3");
+        OriginalSp = orig;
+        damageEarthSp = dmgEarth;
+        damageFireSp = dmgFire;
+        damageMetalSp = dmgMetal;
+        damagePhysicalSp = dmgPhysical;
+        damagePlantSp = dmgPlant;
+        damageWaterSp = dmgWater;
+        deathSp = death;
+        healingSp = heal;
+        blockDamageSp = block;
+    }
 }
 
 // Asset bundle e Addressables

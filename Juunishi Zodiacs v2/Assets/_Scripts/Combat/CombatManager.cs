@@ -110,6 +110,7 @@ public class CombatManager : MonoBehaviour
                 uIManager.OnOneCaracter();
             }
         }
+        uIManager.TurnOff2Caracters();
     }
 
     #endregion
@@ -533,6 +534,18 @@ public class CombatManager : MonoBehaviour
     public void LocateEnemies()
     {
         GameObject parent = GameObject.FindGameObjectWithTag("EnemySet");
+        if(parent.name == "PrefEnemySet1(Clone)")
+        {
+            Debug.Log("1");
+            foreach (var car in Caracters.ToList())
+            {
+                if (car.name == "Akira")
+                {
+                    Debug.Log("2");
+                    uIManager.ChangeAkira(car);
+                }
+            }
+        }
         int enemiesCount = 0;
         //Enemies = new Enemy[parent.transform.GetChild(0).childCount];
         for (int i = 0; i < parent.transform.GetChild(0).childCount; i++)
@@ -642,7 +655,6 @@ public class CombatManager : MonoBehaviour
         {
             if (_caracters[i].CaracterNumber > value)
             {
-                Debug.Log("123");
                 _caracters[i].CaracterNumber--;
                 _caracters[i].NumberRetracted++;
             }
@@ -737,7 +749,6 @@ public class CombatManager : MonoBehaviour
 
     private void GiveSpPls()
     {
-        Debug.Log("123123");
         foreach (var item in Caracters)
         {
             item.UpdateSp(15);
