@@ -72,6 +72,10 @@ public class PlayableCaracter : BaseStats
     {
         PlayableCaracterScptObj myCaracterScpt = (PlayableCaracterScptObj)myCaracter;
         myCaracterScpt.SpMax.value += value;
+        if (myCaracterScpt.SpMax.value >= myCaracterScpt.SpMax.resetValue)
+        {
+            myCaracterScpt.SpMax.value = myCaracterScpt.SpMax.resetValue;
+        }
         takeDamageEV.Raise();
     }
 

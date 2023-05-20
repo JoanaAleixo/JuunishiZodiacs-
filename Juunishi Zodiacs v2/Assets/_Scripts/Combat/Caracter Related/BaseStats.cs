@@ -61,6 +61,7 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     [SerializeField] Sprite damageWaterSp;
     [SerializeField] protected Sprite deathSp;
     [SerializeField] Sprite healingSp;
+    [SerializeField] Sprite blockDamageSp;
 
 
     public Dictionary<StatusFx, int> currentStatus = new Dictionary<StatusFx, int>();
@@ -123,6 +124,10 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
                 }
                 combatMg.SpawnFloatingDamage(transform.position + new Vector3(2,0,0), (int)finalDamage);
             }
+            else
+            {
+                SpriteChange();
+            }
             takeDamageEV.Raise();
         }
         else
@@ -173,6 +178,11 @@ public class BaseStats : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
             default:    
                 break;
         }
+    }
+
+    private void SpriteChange()
+    {
+        StartCoroutine(SpriteChangor(blockDamageSp));
     }
 
     private IEnumerator SpriteChangor(Sprite sp)

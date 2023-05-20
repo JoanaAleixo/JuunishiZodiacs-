@@ -682,8 +682,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.6, y: 2.5853026, z: 4.8670454}
   m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 2854446923882043735}
+  m_Children: []
   m_Father: {fileID: 2854446925365133561}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1034,8 +1033,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487726037018842473}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.8691192}
-  m_LocalScale: {x: 0.027, y: 0.027333248, z: 1.4392887}
+  m_LocalPosition: {x: 0, y: 0, z: 1.6400002}
+  m_LocalScale: {x: 0.012628588, y: 0.012628587, z: 1.2628589}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 634288342423698557}
@@ -1043,12 +1042,12 @@ RectTransform:
   - {fileID: 372606044062803559}
   - {fileID: 5875427157261193719}
   - {fileID: 1862142830633089069}
-  m_Father: {fileID: 2854446923962306440}
-  m_RootOrder: 2
+  m_Father: {fileID: 3286372860884296280}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 9.54}
+  m_AnchoredPosition: {x: -1.0000004, y: 5.192427}
   m_SizeDelta: {x: 308.109, y: 27.107}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3754330332084223667
@@ -1416,8 +1415,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943909644395858266}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.64}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2.1374106}
+  m_LocalScale: {x: 0.013032991, y: 0.013032989, z: 1.303299}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1055117142878465498}
@@ -1425,12 +1424,12 @@ RectTransform:
   - {fileID: 3303416586626691171}
   - {fileID: 9150571011861478994}
   - {fileID: 5037716877779635801}
-  m_Father: {fileID: 8893932315610387895}
-  m_RootOrder: 0
+  m_Father: {fileID: 6626118456154280232}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 4.4}
+  m_AnchoredPosition: {x: 4.029634, y: 4.267415}
   m_SizeDelta: {x: 308.109, y: 27.107}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6234405542418181212
@@ -1948,6 +1947,82 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &2664714803107740677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6626118456154280232}
+  m_Layer: 0
+  m_Name: Enemy3(Kameosa)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6626118456154280232
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2664714803107740677}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9219448577996266710}
+  - {fileID: 5582178439739786484}
+  m_Father: {fileID: 8545987546615901841}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2693717778656914093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3286372860884296280}
+  m_Layer: 0
+  m_Name: Enemy1(Kitsune)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3286372860884296280
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2693717778656914093}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2854446923962306440}
+  - {fileID: 8198655389484925299}
+  m_Father: {fileID: 8545987546615901841}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2854446923631968215
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,7 +2204,7 @@ RectTransform:
   m_GameObject: {fileID: 2854446923882043734}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
+  m_LocalScale: {x: 0.012250959, y: 0.012033183, z: 4.302076}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2854446923631968208}
@@ -2137,12 +2212,12 @@ RectTransform:
   - {fileID: 3865416385281484826}
   - {fileID: 2854446924692858654}
   - {fileID: 371464981321830417}
-  m_Father: {fileID: 7049070287668297683}
-  m_RootOrder: 0
+  m_Father: {fileID: 125412905786638645}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 4.4}
+  m_AnchoredPosition: {x: 9.057567, y: 5.194457}
   m_SizeDelta: {x: 308.109, y: 27.107}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2854446923882043729
@@ -2241,6 +2316,7 @@ GameObject:
   - component: {fileID: 2854446923962306447}
   - component: {fileID: 2854446923962306446}
   - component: {fileID: 2854446923962306445}
+  - component: {fileID: 4402474565554437279}
   m_Layer: 0
   m_Name: Kitsune
   m_TagString: Enemy
@@ -2257,13 +2333,12 @@ Transform:
   m_GameObject: {fileID: 2854446923962306444}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1, y: 0.784728, z: 0}
-  m_LocalScale: {x: 0.46772552, y: 0.46202293, z: 0.87741876}
+  m_LocalScale: {x: 0.46772552, y: 0.46202293, z: 0.8774187}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2854446924838069798}
   - {fileID: 1534347191119038380}
-  - {fileID: 8198655389484925299}
-  m_Father: {fileID: 8545987546615901841}
+  m_Father: {fileID: 3286372860884296280}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2854446923962306447
@@ -2344,8 +2419,9 @@ MonoBehaviour:
   damagePhysicalSp: {fileID: 21300000, guid: 38d9da9212083d846966bd516abbf752, type: 3}
   damagePlantSp: {fileID: 21300000, guid: 13531647e83657c499f85ddcddc22d1d, type: 3}
   damageWaterSp: {fileID: 21300000, guid: 9f14d2b101a12dd44b0733c2b739da92, type: 3}
-  deathSp: {fileID: 21300000, guid: bb4c0457f534e7c489312f836682c85d, type: 3}
+  deathSp: {fileID: 21300000, guid: bd18dd96969f33348b89b530b0f27943, type: 3}
   healingSp: {fileID: 0}
+  blockDamageSp: {fileID: 21300000, guid: 86237fea10a77094fb1336425175e46d, type: 3}
   statusSprites:
   - {fileID: 3890396369715716251}
   - {fileID: 3037168621655550983}
@@ -2378,6 +2454,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.0157633, y: 6.6023297}
   m_EdgeRadius: 0
+--- !u!114 &4402474565554437279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2854446923962306444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8c5674dca11ba74a904096015af4276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialPos: {x: 0, y: 0}
+  verticalSpeed: 1
+  amplitude: 0.1
+  pushDown: -0.8
+  displace: 0
 --- !u!1 &2854446924459306964
 GameObject:
   m_ObjectHideFlags: 0
@@ -2693,6 +2786,7 @@ GameObject:
   - component: {fileID: 2854446925365133560}
   - component: {fileID: 2854446925365133567}
   - component: {fileID: 2854446925365133566}
+  - component: {fileID: 272044342362278172}
   m_Layer: 0
   m_Name: Kitsune
   m_TagString: Enemy
@@ -2708,15 +2802,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2854446925365133565}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9, y: 0.80747384, z: 0}
+  m_LocalPosition: {x: 9, y: 0.8074737, z: 0}
   m_LocalScale: {x: 0.47119078, y: 0.46544594, z: 0.88391936}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2854446924459306965}
   - {fileID: 3549264115900313409}
   - {fileID: 7049070287668297683}
-  m_Father: {fileID: 8545987546615901841}
-  m_RootOrder: 1
+  m_Father: {fileID: 125412905786638645}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2854446925365133560
 SpriteRenderer:
@@ -2796,8 +2890,9 @@ MonoBehaviour:
   damagePhysicalSp: {fileID: 21300000, guid: 38d9da9212083d846966bd516abbf752, type: 3}
   damagePlantSp: {fileID: 21300000, guid: 13531647e83657c499f85ddcddc22d1d, type: 3}
   damageWaterSp: {fileID: 21300000, guid: 9f14d2b101a12dd44b0733c2b739da92, type: 3}
-  deathSp: {fileID: 21300000, guid: bb4c0457f534e7c489312f836682c85d, type: 3}
+  deathSp: {fileID: 21300000, guid: bd18dd96969f33348b89b530b0f27943, type: 3}
   healingSp: {fileID: 0}
+  blockDamageSp: {fileID: 21300000, guid: 86237fea10a77094fb1336425175e46d, type: 3}
   statusSprites:
   - {fileID: 1822786253886896358}
   - {fileID: 8115737426790151162}
@@ -2830,6 +2925,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.8780127, y: 6.980229}
   m_EdgeRadius: 0
+--- !u!114 &272044342362278172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2854446925365133565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8c5674dca11ba74a904096015af4276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialPos: {x: 0, y: 0}
+  verticalSpeed: 1
+  amplitude: 0.1
+  pushDown: -0.8
+  displace: 0
 --- !u!1 &3037168621655550983
 GameObject:
   m_ObjectHideFlags: 0
@@ -3203,6 +3315,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3563450619313475364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 125412905786638645}
+  m_Layer: 0
+  m_Name: Enemy2(Kitsune)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &125412905786638645
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3563450619313475364}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2854446925365133561}
+  - {fileID: 2854446923882043735}
+  m_Father: {fileID: 8545987546615901841}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3865636079625539348
 GameObject:
   m_ObjectHideFlags: 0
@@ -3733,8 +3883,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.83, y: 2.8649297, z: 1.5085877}
   m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 5582178439739786484}
+  m_Children: []
   m_Father: {fileID: 9219448577996266710}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5017,9 +5166,9 @@ RectTransform:
   m_LocalScale: {x: 0.86856496, y: 0.87928534, z: 0.4630058}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2854446923962306440}
-  - {fileID: 2854446925365133561}
-  - {fileID: 9219448577996266710}
+  - {fileID: 3286372860884296280}
+  - {fileID: 125412905786638645}
+  - {fileID: 6626118456154280232}
   m_Father: {fileID: 6839245747571586187}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5634,6 +5783,7 @@ GameObject:
   - component: {fileID: 6343607141535838786}
   - component: {fileID: 3908976887232452601}
   - component: {fileID: 4504248990336415463}
+  - component: {fileID: 1822375914106926598}
   m_Layer: 0
   m_Name: Kameosa
   m_TagString: Enemy
@@ -5649,15 +5799,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8580614490474169341}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.029635, y: 0.4662876, z: 0}
-  m_LocalScale: {x: 0.46052974, y: 0.45491487, z: 0.86392}
+  m_LocalPosition: {x: 4.0296345, y: 0.4662876, z: 0}
+  m_LocalScale: {x: 0.46052974, y: 0.4549148, z: 0.8639199}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5274657340404711912}
   - {fileID: 7550762836301234958}
   - {fileID: 8893932315610387895}
-  m_Father: {fileID: 8545987546615901841}
-  m_RootOrder: 2
+  m_Father: {fileID: 6626118456154280232}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6343607141535838786
 SpriteRenderer:
@@ -5737,8 +5887,9 @@ MonoBehaviour:
   damagePhysicalSp: {fileID: 21300000, guid: aa17ae6ee9763bc41bb3028ed07761db, type: 3}
   damagePlantSp: {fileID: 21300000, guid: 266e1b93c46045a4db703792e6172767, type: 3}
   damageWaterSp: {fileID: 21300000, guid: 9befd3f265911f34b8388043b76ed4ac, type: 3}
-  deathSp: {fileID: 21300000, guid: dfbf8f1bcaef4064fa2e330a8663d268, type: 3}
+  deathSp: {fileID: 21300000, guid: 2a8537f8e528e9d46ad3adf819f0093e, type: 3}
   healingSp: {fileID: 21300000, guid: 76f23abfc35f727429dea0e8e5b10b2d, type: 3}
+  blockDamageSp: {fileID: 21300000, guid: a3a2e3da0bde4e141b603c250f54fb94, type: 3}
   statusSprites:
   - {fileID: 180635247453901811}
   - {fileID: 8348361841787259002}
@@ -5771,6 +5922,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.530468, y: 11.38633}
   m_EdgeRadius: 0
+--- !u!114 &1822375914106926598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8580614490474169341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8c5674dca11ba74a904096015af4276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialPos: {x: 0, y: 0}
+  verticalSpeed: 1
+  amplitude: 0.1
+  pushDown: 0
+  displace: 2.5
 --- !u!1 &8740277185159503347
 GameObject:
   m_ObjectHideFlags: 0

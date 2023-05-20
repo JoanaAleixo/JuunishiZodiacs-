@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.TextCore.Text;
 
 public class CombatUiManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class CombatUiManager : MonoBehaviour
     [SerializeField] GameObject[] _magicalAttack = new GameObject[3];
     [SerializeField] GameObject[] _selectionButtons;
     [SerializeField] GameObject _caractersInfo;
+    [SerializeField] GameObject _pauseMenu;
     [Header("TemporaryTargetSelection")]
     [SerializeField] BaseStats _temporarySelectedTarget;
     [SerializeField] float _targetTimer;
@@ -47,6 +49,7 @@ public class CombatUiManager : MonoBehaviour
     [SerializeField] Sprite shieldFxSprite;
     [SerializeField] Sprite rageFxSprite;
     [SerializeField] Sprite cureDebuffFxSprite;
+    
 
     //[Header("Other")]
 
@@ -89,6 +92,23 @@ public class CombatUiManager : MonoBehaviour
                 _temporarySelectedTarget.transform.GetChild(1).gameObject.SetActive(!_temporarySelectedTarget.transform.GetChild(1).gameObject.activeSelf);
                 _targetTimer = 0;
             }   
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OpenClosePauseMenu();
+        }
+    }
+
+    public void OpenClosePauseMenu()
+    {
+        if (_pauseMenu.activeSelf == true)
+        {
+            _pauseMenu.SetActive(false);
+        }
+        else
+        {
+            _pauseMenu.SetActive(true);
         }
     }
 
@@ -187,7 +207,6 @@ public class CombatUiManager : MonoBehaviour
 
     public void OpenActionMenu()
     {
-        Debug.Log(combatMg.SelectedCaracter);
         combatMg.Caracters[combatMg.SelectedCaracter].transform.GetChild(0).gameObject.SetActive(true);
         _actionMenu.SetActive(true);
         _abilitiesMenu.SetActive(false);
@@ -212,6 +231,12 @@ public class CombatUiManager : MonoBehaviour
     {
         _abilityUsed.SetActive(true);
         _abilityUsedText.text = caracter.name + " used\n" + ab.AbilityName;
+    }
+
+    public void ShowTextPrompt(string textToUse)
+    {
+        _abilityUsed.SetActive(true);
+        _abilityUsedText.text = textToUse;
     }
 
     public void CloseAbilityUsedPrompt()
@@ -292,6 +317,16 @@ public class CombatUiManager : MonoBehaviour
     public void LockSelectionButton(int _buttonInt)
     {
         _selectionButtons[_buttonInt].SetActive(false);
+        combatMg.Caracters[_buttonInt].GetComponent<SpriteRenderer>().color = new Color32(255/2, 255/2, 255/2, 255);
+        Debug.Log("Lokou");
+    }
+
+    public void RepaintSpritesBackToNormal()
+    {
+        for (int i = 0; i < _selectionButtons.Length; i++)
+        {
+            combatMg.Caracters[i].GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+        }
     }
 
     public void UnlockAllSelectionButtons()
@@ -465,8 +500,6 @@ public class CombatUiManager : MonoBehaviour
     {
         _caractersInfo.transform.GetChild(0).gameObject.SetActive(false);
         _caractersInfo.transform.GetChild(2).gameObject.SetActive(false);
-        /*_caracterSelection.transform.GetChild(0).gameObject.SetActive(false);
-        _caracterSelection.transform.GetChild(2).gameObject.SetActive(false);*/
         _selectionButtons[0].GetComponent<Button>().interactable = false;
         _selectionButtons[2].GetComponent<Button>().interactable = false;
     }
