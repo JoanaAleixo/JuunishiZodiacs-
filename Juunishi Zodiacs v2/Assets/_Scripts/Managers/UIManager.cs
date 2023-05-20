@@ -15,7 +15,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] CanvasGroup canvasGroupBrightness;
 
 
-    [SerializeField] GameObject EnemyPreTest;
+    [SerializeField] GameObject enemyPreTest;
+    [SerializeField] Sprite combatBackground;
 
     void Start()
     {
@@ -44,7 +45,7 @@ public class UIManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            SoundManager.PlaySound(SoundManager.slashSound);
+            //SoundManager.PlaySound(SoundManager.slashSound);
         }
     }
 
@@ -62,7 +63,7 @@ public class UIManager : MonoBehaviour
 
     public void CombatSceneButton()
     {
-        sceneInstance.LoadScene("Title Screen",EnemyPreTest, false);
+        sceneInstance.LoadScene("Title Screen",enemyPreTest, false, combatBackground);
     }
 
     public void OptionsMenuButton()

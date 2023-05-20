@@ -13,6 +13,7 @@ public class LoadingSceneManager : MonoBehaviour
     private bool canTimer = false;
     [SerializeField] string sceneAfterCombat;
     [SerializeField] GameObject enemiesPrefabForCombat;
+    [SerializeField] Sprite lastBackgound;
     [SerializeField] bool oneCaracterOnCombat;
 
     private void Awake()
@@ -39,16 +40,17 @@ public class LoadingSceneManager : MonoBehaviour
         StartCoroutine(LoadSceneAsync(sceneId));
     }
 
-    public void LoadScene(string sceneId, GameObject gm, bool oneCarac)
+    public void LoadScene(string sceneId, GameObject gm, bool oneCarac, Sprite background)
     {
         sceneAfterCombat = sceneId;
-        LoadCombatScene(gm,oneCarac);
+        LoadCombatScene(gm,oneCarac, background);
     }
 
-    public void LoadCombatScene(GameObject enemyPrefab, bool oneCar)
+    public void LoadCombatScene(GameObject enemyPrefab, bool oneCar, Sprite background)
     {
         enemiesPrefabForCombat = enemyPrefab;
-        StartCoroutine(LoadCombatSceneAsync(enemyPrefab, oneCar));
+        lastBackgound = background;
+        StartCoroutine(LoadCombatSceneAsync(enemyPrefab, oneCar, background));
         oneCaracterOnCombat = oneCar;
     }
 
@@ -61,7 +63,7 @@ public class LoadingSceneManager : MonoBehaviour
     {
         Destroy(CombatManager.combatInstance.gameObject);
         Destroy(CombatUiManager.uiInstance.gameObject);
-        StartCoroutine(LoadCombatSceneAsync(enemiesPrefabForCombat, oneCaracterOnCombat));
+        StartCoroutine(LoadCombatSceneAsync(enemiesPrefabForCombat, oneCaracterOnCombat, lastBackgound));
     }
 
     IEnumerator LoadSceneAsync(string sceneId)
@@ -89,7 +91,7 @@ public class LoadingSceneManager : MonoBehaviour
         
     }
 
-    IEnumerator LoadCombatSceneAsync(GameObject enemyPref, bool onCaracter)
+    IEnumerator LoadCombatSceneAsync(GameObject enemyPref, bool onCaracter, Sprite background)
     {
         UnityEngine.SceneManagement.Scene sceneID = SceneManager.GetActiveScene();
         AsyncOperation operation = SceneManager.LoadSceneAsync("CombatScene", LoadSceneMode.Additive);
@@ -115,6 +117,10 @@ public class LoadingSceneManager : MonoBehaviour
         GameObject cM = GameObject.Find("CombatManager");
         Instantiate(enemyPref);
         cM.GetComponent<CombatManager>().LocateEnemies();
+        if(background != null)
+        {
+            cM.GetComponent<CombatManager>().ChangeBackground(background);
+        }
         if (onCaracter)
         {
             StartCoroutine(cM.GetComponent<CombatManager>().DiePls());

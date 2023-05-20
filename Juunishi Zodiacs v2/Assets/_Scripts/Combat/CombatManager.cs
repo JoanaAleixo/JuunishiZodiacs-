@@ -46,6 +46,7 @@ public class CombatManager : MonoBehaviour
     public static CombatManager combatInstance;
     [SerializeField] CombatUiManager uIManager;
     [SerializeField] BATTLESTATE _curState;
+    [SerializeField] GameObject background;
     [Header("Players")]
     [SerializeField] List<PlayableCaracter> _caracters;
     [SerializeField] List<Enemy> _enemies;
@@ -741,5 +742,10 @@ public class CombatManager : MonoBehaviour
         {
             item.UpdateSp(15);
         }
+    }
+
+    public void ChangeBackground(Sprite back)
+    {
+        background.GetComponent<SpriteRenderer>().sprite = back;
     }
 }
