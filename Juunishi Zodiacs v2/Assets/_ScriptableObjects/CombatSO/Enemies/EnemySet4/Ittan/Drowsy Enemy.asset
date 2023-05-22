@@ -15,7 +15,7 @@ MonoBehaviour:
   _mods:
   - rid: 5145046174327898120
   - rid: 5145046174327898121
-  abilityName: 
+  abilityName: Sleeping Time
   description: 
   references:
     version: 2
@@ -24,13 +24,13 @@ MonoBehaviour:
       type: {class: StatusModifier, ns: , asm: Assembly-CSharp}
       data:
         _targetType: 2
-        Quantity: 3
+        Quantity: 1
         isBuff: 0
         status: 2
-        maxQuant: 5
+        maxQuant: 2
     - rid: 5145046174327898121
       type: {class: CostModifier, ns: , asm: Assembly-CSharp}
       data:
         _targetType: 0
-        _quantity: 5
+        _quantity: -5
         _costType: 0
