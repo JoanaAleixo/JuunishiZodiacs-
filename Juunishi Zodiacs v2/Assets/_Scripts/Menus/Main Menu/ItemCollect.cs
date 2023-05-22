@@ -9,7 +9,7 @@ public class ItemCollect : MonoBehaviour
     [SerializeField] int itemId;
     [SerializeField] BaseItem _thisItem;
     [SerializeField] int _itemAmount = 1;
-    bool _itsItem = false;
+  
 
     public int ItemId { get => itemId; set => itemId = value; }
     public BaseItem ThisItem { get => _thisItem; set => _thisItem = value; }
@@ -68,6 +68,8 @@ public class ItemCollect : MonoBehaviour
 
     void OpenDialogue()
     {
+        NavigationManager.instance.DialogueCanvas.SetActive(true);
+            
         if (_thisItem is KeyItem)
         {
             KeyItem keyItem = (KeyItem)_thisItem;
@@ -83,10 +85,11 @@ public class ItemCollect : MonoBehaviour
             return;
         }
 
-        _itsItem = true;
-        DialogUIManager.instance.ItemDialogueDisableBackground(_itsItem);
+        
+      
         //nesta parte seguinte, em função de um erro no texto ser excrito pos o dialogo ser encerrado, o dialogo que é escrito,
         //enquanto ainda esta em typing effect e executado duas vezes, para que termine esse dialogo e escreva o novo
+
 
         if (DialogUIManager.instance.typingeffectCoroutine == null)
         {
@@ -99,7 +102,7 @@ public class ItemCollect : MonoBehaviour
 
         }
 
-        NavigationManager.instance.DialogueCanvas.SetActive(true);
+     
 
     }
 

@@ -76,25 +76,22 @@ public class DialogUIManager : MonoBehaviour
     //Passa a informação do dialogo para o UI
     public void DialogOnScrene(string characterName, Font font, Color NameColor, Color DialogColor, Sprite diaBackground, Sprite character, Sprite background, Font characterFont, Sprite namePlace)
     {
-        if (_itemBackgroundRemove == false)
-        {
+     
             _diaBackgroundUI.sprite = diaBackground;
-        }
-        else
-        {
-            return;
-        }
-        _charName.text = characterName; //Passa o nome do Personagem para o UI
-      
-        _characterUI.sprite = character;
-        CharDialog.font = font; 
-        _charName.font = characterFont;
-        _backgroundUI.sprite = background;
-        _backgroundNameUI.sprite = namePlace;
-    
 
-        CharDialog.color = DialogColor;
-        _charName.color = NameColor;
+            _charName.text = characterName; //Passa o nome do Personagem para o UI
+
+            _characterUI.sprite = character;
+            CharDialog.font = font;
+            _charName.font = characterFont;
+            _backgroundUI.sprite = background;
+            _backgroundNameUI.sprite = namePlace;
+
+
+            CharDialog.color = DialogColor;
+            _charName.color = NameColor;
+        
+    
     }
 
     public void CharactersOnDisplay(Sprite characterSprite, int characterPositionOnDisplay)
@@ -220,8 +217,5 @@ public class DialogUIManager : MonoBehaviour
         }
 
     }
-    public void ItemDialogueDisableBackground(bool itsItem)
-    {
-        _itemBackgroundRemove = itsItem;
-    }
+
 }
