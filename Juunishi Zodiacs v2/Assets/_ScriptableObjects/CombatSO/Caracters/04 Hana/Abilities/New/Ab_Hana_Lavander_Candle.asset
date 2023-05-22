@@ -16,7 +16,7 @@ MonoBehaviour:
   - rid: 4869796908226576384
   - rid: 5145046174327898116
   abilityName: Lavander Candle
-  description: "Throws a candle at an enemy that inflicts Drowsy \n+Drowsy\n-30 Sp"
+  description: "Throws a candle that inflicts Drowsy \n+ Drowsy One Enemy\n- 30 Sp"
   references:
     version: 2
     RefIds:
@@ -24,10 +24,10 @@ MonoBehaviour:
       type: {class: StatusModifier, ns: , asm: Assembly-CSharp}
       data:
         _targetType: 2
-        Quantity: 1
+        Quantity: 3
         isBuff: 0
         status: 2
-        maxQuant: 0
+        maxQuant: 5
     - rid: 5145046174327898116
       type: {class: CostModifier, ns: , asm: Assembly-CSharp}
       data:

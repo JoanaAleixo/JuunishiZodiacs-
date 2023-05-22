@@ -18,10 +18,10 @@ MonoBehaviour:
   abilityName: Divine Slash
   description: 'Strikes all enemies with a divine slash!
 
-    -7 HP to All Enemies
+    -13 HP to All Enemies
 
-    -40
-    SP'
+    -15
+    HP'
   references:
     version: 2
     RefIds:
@@ -35,5 +35,5 @@ MonoBehaviour:
       type: {class: CostModifier, ns: , asm: Assembly-CSharp}
       data:
         _targetType: 0
-        _quantity: 50
-        _costType: 1
+        _quantity: 15
+        _costType: 0

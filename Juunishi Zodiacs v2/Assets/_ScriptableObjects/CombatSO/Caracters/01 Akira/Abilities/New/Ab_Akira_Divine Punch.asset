@@ -18,9 +18,9 @@ MonoBehaviour:
   abilityName: Divine Punch
   description: 'Strikes with a divine punch!
 
-    -15 HP to One Enemy
+    -20 HP to One Enemy
 
-    -40 SP'
+    -15 HP'
   references:
     version: 2
     RefIds:
@@ -34,5 +34,5 @@ MonoBehaviour:
       type: {class: CostModifier, ns: , asm: Assembly-CSharp}
       data:
         _targetType: 0
-        _quantity: 40
-        _costType: 1
+        _quantity: 15
+        _costType: 0

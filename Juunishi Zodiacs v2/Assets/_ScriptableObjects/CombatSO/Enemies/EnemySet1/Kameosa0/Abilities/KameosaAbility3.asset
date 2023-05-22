@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f78d8c580e23784b97cf833a9cb3662, type: 3}
-  m_Name: GodOfWordsAbility2
+  m_Name: KameosaAbility3
   m_EditorClassIdentifier: 
   _mods:
-  - rid: 7084498899987857417
-  abilityName: Rock Scatter
+  - rid: 7084498899987857415
+  abilityName: Chloroform
   description: 
   references:
     version: 2
     RefIds:
-    - rid: 7084498899987857417
-      type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
+    - rid: 7084498899987857415
+      type: {class: StatusModifier, ns: , asm: Assembly-CSharp}
       data:
-        _targetType: 4
-        _quantity: 9
-        _damageType: 3
+        _targetType: 2
+        Quantity: 3
+        isBuff: 0
+        status: 2
+        maxQuant: 3
