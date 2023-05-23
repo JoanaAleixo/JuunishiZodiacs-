@@ -78,6 +78,9 @@ public class MenuManager : MonoBehaviour
     {
         foreach (var item in InventoryInfo.InventoryDic.Keys)
         {
+            if (item is KeyItem || item is UsableItem)
+            { 
+           
             GameObject Item = Instantiate(_itemToStorage, _inventoryStorage.transform.position, _itemToStorage.transform.rotation) as GameObject;
             Item.transform.SetParent(_inventoryStorage.transform, false);
             Item.transform.position = Camera.main.WorldToScreenPoint(_itemToStorage.transform.position);
@@ -97,6 +100,7 @@ public class MenuManager : MonoBehaviour
                 itemIcon.sprite = usableItem.IconForBag;
             }
 
+         
             TextMeshProUGUI itemToName = Item.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();        
             itemToName.text = item.ItemName;
 
@@ -106,7 +110,7 @@ public class MenuManager : MonoBehaviour
 
             OpenItemDescription thisItem = Item.transform.GetChild(1).GetComponent<OpenItemDescription>();
             thisItem.ThisItemOnButton = item;
-
+            }
         }
     }
 
@@ -114,6 +118,10 @@ public class MenuManager : MonoBehaviour
     {
         foreach (var item in InventoryInfo.InventoryDic.Keys)
         {
+            if(item is PhotoItem)
+            {
+
+          
             GameObject Item = Instantiate(_photoPrefab, _galleryStorage.transform.position, _photoPrefab.transform.rotation) as GameObject;
             Item.transform.SetParent(_galleryStorage.transform, false);
             Item.transform.position = Camera.main.WorldToScreenPoint(_photoPrefab.transform.position);
@@ -130,6 +138,7 @@ public class MenuManager : MonoBehaviour
             else 
             {
                 return;
+            }
             }
         }
     }

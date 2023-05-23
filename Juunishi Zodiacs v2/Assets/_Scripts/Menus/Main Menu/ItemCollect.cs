@@ -19,14 +19,11 @@ public class ItemCollect : MonoBehaviour
         OpenDialogue();
         NavigationManager.instance.ItemDic.Remove(itemId);
 
-        if (_thisItem is KeyItem || _thisItem is UsableItem)
+        if (_thisItem is KeyItem || _thisItem is UsableItem || _thisItem is PhotoItem)
         {
             AddInventory();
         }
-        else if( _thisItem is PhotoItem)
-        {
-
-        }
+      
 
         gameObject.SetActive(false);
     }
