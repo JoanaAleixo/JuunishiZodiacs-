@@ -40,10 +40,10 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            CombatSceneButton();
-        }
+        //if (Input.GetKeyDown(KeyCode.C))
+        //{
+        //    CombatSceneButton();
+        //}
 
         if (Input.GetKeyDown(KeyCode.S))
         {
