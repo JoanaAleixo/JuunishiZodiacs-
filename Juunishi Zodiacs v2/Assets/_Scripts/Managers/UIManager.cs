@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject enemyPreTest;
     [SerializeField] Sprite combatBackground;
 
+    [SerializeField] GameObject _pauseMenu;
+
     void Start()
     {
         sceneInstance = LoadingSceneManager.sceneInstance;
@@ -107,4 +109,17 @@ public class UIManager : MonoBehaviour
         PlayerPrefs.Save();
     }
     #endregion
+
+
+    public void OpenClosePauseMenu()
+    {
+        if (_pauseMenu.activeSelf == true)
+        {
+            _pauseMenu.SetActive(false);
+        }
+        else
+        {
+            _pauseMenu.SetActive(true);
+        }
+    }
 }
