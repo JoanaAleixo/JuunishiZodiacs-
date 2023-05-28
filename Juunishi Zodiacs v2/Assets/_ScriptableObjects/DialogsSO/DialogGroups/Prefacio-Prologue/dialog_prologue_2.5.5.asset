@@ -10,33 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60273dc35858ef04aa950a041ea1afe0, type: 3}
-  m_Name: dialog_prologue_2_c3
+  m_Name: dialog_prologue_2.5.5
   m_EditorClassIdentifier: 
   _background: {fileID: 21300000, guid: dac55afb5ecddf842b6abdf39062634b, type: 3}
   _backgroundName: {fileID: 21300000, guid: 94227921711f172438536507b0e51baa, type: 3}
   _dialogueStr:
   - myCharacter: {fileID: 11400000, guid: f9cb58de52f6082498205d2f0ce3b776, type: 2}
     _dialogueMessages:
-    - '"Do you really think you can beat us?"'
-    myExpressions: 0
-    myFullbody: 0
-    myPositions: 0
-  - myCharacter: {fileID: 11400000, guid: d04d07f168c0fa240b25f33d1c6064d7, type: 2}
-    _dialogueMessages:
-    - '"You''ll see what I''m capable of!!"'
-    myExpressions: 5
-    myFullbody: 5
+    - ........
+    myExpressions: 2
+    myFullbody: 2
     myPositions: 2
-  _changeBrench: 0
-  _choiseDialogueToChange1: 0
-  _question1: 
+  _changeBrench: 1
+  _choiseDialogueToChange1: 1
+  _question1: "Let\xB4s end this!"
   _TrustValueToIncrese1: 0
-  _choiseDialogueToChange2: 0
-  _question2: 
-  _TrustValueToIncrese2: 0
-  _choiseDialogueToChange3: 0
-  _question3: 
-  _TrustValueToIncrese3: 0
+  _choiseDialogueToChange2: 3
+  _question2: I don't plan to die here.
+  _TrustValueToIncrese2: 10
+  _choiseDialogueToChange3: 5
+  _question3: Do you think you can really do it?
+  _TrustValueToIncrese3: -10
   _isEndDialogueOnNav: 0
   _sceneTransition: 0
   _loadingScene: 0

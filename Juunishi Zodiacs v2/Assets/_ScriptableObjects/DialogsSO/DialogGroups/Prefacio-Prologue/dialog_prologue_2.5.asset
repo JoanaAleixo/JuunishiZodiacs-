@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60273dc35858ef04aa950a041ea1afe0, type: 3}
+  m_Name: dialog_prologue_2.5
+  m_EditorClassIdentifier: 
+  _background: {fileID: 21300000, guid: a9bb70e71ccd3a742b22a938a81ed561, type: 3}
+  _backgroundName: {fileID: 21300000, guid: 94227921711f172438536507b0e51baa, type: 3}
+  _dialogueStr:
+  - myCharacter: {fileID: 11400000, guid: 6976d2aa34c224042aa5136623fbe1c0, type: 2}
+    _dialogueMessages:
+    - '"I''m sorry, but we won''t die over something like this!"'
+    myExpressions: 3
+    myFullbody: 3
+    myPositions: 1
+  - myCharacter: {fileID: 11400000, guid: 9732b72edb9819a4586d61ca4efd7e46, type: 2}
+    _dialogueMessages:
+    - "\u201COh, no, so scary! You might be all-powerful and all, but you're just
+      a child wanting attention, kid.\""
+    myExpressions: 0
+    myFullbody: 0
+    myPositions: 2
+  - myCharacter: {fileID: 11400000, guid: d04d07f168c0fa240b25f33d1c6064d7, type: 2}
+    _dialogueMessages:
+    - "\u201CYou are no one to criticize me, Spirit of the Rat! None of you are\u2026\u201D"
+    myExpressions: 5
+    myFullbody: 5
+    myPositions: 2
+  _changeBrench: 0
+  _choiseDialogueToChange1: 1
+  _question1: "Let\xB4s end this!"
+  _TrustValueToIncrese1: 0
+  _choiseDialogueToChange2: 3
+  _question2: I don't plan to die here.
+  _TrustValueToIncrese2: 10
+  _choiseDialogueToChange3: 5
+  _question3: Do you think you can really do it?
+  _TrustValueToIncrese3: -10
+  _isEndDialogueOnNav: 0
+  _sceneTransition: 1
+  _loadingScene: 0
+  _nextScene: D_0_Prologue1 2
