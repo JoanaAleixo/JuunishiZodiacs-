@@ -417,7 +417,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7969b2d1a2f4bb44ea6e86e2cf552cb2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73cdc0fc4f6a79f4fb72452b7010b140, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -635,8 +635,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -204.84206, y: -104}
-  m_SizeDelta: {x: 932.586, y: 1303.458}
+  m_AnchoredPosition: {x: -256, y: -104}
+  m_SizeDelta: {x: 799.826, y: 1117.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &387012862
 MonoBehaviour:
@@ -658,7 +658,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 21b579ae8a318be46804a9648c58601a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f39eda72cc33e594eb8b938f0412ad97, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1549,7 +1549,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 195, y: -104.00001}
+  m_AnchoredPosition: {x: 174, y: -104.00001}
   m_SizeDelta: {x: 876.76, y: 1240.632}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &863680331
@@ -1903,6 +1903,7 @@ GameObject:
   - component: {fileID: 1058195222}
   - component: {fileID: 1058195224}
   - component: {fileID: 1058195223}
+  - component: {fileID: 1058195225}
   m_Layer: 5
   m_Name: Position1
   m_TagString: Untagged
@@ -1927,7 +1928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -690, y: -71.818}
+  m_AnchoredPosition: {x: -588, y: -100}
   m_SizeDelta: {x: 662.5021, y: 937.4404}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1058195223
@@ -1968,6 +1969,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058195221}
   m_CullTransparentMesh: 1
+--- !u!95 &1058195225
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058195221}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2a6a6ae39f2b9b74389c49b6e4116367, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1118311238
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,6 +2000,7 @@ GameObject:
   - component: {fileID: 1118311239}
   - component: {fileID: 1118311241}
   - component: {fileID: 1118311240}
+  - component: {fileID: 1118311242}
   m_Layer: 5
   m_Name: Position5
   m_TagString: Untagged
@@ -2003,7 +2025,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 656.01, y: -71.818}
+  m_AnchoredPosition: {x: 434, y: -71.818}
   m_SizeDelta: {x: 662.5021, y: 937.4404}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1118311240
@@ -2044,6 +2066,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118311238}
   m_CullTransparentMesh: 1
+--- !u!95 &1118311242
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118311238}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0d4ee8f7a120ff40a48c94b6173da96, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1195121471
 GameObject:
   m_ObjectHideFlags: 0
@@ -3667,17 +3709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myDialogTree:
-  - {fileID: 11400000, guid: 31ed71b89bbb4a54a8ecf99d911f1dc9, type: 2}
-  - {fileID: 11400000, guid: 6cfc66f93763ca649a830cb208d3f19d, type: 2}
-  - {fileID: 11400000, guid: e5ef7abb5fead344dba3f563f33c47d3, type: 2}
-  - {fileID: 11400000, guid: 6eddfe3348f62f1438f2a9d9e11e715d, type: 2}
-  - {fileID: 11400000, guid: 2e44b190ef16f8646b9bde1f160b1698, type: 2}
-  - {fileID: 11400000, guid: c53e29a502bdced4681732d2977cdf51, type: 2}
-  - {fileID: 11400000, guid: 6eddfe3348f62f1438f2a9d9e11e715d, type: 2}
-  - {fileID: 11400000, guid: 2e44b190ef16f8646b9bde1f160b1698, type: 2}
-  - {fileID: 11400000, guid: 81ab481ec78aed447b5c136e63549bab, type: 2}
-  - {fileID: 11400000, guid: 6eddfe3348f62f1438f2a9d9e11e715d, type: 2}
-  - {fileID: 11400000, guid: 2e44b190ef16f8646b9bde1f160b1698, type: 2}
+  - {fileID: 11400000, guid: e3ac5008f801f4f449d9e28ad25175c8, type: 2}
   _dialogueGameObject: {fileID: 2081256446}
   _dialogueCanChange: 1
   _choisesButtons: {fileID: 1824447027}
