@@ -63,6 +63,8 @@ public class CombatManager : MonoBehaviour
     [SerializeField] int tempEnemy = 0;
     [SerializeField] GameObject floatingDamagePre;
     [SerializeField] bool oneCaracter;
+    [Header("Sound")]
+    [SerializeField] AudioClip musicScene; 
     
 
     public int SelectedCaracter { get => _selectedCaracter; set { ChangeSelectedCaracter(_selectedCaracter, value);} }
@@ -94,6 +96,11 @@ public class CombatManager : MonoBehaviour
         if (oneCaracter)
         {
             StartCoroutine(DiePls());
+        }
+
+        if(musicScene != null)
+        {
+            SoundManager.soundInstance.PlayMusic(musicScene);
         }
     }
 
@@ -146,7 +153,6 @@ public class CombatManager : MonoBehaviour
         {
             CombatEndVerification();
         }
-        
 
         if (Input.GetKeyDown(KeyCode.C))
         {
@@ -158,10 +164,7 @@ public class CombatManager : MonoBehaviour
             ChangeState(BATTLESTATE.Victory);
         }
 
-        
     }
-
-    
 
     void ChangeState(BATTLESTATE _newState)
     {

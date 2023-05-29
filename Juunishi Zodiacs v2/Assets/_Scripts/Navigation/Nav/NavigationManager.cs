@@ -30,6 +30,9 @@ public class NavigationManager : MonoBehaviour
     [SerializeField] List<GameObject> _itensList = new List<GameObject>();
     Dictionary<int, int> _itemDic = new Dictionary<int, int> ();
 
+    [Header("Sound")]
+    [SerializeField] AudioClip musicScene;
+
     public static NavigationManager instance;
     #endregion
 
@@ -56,8 +59,11 @@ public class NavigationManager : MonoBehaviour
         }
         SpawnItems();
         NewPlace(0);
-       
 
+        if (musicScene != null)
+        {
+            SoundManager.soundInstance.PlayMusic(musicScene);
+        }
 
     }
     #endregion

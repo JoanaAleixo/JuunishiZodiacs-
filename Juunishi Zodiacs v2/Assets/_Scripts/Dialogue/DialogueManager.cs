@@ -69,6 +69,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] bool _oneCaracter;
     [SerializeField] Sprite _combatBackground;
 
+    [Header("Sound")]
+    [SerializeField] AudioClip musicScene;
+
 
 
     public static DialogueManager instance;
@@ -103,6 +106,11 @@ public class DialogueManager : MonoBehaviour
         _dialogTreeNumber = 0;
 
         UpdateOnUI();
+
+        if (musicScene != null)
+        {
+            SoundManager.soundInstance.PlayMusic(musicScene);
+        }
 
     }
 

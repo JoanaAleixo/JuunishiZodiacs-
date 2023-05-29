@@ -151,22 +151,28 @@ public class Enemy : BaseStats
 
     public override void OnPointerClick(PointerEventData eventData)
     {
-        if (uIManager.EnemyTargetSelecting == true)
+        if(myCaracter.HpMax.value > 0)
         {
-            if (combatMg.CurState == BATTLESTATE.SelectingTarget && uIManager.TemporarySelectedTarget == this)
+            if (uIManager.EnemyTargetSelecting == true)
             {
-                uIManager.LockTarget(this);
+                if (combatMg.CurState == BATTLESTATE.SelectingTarget && uIManager.TemporarySelectedTarget == this)
+                {
+                    uIManager.LockTarget(this);
+                }
             }
         }
     }
 
     public override void OnPointerEnter(PointerEventData eventData)
     {
-        if(uIManager.EnemyTargetSelecting == true)
+        if(myCaracter.HpMax.value > 0)
         {
-            if (combatMg.CurState == BATTLESTATE.SelectingTarget && uIManager.TemporarySelectedTarget != this)
+            if (uIManager.EnemyTargetSelecting == true)
             {
-                uIManager.ChangeTarget(this);
+                if (combatMg.CurState == BATTLESTATE.SelectingTarget && uIManager.TemporarySelectedTarget != this)
+                {
+                    uIManager.ChangeTarget(this);
+                }
             }
         }
     }

@@ -5,13 +5,24 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     [SerializeField] AudioSource audioSourcePre;
+    public static SoundManager soundInstance;
+    [SerializeField] GameObject currentMusicObj;
+    [SerializeField] AudioClip titleMenuMusic;
 
     void Start()
     {
+        if(soundInstance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            soundInstance = this;
+        }
 
+        PlayMusic(titleMenuMusic);
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -21,5 +32,18 @@ public class SoundManager : MonoBehaviour
     {
         AudioSource insta = Instantiate(audioSourcePre);
         insta.PlayOneShot(clip);
+    }
+
+    public void PlayMusic(AudioClip musicClip)
+    {
+        if(currentMusicObj != null)
+        {
+            Debug.Log("destroy?");
+            Destroy(currentMusicObj);
+        }
+        AudioSource insta = Instantiate(audioSourcePre);
+        currentMusicObj = insta.gameObject;
+        insta.PlayOneShot(musicClip);
+        insta.loop = true;
     }
 }
