@@ -132,7 +132,7 @@ public class CombatManager : MonoBehaviour
 
                 break;
             case BATTLESTATE.PlayerTurn:
-                CheckForAbilities();
+                
                 break;
             case BATTLESTATE.SelectingTarget:
                 TargetAbility();
@@ -183,9 +183,17 @@ public class CombatManager : MonoBehaviour
                     uIManager.UnlockAllSelectionButtons();
                     PreRoundStatusCheck();
                 }
-                uIManager.EnableCaracterSelection();
-                uIManager.UnlockCaracterSelection();
-                uIManager.CloseAbilityUsedPrompt();
+                if (CheckForAbilities())
+                {
+                    _actions.Clear();
+                    StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EndOfPlayerTurn, 0));
+                }
+                else
+                {
+                    uIManager.EnableCaracterSelection();
+                    uIManager.UnlockCaracterSelection();
+                    uIManager.CloseAbilityUsedPrompt();
+                }
                 break;
             case BATTLESTATE.SelectingTarget:
                 uIManager.LockCaracterSelection();
@@ -425,14 +433,17 @@ public class CombatManager : MonoBehaviour
         tempIndex++;
     }
 
-    private void CheckForAbilities()  //Conta quantas habilidades foram utilizadas para passar o turno.
+    private bool CheckForAbilities()  //Conta quantas habilidades foram utilizadas para passar o turno.
     {
         if (oneCaracter)
             playersOnRoundStart = 1;
         if(_actions.Count >= playersOnRoundStart)
         {
-            _actions.Clear();
-            StartCoroutine(ChangeStateWithDelay(BATTLESTATE.EndOfPlayerTurn,0));
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
